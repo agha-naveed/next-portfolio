@@ -2,6 +2,6 @@
 
 export default function Page() {
   return (
-    <div>page</div>
+    <div className="bg-my-clr p-4">page</div>
   )
 }

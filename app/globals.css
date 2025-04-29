@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@theme {
+    --color-main-dark-clr: #0f111e;
+    --color-main-skin-clr: #a48332;
+    --color-secondary-light-clr: #131824;
+}
