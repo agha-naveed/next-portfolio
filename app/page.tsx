@@ -1,7 +1,11 @@
 'use client'
 
+import Header from "./components/Header"
+
 export default function Page() {
   return (
-    <div className="bg-my-clr p-4">page</div>
+    <div className="w-full h-full bg-my-clr p-4">
+      <Header />
+    </div>
   )
 }
