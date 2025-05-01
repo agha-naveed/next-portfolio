@@ -1,17 +1,39 @@
+'use client'
+import { useState, useEffect } from 'react';
 import Link from 'next/link'
 import React from 'react'
 
 export default function Navbar() {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
     return (
-        <nav className='w-full !py-7 fixed anchor-center z-[1000] bg-main-dark-clr/20 backdrop-blur-[5px]'>
+        <nav className={`w-full !py-7 fixed anchor-center z-[1000] ${scrolled ? "bg-main-dark-clr/20 backdrop-blur-[5px]" : "bg-transparent"}`}>
             <ul className='flex h-auto justify-center gap-3'>
-                <li><Link href={'/'} className='!py-3 !px-5'>Home</Link></li>
-                <li><Link href={'/'} className='!py-3 !px-5'>Project</Link></li>
+                <li className='group'>
+                    <Link href={'/'} className='!py-3 !px-5 transition-all'>
+                        Home
+                    </Link>
+                    <span className='block w-0 transition-all h-[1.5px] justify-self-center origin-center group-hover:w-[70%] bg-main-skin-clr !mt-1'></span>
+                </li>
+                <li className='group'>
+                    <Link href={'/'} className='!py-3 !px-5 transition-all'>
+                        Projects
+                    </Link>
+                    <span className='block w-0 transition-all h-[1.5px] justify-self-center origin-center group-hover:w-[70%] bg-main-skin-clr !mt-1'></span>
+                </li>
                 <li className='group'>
                     <Link href={'/'} className='!py-3 !px-5 transition-all'>
                         About
                     </Link>
-                    <span className='block w-0 transition-all h-[1.5px] justify-self-center origin-center group-hover:w-[80%] bg-main-skin-clr !mt-1'></span>
+                    <span className='block w-0 transition-all h-[1.5px] justify-self-center origin-center group-hover:w-[70%] bg-main-skin-clr !mt-1'></span>
                 </li>
             </ul>
         </nav>
