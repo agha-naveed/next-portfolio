@@ -3,10 +3,12 @@ import bgBlend from "public/img/bg1.png"
 import ANtext from 'public/img/naveed_text.png'
 import dottedBg from 'public/img/dotted_overlay.png'
 import blueFlare from 'public/img/blue-flare.jpg'
+import Navbar from './Navbar'
 
 export default function Header() {
     return (
         <div className='w-full min-h-screen h-screen bg-main-dark-clr text-white'>
+            <Navbar />
             <div className='w-full object-center absolute top-0'>
                 <Image src={bgBlend} alt="" 
                 className='w-full mix-blend-color-dodge select-none'

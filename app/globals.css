@@ -2,7 +2,7 @@
 
 @theme {
     --color-main-dark-clr: #0f111e;
-    --color-main-skin-clr: #a48332;
+    --color-main-skin-clr: #e69d3f;
     --color-secondary-light-clr: #131824;
 }
 * {
@@ -12,4 +12,7 @@
 }
 .txt-stroke {
     -webkit-text-stroke: 0.5px white;
+}
+.anchor-center {
+    justify-self: anchor-center;
 }
