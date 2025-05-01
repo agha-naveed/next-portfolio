@@ -18,6 +18,8 @@ export default function Header() {
                 <div className='relative justify-self-center'>
                     <Image src={ANtext} alt=''
                     className='w-[750px]'
+                    loading='lazy'
+                    decoding='async'
                     />
                     <div>
                         <Image src={blueFlare}
@@ -31,7 +33,7 @@ export default function Header() {
                         alt='' />
                     </div>
                 </div>
-                <span className='uppercase font-extrabold text-3xl !mt-4'>full-<span className='txt-stroke text-transparent'>stack</span> developer</span>
+                <span className='uppercase font-extrabold text-[26px] !mt-4 tracking-[4px]'>full-<span className='txt-stroke text-transparent'>stack</span> developer</span>
                 <div>
                     <Image className='
                     absolute top-[40%] left-1/2 -translate-x-1/2

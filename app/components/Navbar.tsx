@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function Navbar() {
     return (
-        <nav className='w-full !py-7 fixed anchor-center bg-secondary-light-clr/35 backdrop-blur-3xl'>
-            <ul className='flex h-auto justify-center gap-3 relative z-[100]'>
+        <nav className='w-full !py-7 fixed anchor-center z-[1000] bg-main-dark-clr/20 backdrop-blur-[5px]'>
+            <ul className='flex h-auto justify-center gap-3'>
                 <li><Link href={'/'} className='!py-3 !px-5'>Home</Link></li>
                 <li><Link href={'/'} className='!py-3 !px-5'>Project</Link></li>
                 <li className='group'>
