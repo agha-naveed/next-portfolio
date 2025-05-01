@@ -1,13 +1,14 @@
 'use client'
 import { useState } from "react"
-import { AnimatePresence, motion } from "motion/react"
 
 export default function Skills() {
+    const [isVisible, setIsVisible] = useState(true)
     const [option, setOption] = useState("")
     return (
         <div className='w-full h-full p-sec bg-main-dark-clr'>
             <div className='container !mx-auto justify-items-center'>
                 <h2 className='text-5xl font-bold text-white text-center'>Skills</h2>
+
                 <div className="flex gap-3 justify-between w-[80%]">
                     <div className="text-white text-start flex flex-col gap-1 w-65">
                         <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("frontend")}>Frontend</button>
