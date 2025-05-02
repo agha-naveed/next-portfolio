@@ -39,57 +39,57 @@ export default function Skills() {
             <div className='container !mx-auto justify-items-center'>
                 <h2 className='text-5xl font-semibold text-white text-center'>SKILLS</h2>
 
-                <div className="flex gap-3 justify-center !mt-12">
-                    <div className="text-white text-start flex flex-col gap-1 w-65">
-                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("frontend")}>Frontend</button>
-                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("backend")}>Backend</button>
-                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("database")}>Database</button>
-                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("programming")}>Programming</button>
-                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("designing")}>Designing</button>
-                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("ai")}>AI</button>
-                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("tools")}>Tools</button>
+                <div className="flex sm:flex-row flex-col gap-3 justify-center !mt-12 !px-10 w-full">
+                    <div className="text-white text-start flex sm:flex-col flex-row flex-wrap sm:gap-1 sm:w-65 w-full gap-x-10">
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("frontend")}>Frontend</button>
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("backend")}>Backend</button>
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("database")}>Database</button>
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("programming")}>Programming</button>
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("designing")}>Designing</button>
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("ai")}>AI</button>
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("tools")}>Tools</button>
                     </div>
 
-                    <div className="w-1 h-100 bg-main-skin-clr"></div>
+                    <div className="sm:w-1 sm:h-100 w-full h-1 bg-main-skin-clr"></div>
 
-                    <div className="w-180 h-full text-white relative">
-                        <span className="font-semibold text-xl relative left-15 capitalize">{option}</span>
-                        <div className={`transition-all ${option == "frontend" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 gap-5 w-110 !pt-12 !pl-10 absolute top-0`}>
-                            <div className="flex flex-col gap-1 items-center justify-between">
+                    <div className="sm:w-180 w-full h-full text-white relative">
+                        <span className="font-semibold text-xl relative sm:left-15 sm:top-0 top-4 left-2 capitalize">{option}</span>
+                        <div className={`transition-all ${option == "frontend" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-auto !pt-12 sm:!pl-10 sm:absolute relative top-0`}>
+                            <div className="flex flex-col w-fit gap-1 items-center justify-between">
                                 <Image src={html} className="w-10" alt="" />
                                 <label htmlFor="">HTML</label>
                             </div>
-                            <div className="flex flex-col gap-1 items-center justify-between">
+                            <div className="flex flex-col gap-1 w-fit items-center justify-between">
                                 <Image src={css} className="w-10" alt="" />
                                 <label htmlFor="">CSS</label>
                             </div>
-                            <div className="flex flex-col gap-1 items-center justify-between">
+                            <div className="flex flex-col gap-1 w-fit items-center justify-between">
                                 <Image src={bootstrap} className="w-10" alt="" />
                                 <label htmlFor="">Bootstrap</label>
                             </div>
-                            <div className="flex flex-col gap-1 items-center justify-between">
+                            <div className="flex flex-col gap-1 w-fit items-center justify-between">
                                 <Image src={tailwind} className="w-10" alt="" />
                                 <label htmlFor="">Tailwind</label>
                             </div>
-                            <div className="flex flex-col gap-1 items-center justify-between">
+                            <div className="flex flex-col gap-1 w-fit items-center justify-between">
                                 <Image src={js} className="w-10" alt="" />
                                 <label htmlFor="">JavaScript</label>
                             </div>
-                            <div className="flex flex-col gap-1 items-center justify-between">
+                            <div className="flex flex-col gap-1 w-fit items-center justify-between">
                                 <Image src={ts} className="w-10" alt="" />
                                 <label htmlFor="">TypeScript</label>
                             </div>
-                            <div className="flex flex-col gap-1 items-center justify-between">
+                            <div className="flex flex-col gap-1 w-fit items-center justify-between">
                                 <Image src={react} className="w-10" alt="" />
                                 <label htmlFor="">React Js</label>
                             </div>
-                            <div className="flex flex-col gap-1 items-center justify-between">
+                            <div className="flex flex-col gap-1 w-fit items-center justify-between">
                                 <Image src={next} className="w-10" alt="" />
                                 <label htmlFor="">Next Js</label>
                             </div>
                         </div>
 
-                        <div className={`transition-all ${option == "backend" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-12 !pl-10`}>
+                        <div className={`transition-all ${option == "backend" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-auto !pt-12 sm:!pl-10 sm:absolute relative top-0`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={express} className="w-10" alt="" />
@@ -102,7 +102,7 @@ export default function Skills() {
                             </div>
                         </div>
 
-                        <div className={`transition-all ${option == "database" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-12 !pl-10`}>
+                        <div className={`transition-all ${option == "database" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-auto !pt-12 sm:!pl-10 sm:absolute relative top-0`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={mysql} className="w-10" alt="" />
@@ -115,7 +115,7 @@ export default function Skills() {
                             </div>
                         </div>
 
-                        <div className={`transition-all ${option == "programming" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-12 !pl-10`}>
+                        <div className={`transition-all ${option == "programming" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-auto !pt-12 sm:!pl-10 sm:absolute relative top-0`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={cpp} className="w-10" alt="" />
@@ -133,7 +133,7 @@ export default function Skills() {
                             </div>
                         </div>
 
-                        <div className={`transition-all ${option == "designing" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-12 !pl-10`}>
+                        <div className={`transition-all ${option == "designing" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-auto !pt-12 sm:!pl-10 sm:absolute relative top-0`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={wordpress} className="w-10" alt="" />
@@ -147,7 +147,7 @@ export default function Skills() {
                             
                         </div>
 
-                        <div className={`transition-all ${option == "ai" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-12 !pl-10`}>
+                        <div className={`transition-all ${option == "ai" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-auto !pt-12 sm:!pl-10 sm:absolute relative top-0`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={numpy} className="w-10" alt="" />
@@ -161,7 +161,7 @@ export default function Skills() {
                             
                         </div>
 
-                        <div className={`transition-all ${option == "tools" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-12 !pl-10`}>
+                        <div className={`transition-all ${option == "tools" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-auto !pt-12 sm:!pl-10 sm:absolute relative top-0`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={npm} className="w-10" alt="" />
