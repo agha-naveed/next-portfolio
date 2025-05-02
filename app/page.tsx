@@ -9,7 +9,7 @@ import '../node_modules/aos/dist/aos.css'
 
 export default function Page() {
   useEffect(() => {
-    
+    AOS.init()
   }, [])
   return (
     <div className="w-full h-full p-4">

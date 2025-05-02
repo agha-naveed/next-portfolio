@@ -16,7 +16,8 @@ export default function Header() {
             </div>
             <div className='container !mx-auto h-full relative flex flex-col items-center justify-center'>
                 <div className='relative justify-self-center justify-items-center'>
-                    <Image src={ANtext} alt=''
+                    <Image src={ANtext} alt='AGHA NAVEED'
+                    data-aos="zoom-out-up" data-aos-duration="1000"
                     className='lg:w-[750px] md:w-[500px] w-[70%]'
                     loading='lazy'
                     decoding='async'
@@ -33,7 +34,9 @@ export default function Header() {
                         alt='' />
                     </div>
                 </div>
-                <span className='uppercase font-extrabold md:text-[26px] sm:text-[20px] text-[14px] !mt-4 tracking-[4px]'>full-<span className='txt-stroke text-transparent'>stack</span> developer</span>
+                <span
+                data-aos="zoom-out-up" data-aos-duration="2200"
+                className='uppercase font-extrabold md:text-[26px] sm:text-[20px] text-[14px] !mt-4 tracking-[4px]'>full-<span className='txt-stroke text-transparent'>stack</span> developer</span>
                 <div>
                     <Image className='
                     absolute top-[40%] left-1/2 -translate-x-1/2
