@@ -12,9 +12,6 @@
     box-sizing: border-box;
     font-family: var(--font-poppins);
 }
-.fade-blink {
-    animation: blink 3s linear infinite alternate;
-}
 @keyframes blink {
     0% {
         opacity: 0;

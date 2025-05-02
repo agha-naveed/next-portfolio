@@ -37,7 +37,7 @@ export default function Header() {
                 </div>
                 <span
                 data-aos="zoom-out-up" data-aos-duration="2200"
-                className='uppercase flex gap-1 font-extrabold md:text-[26px] sm:text-[20px] text-[14px] !mt-4 tracking-[4px]'>
+                className='uppercase flex gap-[6px] font-extrabold md:text-[26px] sm:text-[20px] text-[14px] !mt-4 tracking-[4px]'>
                         <Typewriter
                         words={["Full Stack", "MERN Stack", "Software"]}
                         loop={false}
