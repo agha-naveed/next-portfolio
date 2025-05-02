@@ -6,16 +6,8 @@ import React from 'react'
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
     return (
-        <nav className={`w-full !py-7 fixed anchor-center z-[1000] ${scrolled ? "bg-main-dark-clr/20 backdrop-blur-[5px]" : "bg-transparent"}`}>
+        <nav className={`w-full !py-6 text-white fixed anchor-center z-[1000] bg-main-dark-clr/20 backdrop-blur-[5px]`}>
             <ul className='flex h-auto justify-center gap-3'>
                 <li className='group'>
                     <Link href={'/'} className='!py-3 !px-5 transition-all'>

@@ -53,7 +53,8 @@ export default function Skills() {
                     <div className="w-1 h-100 bg-main-skin-clr"></div>
 
                     <div className="w-180 h-full text-white relative">
-                        <div className={`transition-all ${option == "frontend" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 gap-5 w-110 !pt-2 !pl-10 absolute top-0`}>
+                        <span className="font-semibold text-xl relative left-15 capitalize">{option}</span>
+                        <div className={`transition-all ${option == "frontend" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 gap-5 w-110 !pt-12 !pl-10 absolute top-0`}>
                             <div className="flex flex-col gap-1 items-center justify-between">
                                 <Image src={html} className="w-10" alt="" />
                                 <label htmlFor="">HTML</label>
@@ -88,7 +89,7 @@ export default function Skills() {
                             </div>
                         </div>
 
-                        <div className={`transition-all ${option == "backend" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-2 !pl-10`}>
+                        <div className={`transition-all ${option == "backend" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-12 !pl-10`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={express} className="w-10" alt="" />
@@ -101,7 +102,7 @@ export default function Skills() {
                             </div>
                         </div>
 
-                        <div className={`transition-all ${option == "database" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-2 !pl-10`}>
+                        <div className={`transition-all ${option == "database" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-12 !pl-10`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={mysql} className="w-10" alt="" />
@@ -114,7 +115,7 @@ export default function Skills() {
                             </div>
                         </div>
 
-                        <div className={`transition-all ${option == "programming" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-2 !pl-10`}>
+                        <div className={`transition-all ${option == "programming" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-12 !pl-10`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={cpp} className="w-10" alt="" />
@@ -132,7 +133,7 @@ export default function Skills() {
                             </div>
                         </div>
 
-                        <div className={`transition-all ${option == "designing" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-2 !pl-10`}>
+                        <div className={`transition-all ${option == "designing" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-12 !pl-10`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={wordpress} className="w-10" alt="" />
@@ -146,7 +147,7 @@ export default function Skills() {
                             
                         </div>
 
-                        <div className={`transition-all ${option == "ai" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-2 !pl-10`}>
+                        <div className={`transition-all ${option == "ai" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-12 !pl-10`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={numpy} className="w-10" alt="" />
@@ -160,7 +161,7 @@ export default function Skills() {
                             
                         </div>
 
-                        <div className={`transition-all ${option == "tools" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-2 !pl-10`}>
+                        <div className={`transition-all ${option == "tools" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-12 !pl-10`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={npm} className="w-10" alt="" />
