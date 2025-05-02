@@ -5,7 +5,7 @@ export default function Skills() {
     const [isVisible, setIsVisible] = useState(true)
     const [option, setOption] = useState("")
     return (
-        <div className='w-full h-full p-sec bg-main-dark-clr'>
+        <div className='w-full h-full p-sec bg-main-dark-clr relative -top-1'>
             <div className='container !mx-auto justify-items-center'>
                 <h2 className='text-5xl font-bold text-white text-center'>Skills</h2>
 

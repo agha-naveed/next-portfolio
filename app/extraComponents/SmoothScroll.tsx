@@ -1,30 +1,30 @@
 'use client'
-import { ReactNode, useEffect, useRef } from "react";
-import LocomotiveScroll from "locomotive-scroll";
+import { useEffect, useRef } from "react";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 
-type SmoothScrollProps = {
-  children: ReactNode;
-};
-
 const SmoothScroll = ({ children }:any) => {
-  const scrollRef = useRef<HTMLDivElement | null>(null);
-
-  let scroll:LocomotiveScroll | null = null;
-
+  const scrollRef = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
-    if (scrollRef.current) {
-      scroll = new LocomotiveScroll({
-        el: scrollRef.current,
-        smooth: true,
-      });
+    let scroll:LocomotiveScroll | null = null;
 
-      return () => {
-        if(scroll)
-          scroll?.destroy();
-      };
-    }
-  }, [children]);
+    const initScroll = async () => {
+      const LocomotiveScroll = (await import('locomotive-scroll')).default;
+
+      if (scrollRef.current) {
+        scroll = new LocomotiveScroll({
+          el: scrollRef.current,
+          smooth: true,
+        });
+      }
+    };
+
+    initScroll();
+
+    return () => {
+      if (scroll) scroll.destroy();
+    };
+  }, []);
 
   return <div ref={scrollRef} className="h-full">{children}</div>;
 };
