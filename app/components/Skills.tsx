@@ -14,10 +14,10 @@ export default function Skills() {
                         <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("frontend")}>Frontend</button>
                         <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("backend")}>Backend</button>
                         <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("database")}>Database</button>
-                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start">Programming</button>
-                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start">Designing</button>
-                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start">AI</button>
-                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start">Tools</button>
+                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("programming")}>Programming</button>
+                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("designing")}>Designing</button>
+                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("ai")}>AI</button>
+                        <button className="border-none outline-none !py-[13px] w-full hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("tools")}>Tools</button>
                     </div>
                     <div className="w-1 h-100 bg-main-skin-clr"></div>
                     <div className="w-full h-full bg-purple-700">
