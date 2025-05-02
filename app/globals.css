@@ -1,15 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-    --color-main-dark-clr: #0f111e;
+    --color-main-dark-clr: #0d141e;
     --color-main-skin-clr: #e69d3f;
     --color-secondary-light-clr: #131824;
+    --animate-blink: blink 3s linear infinite alternate;
 }
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: var(--font-poppins);
+}
+.fade-blink {
+    animation: blink 3s linear infinite alternate;
+}
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.2;
+    }
 }
 .txt-stroke {
     -webkit-text-stroke: 0.5px white;

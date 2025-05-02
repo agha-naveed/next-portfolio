@@ -26,10 +26,10 @@ export default function Header() {
                         <Image src={blueFlare}
                         className='absolute
                         mix-blend-screen
-                        -top-35
+                        animate-blink
+                        -top-48
                         -left-30
                         w-[350px]
-                        opacity-20
                         '
                         alt='' />
                     </div>
