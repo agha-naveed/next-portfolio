@@ -38,10 +38,12 @@ export default function Header() {
                 data-aos="zoom-out-up" data-aos-duration="2200"
                 className='uppercase font-extrabold md:text-[26px] sm:text-[20px] text-[14px] !mt-4 tracking-[4px]'>full-<span className='txt-stroke text-transparent'>stack</span> developer</span>
                 <div>
-                    <Image className='
-                    absolute top-[40%] left-1/2 -translate-x-1/2
-                    mix-blend-screen opacity-20 select-none
-                    ' src={dottedBg} alt=''/>
+                    <Image
+                    data-aos="zoom-out-up" data-aos-duration="2500"
+                    className='
+                    absolute top-[40%] left-1/2 -translate-x-1/2 z-[1000]
+                    mix-blend-screen !opacity-20 select-none'
+                    src={dottedBg} alt=''/>
                 </div>
             </div>
             
