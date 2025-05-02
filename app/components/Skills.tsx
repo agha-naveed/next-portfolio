@@ -8,6 +8,7 @@ import ts from 'public/img/skills-logo/typescript.svg'
 import react from 'public/img/skills-logo/react.svg'
 import next from 'public/img/skills-logo/nextjs.svg'
 
+
 export default function Skills() {
     const [option, setOption] = useState("frontend")
 
