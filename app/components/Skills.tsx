@@ -37,7 +37,7 @@ export default function Skills() {
     return (
         <div className='w-full h-full p-sec overflow-hidden bg-main-dark-clr relative -top-1'>
             <div className='container !mx-auto justify-items-center'>
-                <h2 className='text-5xl font-bold text-white text-center'>SKILLS</h2>
+                <h2 className='text-5xl font-semibold text-white text-center'>SKILLS</h2>
 
                 <div className="flex gap-3 justify-center !mt-12">
                     <div className="text-white text-start flex flex-col gap-1 w-65">
@@ -113,7 +113,6 @@ export default function Skills() {
                                 <label htmlFor="">MongoDB</label>
                             </div>
                         </div>
-
 
                         <div className={`transition-all ${option == "programming" ? " scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid grid-cols-4 absolute top-0 gap-5 w-110 !pt-2 !pl-10`}>
                             
