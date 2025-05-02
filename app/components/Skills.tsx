@@ -53,7 +53,7 @@ export default function Skills() {
                     <div className="sm:w-1 sm:h-100 w-full h-1 bg-main-skin-clr"></div>
 
                     <div className="sm:w-180 w-full h-[80vh] text-white relative justify-items-center">
-                        <span className="font-semibold text-xl relative md:left-[65px] sm:left-[34px] sm:top-0 top-4 left-2 capitalize">{option}</span>
+                        <span className="font-semibold text-xl relative md:left-[65px] sm:left-[34px] sm:top-0 top-4 left-2 capitalize text-center">{option}</span>
                         <div className={`transition-all ${option == "frontend" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             <div className="flex flex-col w-fit gap-1 items-center justify-between">
                                 <Image src={html} className="w-10" alt="" />
