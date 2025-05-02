@@ -4,6 +4,7 @@ import ANtext from 'public/img/naveed_text.png'
 import dottedBg from 'public/img/dotted_overlay.png'
 import blueFlare from 'public/img/blue-flare.jpg'
 import Navbar from './Navbar'
+import { Typewriter } from 'react-simple-typewriter'
 
 export default function Header() {
     return (
@@ -36,15 +37,24 @@ export default function Header() {
                 </div>
                 <span
                 data-aos="zoom-out-up" data-aos-duration="2200"
-                className='uppercase font-extrabold md:text-[26px] sm:text-[20px] text-[14px] !mt-4 tracking-[4px]'>full-<span className='txt-stroke text-transparent'>stack</span> developer</span>
-                <div>
-                    <Image
-                    data-aos="zoom-out-up" data-aos-duration="2500"
-                    className='
-                    absolute top-[40%] left-1/2 -translate-x-1/2 z-[1000]
-                    mix-blend-screen !opacity-20 select-none'
-                    src={dottedBg} alt=''/>
-                </div>
+                className='uppercase flex gap-1 font-extrabold md:text-[26px] sm:text-[20px] text-[14px] !mt-4 tracking-[4px]'>
+                        <Typewriter
+                        words={["Full Stack", "MERN Stack", "Software"]}
+                        loop={false}
+                        cursor
+                        />
+                        <span className='txt-stroke text-transparent'>
+                            developer
+                        </span>
+                </span>
+                
+                
+                <Image
+                data-aos="zoom-out-up" data-aos-duration="2500"
+                className='
+                absolute md:top-[40%] top-[50%] md:w-full w-[80%] left-1/2 -translate-x-1/2 z-[1000]
+                mix-blend-screen !opacity-20 select-none'
+                src={dottedBg} alt=''/>
             </div>
             
         </div>
