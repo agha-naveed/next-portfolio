@@ -11,8 +11,14 @@ export default function Projects() {
 
                 <h2 className='text-5xl font-semibold text-white text-center'>PROJECTS</h2>
 
-                <div>
-                    <Image src={} alt='' />
+                <div className='w-fit bg-secondary-light-clr !py-3 !px-5 rounded-lg'>
+                    <span className='font-semibold text-xl block !py-3'>Library Management System</span>
+                    <Image src={store} alt='' className='w-80 rounded-sm' placeholder='blur' />
+
+                    <div className='flex flex-col !py-3'>
+                        <span className='text-xl font-semibold'>Library Management System</span>
+                        <span className='font-semibold'>Desktop Application</span>
+                    </div>
                 </div>
 
             </div>
