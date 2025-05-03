@@ -3,7 +3,7 @@
 @theme {
     --color-main-dark-clr: #0d141e;
     --color-main-skin-clr: #e69d3f;
-    --color-secondary-light-clr: #131824;
+    --color-secondary-light-clr: #121a23;
     --animate-blink: blink 3s linear infinite alternate;
 }
 * {
@@ -11,6 +11,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: var(--font-poppins);
+    /* color: #e69d3f; */
 }
 body {
     overflow-y: scroll;
