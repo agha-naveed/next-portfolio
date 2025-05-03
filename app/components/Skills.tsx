@@ -41,13 +41,13 @@ export default function Skills() {
 
                 <div className="flex sm:flex-row flex-col gap-3 justify-center !mt-12 !px-10 w-full">
                     <div className="text-white text-start flex sm:flex-col flex-row flex-wrap sm:gap-1 sm:w-65 w-full gap-x-10">
-                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("frontend")}>Frontend</button>
-                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("backend")}>Backend</button>
-                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("database")}>Database</button>
-                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("programming")}>Programming</button>
-                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("designing")}>Designing</button>
-                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("ai")}>AI</button>
-                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:underline cursor-pointer text-xl text-start" onClick={(e) => setOption("tools")}>Tools</button>
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:text-main-skin-clr transition-all cursor-pointer text-xl text-start" onClick={(e) => setOption("frontend")}>Frontend</button>
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:text-main-skin-clr transition-all cursor-pointer text-xl text-start" onClick={(e) => setOption("backend")}>Backend</button>
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:text-main-skin-clr transition-all cursor-pointer text-xl text-start" onClick={(e) => setOption("database")}>Database</button>
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:text-main-skin-clr transition-all cursor-pointer text-xl text-start" onClick={(e) => setOption("programming")}>Programming</button>
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:text-main-skin-clr transition-all cursor-pointer text-xl text-start" onClick={(e) => setOption("designing")}>Designing</button>
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:text-main-skin-clr transition-all cursor-pointer text-xl text-start" onClick={(e) => setOption("ai")}>AI</button>
+                        <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:text-main-skin-clr transition-all cursor-pointer text-xl text-start" onClick={(e) => setOption("tools")}>Tools</button>
                     </div>
 
                     <div className="sm:w-1 sm:h-100 w-full h-1 bg-main-skin-clr"></div>
