@@ -6,6 +6,7 @@ import Header from "./components/Header"
 import Skills from "./components/Skills"
 import AOS from 'aos'
 import '../node_modules/aos/dist/aos.css'
+import Projects from "./components/Projects"
 
 export default function Page() {
   useEffect(() => {
@@ -17,6 +18,7 @@ export default function Page() {
       <Header />
       <About />
       <Skills />
+      <Projects />
     </div>
   )
 }
