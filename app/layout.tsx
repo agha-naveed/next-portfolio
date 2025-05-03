@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "./extraComponents/SmoothScroll";
 import Navbar from "./components/Navbar";
 
 const poppins = Poppins({
@@ -43,9 +42,7 @@ export default function RootLayout({
         className={`${poppins.variable} overflow-hidden antialiased`}
       >
         <Navbar />
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
+        {children}
       </body>
     </html>
   );

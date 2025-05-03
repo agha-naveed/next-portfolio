@@ -12,6 +12,22 @@
     box-sizing: border-box;
     font-family: var(--font-poppins);
 }
+body {
+    /* overflow-y: scroll; */
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(26, 26, 26);
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgb(26, 26, 26);
+}
+::-webkit-scrollbar-thumb {
+    background: #384b66;
+    border-radius: 10px;
+}
 @keyframes blink {
     0% {
         opacity: 0;
