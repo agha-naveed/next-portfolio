@@ -28,7 +28,7 @@ export default function Projects() {
                     />
 
                     <div data-aos="fade-up" className='justify-items-center' data-aos-duration="1000" data-aos-easing="ease-out">
-                        <Tilt tiltMaxAngleX={10}
+                        <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}
                         className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
                             <div className='w-full overflow-hidden rounded-sm'>
@@ -47,7 +47,7 @@ export default function Projects() {
                     </div>
 
                     <div className='justify-items-center' data-aos="fade-up" data-aos-duration="1300" data-aos-easing="ease-out">
-                        <Tilt tiltMaxAngleX={10} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
+                        <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
                             <div className='w-full overflow-hidden rounded-sm'>
                                 <Image src={lms} alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
@@ -65,7 +65,7 @@ export default function Projects() {
                     </div>
                     
                     <div className='justify-items-center' data-aos="fade-up" data-aos-duration="1600" data-aos-easing="ease-out">
-                        <Tilt tiltMaxAngleX={10} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[1000]'>
+                        <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[1000]'>
                             
                             <div className='w-full overflow-hidden rounded-sm'>
                                 <Image src={chatbot} alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
@@ -98,17 +98,17 @@ export default function Projects() {
 
                     <div className='flex flex-wrap justify-center relative gap-14'>
                         <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
-                            <Tilt tiltMaxAngleX={10} className="justify-items-center" >
+                            <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} className="justify-items-center" >
                                 <Image src={portfolio} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                             </Tilt>
                         </div>
                         <div data-aos="fade-up" data-aos-duration="1300" data-aos-easing="ease-out">
-                            <Tilt tiltMaxAngleX={10} className="justify-items-center" >
+                            <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} className="justify-items-center" >
                                 <Image src={sevenup} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                             </Tilt>
                         </div>
                         <div data-aos="fade-up" data-aos-duration="1600" data-aos-easing="ease-out">
-                            <Tilt tiltMaxAngleX={10} className="justify-items-center" >
+                            <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} className="justify-items-center" >
                                 <Image src={player} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                             </Tilt>
                         </div>
