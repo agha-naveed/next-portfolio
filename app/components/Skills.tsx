@@ -38,7 +38,7 @@ export default function Skills() {
     return (
         <div className='w-full h-[660px] overflow-hidden bg-main-dark-clr relative -top-1'>
             <div className='container !mx-auto justify-items-center !py-5'>
-                <h2 className='text-5xl font-semibold text-white text-center'>SKILLS</h2>
+                <h2 className='text-5xl font-semibold text-white text-center'>Skills</h2>
                 <Image src={blueFlare}
                         className='absolute
                         animate-blink

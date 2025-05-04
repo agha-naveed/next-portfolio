@@ -52,7 +52,6 @@ const CustomCursor = () => {
     };
   }, []);
 
-  // Define cursorStyles with proper types
   const cursorStyles: { [key: string]: CursorStyle } = {
     default: {
       top: "-2px",
