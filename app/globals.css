@@ -5,7 +5,6 @@
     --color-main-skin-clr: #e69d3f;
     --color-secondary-light-clr: #121a23;
     --animate-blink: blink 3s linear infinite alternate;
-    --animate-grad-movement: gradient 5s ease-out infinite alternate;
 }
 * {
     padding: 0;
@@ -77,3 +76,20 @@ body {
         background: linear-gradient(360deg);
 	}
 }
+
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }

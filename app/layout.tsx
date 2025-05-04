@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Agha Naveed Portfolio | Full Stack Engineer",
-  description: "Full Stack Web",
+  description: "Full Stack Web Developer",
   metadataBase: new URL("https://www.aghanaveed.vercel.app"),
   keywords: ["Full Stack Engineer", "MERN Stack Developer", "React Js Developer", "Software Developer", "AI Engineer"],
   robots: "index, follow",

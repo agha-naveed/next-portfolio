@@ -4,6 +4,7 @@ import ANtext from 'public/img/naveed_text.png'
 import dottedBg from 'public/img/dotted_overlay.png'
 import blueFlare from 'public/img/blue-flare.jpg'
 import { Typewriter } from 'react-simple-typewriter'
+import vid from 'public/img/vid.gif'
 
 export default function Header() {
     return (
@@ -13,6 +14,7 @@ export default function Header() {
                 className='w-full mix-blend-color-dodge select-none'
                 />
             </div>
+            
             <div className='container !mx-auto h-full relative flex flex-col items-center justify-center'>
                 <div className='relative justify-self-center justify-items-center'>
                     <Image src={ANtext} alt='AGHA NAVEED'
@@ -32,6 +34,7 @@ export default function Header() {
                         '
                         alt='' />
                     </div>
+                    
                 </div>
                 <span
                 data-aos="zoom-out-up" data-aos-duration="2200"

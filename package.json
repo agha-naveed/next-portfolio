@@ -14,7 +14,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@barba/core": "^2.10.3",
     "aos": "^2.3.4",
     "motion": "^12.9.4",
     "next": "15.3.1",
@@ -27,7 +26,6 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/aos": "^3.0.7",
-    "@types/locomotive-scroll": "^4.1.4",
     "@types/node": "^20",
     "@types/nprogress": "^0.2.3",
     "@types/react": "^19",

@@ -1,5 +1,4 @@
 'use client'
-
 import { useEffect } from "react"
 import About from "./components/About"
 import Header from "./components/Header"

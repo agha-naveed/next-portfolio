@@ -21,8 +21,8 @@ export default function Navbar() {
                     <span className='block w-0 transition-all h-[1.5px] justify-self-center origin-center group-hover:w-[70%] bg-main-skin-clr !mt-1'></span>
                 </li>
                 <li className='group'>
-                    <Link href={'/about'} className='!py-3 !px-5 transition-all hover-text'>
-                        About
+                    <Link href={'/about'} legacyBehavior className='!py-3 !px-5 transition-all hover-text'>
+                        <a data-barba-trigger>About</a>
                     </Link>
                     <span className='block w-0 transition-all h-[1.5px] justify-self-center origin-center group-hover:w-[70%] bg-main-skin-clr !mt-1'></span>
                 </li>
