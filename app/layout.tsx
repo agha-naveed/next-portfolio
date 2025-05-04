@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import CustomCursor from "./components/Cursor";
+import LoadingProvider from "./components/Loading";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -39,13 +40,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} overflow-hidden antialiased`}
-      >
-        <CustomCursor />
-        <Navbar />
-        {children}
-      </body>
+      <LoadingProvider>
+        <body
+          className={`${poppins.variable} overflow-hidden antialiased`}>
+          <CustomCursor />
+          <Navbar />
+          {children}
+        </body>
+      </LoadingProvider>
     </html>
   );
 }
