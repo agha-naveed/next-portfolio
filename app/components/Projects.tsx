@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Tilt } from 'react-tilt'
+import Tilt from 'react-parallax-tilt';
 import blueFlare from 'public/img/blue-flare.jpg'
 import store from 'public/img/projects/store.webp'
 import chatbot from 'public/img/projects/chatbot.webp'
@@ -10,18 +10,6 @@ import lms from 'public/img/projects/lib_lms.webp'
 import portfolio from 'public/img/projects/old_portfolio.webp'
 
 export default function Projects() {
-    const defaultOptions = {
-        reverse: false,
-        max: 10,
-        perspective: 1000,
-        scale: 1.01,
-        speed: 1000,
-        transition: true,
-        axis: null,
-        reset: true,
-        easing: "cubic-bezier(.03,.98,.52,.99)",
-    }
-    
     return (
         <div className='w-full h-full !py-10 overflow-hidden bg-main-dark-clr relative -top-3 z-300'>
             <div className="container !mx-auto text-white">
@@ -39,8 +27,8 @@ export default function Projects() {
                     className='mix-blend-screen absolute -top-30 -left-10 w-70 animate-blink'
                     />
 
-                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
-                        <Tilt options={defaultOptions}
+                    <div data-aos="fade-up" className='justify-items-center' data-aos-duration="1000" data-aos-easing="ease-out">
+                        <Tilt tiltMaxAngleX={10}
                         className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
                             <div className='w-full overflow-hidden rounded-sm'>
@@ -58,8 +46,8 @@ export default function Projects() {
                         </Tilt>
                     </div>
 
-                    <div data-aos="fade-up" data-aos-duration="1300" data-aos-easing="ease-out">
-                        <Tilt options={defaultOptions} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
+                    <div className='justify-items-center' data-aos="fade-up" data-aos-duration="1300" data-aos-easing="ease-out">
+                        <Tilt tiltMaxAngleX={10} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
                             <div className='w-full overflow-hidden rounded-sm'>
                                 <Image src={lms} alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
@@ -76,8 +64,8 @@ export default function Projects() {
                         </Tilt>
                     </div>
                     
-                    <div data-aos="fade-up" data-aos-duration="1600" data-aos-easing="ease-out">
-                        <Tilt options={defaultOptions} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[1000]'>
+                    <div className='justify-items-center' data-aos="fade-up" data-aos-duration="1600" data-aos-easing="ease-out">
+                        <Tilt tiltMaxAngleX={10} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[1000]'>
                             
                             <div className='w-full overflow-hidden rounded-sm'>
                                 <Image src={chatbot} alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
@@ -110,17 +98,17 @@ export default function Projects() {
 
                     <div className='flex flex-wrap justify-center relative gap-14'>
                         <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
-                            <Tilt className="justify-items-center" options={defaultOptions}>
+                            <Tilt tiltMaxAngleX={10} className="justify-items-center" >
                                 <Image src={portfolio} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                             </Tilt>
                         </div>
                         <div data-aos="fade-up" data-aos-duration="1300" data-aos-easing="ease-out">
-                            <Tilt className="justify-items-center" options={defaultOptions}>
+                            <Tilt tiltMaxAngleX={10} className="justify-items-center" >
                                 <Image src={sevenup} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                             </Tilt>
                         </div>
                         <div data-aos="fade-up" data-aos-duration="1600" data-aos-easing="ease-out">
-                            <Tilt className="justify-items-center" options={defaultOptions}>
+                            <Tilt tiltMaxAngleX={10} className="justify-items-center" >
                                 <Image src={player} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                             </Tilt>
                         </div>
