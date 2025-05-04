@@ -60,9 +60,9 @@ body {
     top: 0;
     left: 0;
     display: block;
-    background: linear-gradient(90deg, #e69d3f, orange, rgb(103, 158, 15), #e69d3f);
+    background: linear-gradient(90deg, #e69d3f, orange, rgb(158, 149, 15), #e69d3f);
     background-size: 400% 400%;
-    animation: gradient 5s ease-out infinite alternate;
+    animation: gradient 5s ease-out infinite alternate-reverse;
 
 }
 

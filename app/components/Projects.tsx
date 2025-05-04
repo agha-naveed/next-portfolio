@@ -5,9 +5,9 @@ import store from 'public/img/projects/store.webp'
 import chatbot from 'public/img/projects/chatbot.webp'
 import sevenup from 'public/img/projects/sevenup.webp'
 import dottedBg from 'public/img/dotted-small.png'
-import pharmacy from 'public/img/projects/pharmacy.webp'
 import player from 'public/img/projects/music_player.webp'
 import lms from 'public/img/projects/lib_lms.webp'
+import portfolio from 'public/img/projects/old_portfolio.webp'
 
 export default function Projects() {
     const defaultOptions = {
@@ -112,13 +112,13 @@ export default function Projects() {
 
                     <div className='flex flex-wrap justify-center relative gap-14'>
                         <Tilt className="justify-items-center" options={defaultOptions}>
+                            <Image src={portfolio} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
+                        </Tilt>
+                        <Tilt className="justify-items-center" options={defaultOptions}>
                             <Image src={sevenup} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                         </Tilt>
                         <Tilt className="justify-items-center" options={defaultOptions}>
-                            <Image src={chatbot} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
-                        </Tilt>
-                        <Tilt className="justify-items-center" options={defaultOptions}>
-                            <Image src={store} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
+                            <Image src={player} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                         </Tilt>
                         
                     </div>
