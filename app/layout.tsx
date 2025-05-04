@@ -19,12 +19,12 @@ export const metadata: Metadata = {
   robots: "index, follow",
   openGraph: {
     title: "Agha Naveed Portfolio",
-    description: "Agha Naveed Technology",
+    description: "Full Stack Engineer | Software Engineer",
     url: "https://www.aghanaveed.vercel.app",
     siteName: "Agha Naveed Portfolio",
     images: [
       {
-        url: "https://www.stylefactoryproductions.com/wp-content/uploads/2022/04/how-to-make-an-online-store-copy-1024x576.png",
+        url: "https://agha-naveed.vercel.app/assets/my-picture-V7ZyympP.png",
         width: 800,
         height: 600,
         alt: "Agha Naveed Banner"
