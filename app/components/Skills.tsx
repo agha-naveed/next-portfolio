@@ -1,6 +1,7 @@
 'use client'
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Image from "next/image"
+import blueFlare from 'public/img/blue-flare.jpg'
 import html from 'public/img/skills-logo/html-logo.svg'
 import css from 'public/img/skills-logo/css-logo.svg'
 import bootstrap from 'public/img/skills-logo/bootstrap-logo.svg'
@@ -35,12 +36,20 @@ export default function Skills() {
     const [option, setOption] = useState("frontend")
 
     return (
-        <div className='w-full h-full p-sec overflow-hidden bg-main-dark-clr relative -top-1'>
-            <div className='container !mx-auto justify-items-center'>
+        <div className='w-full h-[660px] overflow-hidden bg-main-dark-clr relative -top-1'>
+            <div className='container !mx-auto justify-items-center !py-5'>
                 <h2 className='text-5xl font-semibold text-white text-center'>SKILLS</h2>
-
+                <Image src={blueFlare}
+                        className='absolute
+                        animate-blink
+                        top-20
+                        left-0
+                        mix-blend-screen
+                        w-[350px]
+                        '
+                        alt='' />
                 <div className="flex sm:flex-row flex-col gap-3 justify-center !mt-12 !px-10 w-full">
-                    <div className="text-white text-start flex sm:flex-col flex-row flex-wrap sm:gap-1 sm:w-65 w-full gap-x-10">
+                    <div className="text-white text-start flex sm:flex-col flex-row flex-wrap sm:gap-1 sm:w-65 w-full gap-x-10 z-[200]">
                         <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:text-main-skin-clr transition-all cursor-pointer text-xl text-start" onClick={(e) => setOption("frontend")}>Frontend</button>
                         <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:text-main-skin-clr transition-all cursor-pointer text-xl text-start" onClick={(e) => setOption("backend")}>Backend</button>
                         <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:text-main-skin-clr transition-all cursor-pointer text-xl text-start" onClick={(e) => setOption("database")}>Database</button>
