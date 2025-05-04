@@ -14,6 +14,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@barba/core": "^2.10.3",
     "aos": "^2.3.4",
     "motion": "^12.9.4",
     "next": "15.3.1",
