@@ -16,6 +16,7 @@
 body {
     overflow-y: scroll;
     scroll-behavior: smooth;
+    background-color: #0d141e;
 }
 ::-webkit-scrollbar {
     width: 10px;
@@ -59,11 +60,11 @@ body {
     top: 0;
     left: 0;
     display: block;
-    background: linear-gradient(90deg, #e69d3f, orange, rgb(158, 149, 15), #e69d3f);
+    background: linear-gradient(120deg, #e69d3f, rgb(126, 7, 126), rgb(3, 206, 206), #e69d3f);
     background-size: 400% 400%;
-    animation: gradient 5s ease-out infinite alternate-reverse;
-
+    animation: gradient 5s ease-out infinite forwards;
 }
+
 
 @keyframes gradient {
 	0% {
