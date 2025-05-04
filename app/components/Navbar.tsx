@@ -1,5 +1,4 @@
 'use client'
-import { useState, useEffect } from 'react';
 import Link from 'next/link'
 import React from 'react'
 
@@ -21,8 +20,8 @@ export default function Navbar() {
                     <span className='block w-0 transition-all h-[1.5px] justify-self-center origin-center group-hover:w-[70%] bg-main-skin-clr !mt-1'></span>
                 </li>
                 <li className='group'>
-                    <Link href={'/about'} legacyBehavior className='!py-3 !px-5 transition-all hover-text'>
-                        <a data-barba-trigger>About</a>
+                    <Link href={'/about'} className='!py-3 !px-5 transition-all hover-text'>
+                        About
                     </Link>
                     <span className='block w-0 transition-all h-[1.5px] justify-self-center origin-center group-hover:w-[70%] bg-main-skin-clr !mt-1'></span>
                 </li>
