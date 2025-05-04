@@ -2,12 +2,21 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 
+interface CursorStyle {
+  top: string;
+  left: string;
+  width: string;
+  height: string;
+  backgroundColor: string;
+  border: string;
+}
+
 const CustomCursor = () => {
-  const [cursorPos, setCursorPos] = useState<any>({ x: 0, y: 0 });
-  const [cursorType, setCursorType] = useState<any>('default');
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [cursorType, setCursorType] = useState<'default' | 'text' | 'image'>('default');
 
   useEffect(() => {
-    const updateCursorPos = (e:any) => {
+    const updateCursorPos = (e: MouseEvent) => {
       setCursorPos({ x: e.clientX, y: e.clientY });
     };
 
@@ -15,7 +24,6 @@ const CustomCursor = () => {
     const handleMouseEnterImage = () => setCursorType('image');
     const handleMouseLeave = () => setCursorType('default');
 
-    
     const textElements = document.querySelectorAll('.hover-text');
     const imageElements = document.querySelectorAll('.hover-image');
 
@@ -44,22 +52,31 @@ const CustomCursor = () => {
     };
   }, []);
 
-  const cursorStyles:any = {
+  // Define cursorStyles with proper types
+  const cursorStyles: { [key: string]: CursorStyle } = {
     default: {
-        top: "-2px",
-        left: "-2px",
-        width: '38px',
-        height: '38px',
-        backgroundColor: '#3bc47f8c',
-        border: '2px solid white',
+      top: "-2px",
+      left: "-2px",
+      width: '38px',
+      height: '38px',
+      backgroundColor: '#3bc47f8c',
+      border: '2px solid white',
     },
     text: {
-        top: "-10px",
-        left: "-10px",
-        width: '60px',
-        height: '60px',
-        backgroundColor: '#3bc47f8c',
-        border: '3px solid white',
+      top: "-10px",
+      left: "-10px",
+      width: '60px',
+      height: '60px',
+      backgroundColor: '#3bc47f8c',
+      border: '3px solid white',
+    },
+    image: {
+      top: "-5px",
+      left: "-5px",
+      width: '45px',
+      height: '45px',
+      backgroundColor: '#ff7f50',
+      border: '2px solid white',
     },
   };
 
