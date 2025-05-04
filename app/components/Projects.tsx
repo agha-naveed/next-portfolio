@@ -18,7 +18,6 @@ export default function Projects() {
 
                 <div className='flex flex-wrap justify-center relative gap-14'>
 
-                    
                     <Image src={dottedBg} alt=''
                     className='mix-blend-screen opacity-15
                     absolute -top-60 -left-60 w-[70%] pointer-events-none'/>
