@@ -32,7 +32,7 @@ export default function Projects() {
 
                     <Image src={dottedBg} alt=''
                     className='mix-blend-screen opacity-15
-                    absolute top-70 -left-20 w-[70%]
+                    absolute top-20 -left-60 w-[70%]
                     '
                     />
 
@@ -46,59 +46,61 @@ export default function Projects() {
                     '
                     alt='' />
 
+                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
+                        <Tilt options={defaultOptions}
+                        className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
-                    <Tilt options={defaultOptions} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-3 !pb-[90px] !px-5 rounded-lg z-[100]'>
-                        <span className='font-semibold text-2xl block !py-[14px]'>Online Shopping Site</span>
-                        <div className='w-full overflow-hidden rounded-sm'>
-                            <Image src={store} alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
-                        </div>
+                            <div className='w-full overflow-hidden rounded-sm'>
+                                <Image src={store} alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                            </div>
 
-                        <div className='flex flex-col !py-8 gap-1'>
-                            <span className='text-[22px] font-medium'>Lenmi Store Online Shopping Platform</span>
-                            <span className='text-[18px] font-medium'>Desktop Application</span>
-                        </div>
-                        <button className='bg-gradient !px-5 !py-[10px] w-fit rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all hover:bg-main-skin-clr !mb-5 absolute bottom-[16px]' title='View more about this Project'>
-                            <span className='relative z-[200]'>View More</span>
-                        </button>
+                            <div className='flex flex-col !py-8 gap-1'>
+                                <span className='text-[22px] font-medium'>Lenmi Store</span>
+                                <span className='text-[18px] font-medium'>Online Shopping Platform</span>
+                            </div>
+                            <button className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all hover:bg-main-skin-clr w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
+                                <span className='relative z-[200]'>View More</span>
+                            </button>
 
-                    </Tilt>
+                        </Tilt>
+                    </div>
 
+                    <div data-aos="fade-up" data-aos-duration="1300" data-aos-easing="ease-out">
+                        <Tilt options={defaultOptions} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
-                    <Tilt options={defaultOptions} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-3 !pb-[90px] !px-5 rounded-lg z-[100]'>
-                        <span className='font-semibold text-2xl block !py-[14px]'>Library Management Software</span>
+                            <div className='w-full overflow-hidden rounded-sm'>
+                                <Image src={lms} alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                            </div>
 
-                        <div className='w-full overflow-hidden rounded-sm'>
-                            <Image src={lms} alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
-                        </div>
+                            <div className='flex flex-col !py-8 gap-1'>
+                                <span className='text-[22px] font-medium'>Library Management System</span>
+                                <span className='text-[18px] font-medium'>Desktop Application</span>
+                            </div>
+                            <button className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all hover:bg-main-skin-clr w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
+                                <span className='relative z-[200]'>View More</span>
+                            </button>
 
-                        <div className='flex flex-col !py-8 gap-1'>
-                            <span className='text-[22px] font-medium'>Library Management System</span>
-                            <span className='text-[18px] font-medium'>Desktop Application</span>
-                        </div>
-                        <button className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all hover:bg-main-skin-clr w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
-                            <span className='relative z-[200]'>View More</span>
-                        </button>
-
-                    </Tilt>
-
-
-                    <Tilt options={defaultOptions} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-3 !pb-[90px] !px-5 rounded-lg z-[100]'>
-                        <span className='font-semibold text-2xl block !py-[14px]'>AI Chatbot</span>
-                        
-                        <div className='w-full overflow-hidden rounded-sm'>
-                            <Image src={chatbot} alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
-                        </div>
-                        
-                        <div className='flex flex-col !py-8 gap-1'>
-                            <span className='text-[22px] font-medium'>Agha AI Chatbot</span>
-                            <span className='text-[18px] font-medium'>Artificial Intelligence</span>
-                        </div>
-                        <button className='bg-gradient bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
-                            <span className='relative z-[200]'>View More</span>
-                        </button>
-
-                    </Tilt>
+                        </Tilt>
+                    </div>
                     
+                    <div data-aos="fade-up" data-aos-duration="1600" data-aos-easing="ease-out">
+                        <Tilt options={defaultOptions} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
+                            
+                            <div className='w-full overflow-hidden rounded-sm'>
+                                <Image src={chatbot} alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                            </div>
+
+                            <div className='flex flex-col !py-8 gap-1'>
+                                <span className='text-[22px] font-medium'>AI Chatbot</span>
+                                <span className='text-[18px] font-medium'>Agha Chatbot</span>
+                            </div>
+                            <button className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all hover:bg-main-skin-clr w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
+                                <span className='relative z-[200]'>View More</span>
+                            </button>
+
+                        </Tilt>
+                    </div>
+
                 </div>
 
 
@@ -111,20 +113,26 @@ export default function Projects() {
                     <h2 className='md:text-5xl text-[40px] font-semibold text-white text-center !mb-15'>OTHER PROJECTS</h2>
 
                     <div className='flex flex-wrap justify-center relative gap-14'>
-                        <Tilt className="justify-items-center" options={defaultOptions}>
-                            <Image src={portfolio} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
-                        </Tilt>
-                        <Tilt className="justify-items-center" options={defaultOptions}>
-                            <Image src={sevenup} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
-                        </Tilt>
-                        <Tilt className="justify-items-center" options={defaultOptions}>
-                            <Image src={player} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
-                        </Tilt>
+                        <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
+                            <Tilt className="justify-items-center" options={defaultOptions}>
+                                <Image src={portfolio} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
+                            </Tilt>
+                        </div>
+                        <div data-aos="fade-up" data-aos-duration="1300" data-aos-easing="ease-out">
+                            <Tilt className="justify-items-center" options={defaultOptions}>
+                                <Image src={sevenup} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
+                            </Tilt>
+                        </div>
+                        <div data-aos="fade-up" data-aos-duration="1600" data-aos-easing="ease-out">
+                            <Tilt className="justify-items-center" options={defaultOptions}>
+                                <Image src={player} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
+                            </Tilt>
+                        </div>
                         
                     </div>
                 </div>
 
             </div>
-        </div>
+        </div>  
     )
 }
