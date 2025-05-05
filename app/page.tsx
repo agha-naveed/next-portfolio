@@ -6,6 +6,7 @@ import Skills from "./components/Skills"
 import AOS from 'aos'
 import '../node_modules/aos/dist/aos.css'
 import Projects from "./components/Projects"
+import { RiArrowUpDoubleLine } from "react-icons/ri";
 
 export default function Page() {
   const [scroll, setScroll] = useState(false)
@@ -29,6 +30,7 @@ export default function Page() {
 
   return (
     <div className="w-full h-full p-4">
+      <RiArrowUpDoubleLine className="fixed bottom-0 p-2" />
       <Header />
       <About />
       <Skills />
