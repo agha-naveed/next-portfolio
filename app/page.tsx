@@ -1,5 +1,5 @@
 'use client'
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import About from "./components/About"
 import Header from "./components/Header"
 import Skills from "./components/Skills"
@@ -8,8 +8,23 @@ import '../node_modules/aos/dist/aos.css'
 import Projects from "./components/Projects"
 
 export default function Page() {
+  const [scroll, setScroll] = useState(false)
   useEffect(() => {
     AOS.init()
+    const handleScroll = () => {
+      if(window.scrollY < 50) {
+        setScroll(false)
+      }
+      else if(window.scrollY > 50 && window.scrollY < 100) {
+        setScroll(true)
+      } 
+    }
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+    
   }, []);
 
   return (

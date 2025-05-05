@@ -23,7 +23,7 @@ export default function LoadingProvider({ children }: { children: React.ReactNod
     const timer = setTimeout(() => {
       NProgress.done();
       setLoading(false);
-    }, 500); // Simulating loading time
+    }, 500);
 
     return () => {
       clearTimeout(timer);
