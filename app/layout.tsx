@@ -42,16 +42,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Suspense fallback={<Loader />}>
-        <LoadingProvider>
-          <body
-            className={`${poppins.variable} overflow-hidden antialiased`}>
-            <CustomCursor />
-            <Navbar />
-            {children}
-          </body>
-        </LoadingProvider>
-      </Suspense>
-    </html>
+            <LoadingProvider>
+              <body
+                className={`${poppins.variable} overflow-hidden antialiased`}>
+                <Suspense fallback={<Loader />}>
+                  <CustomCursor />
+                  <Navbar />
+                  {children}
+                </Suspense>
+              </body>
+            </LoadingProvider>
+        </html>
   );
 }

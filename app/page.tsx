@@ -9,9 +9,23 @@ import Projects from "./components/Projects"
 import { RiArrowUpDoubleLine } from "react-icons/ri";
 
 export default function Page() {
-  const [scroll, setScroll] = useState(false)
+  
+  const [loading, setLoading] = useState(true)
 
+  const minLoaderTime = 500;
+  let timer:any
+  
+   const handleWindowLoad = () => {
+    timer = setTimeout(() => {
+      setLoading(false);
+    }, minLoaderTime);
+  };
+
+  
+  const [scroll, setScroll] = useState(false)
+  
   useEffect(() => {
+    window.onload = handleWindowLoad;
     AOS.init()
 
     const handleScroll = () => {
@@ -19,7 +33,11 @@ export default function Page() {
     }
     window.addEventListener("scroll", handleScroll)
 
-    return () => window.removeEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      clearTimeout(timer);
+      window.onload = null;
+    }
   
   }, []);
 
