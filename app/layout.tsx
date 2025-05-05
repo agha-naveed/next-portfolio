@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import CustomCursor from "./components/Cursor";
 import LoadingProvider from "./components/Loading";
+import Loader from "./components/Loader";
+import { Suspense } from "react";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -40,14 +42,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <LoadingProvider>
-        <body
-          className={`${poppins.variable} overflow-hidden antialiased`}>
-          <CustomCursor />
-          <Navbar />
-          {children}
-        </body>
-      </LoadingProvider>
+      <Suspense fallback={<Loader />}>
+        <LoadingProvider>
+          <body
+            className={`${poppins.variable} overflow-hidden antialiased`}>
+            <CustomCursor />
+            <Navbar />
+            {children}
+          </body>
+        </LoadingProvider>
+      </Suspense>
     </html>
   );
 }
