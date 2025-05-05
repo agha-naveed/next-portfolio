@@ -5,6 +5,7 @@
     --color-main-skin-clr: #e69d3f;
     --color-secondary-light-clr: #121a23;
     --animate-blink: blink 3s linear infinite alternate;
+    --shadow-arrow: 0 0 12px rgba(255, 255, 255, 0.534);
 }
 * {
     padding: 0;
@@ -50,7 +51,6 @@ body {
 }
 .bg-gradient::after {
     opacity: 0;
-    /* color: #3bc47f8c; */
     content: "";
     width: 100%;
     height: 49px;
@@ -77,19 +77,6 @@ body {
 	}
 }
 
-
-.fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  
-  .fade-in {
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
-  }
-  
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
+.transition-custom {
+    transition: 0.5s ease;
+}
