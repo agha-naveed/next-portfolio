@@ -1,11 +1,22 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function Navbar() {
+    const [scroll, setScroll] = useState(false)
+    useEffect(() => {
+        const handleScroll = () => {
+            setScroll(window.scrollY > 50)
+        }
+
+        window.addEventListener("scroll", handleScroll)
+
+        return () => window.removeEventListener("scroll", handleScroll)
+        
+    }, [])
 
     return (
-        <nav className={`w-full !py-6 text-white fixed anchor-center z-[10000] bg-main-dark-clr/20 backdrop-blur-[5px]`}>
+        <nav className={`w-full transition-all !py-6 text-white fixed anchor-center z-[10000] ${scroll ? "bg-main-dark-clr/20 backdrop-blur-[5px]" : ""}`}>
             <ul className='flex h-auto justify-center gap-3'>
                 <li className='group'>
                     <Link href={'/'} className='!py-3 !px-5 transition-all hover-text'>
