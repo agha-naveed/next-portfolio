@@ -16,7 +16,8 @@ export default function Navbar() {
     }, [])
 
     return (
-        <nav className={`w-full transition-all !py-6 text-white fixed anchor-center z-[10000] ${scroll ? "bg-main-dark-clr/20 backdrop-blur-[5px]" : ""}`} data-aos="fade-down">
+        <nav className={`w-full transition-all !py-6 text-white fixed anchor-center z-[10000] ${scroll ? "bg-main-dark-clr/20 backdrop-blur-[5px]" : ""}`} data-aos="fade-down"
+        data-aos-anchor-placement="top-bottom">
             <ul className='flex h-auto justify-center gap-3'>
                 <li className='group'>
                     <Link href={'/'} className='!py-3 !px-5 transition-all hover-text'>
