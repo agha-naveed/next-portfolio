@@ -81,7 +81,7 @@ const CustomCursor = () => {
 
   return (
     <>
-      <motion.div
+      <motion.div className='md:block hidden'
         style={{
           position: 'fixed',
           top: cursorStyles[cursorType].top,

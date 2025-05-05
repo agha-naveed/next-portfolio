@@ -26,7 +26,7 @@ export default function Page() {
   return (
     <div className="w-full h-full p-4">
       <RiArrowUpDoubleLine
-      className={`fixed right-10 !p-2 h-12 w-12 text-white text-4xl transition-custom
+      className={`fixed md:block hidden right-10 !p-2 h-12 w-12 text-white text-4xl transition-custom
         rounded-full ${scroll ? "bottom-10" : "-bottom-20"} z-[4000] hover-text hover:bg-black hover:shadow-arrow
       `} onClick={() => window.scrollTo({top: 0, behavior: "smooth"})} />
       <Header />

@@ -65,7 +65,6 @@ body {
     animation: gradient 5s ease-out infinite forwards;
 }
 
-
 @keyframes gradient {
 	0% {
 		background-position: 10% 100%;
