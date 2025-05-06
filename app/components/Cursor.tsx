@@ -93,7 +93,7 @@ const CustomCursor = () => {
           height: cursorStyles[cursorType].height,
           transform: `translate3d(${cursorPos.x - 15}px, ${cursorPos.y - 15}px, 0)`,
           transition: '0.1s ease-out',
-          zIndex: 40000,
+          zIndex: 9999999,
         }}
       />
     </>
