@@ -4,10 +4,7 @@ import { IoCloseOutline } from "react-icons/io5";
 
 export default function Contact() {
     const [isClicked, setIsClicked] = useState<boolean>(false)
-    
-    
     const textareaRef = useRef<HTMLTextAreaElement | null>(null)
-
     const [userName, setUserName] = useState("")
     const [email, setEmail] = useState("")
     
@@ -19,6 +16,13 @@ export default function Contact() {
                 'Content-Type': "application/json"
             }
         })
+        const response = await res.json()
+        if(response.message == 'ok') {
+            alert("Message has been Sent!")
+        }
+        else {
+            alert("Some Error Occurred!")
+        }
         
     }
 
