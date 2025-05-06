@@ -31,7 +31,7 @@ export default function Projects() {
                         className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
                             <div className='w-full overflow-hidden rounded-sm'>
-                                <Image src={store} alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                                <Image src={store} loading="lazy" alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
                             </div>
 
                             <div className='flex flex-col !py-8 gap-1'>
@@ -49,7 +49,7 @@ export default function Projects() {
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
                             <div className='w-full overflow-hidden rounded-sm'>
-                                <Image src={lms} alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                                <Image src={lms} loading="lazy" alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
                             </div>
 
                             <div className='flex flex-col !py-8 gap-1'>
@@ -67,7 +67,7 @@ export default function Projects() {
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[1000]'>
                             
                             <div className='w-full overflow-hidden rounded-sm'>
-                                <Image src={chatbot} alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                                <Image src={chatbot} loading="lazy" alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
                             </div>
 
                             <div className='flex flex-col !py-8 gap-1'>
@@ -98,17 +98,17 @@ export default function Projects() {
                     <div className='flex flex-wrap justify-center relative gap-14'>
                         <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
                             <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} className="justify-items-center" >
-                                <Image src={portfolio} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
+                                <Image src={portfolio} loading="lazy" placeholder='blur' className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                             </Tilt>
                         </div>
                         <div data-aos="fade-up" data-aos-duration="1300" data-aos-easing="ease-out">
                             <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} className="justify-items-center" >
-                                <Image src={sevenup} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
+                                <Image src={sevenup} loading="lazy" placeholder='blur' className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                             </Tilt>
                         </div>
                         <div data-aos="fade-up" data-aos-duration="1600" data-aos-easing="ease-out">
                             <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} className="justify-items-center" >
-                                <Image src={player} className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
+                                <Image src={player} loading="lazy" placeholder='blur' className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                             </Tilt>
                         </div>
                         

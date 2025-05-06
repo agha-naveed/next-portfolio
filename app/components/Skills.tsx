@@ -40,14 +40,14 @@ export default function Skills() {
             <div className='container !mx-auto justify-items-center !py-5'>
                 <h2 className='text-5xl font-semibold text-white text-center'>Skills</h2>
                 <Image src={blueFlare}
-                        className='absolute
-                        animate-blink
-                        top-20
-                        left-0
-                        mix-blend-screen
-                        w-[350px]
-                        '
-                        alt='' />
+                    className='absolute
+                    animate-blink
+                    top-20
+                    left-0
+                    mix-blend-screen
+                    w-[350px]
+                    '
+                    alt='' />
                 <div className="flex sm:flex-row flex-col gap-3 justify-center !mt-12 !px-10 w-full">
                     <div className="text-white text-start flex sm:flex-col flex-row flex-wrap sm:gap-1 sm:w-65 w-full gap-x-10 z-[200]">
                         <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:text-main-skin-clr transition-all cursor-pointer text-xl text-start" onClick={(e) => setOption("frontend")}>Frontend</button>
