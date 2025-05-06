@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "mongoose": "^8.14.1",
     "motion": "^12.9.4",
     "next": "15.3.1",
     "nprogress": "^0.2.0",

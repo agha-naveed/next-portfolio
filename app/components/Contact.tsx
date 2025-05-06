@@ -4,7 +4,7 @@ import { IoCloseOutline } from "react-icons/io5";
 
 export default function Contact() {
     const [isClicked, setIsClicked] = useState<boolean>(false)
-    
+
     const textareaRef = useRef(null)
 
     const handleInput = () => {
@@ -23,7 +23,7 @@ export default function Contact() {
                 </button>
             </div>
             
-            <div className={`fixed transition-all top-0 left-0 w-full h-screen bg-black/80 backdrop-blur-[5px] z-[500000] ${isClicked ? "top-0 opacity-100" : "-top-full opacity-0"}`}>
+            <div className={`fixed transition-custom left-0 w-full bg-black/80 backdrop-blur-[5px] z-[500000] ${isClicked ? "opacity-100 h-screen top-0" : "opacity-0 !h-0 -top-30"}`}>
                 <IoCloseOutline className='text-5xl fixed top-7 right-7 hover-text'
                 onClick={() => setIsClicked(false)} />
 
@@ -42,10 +42,10 @@ export default function Contact() {
                         <div className='w-full !mt-2'>
                             <label htmlFor="">Message: </label>
                             <textarea name="" rows={1} ref={textareaRef}
-                            onInput={handleInput} className='!mt-2 !px-1 border-b min-h-[2rem] h-auto resize-none w-full overflow-hidden max-h-auto outline-none'></textarea>
+                            onInput={handleInput} className='!mt-2 !px-1 !py-2 border-b min-h-[2rem] h-auto resize-none w-full overflow-hidden outline-none max-h-80'></textarea>
                         </div>
                         <div className='w-fit relative'>
-                            <button type='submit' className='bg-gradient !px-8 !py-[10px] rounded-3xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] overflow-hidden cursor-pointer transition-all w-fit' title='View more about this Project' onClick={() => setIsClicked(true)}>
+                            <button type='submit' className='bg-gradient !px-8 !py-[10px] rounded-3xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] overflow-hidden cursor-pointer transition-all w-fit' title='View more about this Project'>
                                 <span className='relative z-[200]'>Submit</span>
                             </button>
                         </div>
