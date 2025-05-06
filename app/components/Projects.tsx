@@ -38,7 +38,7 @@ export default function Projects() {
                                 <span className='text-[20px] font-semibold'>Lenmi Store</span>
                                 <span>Online Shopping Platform</span>
                             </div>
-                            <button className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all hover:bg-main-skin-clr w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
+                            <button className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
                                 <span className='relative z-[200]'>View More</span>
                             </button>
 
@@ -56,7 +56,7 @@ export default function Projects() {
                                 <span className='text-[20px] font-semibold'>Library Management System</span>
                                 <span>Desktop Application</span>
                             </div>
-                            <button className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all hover:bg-main-skin-clr w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
+                            <button className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
                                 <span className='relative z-[200]'>View More</span>
                             </button>
 
@@ -74,7 +74,7 @@ export default function Projects() {
                                 <span className='text-[20px] font-semibold'>AI Chatbot</span>
                                 <span>Agha Chatbot</span>
                             </div>
-                            <button className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all hover:bg-main-skin-clr w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
+                            <button className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
                                 <span className='relative z-[200]'>View More</span>
                             </button>
 

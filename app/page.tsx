@@ -7,9 +7,9 @@ import AOS from 'aos'
 import '../node_modules/aos/dist/aos.css'
 import Projects from "./components/Projects"
 import { RiArrowUpDoubleLine } from "react-icons/ri";
+import Contact from "./components/Contact"
 
 export default function Page() {
-  
   const [loading, setLoading] = useState(true)
 
   const minLoaderTime = 500;
@@ -51,6 +51,7 @@ export default function Page() {
       <About />
       <Skills />
       <Projects />
+      <Contact />
     </div>
   )
 }
