@@ -2,8 +2,7 @@
 import React, { useRef, useState } from 'react'
 import { IoCloseOutline } from "react-icons/io5";
 import { PiXLogo } from "react-icons/pi";
-import { FaLinkedinIn, FaGithub, FaFacebookF } from "react-icons/fa";
-import { div } from 'motion/react-client';
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import Link from 'next/link';
 
 export default function Contact() {
