@@ -16,6 +16,7 @@ import node from "public/img/skills-logo/nodejs.svg"
 
 import mongo from "public/img/skills-logo/mongo.svg"
 import mysql from "public/img/skills-logo/mysql.svg"
+import cloudinary from "public/img/skills-logo/cloudinary.svg"
 
 import cpp from "public/img/skills-logo/cpp.svg"
 import java from "public/img/skills-logo/java.svg"
@@ -114,14 +115,20 @@ export default function Skills() {
                         <div className={`transition-all ${option == "database" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={mysql} className="w-10" alt="" />
-                                <label htmlFor="">MySQL</label>
-                            </div>
-                            
-                            <div className="flex flex-col gap-1 items-center">
                                 <Image src={mongo} className="w-10" alt="" />
                                 <label htmlFor="">MongoDB</label>
                             </div>
+
+                            <div className="flex flex-col gap-1 items-center">
+                                <Image src={mysql} className="w-10" alt="" />
+                                <label htmlFor="">MySQL</label>
+                            </div>
+
+                            <div className="flex flex-col gap-1 items-center">
+                                <Image src={cloudinary} className="w-10" alt="" />
+                                <label htmlFor="">Cloudinary</label>
+                            </div>
+                            
                         </div>
 
                         <div className={`transition-all ${option == "programming" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
