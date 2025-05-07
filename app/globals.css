@@ -144,3 +144,12 @@ body {
       transform: translateX(-28px);
     }
   }
+
+  .pers-img {
+    perspective: 1000px;
+  }
+  
+  .per-img {
+    transform: rotateY(-10deg);
+    transition: transform 0.5s ease;
+  }

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import pic from 'public/img/my-picture.png'
+import pic from 'public/img/my-pic.webp'
 
 export default function page() {
     return (
@@ -18,8 +18,8 @@ export default function page() {
 
                         Let’s build the future, one line of code at a time!</p>
                     </div>
-                    <div className='w-1/2'>
-                        <Image src={pic} className='w-[90%] rounded-lg' width={200} height={200} alt='' />
+                    <div className='w-1/2 pers-img'>
+                        <Image src={pic} className='w-[90%] per-img rounded-lg' width={200} height={200} alt='' />
                     </div>
                 </div>
             </div>
