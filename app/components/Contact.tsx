@@ -70,15 +70,15 @@ export default function Contact() {
                 onClick={() => setIsClicked(false)} />
 
                 <form onSubmit={submitForm} className='w-full h-full flex text-xl justify-center items-center'>
-                    <div className='flex flex-col gap-8 relative'>
-                        <div className='flex gap-8'>
-                            <div className='flex gap-3'>
+                    <div className='flex flex-col sm:gap-8 gap-5 relative !px-8'>
+                        <div className='flex md:flex-row flex-col sm:gap-8 gap-5'>
+                            <div className='flex sm:flex-row flex-col gap-3'>
                                 <label htmlFor="">Name: </label>
-                                <input type="text" required onInput={(e:React.ChangeEvent<HTMLInputElement>) => setUserName(e.target?.value)} className='border-b outline-none w-40' />
+                                <input type="text" required onInput={(e:React.ChangeEvent<HTMLInputElement>) => setUserName(e.target?.value)} className='border-b outline-none md:w-40 w-full' />
                             </div>
-                            <div className='flex gap-3'>
+                            <div className='flex sm:flex-row flex-col gap-3'>
                                 <label htmlFor="">Email: </label>
-                                <input type="email" required className='border-b outline-none w-60'
+                                <input type="email" required className='border-b outline-none md:w-60 w-full'
                                 onInput={(e:React.ChangeEvent<HTMLInputElement>) => setEmail(e.target?.value)} 
                                 />
                             </div>
@@ -98,7 +98,7 @@ export default function Contact() {
                 </form>
             </div>
 
-            <span className='w-full text-center !px-5'>Designed by @AghaNaveed_ 2025</span>
+            <span className='w-full text-center !px-5z'>Designed by @AghaNaveed_ 2025</span>
         </footer>
     )
 }
