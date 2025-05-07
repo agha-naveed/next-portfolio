@@ -1,6 +1,8 @@
 'use client'
 import React, { useRef, useState } from 'react'
 import { IoCloseOutline } from "react-icons/io5";
+import { PiXLogo } from "react-icons/pi";
+import { FaLinkedinIn, FaGithub, FaFacebookF } from "react-icons/fa";
 
 export default function Contact() {
     const [isClicked, setIsClicked] = useState<boolean>(false)
@@ -38,6 +40,12 @@ export default function Contact() {
 
     return (
         <footer className='container !mx-auto text-white'>
+            <div>
+                <div className='text-white flex'>
+                    <FaFacebookF className='text-xl' />
+                    <span>/NaveedBalti31</span>
+                </div>
+            </div>
             <div className='w-fit relative'>
                 <button className='bg-gradient !px-7 !py-3 rounded-3xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] overflow-hidden cursor-pointer transition-all w-fit' title='View more about this Project' onClick={() => setIsClicked(true)}>
                     <span className='relative z-[200]'>Send Message</span>
