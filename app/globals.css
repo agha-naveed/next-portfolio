@@ -85,9 +85,9 @@ body {
 .pacman {
     display: flex;
     flex-direction: column;
-  }
+}
   
-  .pacman::before, .pacman::after {
+.pacman::before, .pacman::after {
     content: "";
     display: block;
     position: relative;
@@ -95,61 +95,52 @@ body {
     height: 22px;
     background-color: white;
     z-index: 20;
-  }
-  .pacman::before {
+}
+.pacman::before {
     border-radius: 50px 50px 0 0;
     animation: loader-up 0.3s alternate infinite;
-  }
+}
   .pacman::after {
     border-radius: 0 0 50px 50px;
     animation: loader-down 0.3s alternate infinite;
-  }
+}
   
-  @keyframes loader-up {
+@keyframes loader-up {
     0% {
       transform: rotate(-35deg);
     }
     100% {
       transform: rotate(0deg);
     }
-  }
+}
   
-  @keyframes loader-down {
+@keyframes loader-down {
     0% {
       transform: rotate(35deg);
     }
     100% {
       transform: rotate(0deg);
     }
-  }
+}
   
-  .dots {
+.dots {
     display: flex;
     gap: 25px;
     z-index: 0;
-  }
-  .dot {
+}
+.dot {
     width: 7px;
     height: 7px;
     border-radius: 50%;
     background-color: white;
     animation: eating-dots 0.6s both infinite;
-  }
+}
   
-  @keyframes eating-dots {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-28px);
-    }
+@keyframes eating-dots {
+  0% {
+    transform: translateX(0);
   }
-
-  .pers-img {
-    perspective: 1000px;
+  100% {
+    transform: translateX(-28px);
   }
-  
-  .per-img {
-    transform: rotateY(-10deg);
-    transition: transform 0.5s ease;
-  }
+}
