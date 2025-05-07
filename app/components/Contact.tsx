@@ -39,7 +39,7 @@ export default function Contact() {
     };
 
     return (
-        <footer className='container !mx-auto text-white'>
+        <footer className='container !mx-auto text-white relative'>
             <div>
                 <div className='text-white flex'>
                     <FaFacebookF className='text-xl' />

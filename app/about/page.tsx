@@ -6,9 +6,9 @@ import flare from 'public/img/blue-flare.jpg'
 
 export default function page() {
     return (
-        <div className='w-full h-full bg-main-dark-clr'>
-            <div className="container !mx-auto">
-                <div className='w-full md:h-screen min-h-screen flex lg:flex-row-reverse flex-col-reverse justify-center items-center lg:gap-10 gap-20 relative !pt-40 !px-4'>
+        <div className='w-full min-h-screen bg-main-dark-clr overflow-hidden'>
+            <div className="container !mx-auto !pb-40">
+                <div className='w-full lg:h-screen min-h-screen flex lg:flex-row-reverse flex-col-reverse justify-center items-center lg:gap-10 gap-20 relative !pt-40 !px-4'>
 
                     <div className='lg:w-1/2 w-full lg:h-[100%] lg:max-h-fit text-white md:text-[18px] flex flex-col place-content-start md:gap-20 gap-10 lg:overflow-y-auto lg:!pr-4 lg:!py-0 !px-3 !py-10 lg:text-justify lg:overflow-auto'>
                     
