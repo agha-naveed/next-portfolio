@@ -1,9 +1,10 @@
 'use client'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { IoCloseOutline } from "react-icons/io5";
 import { PiXLogo } from "react-icons/pi";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import Link from 'next/link';
+import { TbMail } from "react-icons/tb";
 
 export default function Contact() {
     const [isClicked, setIsClicked] = useState<boolean>(false)
@@ -26,10 +27,34 @@ export default function Contact() {
         else {
             alert("Some Error Occurred!")
         }
-        
     }
 
 
+    const formRef = useRef<HTMLDivElement | null>(null)
+
+    useEffect(() => {
+        const ref = formRef.current
+        if(!isClicked) {
+            if(ref) {
+                setTimeout(() => {
+                    ref.style.display = "none"
+                }, 400)
+                ref.style.height = "0"
+                ref.style.opacity = "0"
+                ref.style.top = "-100px"
+            }
+        }
+        else {
+            if(ref) {
+                ref.style.display = "block"
+                setTimeout(() => {
+                    ref.style.height = "100vh"
+                    ref.style.opacity = "1"
+                    ref.style.top = "0"
+                }, 100)
+            }
+        }
+    }, [isClicked])
 
     const handleInput = () => {
         const textarea = textareaRef.current as HTMLTextAreaElement | null;
@@ -44,17 +69,21 @@ export default function Contact() {
             <div className='!px-10' data-aos="fade-up" data-aos-duration="1600" data-aos-easing="ease-out">
                 <h3 className='text-xl font-semibold !mb-4 md:text-start text-center'>Connect:</h3>
                 <div className='flex md:flex-row flex-col md:gap-20 gap-5 md:items-start items-center'>
-                    <Link data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out" href={"https://linkedin.com/in/agha-naveed"} target='_blank' className='text-white flex items-center gap-1 hover-text'>
+                    <Link href={"https://linkedin.com/in/agha-naveed"} target='_blank' className='text-white flex items-center gap-1 hover-text'>
                         <FaLinkedinIn className='text-xl' />
                         <span>/Agha-Naveed</span>
                     </Link>
-                    <Link data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out" href={"https://x.com/in/naveed_kazmi31"} target='_blank' className='text-white flex items-center gap-1 hover-text'>
+                    <Link href={"https://x.com/in/naveed_kazmi31"} target='_blank' className='text-white flex items-center gap-1 hover-text'>
                         <PiXLogo className='text-xl' />
                         <span>/Naveed_Kazmi31</span>
                     </Link>
-                    <Link data-aos="fade-up" data-aos-duration="1400" data-aos-easing="ease-out" href={"https://github.com/agha-naveed"} target='_blank' className='text-white flex items-center gap-1 hover-text'>
+                    <Link href={"https://github.com/agha-naveed"} target='_blank' className='text-white flex items-center gap-1 hover-text'>
                         <FaGithub className='text-xl' />
                         <span>/Agha-Naveed</span>
+                    </Link>
+                    <Link href={"mailto:naveedabs31@gmail.com"} target='_blank' className='text-white flex items-center gap-1 hover-text'>
+                        <TbMail className='text-[22px]' />
+                        <span>NaveedAbs31@gmail.com</span>
                     </Link>
                 </div>
             </div>
@@ -64,7 +93,7 @@ export default function Contact() {
                 </button>
             </div>
             
-            <div className={`fixed transition-custom left-0 w-full bg-black/80 backdrop-blur-[5px] z-[500000] ${isClicked ? "opacity-100 h-screen top-0" : "opacity-0 !h-0 -top-30"}`}>
+            <div ref={formRef} className={`fixed transition-custom left-0 w-full bg-black/80 backdrop-blur-[5px] z-[500000]`}>
                 <IoCloseOutline className='text-5xl fixed top-7 right-7 hover-text'
                 onClick={() => setIsClicked(false)} />
 
