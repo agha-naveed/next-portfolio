@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import Tilt from 'react-parallax-tilt';
 import blueFlare from 'public/img/blue-flare.jpg'
@@ -8,10 +9,12 @@ import dottedBg from 'public/img/dotted-small.png'
 import player from 'public/img/projects/music_player.webp'
 import lms from 'public/img/projects/lib_lms.webp'
 import portfolio from 'public/img/projects/old_portfolio.webp'
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function Projects() {
-    const [project, setProject] = useState<string | undefined>(undefined)
+    const [project, setProject] = useState<string | false>(false)
+    const projectData = useRef<HTMLDivElement | null>(null)
+    
     return (
         <div className='w-full h-full !py-10 overflow-hidden bg-main-dark-clr relative -top-3 z-300'>
             <div className="container !mx-auto text-white">
@@ -89,18 +92,6 @@ export default function Projects() {
                         </Tilt>
                     </div>
 
-                    {/* Project Model */}
-                    <div onClick={() => setProject(undefined)}
-                    className={`w-full h-screen bg-black/80 fixed top-0 place-items-center ${project ? "grid" : "hidden"}`}></div>
-
-                    <div className={`fixed top-1/2 left-1/2 -translate-1/2 w-[800px] h-[70%] max-h-[70%] overflow-y-auto bg-white rounded-lg !p-10 transition-all ${project ? "flex flex-col" : "hidden"}`}>
-                            <Image src={store} className='w-full' alt='' />
-
-                            <span className='text-black'>This is online lenmi store shopping platform
-                                <br />
-                                it is build using nextjs
-                            </span>
-                        </div>
 
                 </div>
 
