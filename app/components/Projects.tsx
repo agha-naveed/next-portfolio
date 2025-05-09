@@ -10,11 +10,41 @@ import player from 'public/img/projects/music_player.webp'
 import lms from 'public/img/projects/lib_lms.webp'
 import portfolio from 'public/img/projects/old_portfolio.webp'
 import { useState, useRef, useEffect } from 'react';
+import { AnimatePresence, motion } from "motion/react"
 
 export default function Projects() {
     const [project, setProject] = useState<string | false>(false)
-    const projectData = useRef<HTMLDivElement | null>(null)
+    const detailRef = useRef<HTMLDivElement | null>(null)
+    const [isVisible, setIsVisible] = useState(false)
+
+    useEffect(() => {
+        
+    }, [])
+
+    const container: React.CSSProperties = {
+        display: "flex",
+        flexDirection: "column",
+        width: 100,
+        height: 160,
+    }
     
+    const box: React.CSSProperties = {
+        width: 100,
+        height: 100,
+        backgroundColor: "#0cdcf7",
+        borderRadius: "10px",
+    }
+    
+    const button: React.CSSProperties = {
+        backgroundColor: "#0cdcf7",
+        borderRadius: "10px",
+        padding: "10px 20px",
+        color: "#0f1115",
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        right: 0,
+    }
     return (
         <div className='w-full h-full !py-10 overflow-hidden bg-main-dark-clr relative -top-3 z-300'>
             <div className="container !mx-auto text-white">
@@ -32,7 +62,7 @@ export default function Projects() {
                     />
 
                     <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
-                    onClick={() => setProject("store")}
+                    onClick={() => setIsVisible(true)}
                     data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}
                         className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
@@ -91,6 +121,31 @@ export default function Projects() {
 
                         </Tilt>
                     </div>
+
+
+                    <section ref={detailRef} className={`fixed top-0 left-0 place-items-center`}>
+                        <div style={container} className='absolute'>
+                            <AnimatePresence initial={false}>
+                                {isVisible ? (
+                                    <motion.div
+                                        initial={{ opacity: 0, scale: 0 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0 }}
+                                        style={box}
+                                        key="box"
+                                    />
+                                ) : null}
+                            </AnimatePresence>
+                            {/* <motion.button
+                                style={button}
+                                onClick={() => setIsVisible(!isVisible)}
+                                // whileTap={{ y: 1 }}
+                            >
+                                {isVisible ? "Hide" : "Show"}
+                            </motion.button> */}
+                        </div>
+                        <div className='w-screen h-screen bg-black/70' onClick={() => setIsVisible(false)}></div>
+                    </section>
 
 
                 </div>
