@@ -24,15 +24,6 @@ export default function Projects() {
     const container: React.CSSProperties = {
         display: "flex",
         flexDirection: "column",
-        width: 100,
-        height: 160,
-    }
-    
-    const box: React.CSSProperties = {
-        width: 100,
-        height: 100,
-        backgroundColor: "#0cdcf7",
-        borderRadius: "10px",
     }
     
     const button: React.CSSProperties = {
@@ -62,7 +53,7 @@ export default function Projects() {
                     />
 
                     <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
-                    onClick={() => setIsVisible(true)}
+                    onClick={() => {setIsVisible(true); setProject("store")}}
                     data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}
                         className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
@@ -83,7 +74,7 @@ export default function Projects() {
                     </div>
 
                     <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
-                    onClick={() => setProject("lms")}
+                    onClick={() => {setIsVisible(true); setProject("lms")}}
                     data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
@@ -103,7 +94,7 @@ export default function Projects() {
                     </div>
                     
                     <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
-                    onClick={() => setProject("chatbot")}
+                    onClick={() => {setIsVisible(true); setProject("chatbot")}}
                     data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[1000]'>
                             
@@ -123,28 +114,37 @@ export default function Projects() {
                     </div>
 
 
-                    <section ref={detailRef} className={`fixed top-0 left-0 place-items-center`}>
-                        <div style={container} className='absolute'>
+                    <section ref={detailRef} className={`fixed top-0 left-0 grid place-items-center z-[9999999]`}>
+                        <div style={container} className='fixed top-1/2 left-1/2 -translate-1/2 z-[20000]'>
                             <AnimatePresence initial={false}>
                                 {isVisible ? (
-                                    <motion.div
-                                        initial={{ opacity: 0, scale: 0 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        exit={{ opacity: 0, scale: 0 }}
-                                        style={box}
-                                        key="box"
-                                    />
+                                    <>
+                                        <motion.div
+                                            initial={{ opacity: 0, scale: 0 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0 }}
+                                            className='w-[600px] h-[400px] overflow-y-auto rounded-[10px] bg-white'
+                                            key="box"
+                                        >
+                                            {
+                                                project == "store" ?
+                                                <div>
+                                                    <div className='!p-4'>
+                                                        <Image src={store} className='rounded-sm' alt='' />
+                                                    </div>
+                                                    <div className='bg-black/80 !p-4'>
+                                                        <span>An online shopping website offering a seamless shopping experience with product browsing, order management, and user authentication.</span>
+                                                    </div>
+                                                </div>
+                                                : ""
+                                            }
+                                        </motion.div>
+                                    </>
+                                    
                                 ) : null}
                             </AnimatePresence>
-                            {/* <motion.button
-                                style={button}
-                                onClick={() => setIsVisible(!isVisible)}
-                                // whileTap={{ y: 1 }}
-                            >
-                                {isVisible ? "Hide" : "Show"}
-                            </motion.button> */}
                         </div>
-                        <div className='w-screen h-screen bg-black/70' onClick={() => setIsVisible(false)}></div>
+                        <div className={`w-screen h-screen backdrop-blur-[4px] bg-black/70 z-[9999] ${isVisible ? "block" : "hidden"}`} onClick={() => setIsVisible(false)}></div>
                     </section>
 
 
