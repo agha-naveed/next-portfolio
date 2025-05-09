@@ -41,7 +41,7 @@ export default function Contact() {
                 }, 400)
                 ref.style.height = "0"
                 ref.style.opacity = "0"
-                ref.style.top = "-100px"
+                ref.style.top = "-100%"
             }
         }
         else {
@@ -118,7 +118,7 @@ export default function Contact() {
                             ></textarea>
                         </div>
                         <div className='w-fit relative'>
-                            <button type='submit' className='bg-gradient !px-8 !py-[10px] rounded-3xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] overflow-hidden cursor-pointer transition-all w-fit' title='View more about this Project'>
+                            <button type='submit' className='bg-gradient !px-8 !py-[10px] rounded-3xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] overflow-hidden cursor-pointer transition-all w-fit' title='Send Message/Review'>
                                 <span className='relative z-[200]'>Submit</span>
                             </button>
                         </div>
