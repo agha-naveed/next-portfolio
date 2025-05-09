@@ -8,8 +8,10 @@ import dottedBg from 'public/img/dotted-small.png'
 import player from 'public/img/projects/music_player.webp'
 import lms from 'public/img/projects/lib_lms.webp'
 import portfolio from 'public/img/projects/old_portfolio.webp'
+import { useState } from 'react';
 
 export default function Projects() {
+    const [project, setProject] = useState<string | undefined>(undefined)
     return (
         <div className='w-full h-full !py-10 overflow-hidden bg-main-dark-clr relative -top-3 z-300'>
             <div className="container !mx-auto text-white">
@@ -26,7 +28,9 @@ export default function Projects() {
                     className='mix-blend-screen absolute -top-30 -left-10 w-70 animate-blink'
                     />
 
-                    <div data-aos="fade-up" className='justify-items-center' data-aos-duration="1000" data-aos-easing="ease-out">
+                    <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
+                    onClick={() => setProject("store")}
+                    data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}
                         className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
@@ -45,7 +49,9 @@ export default function Projects() {
                         </Tilt>
                     </div>
 
-                    <div className='justify-items-center' data-aos="fade-up" data-aos-duration="1300" data-aos-easing="ease-out">
+                    <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
+                    onClick={() => setProject("lms")}
+                    data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
                             <div className='w-full overflow-hidden rounded-sm'>
@@ -63,7 +69,9 @@ export default function Projects() {
                         </Tilt>
                     </div>
                     
-                    <div className='justify-items-center' data-aos="fade-up" data-aos-duration="1600" data-aos-easing="ease-out">
+                    <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
+                    onClick={() => setProject("chatbot")}
+                    data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[1000]'>
                             
                             <div className='w-full overflow-hidden rounded-sm'>
@@ -80,6 +88,19 @@ export default function Projects() {
 
                         </Tilt>
                     </div>
+
+                    {/* Project Model */}
+                    <div onClick={() => setProject(undefined)}
+                    className={`w-full h-screen bg-black/80 fixed top-0 place-items-center ${project ? "grid" : "hidden"}`}></div>
+
+                    <div className={`fixed top-1/2 left-1/2 -translate-1/2 w-[800px] h-[70%] max-h-[70%] overflow-y-auto bg-white rounded-lg !p-10 transition-all ${project ? "flex flex-col" : "hidden"}`}>
+                            <Image src={store} className='w-full' alt='' />
+
+                            <span className='text-black'>This is online lenmi store shopping platform
+                                <br />
+                                it is build using nextjs
+                            </span>
+                        </div>
 
                 </div>
 
