@@ -30,7 +30,7 @@ export default function page() {
                 </Link>
 
 
-                <Link href={"/"} data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
+                <Link href={"/projects/library-management-system"} data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
                 data-aos-duration="1000" data-aos-easing="ease-out">
                     <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] h-full relative bg-secondary-light-clr !py-[26px] !px-5 rounded-lg z-[1000]'>
                         
@@ -50,7 +50,7 @@ export default function page() {
                 </Link>
 
 
-                <Link href={"/"} data-aos="fade-up" className='h-auto justify-items-center cursor-pointer hover-text'
+                <Link href={"/projects/agha-chatbot"} data-aos="fade-up" className='h-auto justify-items-center cursor-pointer hover-text'
                 data-aos-duration="1000" data-aos-easing="ease-out">
                     <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] h-full w-[80%] relative bg-secondary-light-clr !py-[26px] !px-5 rounded-lg z-[1000]'>
                         
