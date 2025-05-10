@@ -21,21 +21,7 @@ export default function Projects() {
         
     }, [])
 
-    const container: React.CSSProperties = {
-        display: "flex",
-        flexDirection: "column",
-    }
-    
-    const button: React.CSSProperties = {
-        backgroundColor: "#0cdcf7",
-        borderRadius: "10px",
-        padding: "10px 20px",
-        color: "#0f1115",
-        position: "absolute",
-        bottom: 0,
-        left: 0,
-        right: 0,
-    }
+
     return (
         <div className='w-full h-full !py-10 overflow-hidden bg-main-dark-clr relative -top-3 z-300'>
             <div className="container !mx-auto text-white">
@@ -115,7 +101,7 @@ export default function Projects() {
 
 
                     <section ref={detailRef} className={`fixed top-0 left-0 grid place-items-center z-[9999999]`}>
-                        <div style={container} className='fixed top-1/2 left-1/2 -translate-1/2 z-[20000]'>
+                        <div className='flex flex-col fixed top-1/2 left-1/2 -translate-1/2 z-[20000]'>
                             <AnimatePresence initial={false}>
                                 {isVisible ? (
                                     <>
@@ -123,20 +109,37 @@ export default function Projects() {
                                             initial={{ opacity: 0, scale: 0 }}
                                             animate={{ opacity: 1, scale: 1 }}
                                             exit={{ opacity: 0, scale: 0 }}
-                                            className='w-[600px] h-[400px] overflow-y-auto rounded-[10px] bg-white'
+                                            className='w-[100%]  overflow-y-auto rounded-[10px] bg-white'
                                             key="box"
                                         >
                                             {
                                                 project == "store" ?
                                                 <div>
-                                                    <div className='!p-4'>
+                                                    <div className='!p-3'>
                                                         <Image src={store} className='rounded-sm' alt='' />
                                                     </div>
                                                     <div className='bg-black/80 !p-4'>
                                                         <span>An online shopping website offering a seamless shopping experience with product browsing, order management, and user authentication.</span>
                                                     </div>
                                                 </div>
-                                                : ""
+                                                :
+                                                project == "lms" ?
+                                                    <div>
+                                                        <div className='!p-3 '>
+                                                            <Image src={lms} className='rounded-sm' alt='' />
+                                                        </div>
+                                                        <div className='bg-black/80 !p-4'>
+                                                            <span>Welcome to the Library Management System (LMS) software. This application is designed to efficiently manage library operations using Java programming language, SQL for database management, and MS Access as the backend database.</span>
+                                                        </div>
+                                                    </div>
+                                                : <div>
+                                                <div className='!p-3 '>
+                                                    <Image src={chatbot} className='rounded-sm' alt='' />
+                                                </div>
+                                                <div className='bg-black/80 !p-4'>
+                                                    <span>Welcome to the Chatbot project! A modern, responsive chatbot with an intuitive and polished user interface.</span>
+                                                </div>
+                                            </div>
                                             }
                                         </motion.div>
                                     </>
