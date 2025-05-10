@@ -76,11 +76,13 @@ body {
 	}
 }
 
+
 .transition-custom {
     transition: 0.5s ease;
 }
-
-
+.transition-custom1 {
+    transition: 0.8s ease;
+}
 
 .pacman {
     display: flex;
