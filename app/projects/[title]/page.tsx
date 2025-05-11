@@ -57,15 +57,15 @@ export default function page() {
                     <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit'>Lenmi Store</h1>
                     <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
                         <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
-                            <Image src={laptop} placeholder='blur' className='select-none w-full h-fit relative z-[350]' alt='' />
-                            <Image ref={imagesRef[0]} src={store} placeholder='blur'
-                            className='w-[74%] h-fit absolute xl:top-[26px] top-5 transition-custom'
+                            <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
+                            <Image ref={imagesRef[0]} src={store} loading='lazy'
+                            className='w-[74%] h-fit absolute top-[6%] transition-custom'
                             alt='' />
-                            <Image ref={imagesRef[1]} src={store2} placeholder='blur'
-                            className='w-[74%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
+                            <Image ref={imagesRef[1]} src={store2} loading='lazy'
+                            className='w-[74%] h-fit absolute top-[6%] opacity-0 transition-custom'
                             alt='' />
-                            <Image ref={imagesRef[2]} src={store3} placeholder='blur'
-                            className='w-[74%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
+                            <Image ref={imagesRef[2]} src={store3} loading='lazy'
+                            className='w-[74%] h-fit absolute top-[6%] opacity-0 transition-custom'
                             alt='' />
                         </div>
                         <div className='w-full flex flex-col self-center text-white'>
@@ -125,15 +125,15 @@ export default function page() {
                     <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>Library Management System</h1>
                     <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
                         <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
-                            <Image src={laptop} placeholder='blur' className='select-none w-full h-fit relative z-[350]' alt='' />
-                            <Image  src={lms} placeholder='blur'
-                            className='w-[74%] h-fit absolute xl:top-[8px] top-5 transition-custom'
+                            <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
+                            <Image  src={lms} loading='lazy'
+                            className='w-[74%] h-fit absolute top-[1.7%] transition-custom'
                             alt='' />
-                            <Image ref={imagesRef[0]} src={lms2} placeholder='blur'
-                            className='w-[72%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
+                            <Image ref={imagesRef[0]} src={lms2} loading='lazy'
+                            className='w-[72%] h-fit absolute top-[6.5%] opacity-0 transition-custom'
                             alt='' />
-                            <Image ref={imagesRef[1]} src={lms3} placeholder='blur'
-                            className='w-[72%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
+                            <Image ref={imagesRef[1]} src={lms3} loading='lazy'
+                            className='w-[72%] h-fit absolute top-[6.5%] opacity-0 transition-custom'
                             alt='' />
                         </div>
                         <div className='w-full flex flex-col self-center text-white'>
@@ -179,16 +179,16 @@ export default function page() {
                         <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
                             <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
                             <Image  src={chatbot} placeholder='blur'
-                            className='w-[73%] h-fit absolute xl:top-[18px] top-5 transition-custom'
+                            className='w-[73%] h-fit absolute top-[5.5%] transition-custom'
                             alt='' />
                             <Image ref={imagesRef[0]} src={chatbot2} placeholder='blur'
-                            className='w-[73%] h-fit absolute xl:top-[17px] top-5 opacity-0 transition-custom'
+                            className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
                             alt='' />
                             <Image ref={imagesRef[1]} src={chatbot3} placeholder='blur'
-                            className='w-[73%] h-fit absolute xl:top-[18px] top-5 opacity-0 transition-custom'
+                            className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
                             alt='' />
                             <Image ref={imagesRef[2]} src={chatbot4} placeholder='blur'
-                            className='w-[72%] h-fit absolute xl:top-[10px] top-5 opacity-0 transition-custom'
+                            className='w-[72%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
                             alt='' />
                         </div>
                         <div className='w-full flex flex-col self-center text-white'>
