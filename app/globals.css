@@ -5,6 +5,7 @@
     --color-main-skin-clr: #e69d3f;
     --color-secondary-light-clr: #121a23;
     --animate-blink: blink 3s linear infinite alternate;
+    --animate-pr: prAnim 5s linear infinite alternate;
     --shadow-arrow: 0 0 12px rgba(255, 255, 255, 0.534);
 }
 * {
@@ -76,6 +77,14 @@ body {
 	}
 }
 
+@keyframes prAnim {
+    0% {
+        top: 26px;
+    }
+    100% {
+        top: -73%;
+    }
+}
 
 .transition-custom {
     transition: 0.5s ease;

@@ -4,6 +4,7 @@ import laptop from 'public/img/laptop_PNG101816.png'
 import store from 'public/img/projects/lenmi store/1.webp'
 import store2 from 'public/img/projects/lenmi store/2.webp'
 import store3 from 'public/img/projects/lenmi store/3.webp'
+import whole from 'public/img/projects/lenmi store/whole.png'
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiShadcnui, SiCloudinary, SiMysql } from "react-icons/si";
 import Image from 'next/image'
@@ -43,8 +44,8 @@ export default function page() {
                 title == "lenmi-store" ?
                 <div>
                     <div className='flex flex-row-reverse relative gap-3'>
-                        <div className='w-full overflow-hidden h-fit flex relative place-content-center'>
-                            <Image src={laptop} placeholder='blur' className='select-none w-full h-fit relative z-[200]' alt='' />
+                        <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
+                            <Image src={laptop} placeholder='blur' className='select-none w-full h-fit relative z-[350]' alt='' />
                             <Image ref={imagesRef[0]} src={store} placeholder='blur'
                             className='w-[74%] h-fit absolute xl:top-[26px] top-5 transition-custom'
                             alt='' />
