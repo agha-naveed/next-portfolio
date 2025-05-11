@@ -4,7 +4,7 @@ import laptop from 'public/img/laptop_PNG101816.png'
 import store from 'public/img/projects/lenmi store/1.webp'
 import store2 from 'public/img/projects/lenmi store/2.webp'
 import store3 from 'public/img/projects/lenmi store/3.webp'
-import whole from 'public/img/projects/lenmi store/whole.png'
+import flare from 'public/img/blue-flare.jpg'
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiShadcnui, SiCloudinary, SiMysql } from "react-icons/si";
 import Image from 'next/image'
@@ -42,8 +42,9 @@ export default function page() {
         <div className='container !mx-auto !py-[90px] flex flex-col gap-10'>
             {
                 title == "lenmi-store" ?
-                <div>
-                    <div className='flex flex-row-reverse relative gap-3'>
+                <div className='!px-7'>
+                    <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit'>Lenmi Store</h1>
+                    <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
                         <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
                             <Image src={laptop} placeholder='blur' className='select-none w-full h-fit relative z-[350]' alt='' />
                             <Image ref={imagesRef[0]} src={store} placeholder='blur'
@@ -57,10 +58,11 @@ export default function page() {
                             alt='' />
                         </div>
                         <div className='w-full flex flex-col self-center text-white'>
-                            <h3 className='font-semibold text-4xl'>Overview</h3>
-                            <p className='!pt-4 !pb-8 text-xl leading-8'>
+                            <h3 className='font-semibold md:text-4xl text-3xl relative z-20'>Overview</h3>
+                            <p className='!pt-4 !pb-8 md:text-xl text-[18px] leading-8 relative z-20'>
                                 Lenmi Store is a user-friendly online platform for buying and selling products. It manages buyer accounts, shopping carts, and order records, making e-commerce simple and efficient for both customers and sellers.
                             </p>
+                            <Image src={flare} className='w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
                         </div>
                     </div>
 
@@ -76,26 +78,26 @@ export default function page() {
 
                         <div className='!py-10'>
                             <h4 className='font-semibold text-[26px] !my-3'>Tech Stacks:</h4>
-                            <div className='flex gap-3'>
-                                <div className='flex gap-3 text-4xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-black'>
+                            <div className='flex flex-wrap gap-3'>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-4xl text-[28px] items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-black'>
                                     <RiNextjsFill />
-                                    <span className='text-xl'>Next Js</span>
+                                    <span className='md:text-xl text-[16px]'>Next Js</span>
                                 </div>
-                                <div className='flex gap-3 text-3xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#08b8dd] transition-custom'>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-3xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#08b8dd] transition-custom'>
                                     <RiTailwindCssFill />
-                                    <span className='text-xl'>Tailwind</span>
+                                    <span className='md:text-xl text-[16px]'>Tailwind</span>
                                 </div>
-                                <div className='flex gap-3 text-xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-black'>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-xl text-[18px] items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-black'>
                                     <SiShadcnui />
-                                    <span className='text-xl'>Shadcn</span>
+                                    <span className='md:text-xl text-[16px]'>Shadcn</span>
                                 </div>
-                                <div className='flex gap-3 text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text hover:bg-[#08a457] transition-custom'>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-2xl text-xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text hover:bg-[#08a457] transition-custom'>
                                     <BiLogoMongodb />
-                                    <span className='text-xl'>MongoDB</span>
+                                    <span className='md:text-xl text-[16px]'>MongoDB</span>
                                 </div>
-                                <div className='flex gap-3 text-xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text hover:bg-[#5708ca] transition-custom'>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-xl text-[18px] items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text hover:bg-[#5708ca] transition-custom'>
                                     <SiCloudinary />
-                                    <span className='text-xl'>Cloudinary</span>
+                                    <span className='md:text-xl text-[16px]'>Cloudinary</span>
                                 </div>
                             </div>
 
@@ -108,19 +110,27 @@ export default function page() {
                     </div>
                 </div>
                 : title == "library-management-system" ?
-                <div>
-                    <div className='flex flex-row-reverse relative gap-3'>
-                        <div className='w-full overflow-hidden h-fit flex relative place-content-center'>
-                            <Image src={laptop} placeholder='blur' className='w-full h-fit relative z-[200]' alt='' />
-                            <Image src={store} placeholder='blur'
-                            className='w-[74%] h-fit absolute top-[20px]'
+                <div className='!px-7'>
+                    <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>Library Management System</h1>
+                    <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
+                        <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
+                            <Image src={laptop} placeholder='blur' className='select-none w-full h-fit relative z-[350]' alt='' />
+                            <Image ref={imagesRef[0]} src={store} placeholder='blur'
+                            className='w-[74%] h-fit absolute xl:top-[26px] top-5 transition-custom'
+                            alt='' />
+                            <Image ref={imagesRef[1]} src={store2} placeholder='blur'
+                            className='w-[74%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
+                            alt='' />
+                            <Image ref={imagesRef[2]} src={store3} placeholder='blur'
+                            className='w-[74%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
                             alt='' />
                         </div>
                         <div className='w-full flex flex-col self-center text-white'>
-                            <h3 className='font-semibold text-4xl'>Overview</h3>
-                            <p className='!pt-4 !pb-8 text-xl leading-8'>
+                            <h3 className='font-semibold md:text-4xl text-3xl relative z-20'>Overview</h3>
+                            <p className='!pt-4 !pb-8 md:text-xl text-[18px] leading-8 relative z-20'>
                                 Lenmi Store is a user-friendly online platform for buying and selling products. It manages buyer accounts, shopping carts, and order records, making e-commerce simple and efficient for both customers and sellers.
                             </p>
+                            <Image src={flare} className='w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
                         </div>
                     </div>
 
@@ -136,14 +146,14 @@ export default function page() {
 
                         <div className='!py-10'>
                             <h4 className='font-semibold text-[26px] !my-3'>Tech Stacks:</h4>
-                            <div className='flex gap-3'>
-                                <div className='flex gap-3 text-3xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-red-500'>
+                            <div className='flex flex-wrap gap-3'>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-[27px] text-[22px] items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-red-500'>
                                     <FaJava />
-                                    <span className='text-xl'>Java</span>
+                                    <span className='md:text-xl text-[16px]'>Java</span>
                                 </div>
-                                <div className='flex gap-3 text-3xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#e59908] transition-custom'>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-4xl text-3xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#e59908] transition-custom'>
                                     <SiMysql />
-                                    <span className='text-xl'>MySQL</span>
+                                    <span className='md:text-xl text-[16px]'>MySQL</span>
                                 </div>
                             </div>
 
