@@ -1,9 +1,15 @@
 'use client'
 import { useParams, useRouter } from 'next/navigation'
 import laptop from 'public/img/laptop_PNG101816.png'
+// Store
 import store from 'public/img/projects/lenmi store/1.webp'
 import store2 from 'public/img/projects/lenmi store/2.webp'
 import store3 from 'public/img/projects/lenmi store/3.webp'
+// Lms
+import lms from 'public/img/projects/lms/1.webp'
+import lms2 from 'public/img/projects/lms/2.webp'
+import lms3 from 'public/img/projects/lms/3.webp'
+
 import flare from 'public/img/blue-flare.jpg'
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiShadcnui, SiCloudinary, SiMysql } from "react-icons/si";
@@ -31,7 +37,7 @@ export default function page() {
                 }
             })
             currentIndex = (currentIndex + 1) % imagesRef.length
-        }, 4000)
+        }, 6000)
 
         return () => clearInterval(interval)
     }, [])
@@ -115,20 +121,20 @@ export default function page() {
                     <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
                         <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
                             <Image src={laptop} placeholder='blur' className='select-none w-full h-fit relative z-[350]' alt='' />
-                            <Image ref={imagesRef[0]} src={store} placeholder='blur'
-                            className='w-[74%] h-fit absolute xl:top-[26px] top-5 transition-custom'
+                            <Image  src={lms} placeholder='blur'
+                            className='w-[74%] h-fit absolute xl:top-[8px] top-5 transition-custom'
                             alt='' />
-                            <Image ref={imagesRef[1]} src={store2} placeholder='blur'
-                            className='w-[74%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
+                            <Image ref={imagesRef[0]} src={lms2} placeholder='blur'
+                            className='w-[72%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
                             alt='' />
-                            <Image ref={imagesRef[2]} src={store3} placeholder='blur'
-                            className='w-[74%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
+                            <Image ref={imagesRef[1]} src={lms3} placeholder='blur'
+                            className='w-[72%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
                             alt='' />
                         </div>
                         <div className='w-full flex flex-col self-center text-white'>
                             <h3 className='font-semibold md:text-4xl text-3xl relative z-20'>Overview</h3>
                             <p className='!pt-4 !pb-8 md:text-xl text-[18px] leading-8 relative z-20'>
-                                Lenmi Store is a user-friendly online platform for buying and selling products. It manages buyer accounts, shopping carts, and order records, making e-commerce simple and efficient for both customers and sellers.
+                                The Library Management System is a desktop application designed to streamline library operations. It allows users to manage books, borrowers, issue and return records, and generate detailed reports through an easy-to-use graphical interface, improving efficiency and reducing manual workload.
                             </p>
                             <Image src={flare} className='w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
                         </div>
