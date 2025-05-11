@@ -12,7 +12,7 @@ import lms3 from 'public/img/projects/lms/3.webp'
 
 import flare from 'public/img/blue-flare.jpg'
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiShadcnui, SiCloudinary, SiMysql } from "react-icons/si";
+import { SiShadcnui, SiCloudinary, SiMysql, SiHuggingface, SiOpenai } from "react-icons/si";
 import Image from 'next/image'
 import { BiLogoMongodb } from "react-icons/bi";
 import { useEffect, useRef, useState } from 'react';
@@ -75,7 +75,7 @@ export default function page() {
                     <div className='text-white'>
                         <h4 className='font-semibold text-[26px] !my-3'>Key Features:</h4>
                         <ol className='flex flex-col gap-5 list-disc !ml-6 font-medium text-[18px]'>
-                            <li>Hashing & Encryption:</li>
+                            <li>Hashing & Encryption</li>
                             <li>Product Review and Rating System</li>
                             <li>Search and Filters</li>
                             <li>Shopping Cart</li>
@@ -143,11 +143,11 @@ export default function page() {
                     <div className='text-white'>
                         <h4 className='font-semibold text-[26px] !my-3'>Key Features:</h4>
                         <ol className='flex flex-col gap-5 list-disc !ml-6 font-medium text-[18px]'>
-                            <li>Hashing & Encryption:</li>
-                            <li>Product Review and Rating System</li>
-                            <li>Search and Filters</li>
-                            <li>Shopping Cart</li>
-                            <li>Seller Notifications</li>
+                            <li>Add Books</li>
+                            <li>Borrower Management</li>
+                            <li>Issue & Return Books</li>
+                            <li>Report Generation</li>
+                            <li>User-Friendly GUI</li>
                         </ol>
 
                         <div className='!py-10'>
@@ -161,6 +161,69 @@ export default function page() {
                                     <SiMysql />
                                     <span className='md:text-xl text-[16px]'>MySQL</span>
                                 </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+                : title == "agha-chatbot" ?
+                <div className='!px-7'>
+                    <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>Agha Chatbot</h1>
+                    <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
+                        <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
+                            <Image src={laptop} placeholder='blur' className='select-none w-full h-fit relative z-[350]' alt='' />
+                            <Image  src={lms} placeholder='blur'
+                            className='w-[74%] h-fit absolute xl:top-[8px] top-5 transition-custom'
+                            alt='' />
+                            <Image ref={imagesRef[0]} src={lms2} placeholder='blur'
+                            className='w-[72%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
+                            alt='' />
+                            <Image ref={imagesRef[1]} src={lms3} placeholder='blur'
+                            className='w-[72%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
+                            alt='' />
+                        </div>
+                        <div className='w-full flex flex-col self-center text-white'>
+                            <h3 className='font-semibold md:text-4xl text-3xl relative z-20'>Overview</h3>
+                            <p className='!pt-4 !pb-8 md:text-xl text-[18px] leading-8 relative z-20'>
+                                Agha Chatbot is an AI-powered conversational assistant designed to provide smart, context-aware responses to user queries. It is a mobile-friendly web application built with a clean and responsive interface.
+                                <br />
+                                This project aims to demonstrate the fusion of AI and frontend development, offering an interactive user experience with real-time response handling.
+                            </p>
+                            <Image src={flare} className='w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
+                        </div>
+                    </div>
+
+                    <div className='text-white'>
+                        <h4 className='font-semibold text-[26px] !my-3'>Key Features:</h4>
+                        <ol className='flex flex-col gap-5 list-disc !ml-6 font-medium text-[18px]'>
+                            <li>AI Chat Integration</li>
+                            <li>Mobile-Friendly Design</li>
+                            <li>Real-Time Messaging</li>
+                            <li>Modern UI/UX</li>
+                            <li>Image Generation (simple/not accurate/low-quality)</li>
+                        </ol>
+
+                        <div className='!py-10'>
+                            <h4 className='font-semibold text-[26px] !my-3'>Tech Stacks:</h4>
+                            <div className='flex flex-wrap gap-3'>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-[27px] text-[22px] items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-[#00d5ff]'>
+                                    <FaReact />
+                                    <span className='md:text-xl text-[16px]'>React Js</span>
+                                </div>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-3xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#08b8dd] transition-custom'>
+                                    <RiTailwindCssFill />
+                                    <span className='md:text-xl text-[16px]'>Tailwind</span>
+                                </div>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-2xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-white hover:text-black transition-custom'>
+                                    <SiOpenai />
+                                    <span className='md:text-xl text-[16px]'>OpenAI</span>
+                                </div>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-2xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#fead00] transition-custom'>
+                                    <SiHuggingface />
+                                    <span className='md:text-xl text-[16px]'>Hugging Face</span>
+                                </div>
+
                             </div>
 
                         </div>
