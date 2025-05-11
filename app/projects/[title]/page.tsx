@@ -231,14 +231,16 @@ export default function page() {
                                     <SiHuggingface />
                                     <span className='md:text-xl text-[16px]'>Hugging Face</span>
                                 </div>
-
                             </div>
-
                         </div>
-                        
+
+                        <Link href={"https://agha-ai.vercel.app"} target='_blank' className='relative bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit' title='View more about this Project'>
+                            <span className='relative z-[200]'>Visit Site</span>
+                        </Link>
+
                     </div>
                 </div>
-                : <p>Loading...</p>
+                : ""
             }
 
         </div>
