@@ -2,7 +2,6 @@
 import { useParams, useRouter } from 'next/navigation'
 import laptop from 'public/img/laptop_PNG101816.png'
 import store from 'public/img/projects/lenmi store/1.webp'
-import lms from 'public/img/projects/lib_lms.webp'
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiShadcnui, SiCloudinary, SiMysql } from "react-icons/si";
 import Image from 'next/image'
@@ -10,6 +9,7 @@ import { BiLogoMongodb } from "react-icons/bi";
 import { useEffect, useState } from 'react';
 import { ParamValue } from 'next/dist/server/request/params';
 import { FaJava, FaReact } from "react-icons/fa6";
+import Link from 'next/link'
 
 export default function page() {
     const navigate = useRouter()
@@ -75,10 +75,10 @@ export default function page() {
                             </div>
 
                         </div>
-
-                        <button className='relative bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit' title='View more about this Project'>
+                        
+                        <Link href={"https://lenmi-store.vercel.app"} target='_blank' className='relative bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit' title='View more about this Project'>
                             <span className='relative z-[200]'>Visit Site</span>
-                        </button>
+                        </Link>
                         
                     </div>
                 </div>
@@ -112,35 +112,17 @@ export default function page() {
                         <div className='!py-10'>
                             <h4 className='font-semibold text-[26px] !my-3'>Tech Stacks:</h4>
                             <div className='flex gap-3'>
-                                <div className='flex gap-3 text-4xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-black'>
-                                    <RiNextjsFill />
-                                    <span className='text-xl'>Next Js</span>
+                                <div className='flex gap-3 text-3xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-red-500'>
+                                    <FaJava />
+                                    <span className='text-xl'>Java</span>
                                 </div>
-                                <div className='flex gap-3 text-3xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#08b8dd] transition-custom'>
-                                    <RiTailwindCssFill />
-                                    <span className='text-xl'>Tailwind</span>
-                                </div>
-                                <div className='flex gap-3 text-xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-black'>
-                                    <SiShadcnui />
-                                    <span className='text-xl'>Shadcn</span>
-                                </div>
-                                <div className='flex gap-3 text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text hover:bg-[#08a457] transition-custom'>
-                                    <BiLogoMongodb />
-                                    <span className='text-xl'>MongoDB</span>
-                                </div>
-                                <div className='flex gap-3 text-xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text hover:bg-[#5708ca] transition-custom'>
-                                    <SiCloudinary />
-                                    <span className='text-xl'>Cloudinary</span>
+                                <div className='flex gap-3 text-3xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit !px-5 !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#e59908] transition-custom'>
+                                    <SiMysql />
+                                    <span className='text-xl'>MySQL</span>
                                 </div>
                             </div>
 
                         </div>
-
-                        <button onClick={() => alert("Clicked")}>
-                            <div className='relative bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium overflow-hidden text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit' title='View more about this Project'>
-                                <span className='relative z-[200]'>Visit Site</span>
-                            </div>
-                        </button>
                         
                     </div>
                 </div>
