@@ -2,22 +2,40 @@
 import { useParams, useRouter } from 'next/navigation'
 import laptop from 'public/img/laptop_PNG101816.png'
 import store from 'public/img/projects/lenmi store/1.webp'
+import store2 from 'public/img/projects/lenmi store/2.webp'
+import store3 from 'public/img/projects/lenmi store/3.webp'
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiShadcnui, SiCloudinary, SiMysql } from "react-icons/si";
 import Image from 'next/image'
 import { BiLogoMongodb } from "react-icons/bi";
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ParamValue } from 'next/dist/server/request/params';
 import { FaJava, FaReact } from "react-icons/fa6";
 import Link from 'next/link'
 
 export default function page() {
+    const imagesRef = [useRef<HTMLImageElement | null>(null), useRef(null), useRef(null)]
+
     const navigate = useRouter()
     const param = useParams()
     const [title, setTitle] = useState<ParamValue>("")
     useEffect(() => {
         setTitle(param.title)
+
+        let currentIndex = 0
+        const interval = setInterval(() => {
+            imagesRef.forEach((ref, i) => {
+                if (ref.current) {
+                    ref.current.style.opacity = i === currentIndex ? '1' : '0'
+                }
+            })
+            currentIndex = (currentIndex + 1) % imagesRef.length
+        }, 4000)
+
+        return () => clearInterval(interval)
     }, [])
+
+
     
     return (
         <div className='container !mx-auto !py-[90px] flex flex-col gap-10'>
@@ -26,9 +44,15 @@ export default function page() {
                 <div>
                     <div className='flex flex-row-reverse relative gap-3'>
                         <div className='w-full overflow-hidden h-fit flex relative place-content-center'>
-                            <Image src={laptop} placeholder='blur' className='w-full h-fit relative z-[200]' alt='' />
-                            <Image src={store} placeholder='blur'
-                            className='w-[74%] h-fit absolute top-[20px]'
+                            <Image src={laptop} placeholder='blur' className='select-none w-full h-fit relative z-[200]' alt='' />
+                            <Image ref={imagesRef[0]} src={store} placeholder='blur'
+                            className='w-[74%] h-fit absolute xl:top-[26px] top-5 transition-custom'
+                            alt='' />
+                            <Image ref={imagesRef[1]} src={store2} placeholder='blur'
+                            className='w-[74%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
+                            alt='' />
+                            <Image ref={imagesRef[2]} src={store3} placeholder='blur'
+                            className='w-[74%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
                             alt='' />
                         </div>
                         <div className='w-full flex flex-col self-center text-white'>
