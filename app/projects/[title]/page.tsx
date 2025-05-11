@@ -9,6 +9,11 @@ import store3 from 'public/img/projects/lenmi store/3.webp'
 import lms from 'public/img/projects/lms/1.webp'
 import lms2 from 'public/img/projects/lms/2.webp'
 import lms3 from 'public/img/projects/lms/3.webp'
+// chatbot
+import chatbot from 'public/img/projects/chatbot/1.webp'
+import chatbot2 from 'public/img/projects/chatbot/2.webp'
+import chatbot3 from 'public/img/projects/chatbot/3.webp'
+import chatbot4 from 'public/img/projects/chatbot/4.webp'
 
 import flare from 'public/img/blue-flare.jpg'
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
@@ -173,15 +178,18 @@ export default function page() {
                     <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
                         <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
                             <Image src={laptop} placeholder='blur' className='select-none w-full h-fit relative z-[350]' alt='' />
-                            <Image  src={lms} placeholder='blur'
+                            {/* <Image  src={chatbot} placeholder='blur'
                             className='w-[74%] h-fit absolute xl:top-[8px] top-5 transition-custom'
+                            alt='' /> */}
+                            <Image ref={imagesRef[0]} src={chatbot2} placeholder='blur'
+                            className='w-[72%] h-fit absolute xl:top-[18px] top-5 opacity-0 transition-custom'
                             alt='' />
-                            <Image ref={imagesRef[0]} src={lms2} placeholder='blur'
+                            {/* <Image ref={imagesRef[1]} src={chatbot3} placeholder='blur'
                             className='w-[72%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
                             alt='' />
-                            <Image ref={imagesRef[1]} src={lms3} placeholder='blur'
+                            <Image ref={imagesRef[2]} src={chatbot4} placeholder='blur'
                             className='w-[72%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
-                            alt='' />
+                            alt='' /> */}
                         </div>
                         <div className='w-full flex flex-col self-center text-white'>
                             <h3 className='font-semibold md:text-4xl text-3xl relative z-20'>Overview</h3>
