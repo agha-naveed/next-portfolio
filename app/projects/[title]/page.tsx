@@ -24,7 +24,6 @@ export default function page() {
                 <>
                     <div className='w-full overflow-hidden flex relative gap-5'>
                         <Image src={store} placeholder='blur' className='w-1/2' alt='' />
-                        <Image src={store} placeholder='blur' className='w-1/2' alt='' />
                     </div>
                     <div className='text-white'>
                         <h3 className='font-semibold text-4xl'>Description</h3>
