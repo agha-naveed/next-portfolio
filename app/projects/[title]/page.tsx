@@ -73,7 +73,7 @@ export default function page() {
                             <p className='!pt-4 !pb-8 md:text-xl text-[18px] leading-8 relative z-20'>
                                 Lenmi Store is a user-friendly online platform for buying and selling products. It manages buyer accounts, shopping carts, and order records, making e-commerce simple and efficient for both customers and sellers.
                             </p>
-                            <Image src={flare} className='w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
+                            <Image src={flare} className='w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1 select-none' alt='' />
                         </div>
                     </div>
 
@@ -141,7 +141,7 @@ export default function page() {
                             <p className='!pt-4 !pb-8 md:text-xl text-[18px] leading-8 relative z-20'>
                                 The Library Management System is a desktop application designed to streamline library operations. It allows users to manage books, borrowers, issue and return records, and generate detailed reports through an easy-to-use graphical interface, improving efficiency and reducing manual workload.
                             </p>
-                            <Image src={flare} className='w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
+                            <Image src={flare} className='w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1 select-none' alt='' />
                         </div>
                     </div>
 
@@ -177,19 +177,19 @@ export default function page() {
                     <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>Agha Chatbot</h1>
                     <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
                         <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
-                            <Image src={laptop} placeholder='blur' className='select-none w-full h-fit relative z-[350]' alt='' />
-                            {/* <Image  src={chatbot} placeholder='blur'
-                            className='w-[74%] h-fit absolute xl:top-[8px] top-5 transition-custom'
-                            alt='' /> */}
-                            <Image ref={imagesRef[0]} src={chatbot2} placeholder='blur'
-                            className='w-[72%] h-fit absolute xl:top-[18px] top-5 opacity-0 transition-custom'
+                            <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
+                            <Image  src={chatbot} placeholder='blur'
+                            className='w-[73%] h-fit absolute xl:top-[18px] top-5 transition-custom'
                             alt='' />
-                            {/* <Image ref={imagesRef[1]} src={chatbot3} placeholder='blur'
-                            className='w-[72%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
+                            <Image ref={imagesRef[0]} src={chatbot2} placeholder='blur'
+                            className='w-[73%] h-fit absolute xl:top-[17px] top-5 opacity-0 transition-custom'
+                            alt='' />
+                            <Image ref={imagesRef[1]} src={chatbot3} placeholder='blur'
+                            className='w-[73%] h-fit absolute xl:top-[18px] top-5 opacity-0 transition-custom'
                             alt='' />
                             <Image ref={imagesRef[2]} src={chatbot4} placeholder='blur'
-                            className='w-[72%] h-fit absolute xl:top-[26px] top-5 opacity-0 transition-custom'
-                            alt='' /> */}
+                            className='w-[72%] h-fit absolute xl:top-[10px] top-5 opacity-0 transition-custom'
+                            alt='' />
                         </div>
                         <div className='w-full flex flex-col self-center text-white'>
                             <h3 className='font-semibold md:text-4xl text-3xl relative z-20'>Overview</h3>
@@ -198,7 +198,7 @@ export default function page() {
                                 <br />
                                 This project aims to demonstrate the fusion of AI and frontend development, offering an interactive user experience with real-time response handling.
                             </p>
-                            <Image src={flare} className='w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
+                            <Image src={flare} className='select-none w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
                         </div>
                     </div>
 
