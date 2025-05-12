@@ -54,7 +54,7 @@ export default function page() {
             {
                 title == "lenmi-store" ?
                 <div className='!px-7'>
-                    <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit'>Lenmi Store</h1>
+                    <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>Lenmi Store</h1>
                     <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
                         <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
                             <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
