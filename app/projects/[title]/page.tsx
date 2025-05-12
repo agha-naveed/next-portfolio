@@ -120,6 +120,7 @@ export default function page() {
                         
                     </div>
                 </div>
+
                 : title == "library-management-system" ?
                 <div className='!px-7'>
                     <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>Library Management System</h1>
@@ -172,9 +173,74 @@ export default function page() {
                         
                     </div>
                 </div>
+
                 : title == "agha-chatbot" ?
                 <div className='!px-7'>
                     <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>Agha Chatbot</h1>
+                    <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
+                        <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
+                            <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
+                            <Image ref={imagesRef[0]} src={chatbot} placeholder='blur'
+                            className='w-[73%] h-fit absolute top-[5.5%] transition-custom'
+                            alt='' />
+                            <Image ref={imagesRef[1]} src={chatbot2} placeholder='blur'
+                            className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
+                            alt='' />
+                            <Image ref={imagesRef[2]} src={chatbot3} placeholder='blur'
+                            className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
+                            alt='' />
+                            <Image ref={imagesRef[3]} src={chatbot4} placeholder='blur'
+                            className='w-[72%] h-fit absolute top-[4.5%] opacity-0 transition-custom'
+                            alt='' />
+                        </div>
+                        <div className='w-full flex flex-col self-center text-white'>
+                            <h3 className='font-semibold md:text-4xl text-3xl relative z-20'>Overview</h3>
+                            <p className='!pt-4 !pb-8 md:text-xl text-[18px] leading-8 relative z-20'>
+                                Agha Chatbot is an AI-powered conversational assistant designed to provide smart, context-aware responses to user queries. It is a mobile-friendly web application built with a clean and responsive interface.
+                                <br />
+                                This project aims to demonstrate the fusion of AI and frontend development, offering an interactive user experience with real-time response handling.
+                            </p>
+                            <Image src={flare} className='select-none w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
+                        </div>
+                    </div>
+
+                    <div className='text-white'>
+                        <h4 className='font-semibold text-[26px] !my-3'>Key Features:</h4>
+                        <ol className='flex flex-col gap-5 list-disc !ml-6 font-medium text-[18px]'>
+                            <li>AI Chat Integration</li>
+                            <li>Mobile-Friendly Design</li>
+                            <li>Real-Time Messaging</li>
+                            <li>Modern UI/UX</li>
+                        </ol>
+
+                        <div className='!py-10'>
+                            <h4 className='font-semibold text-[26px] !my-3'>Tech Stacks:</h4>
+                            <div className='flex flex-wrap gap-3'>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-[27px] text-[22px] items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-[#00d5ff]'>
+                                    <FaReact />
+                                    <span className='md:text-xl text-[16px]'>React Js</span>
+                                </div>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-3xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#08b8dd] transition-custom'>
+                                    <RiTailwindCssFill />
+                                    <span className='md:text-xl text-[16px]'>Tailwind</span>
+                                </div>
+                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-2xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-white hover:text-black transition-custom'>
+                                    <SiOpenai />
+                                    <span className='md:text-xl text-[16px]'>OpenAI</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <Link href={"https://agha-ai.vercel.app"} target='_blank' className='relative bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit' title='View more about this Project'>
+                            <span className='relative z-[200]'>Visit Site</span>
+                        </Link>
+
+                    </div>
+                </div>
+
+                : title == "7up-redesign" ?
+                <div className='!px-7'>
+                    <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>7up Website Redesign</h1>
                     <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
                         <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
                             <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
