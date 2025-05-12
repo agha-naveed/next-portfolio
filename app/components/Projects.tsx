@@ -29,7 +29,7 @@ export default function Projects() {
                     className='mix-blend-screen absolute -top-30 -left-10 w-70 animate-blink'
                     />
 
-                    <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
+                    <div data-aos="fade-up" className='justify-items-center cursor-pointer'
                     data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}
                         className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
@@ -42,14 +42,14 @@ export default function Projects() {
                                 <span className='text-[20px] font-semibold'>Lenmi Store</span>
                                 <span>Online Shopping Platform</span>
                             </div>
-                            <Link href={"/projects/lenmi-store"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
+                            <Link href={"/projects/lenmi-store"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px] hover-text' title='View more about this Project'>
                                 <span className='relative z-[200]'>View More</span>
                             </Link>
 
                         </Tilt>
                     </div>
 
-                    <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
+                    <div data-aos="fade-up" className='justify-items-center cursor-pointer'
                     data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
@@ -61,14 +61,14 @@ export default function Projects() {
                                 <span className='text-[20px] font-semibold'>Library Management System</span>
                                 <span>Desktop Application</span>
                             </div>
-                            <Link href={"/projects/library-management-system"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
+                            <Link href={"/projects/library-management-system"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px] hover-text' title='View more about this Project'>
                                 <span className='relative z-[200]'>View More</span>
                             </Link>
 
                         </Tilt>
                     </div>
                     
-                    <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
+                    <div data-aos="fade-up" className='justify-items-center cursor-pointer'
                     data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[1000]'>
                             
@@ -80,7 +80,7 @@ export default function Projects() {
                                 <span className='text-[20px] font-semibold'>AI Chatbot</span>
                                 <span>Agha Chatbot</span>
                             </div>
-                            <Link href={"/projects/agha-chatbot"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
+                            <Link href={"/projects/agha-chatbot"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px] hover-text' title='View more about this Project'>
                                 <span className='relative z-[200]'>View More</span>
                             </Link>
 
