@@ -9,18 +9,9 @@ import dottedBg from 'public/img/dotted-small.png'
 import player from 'public/img/projects/music_player.webp'
 import lms from 'public/img/projects/lib_lms.webp'
 import portfolio from 'public/img/projects/old_portfolio.webp'
-import { useState, useRef, useEffect } from 'react';
-import { AnimatePresence, motion } from "motion/react"
+import Link from 'next/link';
 
 export default function Projects() {
-    const [project, setProject] = useState<string | false>(false)
-    const detailRef = useRef<HTMLDivElement | null>(null)
-    const [isVisible, setIsVisible] = useState(false)
-
-    useEffect(() => {
-        
-    }, [])
-
 
     return (
         <div className='w-full h-full !py-10 overflow-hidden bg-main-dark-clr relative -top-3 z-300'>
@@ -39,7 +30,6 @@ export default function Projects() {
                     />
 
                     <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
-                    onClick={() => {setIsVisible(true); setProject("store")}}
                     data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}
                         className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
@@ -52,15 +42,14 @@ export default function Projects() {
                                 <span className='text-[20px] font-semibold'>Lenmi Store</span>
                                 <span>Online Shopping Platform</span>
                             </div>
-                            <button className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
+                            <Link href={"/projects/lenmi-store"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
                                 <span className='relative z-[200]'>View More</span>
-                            </button>
+                            </Link>
 
                         </Tilt>
                     </div>
 
                     <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
-                    onClick={() => {setIsVisible(true); setProject("lms")}}
                     data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
@@ -72,15 +61,14 @@ export default function Projects() {
                                 <span className='text-[20px] font-semibold'>Library Management System</span>
                                 <span>Desktop Application</span>
                             </div>
-                            <button className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
+                            <Link href={"/projects/library-management-system"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
                                 <span className='relative z-[200]'>View More</span>
-                            </button>
+                            </Link>
 
                         </Tilt>
                     </div>
                     
                     <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
-                    onClick={() => {setIsVisible(true); setProject("chatbot")}}
                     data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[1000]'>
                             
@@ -92,64 +80,12 @@ export default function Projects() {
                                 <span className='text-[20px] font-semibold'>AI Chatbot</span>
                                 <span>Agha Chatbot</span>
                             </div>
-                            <button className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
+                            <Link href={"/projects/agha-chatbot"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit !mb-5 absolute bottom-[16px]' title='View more about this Project'>
                                 <span className='relative z-[200]'>View More</span>
-                            </button>
+                            </Link>
 
                         </Tilt>
                     </div>
-
-
-                    <section ref={detailRef} className={`fixed top-0 left-0 grid place-items-center z-[9999999]`}>
-                        <div className='flex flex-col fixed top-1/2 left-1/2 -translate-1/2 z-[20000]'>
-                            <AnimatePresence initial={false}>
-                                {isVisible ? (
-                                    <>
-                                        <motion.div
-                                            initial={{ opacity: 0, scale: 0 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            exit={{ opacity: 0, scale: 0 }}
-                                            className='w-[100%]  overflow-y-auto rounded-[10px] bg-white'
-                                            key="box"
-                                        >
-                                            {
-                                                project == "store" ?
-                                                <div>
-                                                    <div className='!p-3'>
-                                                        <Image src={store} className='rounded-sm' alt='' />
-                                                    </div>
-                                                    <div className='bg-black/80 !p-4'>
-                                                        <span>An online shopping website offering a seamless shopping experience with product browsing, order management, and user authentication.</span>
-                                                    </div>
-                                                </div>
-                                                :
-                                                project == "lms" ?
-                                                    <div>
-                                                        <div className='!p-3 '>
-                                                            <Image src={lms} className='rounded-sm' alt='' />
-                                                        </div>
-                                                        <div className='bg-black/80 !p-4'>
-                                                            <span>Welcome to the Library Management System (LMS) software. This application is designed to efficiently manage library operations using Java programming language, SQL for database management, and MS Access as the backend database.</span>
-                                                        </div>
-                                                    </div>
-                                                : <div>
-                                                <div className='!p-3 '>
-                                                    <Image src={chatbot} className='rounded-sm' alt='' />
-                                                </div>
-                                                <div className='bg-black/80 !p-4'>
-                                                    <span>Welcome to the Chatbot project! A modern, responsive chatbot with an intuitive and polished user interface.</span>
-                                                </div>
-                                            </div>
-                                            }
-                                        </motion.div>
-                                    </>
-                                    
-                                ) : null}
-                            </AnimatePresence>
-                        </div>
-                        <div className={`w-screen h-screen backdrop-blur-[4px] bg-black/70 z-[9999] ${isVisible ? "block" : "hidden"}`} onClick={() => setIsVisible(false)}></div>
-                    </section>
-
 
                 </div>
 
