@@ -78,7 +78,7 @@ export default function page() {
 
                         <div className='flex flex-col !pt-8 !pb-15 gap-2'>
                             <span className='text-[22px] font-semibold'>7up Website Redesign</span>
-                            <span className='text-[16px] leading-7'>AI Chatbot for generating responses from inputs.</span>
+                            <span className='text-[16px] leading-7'>Refreshing experience that reflects the brand’s lively and youthful personality.</span>
                         </div>
                         <Link href={"/projects/7up-redesign"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit absolute bottom-6' title='View more about this Project'>
                             <span className='relative z-[200]'>View Project</span>
