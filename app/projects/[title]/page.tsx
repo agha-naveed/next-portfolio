@@ -261,9 +261,7 @@ export default function page() {
                         <div className='w-full flex flex-col self-center text-white'>
                             <h3 className='font-semibold md:text-4xl text-3xl relative z-20'>Overview</h3>
                             <p className='!pt-4 !pb-8 md:text-xl text-[18px] leading-8 relative z-20'>
-                                Agha Chatbot is an AI-powered conversational assistant designed to provide smart, context-aware responses to user queries. It is a mobile-friendly web application built with a clean and responsive interface.
-                                <br />
-                                This project aims to demonstrate the fusion of AI and frontend development, offering an interactive user experience with real-time response handling.
+                                The 7UP Website Redesign is a modern, interactive revamp of the classic beverage brand's online presence. This project aims to enhance user engagement and visual appeal through smooth animations, dynamic elements, and an intuitive layout. The redesign focuses on delivering a playful, refreshing experience that reflects the brand’s lively and youthful personality.
                             </p>
                             <Image src={flare} className='select-none w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
                         </div>
@@ -272,10 +270,11 @@ export default function page() {
                     <div className='text-white'>
                         <h4 className='font-semibold text-[26px] !my-3'>Key Features:</h4>
                         <ol className='flex flex-col gap-5 list-disc !ml-6 font-medium text-[18px]'>
-                            <li>AI Chat Integration</li>
-                            <li>Mobile-Friendly Design</li>
-                            <li>Real-Time Messaging</li>
-                            <li>Modern UI/UX</li>
+                            <li>Animated 7up Can Interaction</li>
+                            <li>Horizontal Scrolling Navigation</li>
+                            <li>Responsive Design</li>
+                            <li>Modern UI/UX Design</li>
+                            <li>Scroll Based Animation</li>
                         </ol>
 
                         <div className='!py-10'>
@@ -288,10 +287,6 @@ export default function page() {
                                 <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-3xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#08b8dd] transition-custom'>
                                     <RiTailwindCssFill />
                                     <span className='md:text-xl text-[16px]'>Tailwind</span>
-                                </div>
-                                <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-2xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-white hover:text-black transition-custom'>
-                                    <SiOpenai />
-                                    <span className='md:text-xl text-[16px]'>OpenAI</span>
                                 </div>
                             </div>
                         </div>
