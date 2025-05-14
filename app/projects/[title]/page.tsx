@@ -14,6 +14,10 @@ import chatbot from 'public/img/projects/chatbot/1.webp'
 import chatbot2 from 'public/img/projects/chatbot/2.webp'
 import chatbot3 from 'public/img/projects/chatbot/3.webp'
 import chatbot4 from 'public/img/projects/chatbot/4.webp'
+// sevenup
+import sevenup from 'public/img/projects/7up-redesign/rec.gif'
+import sevenup2 from 'public/img/projects/7up-redesign/2.webp'
+import sevenup3 from 'public/img/projects/7up-redesign/3.webp'
 
 import flare from 'public/img/blue-flare.jpg'
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
@@ -244,17 +248,14 @@ export default function page() {
                     <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
                         <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
                             <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
-                            <Image ref={imagesRef[0]} src={chatbot} placeholder='blur'
+                            <Image  src={sevenup}
                             className='w-[73%] h-fit absolute top-[5.5%] transition-custom'
                             alt='' />
-                            <Image ref={imagesRef[1]} src={chatbot2} placeholder='blur'
+                            <Image ref={imagesRef[0]} src={sevenup2} placeholder='blur'
                             className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
                             alt='' />
-                            <Image ref={imagesRef[2]} src={chatbot3} placeholder='blur'
+                            <Image ref={imagesRef[1]} src={sevenup3} placeholder='blur'
                             className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
-                            alt='' />
-                            <Image ref={imagesRef[3]} src={chatbot4} placeholder='blur'
-                            className='w-[72%] h-fit absolute top-[4.5%] opacity-0 transition-custom'
                             alt='' />
                         </div>
                         <div className='w-full flex flex-col self-center text-white'>
