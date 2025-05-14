@@ -20,7 +20,6 @@ export default function Header() {
                     <Image src={ANtext} alt='AGHA NAVEED'
                     data-aos="zoom-out-up" data-aos-duration="1000"
                     className='lg:w-[750px] md:w-[500px] w-[70%]'
-                    loading='lazy'
                     decoding='async'
                     />
                     <div>
