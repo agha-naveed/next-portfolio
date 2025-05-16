@@ -145,3 +145,12 @@ body {
     transform: translateX(-28px);
   }
 }
+
+
+.pic-bg {
+    background-image: url(../public/img/bg.87635d9.webp);
+    background-blend-mode: luminosity;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
