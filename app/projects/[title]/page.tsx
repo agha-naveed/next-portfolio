@@ -19,8 +19,6 @@ import sevenup from 'public/img/projects/7up-redesign/rec.gif'
 import sevenup2 from 'public/img/projects/7up-redesign/2.webp'
 import sevenup3 from 'public/img/projects/7up-redesign/3.webp'
 
-import bg from 'public/img/bg.87635d9.webp'
-
 import flare from 'public/img/blue-flare.jpg'
 import Image from 'next/image'
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
@@ -56,9 +54,8 @@ export default function page() {
 
     
     return (
-        <div className='bg-main-dark-clr'>
-            <Image src={bg} className='w-full absolute z-1' alt="" />
-            <div className='container !mx-auto !py-[90px] relative z-10 flex flex-col gap-10'>
+        <div className='bg-main-dark-clr pic-bg'>
+            <div className='container !mx-auto !py-[90px] flex flex-col gap-10'>
                 {
                     title == "lenmi-store" ?
                     <div className='!px-7'>
