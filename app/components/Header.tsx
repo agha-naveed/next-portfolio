@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <div className='w-full min-h-screen h-screen bg-main-dark-clr text-white'>
             <div className='w-full object-center absolute top-0'>
-                <Image src={bgBlend} alt="" 
+                <Image src={bgBlend} placeholder='blur' alt="" 
                 className='w-full mix-blend-color-dodge select-none'
                 />
             </div>
