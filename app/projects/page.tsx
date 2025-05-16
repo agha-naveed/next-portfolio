@@ -9,7 +9,7 @@ import chatbot from 'public/img/projects/chatbot.webp'
 
 export default function page() {
     return (
-        <div className="w-full min-h-screen h-auto flex flex-col justify-center items-center text-white text-3xl gap-4 pic-bg">
+        <div className="w-full min-h-screen h-auto flex flex-col justify-center items-center text-white text-3xl gap-4 pic-bg bg-main-dark-clr">
             <div className='flex flex-wrap justify-center relative gap-14 !py-[120px]'>
                 <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
                 data-aos-duration="1000" data-aos-easing="ease-out">
