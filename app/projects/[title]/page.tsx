@@ -292,7 +292,7 @@ export default function page() {
                                 </div>
                             </div>
 
-                            <Link href={"https://agha-ai.vercel.app"} target='_blank' className='relative bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit' title='View more about this Project'>
+                            <Link href={"https://7up-site-redesign.vercel.app"} target='_blank' className='relative bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit' title='View more about this Project'>
                                 <span className='relative z-[200]'>Visit Site</span>
                             </Link>
 
