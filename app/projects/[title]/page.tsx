@@ -28,12 +28,13 @@ import pharmacy4 from 'public/img/projects/pharmacy/4.jpg'
 import flare from 'public/img/blue-flare.jpg'
 import Image from 'next/image'
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiShadcnui, SiCloudinary, SiMysql, SiOpenai } from "react-icons/si";
+import { SiShadcnui, SiCloudinary, SiMysql, SiOpenai, SiExpress } from "react-icons/si";
 import { BiLogoMongodb } from "react-icons/bi";
 import { useEffect, useRef, useState } from 'react';
 import { ParamValue } from 'next/dist/server/request/params';
 import { FaJava, FaReact } from "react-icons/fa6";
 import Link from 'next/link'
+import { FaNodeJs } from "react-icons/fa";
 
 export default function page() {
     const imagesRef = [useRef<HTMLImageElement | null>(null), useRef(null), useRef(null)]
@@ -337,11 +338,13 @@ export default function page() {
                         <div className='text-white'>
                             <h4 className='font-semibold text-[26px] !my-3'>Key Features:</h4>
                             <ol className='flex flex-col gap-5 list-disc !ml-6 font-medium text-[18px]'>
-                                <li>Animated 7up Can Interaction</li>
-                                <li>Horizontal Scrolling Navigation</li>
-                                <li>Responsive Design</li>
-                                <li>Modern UI/UX Design</li>
-                                <li>Scroll Based Animation</li>
+                                <li>Modern Design</li>
+                                <li>Total Users Overview</li>
+                                <li>Daily Sales Tracking</li>
+                                <li>Advance Search</li>
+                                <li>Customer Details Management</li>
+                                <li>Medicine Receipt Generation</li>
+                                <li>Supplier Details</li>
                             </ol>
 
                             <div className='!py-10'>
@@ -354,6 +357,18 @@ export default function page() {
                                     <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-3xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#08b8dd] transition-custom'>
                                         <RiTailwindCssFill />
                                         <span className='md:text-xl text-[16px]'>Tailwind</span>
+                                    </div>
+                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-3xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-black transition-custom'>
+                                        <SiExpress />
+                                        <span className='md:text-xl text-[16px]'>Express Js</span>
+                                    </div>
+                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-3xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-node transition-custom'>
+                                        <FaNodeJs />
+                                        <span className='md:text-xl text-[16px]'>Node Js</span>
+                                    </div>
+                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-2xl text-xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text hover:bg-[#08a457] transition-custom'>
+                                        <BiLogoMongodb />
+                                        <span className='md:text-xl text-[16px]'>MongoDB</span>
                                     </div>
                                 </div>
                             </div>
