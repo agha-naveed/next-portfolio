@@ -18,6 +18,12 @@ import chatbot4 from 'public/img/projects/chatbot/4.webp'
 import sevenup from 'public/img/projects/7up-redesign/rec.gif'
 import sevenup2 from 'public/img/projects/7up-redesign/2.webp'
 import sevenup3 from 'public/img/projects/7up-redesign/3.webp'
+// Pharmacy
+import pharmacy1 from 'public/img/projects/pharmacy/1.jpg'
+import pharmacy2 from 'public/img/projects/pharmacy/2.jpg'
+import pharmacy3 from 'public/img/projects/pharmacy/3.jpg'
+import pharmacy4 from 'public/img/projects/pharmacy/4.jpg'
+
 
 import flare from 'public/img/blue-flare.jpg'
 import Image from 'next/image'
@@ -263,6 +269,66 @@ export default function page() {
                                 <h3 className='font-semibold md:text-4xl text-3xl relative z-20'>Overview</h3>
                                 <p className='!pt-4 !pb-8 md:text-xl text-[18px] leading-8 relative z-20'>
                                     The 7UP Website Redesign is a modern, interactive revamp of the classic beverage brand's online presence. This project aims to enhance user engagement and visual appeal through smooth animations, dynamic elements, and an intuitive layout. The redesign focuses on delivering a playful, refreshing experience that reflects the brand’s lively and youthful personality.
+                                </p>
+                                <Image src={flare} className='select-none w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
+                            </div>
+                        </div>
+
+                        <div className='text-white'>
+                            <h4 className='font-semibold text-[26px] !my-3'>Key Features:</h4>
+                            <ol className='flex flex-col gap-5 list-disc !ml-6 font-medium text-[18px]'>
+                                <li>Animated 7up Can Interaction</li>
+                                <li>Horizontal Scrolling Navigation</li>
+                                <li>Responsive Design</li>
+                                <li>Modern UI/UX Design</li>
+                                <li>Scroll Based Animation</li>
+                            </ol>
+
+                            <div className='!py-10'>
+                                <h4 className='font-semibold text-[26px] !my-3'>Tech Stacks:</h4>
+                                <div className='flex flex-wrap gap-3'>
+                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-[27px] text-[22px] items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-[#00d5ff]'>
+                                        <FaReact />
+                                        <span className='md:text-xl text-[16px]'>React Js</span>
+                                    </div>
+                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-3xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#08b8dd] transition-custom'>
+                                        <RiTailwindCssFill />
+                                        <span className='md:text-xl text-[16px]'>Tailwind</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <Link href={"https://7up-site-redesign.vercel.app"} target='_blank' className='relative bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit' title='View more about this Project'>
+                                <span className='relative z-[200]'>Visit Site</span>
+                            </Link>
+
+                        </div>
+                    </div>
+                    : 
+                    
+                    title == "pharmacy-webapp" ?
+                    <div className='!px-7'>
+                        <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>7up Website Redesign</h1>
+                        <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
+                            <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
+                                <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
+                                <Image  src={pharmacy1}
+                                className='w-[73%] h-fit absolute top-[5.5%] transition-custom'
+                                alt='' />
+                                <Image ref={imagesRef[0]} src={pharmacy2} placeholder='blur'
+                                className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
+                                alt='' />
+                                <Image ref={imagesRef[1]} src={pharmacy3} placeholder='blur'
+                                className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
+                                alt='' />
+                                <Image ref={imagesRef[2]} src={pharmacy4} placeholder='blur'
+                                className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
+                                alt='' />
+                            </div>
+                            <div className='w-full flex flex-col self-center text-white'>
+                                <h3 className='font-semibold md:text-4xl text-3xl relative z-20'>Overview</h3>
+                                <p className='!pt-4 !pb-8 md:text-xl text-[18px] leading-8 relative z-20'>
+                                    The Pharmacy Web App is a modern, user-centric platform designed to streamline and enhance pharmacy management. With a clean and responsive interface, this web application serves as a comprehensive solution for pharmacists, ensuring efficient handling of daily operations, inventory, and customer needs.
                                 </p>
                                 <Image src={flare} className='select-none w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
                             </div>
