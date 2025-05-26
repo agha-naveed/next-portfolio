@@ -13,6 +13,7 @@ import next from 'public/img/skills-logo/nextjs.svg'
 
 import express from 'public/img/skills-logo/express.svg'
 import node from "public/img/skills-logo/nodejs.svg"
+import flask from "public/img/skills-logo/flaskapi.svg"
 
 import mongo from "public/img/skills-logo/mongo.svg"
 import mysql from "public/img/skills-logo/mysql.svg"
@@ -109,6 +110,11 @@ export default function Skills() {
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={node} className="w-10" alt="" />
                                 <label htmlFor="">Node Js</label>
+                            </div>
+
+                            <div className="flex flex-col gap-1 items-center">
+                                <Image src={flask} className="w-10 text-white" alt="" />
+                                <label htmlFor="">Flask</label>
                             </div>
                         </div>
 
