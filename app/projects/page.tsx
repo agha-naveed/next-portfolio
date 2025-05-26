@@ -22,7 +22,7 @@ export default function page() {
 
                         <div className='flex flex-col !pt-8 !pb-15 gap-2'>
                             <span className='text-[22px] font-semibold'>Lenmi Store</span>
-                            <span className='text-[16px] leading-7'>Online Shopping Platform</span>
+                            <span className='text-[16px] leading-7'>Online Shopping Platform | Get Whatever you want</span>
                         </div>
                         <Link href={"/projects/lenmi-store"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit absolute bottom-6' title='View more about this Project'>
                             <span className='relative z-[200]'>View Project</span>
