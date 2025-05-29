@@ -27,7 +27,7 @@ import wordpress from "public/img/skills-logo/wordpress.svg"
 import photoshop from "public/img/skills-logo/photoshop.svg"
 
 import numpy from "public/img/skills-logo/numpy.svg"
-import tensorflow from "public/img/skills-logo/tensorflow.svg"
+import pytorch from "public/img/skills-logo/pytorch.svg"
 
 import git from "public/img/skills-logo/git.svg"
 import github from "public/img/skills-logo/github.svg"
@@ -177,8 +177,8 @@ export default function Skills() {
                             </div>
 
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={tensorflow} className="w-10" alt="" />
-                                <label htmlFor="">Tensorflow</label>
+                                <Image src={pytorch} className="w-10" alt="" />
+                                <label htmlFor="">PyTorch</label>
                             </div>
                             
                         </div>
