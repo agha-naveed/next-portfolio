@@ -7,7 +7,7 @@ import Aurora from '../components/Aurora'
 
 export default function page() {
     return (
-        <div className='w-full min-h-screen bg-main-dark-clr overflow-hidden'>
+        <div className='w-full min-h-screen bg-main-dark-clr overflow-hidden pic-bg'>
             <Aurora  />
 
             <div className="container !mx-auto !pb-40">
