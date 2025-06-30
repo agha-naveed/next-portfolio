@@ -32,7 +32,6 @@ import pytorch from "public/img/skills-logo/pytorch.svg"
 import git from "public/img/skills-logo/git.svg"
 import github from "public/img/skills-logo/github.svg"
 import npm from "public/img/skills-logo/npm.svg"
-import skillBg from 'public/img/bg.87635d9.webp'
 
 export default function Skills() {
     const [option, setOption] = useState("frontend")
