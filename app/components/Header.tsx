@@ -4,7 +4,6 @@ import ANtext from 'public/img/naveed_text.png'
 import dottedBg from 'public/img/dotted_overlay.png'
 import blueFlare from 'public/img/blue-flare.jpg'
 import { Typewriter } from 'react-simple-typewriter'
-import vid from 'public/img/vid.gif'
 
 export default function Header() {
     return (
