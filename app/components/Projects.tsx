@@ -103,17 +103,20 @@ export default function Projects() {
 
                     <div className='flex flex-wrap justify-center relative gap-14'>
                         <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out">
-                            <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} className="justify-items-center" >
+                            <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} scale={1.05} className="justify-items-center group relative">
+                                <span className='absolute !py-[2px] !px-4 bg-gray-500/40 rounded-full top-2 left-2 select-none font-light text-[14px] opacity-0 group-hover:opacity-100 transition-all'>Portfolio</span>
                                 <Image src={portfolio} loading="lazy" placeholder='blur' className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                             </Tilt>
                         </div>
                         <div data-aos="fade-up" data-aos-duration="1300" data-aos-easing="ease-out">
-                            <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} className="justify-items-center" >
+                            <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} scale={1.05} className="justify-items-center group relative">
+                                <span className='absolute !py-[2px] !px-4 bg-gray-500/40 rounded-full top-2 left-2 select-none font-light text-[14px] opacity-0 group-hover:opacity-100 transition-all'>7up Redesign</span>
                                 <Image src={sevenup} loading="lazy" placeholder='blur' className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                             </Tilt>
                         </div>
                         <div data-aos="fade-up" data-aos-duration="1600" data-aos-easing="ease-out">
-                            <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} className="justify-items-center" >
+                            <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} scale={1.05} className="justify-items-center group relative">
+                                <span className='absolute !py-[2px] !px-4 bg-gray-500/40 rounded-full top-2 left-2 select-none font-light text-[14px] opacity-0 group-hover:opacity-100 transition-all'>Music Player</span>
                                 <Image src={player} loading="lazy" placeholder='blur' className='lg:w-[350px] md:w-[330px] w-[80%] rounded-lg' alt='' />
                             </Tilt>
                         </div>
