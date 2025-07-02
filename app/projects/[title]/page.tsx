@@ -24,7 +24,6 @@ import pharmacy2 from 'public/img/projects/pharmacy/2.jpg'
 import pharmacy3 from 'public/img/projects/pharmacy/3.jpg'
 import pharmacy4 from 'public/img/projects/pharmacy/4.jpg'
 
-
 import flare from 'public/img/blue-flare.jpg'
 import Image from 'next/image'
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
