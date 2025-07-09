@@ -389,7 +389,7 @@ export default function page() {
                     
                     title == "apricot-disease-detector" ?
                     <div className='!px-7'>
-                        <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>7up Website Redesign</h1>
+                        <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>Apricot Disease Detector</h1>
                         <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
                             <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
                                 <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
@@ -433,11 +433,11 @@ export default function page() {
                                         <FaReact />
                                         <span className='md:text-xl text-[16px]'>React Js</span>
                                     </div>
-                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-3xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-node transition-custom'>
+                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-3xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-fastapi transition-custom'>
                                         <SiFastapi />
                                         <span className='md:text-xl text-[16px]'>FastAPI</span>
                                     </div>
-                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-2xl text-xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text hover:bg-[#08a457] transition-custom'>
+                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-2xl text-xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text hover:bg-pytorch transition-custom'>
                                         <SiPytorch />
                                         <span className='md:text-xl text-[16px]'>PyTorch</span>
                                     </div>

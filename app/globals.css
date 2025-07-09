@@ -7,6 +7,8 @@
     --animate-blink: blink 3s linear infinite alternate;
     --shadow-arrow: 0 0 12px rgba(255, 255, 255, 0.534);
     --color-node: rgb(131, 205, 41);
+    --color-fastapi: rgb(0, 148, 133);
+    --color-pytorch: rgb(238, 76, 44);
 }
 * {
     padding: 0;
