@@ -23,15 +23,21 @@ import pharmacy1 from 'public/img/projects/pharmacy/1.jpg'
 import pharmacy2 from 'public/img/projects/pharmacy/2.jpg'
 import pharmacy3 from 'public/img/projects/pharmacy/3.jpg'
 import pharmacy4 from 'public/img/projects/pharmacy/4.jpg'
+// Apricot Disease Detector
+import aprDis1 from 'public/img/projects/apricot-disease-detector/1.png'
+import aprDis2 from 'public/img/projects/apricot-disease-detector/2.png'
+import aprDis3 from 'public/img/projects/apricot-disease-detector/3.png'
+import aprDis4 from 'public/img/projects/apricot-disease-detector/4.png'
 
 import flare from 'public/img/blue-flare.jpg'
 import Image from 'next/image'
+import { useEffect, useRef, useState } from 'react';
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiShadcnui, SiCloudinary, SiMysql, SiOpenai, SiExpress } from "react-icons/si";
 import { BiLogoMongodb } from "react-icons/bi";
-import { useEffect, useRef, useState } from 'react';
-import { ParamValue } from 'next/dist/server/request/params';
+import { SiFastapi, SiPytorch } from "react-icons/si";
 import { FaJava, FaReact } from "react-icons/fa6";
+import { ParamValue } from 'next/dist/server/request/params';
 import Link from 'next/link'
 import { FaNodeJs } from "react-icons/fa";
 
@@ -376,6 +382,71 @@ export default function page() {
                             <Link href={"https://pharmacysoftware.vercel.app"} target='_blank' className='relative bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit' title='View more about this Project'>
                                 <span className='relative z-[200]'>Visit Site</span>
                             </Link>
+
+                        </div>
+                    </div>
+                    :
+                    
+                    title == "apricot-disease-detector" ?
+                    <div className='!px-7'>
+                        <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>7up Website Redesign</h1>
+                        <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
+                            <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
+                                <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
+                                <Image  src={aprDis1}
+                                className='w-[73%] h-fit absolute top-[5.5%] transition-custom'
+                                alt='' />
+                                <Image ref={imagesRef[0]} src={aprDis2} placeholder='blur'
+                                className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
+                                alt='' />
+                                <Image ref={imagesRef[1]} src={aprDis3} placeholder='blur'
+                                className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
+                                alt='' />
+                                <Image ref={imagesRef[1]} src={aprDis4} placeholder='blur'
+                                className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
+                                alt='' />
+                            </div>
+                            <div className='w-full flex flex-col self-center text-white'>
+                                <h3 className='font-semibold md:text-4xl text-3xl relative z-20'>Overview</h3>
+                                <p className='!pt-4 !pb-8 md:text-xl text-[18px] leading-8 relative z-20'>
+                                    A smart web app that uses a custom AI model to detect apricot diseases from uploaded images — fast, accurate, and easy to use for early crop protection.
+                                </p>
+                                <Image src={flare} className='select-none w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
+                            </div>
+                        </div>
+
+                        <div className='text-white'>
+                            <h4 className='font-semibold text-[26px] !my-3'>Key Features:</h4>
+                            <ol className='flex flex-col gap-5 list-disc !ml-6 font-medium text-[18px]'>
+                                <li>Custom AI Model</li>
+                                <li>Fast Detection</li>
+                                <li>Modern UI</li>
+                                <li>Responsive Design</li>
+                                <li>Smart Insights</li>
+                                <li>Image Upload Support</li>
+                            </ol>
+
+                            <div className='!py-10'>
+                                <h4 className='font-semibold text-[26px] !my-3'>Tech Stacks:</h4>
+                                <div className='flex flex-wrap gap-3'>
+                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-[27px] text-[22px] items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-[#00d5ff]'>
+                                        <FaReact />
+                                        <span className='md:text-xl text-[16px]'>React Js</span>
+                                    </div>
+                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-3xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-node transition-custom'>
+                                        <SiFastapi />
+                                        <span className='md:text-xl text-[16px]'>FastAPI</span>
+                                    </div>
+                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-2xl text-xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text hover:bg-[#08a457] transition-custom'>
+                                        <SiPytorch />
+                                        <span className='md:text-xl text-[16px]'>PyTorch</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* <Link href={"https://pharmacysoftware.vercel.app"} target='_blank' className='relative bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit' title='View more about this Project'>
+                                <span className='relative z-[200]'>Visit Site</span>
+                            </Link> */}
 
                         </div>
                     </div>
