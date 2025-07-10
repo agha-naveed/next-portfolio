@@ -67,7 +67,7 @@ export default function Skills() {
 
                     <div className="sm:w-180 w-full h-[80vh] text-white relative justify-items-center">
                         <span className="font-semibold text-xl relative md:left-[65px] sm:left-[34px] sm:top-0 top-4 left-2 capitalize text-center">{option}</span>
-                        <div className={`transition-all ${option == "frontend" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
+                        <div className={`transition-fast ${option == "frontend" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             <div className="flex flex-col w-fit gap-1 items-center justify-between">
                                 <Image src={html} className="w-10" alt="" />
                                 <label htmlFor="">HTML</label>
@@ -106,7 +106,7 @@ export default function Skills() {
                             </div>
                         </div>
 
-                        <div className={`transition-all ${option == "backend" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
+                        <div className={`transition-fast ${option == "backend" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={express} className="w-10" alt="" />
@@ -129,7 +129,7 @@ export default function Skills() {
                             </div>
                         </div>
 
-                        <div className={`transition-all ${option == "database" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
+                        <div className={`transition-fast ${option == "database" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={mongo} className="w-10" alt="" />
@@ -153,7 +153,7 @@ export default function Skills() {
                             
                         </div>
 
-                        <div className={`transition-all ${option == "programming" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
+                        <div className={`transition-fast ${option == "programming" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={cpp} className="w-10" alt="" />
@@ -171,7 +171,7 @@ export default function Skills() {
                             </div>
                         </div>
 
-                        <div className={`transition-all ${option == "designing" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
+                        <div className={`transition-fast ${option == "designing" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={wordpress} className="w-10" alt="" />
@@ -185,7 +185,7 @@ export default function Skills() {
                             
                         </div>
 
-                        <div className={`transition-all ${option == "ai" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
+                        <div className={`transition-fast ${option == "ai" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={numpy} className="w-10" alt="" />
@@ -199,7 +199,7 @@ export default function Skills() {
                             
                         </div>
 
-                        <div className={`transition-all ${option == "tools" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
+                        <div className={`transition-fast ${option == "tools" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={npm} className="w-10" alt="" />

@@ -79,6 +79,10 @@ body {
 	}
 }
 
+.transition-fast {
+    transition: 0.2s ease-out;
+}
+
 .transition-custom {
     transition: 0.5s ease;
 }
