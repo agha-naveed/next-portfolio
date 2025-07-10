@@ -393,16 +393,16 @@ export default function page() {
                         <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
                             <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
                                 <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
-                                <Image  src={aprDis1}
-                                className='w-[73%] h-fit absolute top-[5.5%] transition-custom'
-                                alt='' />
-                                <Image ref={imagesRef[0]} src={aprDis2} placeholder='blur'
+                                <Image ref={imagesRef[0]} src={aprDis1} placeholder='blur'
                                 className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
                                 alt='' />
-                                <Image ref={imagesRef[1]} src={aprDis3} placeholder='blur'
+                                <Image ref={imagesRef[1]} src={aprDis2} placeholder='blur'
                                 className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
                                 alt='' />
-                                <Image ref={imagesRef[2]} src={aprDis4} placeholder='blur'
+                                <Image ref={imagesRef[2]} src={aprDis3} placeholder='blur'
+                                className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
+                                alt='' />
+                                <Image ref={imagesRef[3]} src={aprDis4} placeholder='blur'
                                 className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
                                 alt='' />
                             </div>
