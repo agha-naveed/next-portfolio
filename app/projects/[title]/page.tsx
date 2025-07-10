@@ -402,7 +402,7 @@ export default function page() {
                                 <Image ref={imagesRef[1]} src={aprDis3} placeholder='blur'
                                 className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
                                 alt='' />
-                                <Image ref={imagesRef[1]} src={aprDis4} placeholder='blur'
+                                <Image ref={imagesRef[2]} src={aprDis4} placeholder='blur'
                                 className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
                                 alt='' />
                             </div>
