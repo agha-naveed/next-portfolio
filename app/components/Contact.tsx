@@ -68,22 +68,22 @@ export default function Contact() {
         <footer className='container !mx-auto h-full text-white relative flex flex-col gap-10 justify-center'>
             <div className='!px-10' data-aos="fade-up" data-aos-duration="1600" data-aos-easing="ease-out">
                 <h3 className='text-xl font-semibold !mb-4 md:text-start text-center'>Connect:</h3>
-                <div className='flex md:flex-row flex-col md:gap-20 gap-5 md:items-start items-center'>
-                    <Link href={"https://linkedin.com/in/agha-naveed"} target='_blank' className='text-white flex items-center gap-1 hover-text'>
+                <div className='flex md:flex-row flex-col lg:gap-17 gap-5 md:items-start items-center'>
+                    <Link href={"https://linkedin.com/in/agha-naveed"} target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
                         <FaLinkedinIn className='text-xl' />
-                        <span>/Agha-Naveed</span>
+                        <span className='w-max'>/Agha-Naveed</span>
                     </Link>
-                    <Link href={"https://x.com/in/naveed_kazmi31"} target='_blank' className='text-white flex items-center gap-1 hover-text'>
+                    <Link href={"https://x.com/in/naveed_kazmi31"} target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
                         <PiXLogo className='text-xl' />
-                        <span>/Naveed_Kazmi31</span>
+                        <span className='w-max'>/Naveed_Kazmi31</span>
                     </Link>
-                    <Link href={"https://github.com/agha-naveed"} target='_blank' className='text-white flex items-center gap-1 hover-text'>
+                    <Link href={"https://github.com/agha-naveed"} target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
                         <FaGithub className='text-xl' />
-                        <span>/Agha-Naveed</span>
+                        <span className='w-max'>/Agha-Naveed</span>
                     </Link>
-                    <Link href={"mailto:naveedabs31@gmail.com"} target='_blank' className='text-white flex items-center gap-1 hover-text'>
+                    <Link href={"mailto:naveedabs31@gmail.com"} target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
                         <TbMail className='text-[22px]' />
-                        <span>NaveedAbs31@gmail.com</span>
+                        <span className='w-max'>NaveedAbs31@gmail.com</span>
                     </Link>
                 </div>
             </div>
