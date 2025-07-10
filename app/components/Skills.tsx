@@ -10,6 +10,7 @@ import js from 'public/img/skills-logo/javascript-logo.svg'
 import ts from 'public/img/skills-logo/typescript.svg'
 import react from 'public/img/skills-logo/react.svg'
 import next from 'public/img/skills-logo/nextjs.svg'
+import electron from 'public/img/skills-logo/electron.svg'
 
 import express from 'public/img/skills-logo/express.svg'
 import node from "public/img/skills-logo/nodejs.svg"
@@ -19,6 +20,7 @@ import fastapi from "public/img/skills-logo/fastapi.svg"
 import mongo from "public/img/skills-logo/mongo.svg"
 import mysql from "public/img/skills-logo/mysql.svg"
 import cloudinary from "public/img/skills-logo/cloudinary.svg"
+import sqlite from "public/img/skills-logo/sqlite.svg"
 
 import cpp from "public/img/skills-logo/cpp.svg"
 import java from "public/img/skills-logo/java.svg"
@@ -98,6 +100,10 @@ export default function Skills() {
                                 <Image src={next} className="w-10" alt="" />
                                 <label htmlFor="">Next Js</label>
                             </div>
+                            <div className="flex flex-col gap-1 w-fit items-center justify-between">
+                                <Image src={electron} className="w-10" alt="" />
+                                <label htmlFor="">Electron</label>
+                            </div>
                         </div>
 
                         <div className={`transition-all ${option == "backend" ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
@@ -119,7 +125,7 @@ export default function Skills() {
 
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={flask} className="w-10 text-white" alt="" />
-                                <label htmlFor="">Flask</label>
+                                <label htmlFor="">FlaskAPI</label>
                             </div>
                         </div>
 
@@ -138,6 +144,11 @@ export default function Skills() {
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={cloudinary} className="w-10" alt="" />
                                 <label htmlFor="">Cloudinary</label>
+                            </div>
+
+                            <div className="flex flex-col gap-1 items-center">
+                                <Image src={sqlite} className="w-10" alt="" />
+                                <label htmlFor="">SQLite</label>
                             </div>
                             
                         </div>
