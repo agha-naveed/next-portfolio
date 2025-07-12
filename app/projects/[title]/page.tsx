@@ -394,7 +394,7 @@ export default function page() {
                             <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
                                 <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
                                 <Image src={aprDis1} placeholder='blur'
-                                className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
+                                className='w-[73%] h-fit absolute top-[5.5%] opacity-100 transition-custom'
                                 alt='' />
                                 <Image ref={imagesRef[0]} src={aprDis2} placeholder='blur'
                                 className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
