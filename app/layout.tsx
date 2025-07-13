@@ -6,6 +6,7 @@ import CustomCursor from "./components/Cursor";
 import LoadingProvider from "./components/Loading";
 import Loader from "./components/Loader";
 import { Suspense } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -49,6 +50,7 @@ export default function RootLayout({
                   <CustomCursor />
                   <Navbar />
                   {children}
+                  <SpeedInsights/>
                 </Suspense>
               </body>
             </LoadingProvider>

@@ -1,5 +1,5 @@
 'use client'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import laptop from 'public/img/laptop_PNG101816.png'
 // Store
 import store from 'public/img/projects/lenmi store/1.webp'
@@ -44,7 +44,6 @@ import { FaNodeJs } from "react-icons/fa";
 export default function page() {
     const imagesRef = [useRef<HTMLImageElement | null>(null), useRef(null), useRef(null)]
 
-    const navigate = useRouter()
     const param = useParams()
     const [title, setTitle] = useState<ParamValue>("")
     useEffect(() => {
