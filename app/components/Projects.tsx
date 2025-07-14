@@ -31,11 +31,11 @@ export default function Projects() {
 
                     <div data-aos="fade-up" data-aos-delay="200" className='justify-items-center cursor-pointer'
                     data-aos-duration="1000" data-aos-easing="ease-out">
-                        <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}
+                        <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.02}
                         className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
                             <div className='w-full overflow-hidden rounded-sm'>
-                                <Image src={store} loading="lazy" alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                                <Image src={store} loading="lazy" alt='' className='w-full rounded-sm' placeholder='blur' />
                             </div>
 
                             <div className='flex flex-col !py-8 gap-1'>
@@ -51,10 +51,10 @@ export default function Projects() {
 
                     <div data-aos="fade-up" data-aos-delay="350" className='justify-items-center cursor-pointer'
                     data-aos-duration="1000" data-aos-easing="ease-out">
-                        <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
+                        <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.02} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[100]'>
 
                             <div className='w-full overflow-hidden rounded-sm'>
-                                <Image src={lms} loading="lazy" alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                                <Image src={lms} loading="lazy" alt='' className='w-full rounded-sm' placeholder='blur' />
                             </div>
 
                             <div className='flex flex-col !py-8 gap-1'>
@@ -70,10 +70,10 @@ export default function Projects() {
                     
                     <div data-aos="fade-up" data-aos-delay="500" className='justify-items-center cursor-pointer'
                     data-aos-duration="1000" data-aos-easing="ease-out">
-                        <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[1000]'>
+                        <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.02} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[1000]'>
                             
                             <div className='w-full overflow-hidden rounded-sm'>
-                                <Image src={chatbot} loading="lazy" alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                                <Image src={chatbot} loading="lazy" alt='' className='w-full rounded-sm' placeholder='blur' />
                             </div>
 
                             <div className='flex flex-col !py-8 gap-1'>
