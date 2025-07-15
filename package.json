@@ -35,7 +35,6 @@
     "@types/nprogress": "^0.2.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/three": "^0.178.0",
     "i": "^0.3.7",
     "npm": "^11.4.2",
     "tailwindcss": "^4",
