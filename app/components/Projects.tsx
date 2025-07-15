@@ -68,7 +68,7 @@ export default function Projects() {
                         </Tilt>
                     </div>
                     
-                    <div data-aos="fade-up" data-aos-delay="500" className='justify-items-center cursor-pointer'
+                    <div data-aos="fade-up" data-aos-delay="500" className='justify-items-center cursor-pointer relative'
                     data-aos-duration="1000" data-aos-easing="ease-out">
                         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.02} className='md:w-[350px] w-[80%] relative bg-secondary-light-clr !pt-[26px] !pb-[90px] !px-5 rounded-lg z-[1000]'>
                             

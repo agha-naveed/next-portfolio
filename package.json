@@ -16,7 +16,6 @@
   "dependencies": {
     "@vercel/speed-insights": "^1.2.0",
     "aos": "^2.3.4",
-    "locomotive-scroll": "^4.1.4",
     "mongoose": "^8.14.1",
     "motion": "^12.10.5",
     "next": "15.3.1",
