@@ -4,6 +4,7 @@ import ANtext from 'public/img/naveed_text.png'
 import dottedBg from 'public/img/dotted_overlay.png'
 import blueFlare from 'public/img/blue-flare.jpg'
 import { Typewriter } from 'react-simple-typewriter'
+import Tilt from 'react-parallax-tilt';
 
 export default function Header() {
     return (
@@ -15,12 +16,15 @@ export default function Header() {
             </div>
             
             <div className='container !mx-auto h-full relative flex flex-col items-center justify-center'>
+                
                 <div className='relative justify-self-center justify-items-center'>
+                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={2} scale={1.03} className='relative z-[999999]' >
                     <Image src={ANtext} alt='AGHA NAVEED'
                     data-aos="zoom-out-up" data-aos-duration="1000"
                     className='lg:w-[750px] md:w-[500px] w-[70%]'
                     decoding='async'
                     />
+                    </Tilt>
                     <div>
                         <Image src={blueFlare}
                         className='absolute
@@ -34,7 +38,7 @@ export default function Header() {
                     </div>
                     
                 </div>
-                <span
+                <span 
                 data-aos="zoom-out-up" data-aos-duration="2200"
                 className='uppercase flex gap-[6px] font-extrabold md:text-[26px] sm:text-[20px] text-[14px] !mt-4 tracking-[4px]'>
                         <Typewriter

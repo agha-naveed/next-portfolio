@@ -93,7 +93,7 @@ export default function Contact() {
                 </button>
             </div>
             
-            <div ref={formRef} className={`fixed transition-custom left-0 w-full bg-black/80 backdrop-blur-[5px] z-[500000]`}>
+            <div ref={formRef} className={`fixed transition-custom left-0 w-full bg-black/80 backdrop-blur-[5px] z-[99999999]`}>
                 <IoCloseOutline className='text-5xl fixed top-7 right-7 hover-text'
                 onClick={() => setIsClicked(false)} />
 
