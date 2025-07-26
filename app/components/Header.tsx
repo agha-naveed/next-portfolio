@@ -18,7 +18,7 @@ export default function Header() {
             <div className='container !mx-auto h-full relative flex flex-col items-center justify-center'>
                 
                 <div className='relative justify-self-center justify-items-center'>
-                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={2} scale={1.03} className='relative z-[999999]' >
+                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={2} scale={1.03} className='relative z-[999999] justify-items-center' >
                     <Image src={ANtext} alt='AGHA NAVEED'
                     data-aos="zoom-out-up" data-aos-duration="1000"
                     className='lg:w-[750px] md:w-[500px] w-[70%]'
