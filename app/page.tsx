@@ -26,7 +26,9 @@ export default function Page() {
   
   useEffect(() => {
     window.onload = handleWindowLoad;
-    AOS.init()
+    AOS.init({
+      once: true
+    })
 
     const handleScroll = () => {
       setScroll(window.scrollY > 50)

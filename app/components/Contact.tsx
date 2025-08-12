@@ -73,7 +73,7 @@ export default function Contact() {
                         <FaLinkedinIn className='text-xl' />
                         <span className='w-max'>/Agha-Naveed</span>
                     </Link>
-                    <Link href={"https://x.com/in/naveed_kazmi31"} target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
+                    <Link href={"https://x.com/naveed_kazmi31"} target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
                         <PiXLogo className='text-xl' />
                         <span className='w-max'>/Naveed_Kazmi31</span>
                     </Link>

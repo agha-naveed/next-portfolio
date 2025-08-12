@@ -18,7 +18,7 @@ export default function page() {
                     <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] h-full relative bg-secondary-light-clr !py-[26px] !px-5 rounded-lg z-[1000]'>
                         
                         <div className='w-full overflow-hidden rounded-sm'>
-                            <Image src={store} loading="lazy" alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                            <Image src={store} loading="lazy" alt='' className='w-full rounded-sm  transition-all' placeholder='blur' />
                         </div>
 
                         <div className='flex flex-col !pt-8 !pb-15 gap-2'>
@@ -37,7 +37,7 @@ export default function page() {
                     <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] h-full relative bg-secondary-light-clr !py-[26px] !px-5 rounded-lg z-[1000]'>
                         
                         <div className='w-full overflow-hidden rounded-sm'>
-                            <Image src={aprDisDetect} loading="lazy" alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                            <Image src={aprDisDetect} loading="lazy" alt='' className='w-full rounded-sm  transition-all' placeholder='blur' />
                         </div>
 
                         <div className='flex flex-col !pt-8 !pb-15 gap-2'>
@@ -56,7 +56,7 @@ export default function page() {
                     <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] w-[80%] h-full relative bg-secondary-light-clr !py-[26px] !px-5 rounded-lg z-[1000]'>
                         
                         <div className='w-full overflow-hidden rounded-sm'>
-                            <Image src={lms} loading="lazy" alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                            <Image src={lms} loading="lazy" alt='' className='w-full rounded-sm  transition-all' placeholder='blur' />
                         </div>
 
                         <div className='flex flex-col !pt-8 !pb-15 gap-2'>
@@ -75,7 +75,7 @@ export default function page() {
                     <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] h-full w-[80%] relative bg-secondary-light-clr !py-[26px] !px-5 rounded-lg z-[1000]'>
                         
                         <div className='w-full overflow-hidden rounded-sm'>
-                            <Image src={chatbot} loading="lazy" alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                            <Image src={chatbot} loading="lazy" alt='' className='w-full rounded-sm  transition-all' placeholder='blur' />
                         </div>
 
                         <div className='flex flex-col !pt-8 !pb-15 gap-2'>
@@ -94,7 +94,7 @@ export default function page() {
                     <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] h-full w-[80%] relative bg-secondary-light-clr !py-[26px] !px-5 rounded-lg z-[1000]'>
                         
                         <div className='w-full overflow-hidden rounded-sm'>
-                            <Image src={sevenup} loading="lazy" alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                            <Image src={sevenup} loading="lazy" alt='' className='w-full rounded-sm  transition-all' placeholder='blur' />
                         </div>
 
                         <div className='flex flex-col !pt-8 !pb-15 gap-2'>
@@ -113,7 +113,7 @@ export default function page() {
                     <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} className='md:w-[350px] h-full w-[80%] relative bg-secondary-light-clr !py-[26px] !px-5 rounded-lg z-[1000]'>
                         
                         <div className='w-full overflow-hidden rounded-sm'>
-                            <Image src={pharmacy} loading="lazy" alt='' className='w-full rounded-sm hover:scale-105 transition-all' placeholder='blur' />
+                            <Image src={pharmacy} loading="lazy" alt='' className='w-full rounded-sm  transition-all' placeholder='blur' />
                         </div>
 
                         <div className='flex flex-col !pt-8 !pb-15 gap-2'>
