@@ -7,7 +7,6 @@ import LoadingProvider from "./components/Loading";
 import Loader from "./components/Loader";
 import { Suspense } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import Head from "next/head";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -35,6 +34,9 @@ export const metadata: Metadata = {
       }
     ]
   },
+  other: {
+    "google-site-verification": "4q3XnFFPqEBtFBFsSNzPLMgsAjkGxAWvK56Jy030V7Y"
+  }
 };
 
 export default function RootLayout({
@@ -44,9 +46,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <meta name="google-site-verification" content="4q3XnFFPqEBtFBFsSNzPLMgsAjkGxAWvK56Jy030V7Y" />
-      </Head>
             <LoadingProvider>
               <body
                 className={`${poppins.variable} overflow-hidden antialiased`}>
