@@ -43,7 +43,7 @@ export default function page() {
 
                         <div className='flex flex-col !pt-8 !pb-15 gap-2'>
                             <span className='text-[22px] font-semibold'>Quran Academy</span>
-                            <span className='text-[15px] leading-7'>Your favorite brands, delivered to your door.</span>
+                            <span className='text-[15px] leading-7'>Online Quran Academy for students of all ages.</span>
                         </div>
                         <Link href={"/projects/online-quran-academy"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit absolute bottom-6' title='View more about this Project'>
                             <span className='relative z-[200]'>View Project</span>
