@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import bgBlend from "public/img/bg1.webp"
-import ANtext from 'public/img/naveed_text.png'
+import ANtext from 'public/img/naveed_text.webp'
 import dottedBg from 'public/img/dotted_overlay.webp'
 import blueFlare from 'public/img/blue-flare.jpg'
 import { Typewriter } from 'react-simple-typewriter'

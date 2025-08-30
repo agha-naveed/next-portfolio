@@ -8,7 +8,7 @@ import sevenup from 'public/img/projects/sevenup.webp'
 import chatbot from 'public/img/projects/chatbot.webp'
 import pharmacy from 'public/img/projects/pharmacy.webp'
 import aprDisDetect from 'public/img/projects/apr-dis.png'
-import shiahoza from 'public/img/projects/shiahoza.png'
+import shiahoza from 'public/img/projects/shiahoza.webp'
 
 export default function page() {
     return (

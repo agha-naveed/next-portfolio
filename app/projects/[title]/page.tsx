@@ -1,6 +1,6 @@
 'use client'
 import { useParams } from 'next/navigation'
-import laptop from 'public/img/laptop_PNG101816.png'
+import laptop from 'public/img/laptop_PNG101816.webp'
 // Store
 import store from 'public/img/projects/lenmi store/1.webp'
 import store2 from 'public/img/projects/lenmi store/2.webp'
@@ -24,12 +24,12 @@ import pharmacy2 from 'public/img/projects/pharmacy/2.jpg'
 import pharmacy3 from 'public/img/projects/pharmacy/3.jpg'
 import pharmacy4 from 'public/img/projects/pharmacy/4.jpg'
 // Apricot Disease Detector
-import aprDis1 from 'public/img/projects/apricot-disease-detector/1.png'
-import aprDis2 from 'public/img/projects/apricot-disease-detector/2.png'
-import aprDis3 from 'public/img/projects/apricot-disease-detector/3.png'
-import aprDis4 from 'public/img/projects/apricot-disease-detector/4.png'
+import aprDis1 from 'public/img/projects/apricot-disease-detector/1.webp'
+import aprDis2 from 'public/img/projects/apricot-disease-detector/2.webp'
+import aprDis3 from 'public/img/projects/apricot-disease-detector/3.webp'
+import aprDis4 from 'public/img/projects/apricot-disease-detector/4.webp'
 // Shiahoza
-import shiahoza from 'public/img/projects/shiahoza/1.png'
+import shiahoza from 'public/img/projects/shiahoza/1.webp'
 
 import flare from 'public/img/blue-flare.jpg'
 import Image from 'next/image'
