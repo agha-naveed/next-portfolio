@@ -8,6 +8,7 @@ import sevenup from 'public/img/projects/sevenup.webp'
 import chatbot from 'public/img/projects/chatbot.webp'
 import pharmacy from 'public/img/projects/pharmacy.webp'
 import aprDisDetect from 'public/img/projects/apr-dis.png'
+import shiahoza from 'public/img/projects/shiahoza.png'
 
 export default function page() {
     return (
@@ -26,6 +27,25 @@ export default function page() {
                             <span className='text-[15px] leading-7'>Your favorite brands, delivered to your door.</span>
                         </div>
                         <Link href={"/projects/lenmi-store"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit absolute bottom-6' title='View more about this Project'>
+                            <span className='relative z-[200]'>View Project</span>
+                        </Link>
+
+                    </Tilt>
+                </div>
+
+                <div data-aos="fade-up" className='justify-items-center cursor-pointer hover-text'
+                data-aos-duration="1000" data-aos-easing="ease-out">
+                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.02} className='md:w-[350px] w-[80%] h-full relative  bg-secondary-light-clr hover:bg-[#16202b] !py-[26px] !px-5 rounded-lg z-[1000]'>
+                        
+                        <div className='w-full overflow-hidden rounded-sm'>
+                            <Image src={shiahoza} loading="lazy" alt='' className='w-full rounded-sm  transition-all' placeholder='blur' />
+                        </div>
+
+                        <div className='flex flex-col !pt-8 !pb-15 gap-2'>
+                            <span className='text-[22px] font-semibold'>Quran Academy</span>
+                            <span className='text-[15px] leading-7'>Your favorite brands, delivered to your door.</span>
+                        </div>
+                        <Link href={"/projects/online-quran-academy"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit absolute bottom-6' title='View more about this Project'>
                             <span className='relative z-[200]'>View Project</span>
                         </Link>
 
