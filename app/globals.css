@@ -9,10 +9,9 @@
     --color-node: rgb(131, 205, 41);
     --color-fastapi: rgb(0, 148, 133);
     --color-pytorch: rgb(238, 76, 44);
+    --animate-academy: academy 10s 3s linear infinite alternate;
 }
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
     font-family: var(--font-poppins);
 }
@@ -67,7 +66,14 @@ body {
     background-size: 400% 400%;
     animation: gradient 5s ease-out infinite forwards;
 }
-
+@keyframes academy {
+    0% {
+        top: 5.5%;
+    }
+    100% {
+        top: -423%;
+    }
+}
 @keyframes gradient {
 	0% {
 		background-position: 10% 100%;

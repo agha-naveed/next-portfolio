@@ -34,10 +34,10 @@ import shiahoza from 'public/img/projects/shiahoza/1.png'
 import flare from 'public/img/blue-flare.jpg'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react';
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiShadcnui, SiCloudinary, SiMysql, SiOpenai, SiExpress } from "react-icons/si";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { SiShadcnui, SiCloudinary, SiMysql, SiOpenai, SiExpress, SiPhp } from "react-icons/si";
 import { BiLogoMongodb } from "react-icons/bi";
-import { SiFastapi, SiPytorch } from "react-icons/si";
+import { SiFastapi, SiPytorch, SiNextdotjs } from "react-icons/si";
 import { FaJava, FaReact } from "react-icons/fa6";
 import { ParamValue } from 'next/dist/server/request/params';
 import Link from 'next/link'
@@ -109,7 +109,7 @@ export default function page() {
                                 <h4 className='font-semibold text-[26px] !my-3'>Tech Stacks:</h4>
                                 <div className='flex flex-wrap gap-3'>
                                     <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-4xl text-[28px] items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-black'>
-                                        <RiNextjsFill />
+                                        <SiNextdotjs className='text-[32px]' />
                                         <span className='md:text-xl text-[16px]'>Next Js</span>
                                     </div>
                                     <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-3xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#08b8dd] transition-custom'>
@@ -454,64 +454,56 @@ export default function page() {
                     :
                     title == "online-quran-academy" ?
                     <div className='!px-7'>
-                        <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>Apricot Disease Detector</h1>
+                        <h1 className='md:text-[40px] sm:text-3xl text-[26px] text-white font-semibold border-b !py-3 w-fit !mb-9'>Shia Hoza Online Quran Academy</h1>
                         <div className='flex md:flex-row-reverse flex-col relative md:gap-3 gap-10'>
                             <div className='w-full overflow-hidden h-fit flex group relative place-content-center'>
                                 <Image src={laptop} loading='lazy' className='select-none w-full h-fit relative z-[350]' alt='' />
                                 <Image src={shiahoza} placeholder='blur'
-                                className='w-[73%] h-fit absolute top-[5.5%] opacity-100 transition-custom'
+                                className='w-[73%] h-fit absolute top-[5.5%] animate-academy opacity-100 transition-custom'
                                 alt='' />
-                                {/* <Image ref={imagesRef[0]} src={aprDis2} placeholder='blur'
-                                className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
-                                alt='' />
-                                <Image ref={imagesRef[1]} src={aprDis3} placeholder='blur'
-                                className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
-                                alt='' />
-                                <Image ref={imagesRef[2]} src={aprDis4} placeholder='blur'
-                                className='w-[73%] h-fit absolute top-[5.5%] opacity-0 transition-custom'
-                                alt='' /> */}
                             </div>
                             <div className='w-full flex flex-col self-center text-white'>
                                 <h3 className='font-semibold md:text-4xl text-3xl relative z-20'>Overview</h3>
                                 <p className='!pt-4 !pb-8 md:text-xl text-[18px] leading-8 relative z-20'>
-                                    A smart web app that uses a custom AI model to detect apricot diseases from uploaded images — fast, accurate, and easy to use for early crop protection.
+                                    Shia Hoza Online Quran/Islamic Academy offers Quran recitation, Tajweed, and Islamic studies online, guided by qualified Shia teachers for students of all ages.
                                 </p>
                                 <Image src={flare} className='select-none w-[350px] absolute -top-20 opacity-50 animate-blink mix-blend-screen z-1' alt='' />
                             </div>
                         </div>
 
                         <div className='text-white'>
-                            <h4 className='font-semibold text-[26px] !my-3'>Key Features:</h4>
+                            <h4 className='font-semibold text-[26px] !my-3'>Courses:</h4>
                             <ol className='flex flex-col gap-5 list-disc !ml-6 font-medium text-[18px]'>
-                                <li>Custom AI Model</li>
-                                <li>Fast Detection</li>
-                                <li>Modern UI</li>
-                                <li>Responsive Design</li>
-                                <li>Smart Insights</li>
-                                <li>Image Upload Support</li>
+                                <li>Yassarnal Quran</li>
+                                <li>Recite Quran</li>
+                                <li>Quran with Translation</li>
+                                <li>Quran with Tajweed</li>
+                                <li>Quran with Tafseer</li>
+                                <li>Quran with Memorization</li>
+                                <li>Islamic Studies</li>
                             </ol>
 
                             <div className='!py-10'>
                                 <h4 className='font-semibold text-[26px] !my-3'>Tech Stacks:</h4>
                                 <div className='flex flex-wrap gap-3'>
-                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-[27px] text-[22px] items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-[#00d5ff]'>
-                                        <FaReact />
-                                        <span className='md:text-xl text-[16px]'>React Js</span>
+                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-4xl text-[28px] items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text transition-custom hover:bg-black'>
+                                        <SiNextdotjs className='text-[32px]' />
+                                        <span className='md:text-xl text-[16px]'>Next Js</span>
                                     </div>
-                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-3xl text-2xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-fastapi transition-custom'>
-                                        <SiFastapi />
-                                        <span className='md:text-xl text-[16px]'>FastAPI</span>
+                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-2xl text-xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text hover:bg-[#7377AD] transition-custom'>
+                                        <SiPhp className='text-[36px]' />
+                                        <span className='md:text-xl text-[16px]'>PHP</span>
                                     </div>
-                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-2xl text-xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text hover:bg-pytorch transition-custom'>
-                                        <SiPytorch />
-                                        <span className='md:text-xl text-[16px]'>PyTorch</span>
+                                    <div className='md:min-h-[54px] min-h-[46px] flex md:gap-3 gap-2 md:text-4xl text-3xl items-center border border-[#465b7cc2] bg-main-dark-clr w-fit md:!px-5 !px-[16px] !py-2 rounded-lg cursor-pointer hover-text group hover:bg-[#e59908] transition-custom'>
+                                        <SiMysql />
+                                        <span className='md:text-xl text-[16px]'>MySQL</span>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* <Link href={"https://pharmacysoftware.vercel.app"} target='_blank' className='relative bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit' title='View more about this Project'>
+                            <Link href={"https://shiahoza.com"} target='_blank' className='relative bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit' title='View more about this Project'>
                                 <span className='relative z-[200]'>Visit Site</span>
-                            </Link> */}
+                            </Link>
 
                         </div>
                     </div>
