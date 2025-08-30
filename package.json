@@ -11,8 +11,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "lint": "next lint"
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.2.0",
@@ -37,7 +36,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "i": "^0.3.7",
-    "next-sitemap": "^4.2.3",
     "npm": "^11.4.2",
     "tailwindcss": "^4",
     "typescript": "^5"
