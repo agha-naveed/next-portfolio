@@ -48,7 +48,7 @@ export default function TransitionProvider({ children }: { children: ReactNode }
       {/* Circular overlay */}
       <div
         ref={overlayRef}
-        className="fixed top-1/2 left-1/2 z-[9999] w-[100px] h-[100px] bg-main-dark-clr rounded-full pointer-events-none opacity-0"
+        className="fixed top-1/2 left-1/2 z-[9999999] w-[100px] h-[100px] bg-main-dark-clr rounded-full pointer-events-none opacity-0"
         style={{
           transform: "translate(-50%, -50%) scale(0)",
           transformOrigin: "center center",
