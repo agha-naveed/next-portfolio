@@ -7,6 +7,7 @@ import LoadingProvider from "./components/Loading";
 import Loader from "./components/Loader";
 import { Suspense } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import TransitionProvider from "./components/TransitionProvider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -46,12 +47,14 @@ export default function RootLayout({
             <LoadingProvider>
               <body
                 className={`${poppins.variable} overflow-hidden antialiased`}>
-                <Suspense fallback={<Loader />}>
-                  <CustomCursor />
-                  <Navbar />
-                  {children}
-                  <SpeedInsights/>
-                </Suspense>
+                  <TransitionProvider>
+                  <Suspense fallback={<Loader />}>
+                    <CustomCursor />
+                    <Navbar />
+                    {children}
+                    <SpeedInsights/>
+                  </Suspense>
+                </TransitionProvider>
               </body>
             </LoadingProvider>
         </html>
