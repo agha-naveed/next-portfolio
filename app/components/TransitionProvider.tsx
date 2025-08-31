@@ -1,3 +1,4 @@
+// components/TransitionProvider.tsx
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
@@ -8,10 +9,8 @@ import gsap from "gsap";
 export default function TransitionProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
-  const leftPanel = useRef<HTMLDivElement>(null);
-  const rightPanel = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
 
-  // Trigger transition when navigation is triggered
   const playTransition = (navigate: () => void) => {
     const tl = gsap.timeline({
       onComplete: () => {
@@ -19,74 +18,42 @@ export default function TransitionProvider({ children }: { children: ReactNode }
       },
     });
 
-    // Prepare panels for fade + slide in
-    tl.set([leftPanel.current, rightPanel.current], {
-      x: (i) => (i === 0 ? "-100%" : "100%"),
-      opacity: 0,
-      display: "block",
+    tl.set(overlayRef.current, {
+      scale: 0,
+      opacity: 1,
     });
 
-    // Animate panels sliding in + fading in (opacity)
-    tl.to(
-      [leftPanel.current, rightPanel.current],
-      {
-        x: "0%",
-        opacity: 1,
-        duration: 0.7,
-        ease: "power4.inOut",
-        stagger: 0.1,
-      },
-      0
-    );
+    tl.to(overlayRef.current, {
+      scale: 20,
+      duration: 0.8,
+      ease: "power4.inOut",
+    });
   };
 
-  // When pathname changes, animate panels sliding + fading out
+  // When route changes, animate the circle away
   useEffect(() => {
-    if (!leftPanel.current || !rightPanel.current) return;
-
-    const tl = gsap.timeline();
-
-    tl.to(
-      [leftPanel.current],
-      {
-        x: "-100%",
-        opacity: 0,
-        duration: 0.7,
-        ease: "power4.inOut",
-        display: "block",
+    gsap.to(overlayRef.current, {
+      scale: 0,
+      duration: 0.8,
+      ease: "power4.inOut",
+      delay: 0.2,
+      onComplete: () => {
+        if (overlayRef.current) overlayRef.current.style.opacity = "0";
       },
-      0
-    );
-
-    tl.to(
-      [rightPanel.current],
-      {
-        x: "100%",
-        opacity: 0,
-        duration: 0.7,
-        ease: "power4.inOut",
-        display: "block",
-      },
-      0
-    );
+    });
   }, [pathname]);
 
   return (
     <TransitionContext.Provider value={{ playTransition }}>
-      {/* Left panel */}
+      {/* Circular overlay */}
       <div
-        ref={leftPanel}
-        className="fixed top-0 left-0 w-1/2 h-full bg-main-dark-clr z-[99999999] pointer-events-none"
-        style={{ display: "none" }}
+        ref={overlayRef}
+        className="fixed top-1/2 left-1/2 z-[9999] w-[100px] h-[100px] bg-main-dark-clr rounded-full pointer-events-none opacity-0"
+        style={{
+          transform: "translate(-50%, -50%) scale(0)",
+          transformOrigin: "center center",
+        }}
       />
-
-      {/* Right panel */}
-      <div
-        ref={rightPanel}
-        className="fixed top-0 right-0 w-1/2 h-full bg-main-dark-clr z-[99999999] pointer-events-none"
-        style={{ display: "none" }}
-      />
-
       {children}
     </TransitionContext.Provider>
   );

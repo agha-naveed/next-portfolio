@@ -1,3 +1,4 @@
+// components/GsapLink.tsx
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -16,7 +17,9 @@ export default function GsapLink({
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    playTransition(() => router.push(href));
+    playTransition(() => {
+      router.push(href);
+    });
   };
 
   return (
