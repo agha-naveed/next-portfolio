@@ -21,7 +21,7 @@ export default function Header() {
                     <Tilt tiltMaxAngleX={5} tiltMaxAngleY={2} scale={1.03} className='relative z-[999999] justify-items-center' >
                     <Image src={ANtext} alt='AGHA NAVEED'
                     data-aos="zoom-out-up" data-aos-duration="1000"
-                    className='lg:w-[750px] md:w-[500px] w-[70%]'
+                    className='lg:w-[750px] md:w-[500px] w-[75%]'
                     decoding='async'
                     />
                     </Tilt>
