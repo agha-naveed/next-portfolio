@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Tilt from 'react-parallax-tilt';
-import Link from 'next/link'
+import GsapLink from '../components/GsapLink';
 import store from 'public/img/projects/store.webp'
 import lms from 'public/img/projects/lib_lms.webp'
 import sevenup from 'public/img/projects/sevenup.webp'
@@ -26,9 +26,9 @@ export default function page() {
                             <span className='text-[22px] font-semibold'>Lenmi Store</span>
                             <span className='text-[15px] leading-7'>Your favorite brands, delivered to your door.</span>
                         </div>
-                        <Link href={"/projects/lenmi-store"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit absolute bottom-6' title='View more about this Project'>
+                        <GsapLink href={"/projects/lenmi-store"} >
                             <span className='relative z-[200]'>View Project</span>
-                        </Link>
+                        </GsapLink>
 
                     </Tilt>
                 </div>
@@ -45,9 +45,9 @@ export default function page() {
                             <span className='text-[22px] font-semibold'>Quran Academy</span>
                             <span className='text-[15px] leading-7'>Online Quran Academy for students of all ages.</span>
                         </div>
-                        <Link href={"/projects/online-quran-academy"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit absolute bottom-6' title='View more about this Project'>
+                        <GsapLink href={"/projects/online-quran-academy"} >
                             <span className='relative z-[200]'>View Project</span>
-                        </Link>
+                        </GsapLink>
 
                     </Tilt>
                 </div>
@@ -64,9 +64,9 @@ export default function page() {
                             <span className='text-[22px] font-semibold'>Apricot Disease Detector</span>
                             <span className='text-[15px] leading-7'>Snap, upload, and know — AI-powered apricot health check.</span>
                         </div>
-                        <Link href={"/projects/apricot-disease-detector"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit absolute bottom-6' title='View more about this Project'>
+                        <GsapLink href={"/projects/apricot-disease-detector"} >
                             <span className='relative z-[200]'>View Project</span>
-                        </Link>
+                        </GsapLink>
 
                     </Tilt>
                 </div>
@@ -83,9 +83,9 @@ export default function page() {
                             <span className='text-[22px] font-semibold'>Library Management System</span>
                             <span className='text-[15px] leading-7'>Simplify book tracking, borrowing, and inventory control.</span>
                         </div>
-                        <Link href={"/projects/library-management-system"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit absolute bottom-6' title='View more about this Project'>
+                        <GsapLink href={"/projects/library-management-system"} >
                             <span className='relative z-[200]'>View Project</span>
-                        </Link>
+                        </GsapLink>
 
                     </Tilt>
                 </div>
@@ -102,9 +102,9 @@ export default function page() {
                             <span className='text-[22px] font-semibold'>AI Chatbot</span>
                             <span className='text-[15px] leading-7'>Agha AI Chatbot: Quick chats, smart answers.</span>
                         </div>
-                        <Link href={"/projects/agha-chatbot"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit absolute bottom-6' title='View more about this Project'>
+                        <GsapLink href={"/projects/agha-chatbot"} >
                             <span className='relative z-[200]'>View Project</span>
-                        </Link>
+                        </GsapLink>
 
                     </Tilt>
                 </div>
@@ -121,9 +121,9 @@ export default function page() {
                             <span className='text-[22px] font-semibold'>7up Website Redesign</span>
                             <span className='text-[15px] leading-7'>Refreshing experience that reflects the brand’s lively and youthful personality.</span>
                         </div>
-                        <Link href={"/projects/7up-redesign"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit absolute bottom-6' title='View more about this Project'>
+                        <GsapLink href={"/projects/7up-redesign"} >
                             <span className='relative z-[200]'>View Project</span>
-                        </Link>
+                        </GsapLink>
 
                     </Tilt>
                 </div>
@@ -140,9 +140,9 @@ export default function page() {
                             <span className='text-[22px] font-semibold'>Pharmacy Web App</span>
                             <span className='text-[15px] leading-7'>Simplify daily tasks—track stock, process orders, and manage patients</span>
                         </div>
-                        <Link href={"/projects/pharmacy-webapp"} className='bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit absolute bottom-6' title='View more about this Project'>
+                        <GsapLink href={"/projects/pharmacy-webapp"} >
                             <span className='relative z-[200]'>View Project</span>
-                        </Link>
+                        </GsapLink>
 
                     </Tilt>
                 </div>

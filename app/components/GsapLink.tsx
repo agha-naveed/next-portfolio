@@ -23,7 +23,7 @@ export default function GsapLink({
   };
 
   return (
-    <Link href={href} onClick={handleClick} className='!py-3 !px-5 transition-all hover-text'>
+    <Link href={href} onClick={handleClick} className={`${href.includes("projects/") ? "bg-gradient !px-5 !py-[10px] rounded-xl bg-main-dark-clr font-medium text-[18px] border-[1px] border-[#465b7c] cursor-pointer transition-all w-fit absolute bottom-6" : "!py-3 !px-5 transition-all hover-text"}`}>
       {children}
     </Link>
   );

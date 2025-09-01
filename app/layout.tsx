@@ -16,35 +16,13 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-// export const metadata: Metadata = {
-//   title: "Agha Naveed Portfolio | Full Stack Engineer",
-//   description: "Full Stack Web Developer",
-//   metadataBase: new URL("https://www.aghanaveed.vercel.app"),
-//   keywords: ["Full Stack Engineer", "MERN Stack Developer", "React Js Developer", "Software Developer", "AI Engineer"],
-//   robots: "index, follow",
-//   openGraph: {
-//     title: "Agha Naveed Portfolio",
-//     description: "Full Stack Engineer | Software Engineer",
-//     url: "https://www.aghanaveed.vercel.app",
-//     siteName: "Agha Naveed Portfolio",
-//     images: [
-//       {
-//         url: "https://agha-naveed.vercel.app/assets/my-picture-V7ZyympP.png",
-//         width: 800,
-//         height: 600,
-//         alt: "Agha Naveed Banner"
-//       }
-//     ]
-//   },
-// };
-
 const schema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Agha Naveed",
   "url": "https://www.aghanaveed.vercel.app",
   "sameAs": [
-    "https://www.linkedin.com/in/aghanaveed",  // add your real social URLs
+    "https://www.linkedin.com/in/agha-naveed",
     "https://github.com/aghanaveed"
   ],
   "jobTitle": "Full Stack Engineer",
