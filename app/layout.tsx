@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <title>Agha Naveed Portfolio | Full Stack Engineer</title>
+      <title>Agha Naveed Portfolio | Full Stack Engineer</title>
       <meta name="description" content="Full Stack Web Developer" />
       <meta name="keywords" content="Full Stack Engineer, MERN Stack Developer, React Js Developer, Software Developer, AI Engineer" />
       <meta name="robots" content="index, follow" />

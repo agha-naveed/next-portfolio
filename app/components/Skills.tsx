@@ -30,6 +30,7 @@ import wordpress from "public/img/skills-logo/wordpress.svg"
 import photoshop from "public/img/skills-logo/photoshop.svg"
 
 import numpy from "public/img/skills-logo/numpy.svg"
+import pandas from "public/img/skills-logo/pandas.svg"
 import pytorch from "public/img/skills-logo/pytorch.svg"
 
 import git from "public/img/skills-logo/git.svg"
@@ -190,6 +191,11 @@ export default function Skills() {
                             <div className="flex flex-col gap-1 items-center">
                                 <Image src={numpy} className="w-10" alt="" />
                                 <label htmlFor="">NumPy</label>
+                            </div>
+
+                            <div className="flex flex-col gap-1 items-center">
+                                <Image src={pandas} className="w-10" alt="" />
+                                <label htmlFor="">Pandas</label>
                             </div>
 
                             <div className="flex flex-col gap-1 items-center">
