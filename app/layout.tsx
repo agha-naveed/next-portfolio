@@ -8,7 +8,6 @@ import Loader from "./components/Loader";
 import { Suspense } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import TransitionProvider from "./components/TransitionProvider";
-import Head from "next/head";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -16,16 +15,72 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+export const metadata: Metadata = {
+  title: "Agha Naveed Portfolio | Full Stack Engineer | MERN Stack Developer in Pakistan",
+  description: "MERN Stack Developer from Skardu, Pakistan, delivering scalable web applications using Next.js, React, Node.js, and MongoDB. Helping startups and businesses in Gilgit Baltistan and beyond build digital products.",
+  keywords: [
+    "Web Developer in Skardu",
+    "MERN Stack Developer in Pakistan",
+    "Full Stack Developer in Gilgit Baltistan",
+    "React JS Developer in Pakistan",
+    "Remote Full Stack Engineer from Pakistan",
+    "Software Developer in Skardu",
+    "AI Engineer in Pakistan",
+    "Freelance Web Developer in Gilgit Baltistan",
+    "Frontend Developer in Pakistan",
+    "Backend Developer in Skardu",
+    "MERN Developer in Gilgit",
+    "JavaScript Developer in Pakistan",
+    "Node.js Developer in Pakistan",
+    "MongoDB Developer in Pakistan",
+    "Express.js Developer from Skardu",
+    "Next.js Developer in Pakistan",
+    "Web App Developer in Northern Pakistan",
+    "Tech Talent from Gilgit Baltistan",
+    "Pakistani Software Engineer Portfolio",
+    "Remote React Developer in Pakistan",
+  ],
+  robots: "index, follow",
+  metadataBase: new URL("https://aghanaveed.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    title: "Agha Naveed Portfolio",
+    description: "Full Stack Engineer | Software Engineer",
+    url: "https://aghanaveed.vercel.app",
+    siteName: "Agha Naveed Portfolio",
+    images: [
+      {
+        url: "https://agha-naveed.vercel.app/assets/my-picture-V7ZyympP.png",
+        width: 800,
+        height: 600,
+        alt: "Agha Naveed Banner",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Agha Naveed Portfolio",
+    description: "Full Stack Engineer | Software Engineer",
+    images: [
+      "https://agha-naveed.vercel.app/assets/my-picture-V7ZyympP.png",
+    ],
+  },
+};
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Agha Naveed",
-  "url": "https://www.aghanaveed.vercel.app",
+  "url": "https://aghanaveed.vercel.app",
   "sameAs": [
     "https://www.linkedin.com/in/agha-naveed",
-    "https://github.com/aghanaveed"
+    "https://github.com/agha-naveed",
+    "https://x.com/naveed_kazmi31"
   ],
-  "jobTitle": "Full Stack Engineer",
+  "jobTitle": "Full Stack Engineer, Software Engineer",
   "image": "https://agha-naveed.vercel.app/assets/my-picture-V7ZyympP.png",
   "description": "Full Stack Web Developer specializing in MERN stack, React.js, and AI Engineering."
 };
@@ -37,36 +92,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-      <title>Agha Naveed Portfolio | Full Stack Engineer</title>
-      <meta name="description" content="Full Stack Web Developer" />
-      <meta name="keywords" content="Full Stack Engineer, MERN Stack Developer, React Js Developer, Software Developer, AI Engineer" />
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://www.aghanaveed.vercel.app" />
-
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Agha Naveed Portfolio" />
-      <meta property="og:description" content="Full Stack Engineer | Software Engineer" />
-      <meta property="og:url" content="https://www.aghanaveed.vercel.app" />
-      <meta property="og:site_name" content="Agha Naveed Portfolio" />
-      <meta property="og:image" content="https://agha-naveed.vercel.app/assets/my-picture-V7ZyympP.png" />
-      <meta property="og:image:width" content="800" />
-      <meta property="og:image:height" content="600" />
-      <meta property="og:image:alt" content="Agha Naveed Banner" />
-
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Agha Naveed Portfolio" />
-      <meta name="twitter:description" content="Full Stack Engineer | Software Engineer" />
-      <meta name="twitter:image" content="https://agha-naveed.vercel.app/assets/my-picture-V7ZyympP.png" />
-          {
+      
+          
             <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
-        }
-      </Head>
+        
             <LoadingProvider>
               <body
                 className={`${poppins.variable} overflow-hidden antialiased`}>
