@@ -45,8 +45,8 @@ export default function page() {
 
                     <div className='lg:max-w-1/2 lg:w-[45%] w-[90%] !p-3 perspective-[1000px] relative flex place-content-center z-[300]'>
                         <div className='rotate-y-[10deg] transition-all w-[80%] group'>
-                            <Image src={pic} placeholder='blur' className={`w-full border-3 border-white`}  alt='' />
-                            <Image src={pic2} placeholder='blur' className={`absolute transition-custom top-0 opacity-0 group-hover:opacity-100 z-[2000] w-full border-3 border-white`}  alt='' />
+                            <Image src={pic} placeholder='blur' loading='lazy' decoding='async' className={`w-full border-3 border-white`}  alt='' />
+                            <Image src={pic2} placeholder='blur' loading='lazy' decoding='async' className={`absolute transition-custom top-0 opacity-0 group-hover:opacity-100 z-[2000] w-full border-3 border-white`}  alt='' />
                         </div>
                         
                         <div className='
