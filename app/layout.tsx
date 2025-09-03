@@ -92,16 +92,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
-          
-            <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-        
             <LoadingProvider>
               <body
                 className={`${poppins.variable} overflow-hidden antialiased`}>
+                  <script async
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                  />
                   <TransitionProvider>
                   <Suspense fallback={<Loader />}>
                     <CustomCursor />
