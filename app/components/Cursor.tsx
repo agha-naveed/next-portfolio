@@ -54,12 +54,39 @@ const CustomCursor = () => {
 
   const cursorStyles: { [key: string]: CursorStyle } = {
     default: {
+      top: "10px",
+      left: "10px",
+      width: '8px',
+      height: '8px',
+      backgroundColor: 'white',
+      border: '2px solid white',
+    },
+    text: {
+      top: "16px",
+      left: "16px",
+      width: '8px',
+      height: '8px',
+      backgroundColor: 'white',
+      border: '3px solid white',
+    },
+    image: {
+      top: "13px",
+      left: "13px",
+      width: '8px',
+      height: '8px',
+      backgroundColor: 'white',
+      border: '2px solid white',
+    },
+  };
+
+  const cursorStyles2: { [key: string]: CursorStyle } = {
+    default: {
       top: "-2px",
       left: "-2px",
-      width: '38px',
-      height: '38px',
+      width: '32px',
+      height: '32px',
       backgroundColor: '#3bc47f8c',
-      border: '2px solid white',
+      border: '1px solid white',
     },
     text: {
       top: "-10px",
@@ -67,13 +94,13 @@ const CustomCursor = () => {
       width: '60px',
       height: '60px',
       backgroundColor: '#3bc47f8c',
-      border: '3px solid white',
+      border: '2px solid white',
     },
     image: {
       top: "-5px",
       left: "-5px",
-      width: '45px',
-      height: '45px',
+      width: '65px',
+      height: '65px',
       backgroundColor: '#ff7f50',
       border: '2px solid white',
     },
@@ -92,8 +119,26 @@ const CustomCursor = () => {
           width: cursorStyles[cursorType].width,
           height: cursorStyles[cursorType].height,
           transform: `translate3d(${cursorPos.x - 15}px, ${cursorPos.y - 15}px, 0)`,
-          transition: '0.1s ease-out',
+          transition: '0.05s ease-out',
           zIndex: 999999999,
+          mixBlendMode: 'difference'
+        }}
+      />
+      <motion.div className='md:block hidden'
+        style={{
+          position: 'fixed',
+          top: cursorStyles2[cursorType].top,
+          left: cursorStyles2[cursorType].left,
+          pointerEvents: 'none',
+          borderRadius: '50%',
+          backgroundColor: "transparent",
+          border: cursorStyles2[cursorType].border,
+          width: cursorStyles2[cursorType].width,
+          height: cursorStyles2[cursorType].height,
+          transform: `translate3d(${cursorPos.x - 15}px, ${cursorPos.y - 15}px, 0)`,
+          transition: '0.2s ease-out',
+          zIndex: 999999999,
+          mixBlendMode: 'difference'
         }}
       />
     </>
