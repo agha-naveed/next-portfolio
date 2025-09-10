@@ -102,26 +102,26 @@ export default function Projects() {
                     <h2 className='md:text-5xl text-[40px] font-semibold text-white text-center !mb-15'>Other Projects</h2>
 
                     <div className='flex flex-wrap justify-center relative gap-14'>
-                        <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="700" data-aos-easing="linear">
+                        <Link href={"https://agha-naveed.vercel.app"} target='_blank' data-aos="fade-up" data-aos-delay="200" data-aos-duration="700" data-aos-easing="linear">
                             <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} scale={1.05} className="justify-items-center group relative">
                                 <span className='absolute !py-[2px] !px-4 bg-gray-500/40 rounded-full top-2 left-2 select-none font-light text-[14px] opacity-0 group-hover:opacity-100 transition-all'>Portfolio</span>
                                 <Image src={portfolio} loading="lazy" placeholder='blur' className='lg:w-[350px] md:w-[330px] w-[90%] rounded-lg' alt='' />
                             </Tilt>
-                        </div>
+                        </Link>
                         
-                        <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="700" data-aos-easing="linear">
+                        <Link href={"https://7up-site-redesign.vercel.app"} target='_blank' data-aos="fade-up" data-aos-delay="300" data-aos-duration="700" data-aos-easing="linear">
                             <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} scale={1.05} className="justify-items-center group relative">
                                 <span className='absolute !py-[2px] !px-4 bg-gray-500/40 rounded-full top-2 left-2 select-none font-light text-[14px] opacity-0 group-hover:opacity-100 transition-all'>7up Redesign</span>
                                 <Image src={sevenup} loading="lazy" placeholder='blur' className='lg:w-[350px] md:w-[330px] w-[90%] rounded-lg' alt='' />
                             </Tilt>
-                        </div>
+                        </Link>
 
-                        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="700" data-aos-easing="linear">
+                        <Link href={"https://agha-naveed.github.io/music-player"} data-aos="fade-up" data-aos-delay="400" data-aos-duration="700" data-aos-easing="linear">
                             <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} scale={1.05} className="justify-items-center group relative">
                                 <span className='absolute !py-[2px] !px-4 bg-gray-500/40 rounded-full top-2 left-2 select-none font-light text-[14px] opacity-0 group-hover:opacity-100 transition-all'>Music Player</span>
                                 <Image src={player} loading="lazy" placeholder='blur' className='lg:w-[350px] md:w-[330px] w-[90%] rounded-lg' alt='' />
                             </Tilt>
-                        </div>
+                        </Link>
                         
                     </div>
                 </div>

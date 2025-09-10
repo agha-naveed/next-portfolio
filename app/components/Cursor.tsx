@@ -81,18 +81,18 @@ const CustomCursor = () => {
 
   const cursorStyles2: { [key: string]: CursorStyle } = {
     default: {
-      top: "-2px",
-      left: "-2px",
-      width: '32px',
-      height: '32px',
+      top: "0px",
+      left: "0px",
+      width: '28px',
+      height: '28px',
       backgroundColor: '#3bc47f8c',
       border: '1px solid white',
     },
     text: {
-      top: "-10px",
-      left: "-10px",
-      width: '60px',
-      height: '60px',
+      top: "-5px",
+      left: "-5px",
+      width: '50px',
+      height: '50px',
       backgroundColor: '#3bc47f8c',
       border: '2px solid white',
     },
