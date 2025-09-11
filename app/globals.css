@@ -14,7 +14,7 @@
 * {
     box-sizing: border-box;
     font-family: var(--font-poppins);
-    /* cursor: none; */
+    cursor: none;
 }
 body {
     overflow-y: scroll;
@@ -89,7 +89,9 @@ body {
 .transition-fast {
     transition: 0.2s ease-out;
 }
-
+.transition-custom2 {
+    transition: 0.3s ease;
+}
 .transition-custom {
     transition: 0.5s ease;
 }
