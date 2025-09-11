@@ -24,7 +24,7 @@ export default function TransitionProvider({ children }: { children: ReactNode }
     });
 
     tl.to(overlayRef.current, {
-      scale: 20,
+      scale: 22,
       duration: 0.8,
       ease: "power4.inOut",
     });
