@@ -36,6 +36,7 @@ import pytorch from "public/img/skills-logo/pytorch.svg"
 import git from "public/img/skills-logo/git.svg"
 import github from "public/img/skills-logo/github.svg"
 import npm from "public/img/skills-logo/npm.svg"
+import docker from "public/img/skills-logo/docker.svg"
 
 export default function Skills() {
     const [option, setOption] = useState("frontend")
@@ -70,39 +71,39 @@ export default function Skills() {
                         <span className="font-semibold text-xl relative md:left-[65px] sm:left-[34px] sm:top-0 top-4 left-2 capitalize text-center">{option}</span>
                         <div className={`transition-fast ${option == "frontend" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             <div className="flex flex-col w-fit gap-1 items-center justify-between">
-                                <Image src={html} className="w-10" alt="" />
+                                <Image src={html} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">HTML</label>
                             </div>
                             <div className="flex flex-col gap-1 w-fit items-center justify-between">
-                                <Image src={css} className="w-10" alt="" />
+                                <Image src={css} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">CSS</label>
                             </div>
                             <div className="flex flex-col gap-1 w-fit items-center justify-between">
-                                <Image src={bootstrap} className="w-10" alt="" />
+                                <Image src={bootstrap} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">Bootstrap</label>
                             </div>
                             <div className="flex flex-col gap-1 w-fit items-center justify-between">
-                                <Image src={tailwind} className="w-10" alt="" />
+                                <Image src={tailwind} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">Tailwind</label>
                             </div>
                             <div className="flex flex-col gap-1 w-fit items-center justify-between">
-                                <Image src={js} className="w-10" alt="" />
+                                <Image src={js} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">JavaScript</label>
                             </div>
                             <div className="flex flex-col gap-1 w-fit items-center justify-between">
-                                <Image src={ts} className="w-10" alt="" />
+                                <Image src={ts} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">TypeScript</label>
                             </div>
                             <div className="flex flex-col gap-1 w-fit items-center justify-between">
-                                <Image src={react} className="w-10" alt="" />
+                                <Image src={react} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">React Js</label>
                             </div>
                             <div className="flex flex-col gap-1 w-fit items-center justify-between">
-                                <Image src={next} className="w-10" alt="" />
+                                <Image src={next} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">Next Js</label>
                             </div>
                             <div className="flex flex-col gap-1 w-fit items-center justify-between">
-                                <Image src={electron} className="w-10" alt="" />
+                                <Image src={electron} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">Electron</label>
                             </div>
                         </div>
@@ -110,22 +111,22 @@ export default function Skills() {
                         <div className={`transition-fast ${option == "backend" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={express} className="w-10" alt="" />
+                                <Image src={express} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">Express Js</label>
                             </div>
                             
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={node} className="w-10" alt="" />
+                                <Image src={node} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">Node Js</label>
                             </div>
 
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={fastapi} className="w-10 text-white" alt="" />
+                                <Image src={fastapi} className="w-10 text-white" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">FastAPI</label>
                             </div>
 
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={flask} className="w-10 text-white" alt="" />
+                                <Image src={flask} className="w-10 text-white" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">FlaskAPI</label>
                             </div>
                         </div>
@@ -133,22 +134,22 @@ export default function Skills() {
                         <div className={`transition-fast ${option == "database" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={mongo} className="w-10" alt="" />
+                                <Image src={mongo} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">MongoDB</label>
                             </div>
 
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={mysql} className="w-10" alt="" />
+                                <Image src={mysql} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">MySQL</label>
                             </div>
 
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={cloudinary} className="w-10" alt="" />
+                                <Image src={cloudinary} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">Cloudinary</label>
                             </div>
 
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={sqlite} className="w-10" alt="" />
+                                <Image src={sqlite} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">SQLite</label>
                             </div>
                             
@@ -157,17 +158,17 @@ export default function Skills() {
                         <div className={`transition-fast ${option == "programming" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={cpp} className="w-10" alt="" />
+                                <Image src={cpp} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">C++</label>
                             </div>
 
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={java} className="w-10" alt="" />
+                                <Image src={java} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">Java</label>
                             </div>
                             
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={python} className="w-10" alt="" />
+                                <Image src={python} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">Python</label>
                             </div>
                         </div>
@@ -175,12 +176,12 @@ export default function Skills() {
                         <div className={`transition-fast ${option == "designing" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={wordpress} className="w-10" alt="" />
+                                <Image src={wordpress} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">Wordpress</label>
                             </div>
 
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={photoshop} className="w-10" alt="" />
+                                <Image src={photoshop} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">Photoshop</label>
                             </div>
                             
@@ -189,17 +190,17 @@ export default function Skills() {
                         <div className={`transition-fast ${option == "ai" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={numpy} className="w-10" alt="" />
+                                <Image src={numpy} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">NumPy</label>
                             </div>
 
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={pandas} className="w-10" alt="" />
+                                <Image src={pandas} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">Pandas</label>
                             </div>
 
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={pytorch} className="w-10" alt="" />
+                                <Image src={pytorch} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">PyTorch</label>
                             </div>
                             
@@ -208,17 +209,22 @@ export default function Skills() {
                         <div className={`transition-fast ${option == "tools" ? "  opacity-100 pointer-events-auto" : "  opacity-0 pointer-events-none"} grid sm:grid-cols-4 grid-cols-3 justify-items-center gap-5 sm:w-110 w-full !pt-12 sm:!pl-10 absolute lg:left-1/3 md:left-[45%] left-1/2 -translate-x-1/2 sm:top-0 top-8`}>
                             
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={npm} className="w-10" alt="" />
+                                <Image src={docker} className="w-10" loading="lazy" decoding="async" alt="" />
+                                <label htmlFor="">Docker</label>
+                            </div>
+
+                            <div className="flex flex-col gap-1 items-center">
+                                <Image src={npm} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">NPM</label>
                             </div>
 
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={git} className="w-10" alt="" />
+                                <Image src={git} className="w-10" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">Git</label>
                             </div>
 
                             <div className="flex flex-col gap-1 items-center">
-                                <Image src={github} className="w-10" alt="" />
+                                <Image src={github} className="w-10 bg-white rounded-full" loading="lazy" decoding="async" alt="" />
                                 <label htmlFor="">GitHub</label>
                             </div>
                             
