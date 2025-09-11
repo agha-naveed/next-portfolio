@@ -14,7 +14,7 @@ import Link from 'next/link';
 export default function Projects() {
 
     return (
-        <div className='w-full h-full !py-10 overflow-hidden bg-main-dark-clr relative -top-3 z-300'>
+        <div className='w-full h-full pt-40 pb-20 overflow-hidden bg-main-dark-clr relative -top-3 z-300 project-section'>
             <div className="container !mx-auto text-white">
 
                 <h2 className='md:text-5xl text-[40px] font-semibold text-white text-center !mb-15'>Projects</h2>
@@ -99,9 +99,9 @@ export default function Projects() {
                         className='mix-blend-screen absolute top-20 right-0 w-70 animate-blink'
                         />
 
-                    <h2 className='md:text-5xl text-[40px] font-semibold text-white text-center !mb-15'>Other Projects</h2>
+                    <h2 className='md:text-5xl text-[40px] font-semibold text-white text-center !mb-15 z-[200]'>Other Projects</h2>
 
-                    <div className='flex flex-wrap justify-center relative gap-14'>
+                    <div className='flex flex-wrap justify-center relative gap-14 z-[100]'>
                         <Link href={"https://agha-naveed.vercel.app"} target='_blank' data-aos="fade-up" data-aos-delay="200" data-aos-duration="700" data-aos-easing="linear">
                             <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} scale={1.05} className="justify-items-center group relative">
                                 <span className='absolute !py-[2px] !px-4 bg-gray-500/40 rounded-full top-2 left-2 select-none font-light text-[14px] opacity-0 group-hover:opacity-100 transition-all'>Portfolio</span>

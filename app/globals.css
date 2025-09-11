@@ -172,12 +172,24 @@ body {
 .skills-section::before {
     content: "SKILLS";
     color: white;
-    font-size: 22rem;
+    font-size: 20rem;
     font-weight: 700;
     position: absolute;
     z-index: 0;
     mix-blend-mode: overlay;
     right: -150px;
-    top: 20rem;
+    top: 19rem;
+    opacity: 0.1;
+}
+.project-section::before {
+    content: "PROJECTS";
+    color: white;
+    font-size: 20rem;
+    font-weight: 700;
+    position: absolute;
+    mix-blend-mode: overlay;
+    left: -150px;
+    bottom: -3rem;
+    z-index: 0;
     opacity: 0.1;
 }

@@ -25,7 +25,7 @@ export default function TransitionProvider({ children }: { children: ReactNode }
 
     tl.to(overlayRef.current, {
       scale: 22,
-      duration: 0.8,
+      duration: 0.6,
       ease: "power4.inOut",
     });
   };
@@ -34,7 +34,7 @@ export default function TransitionProvider({ children }: { children: ReactNode }
   useEffect(() => {
     gsap.to(overlayRef.current, {
       scale: 0,
-      duration: 0.8,
+      duration: 0.6,
       ease: "power4.inOut",
       delay: 0.2,
       onComplete: () => {
