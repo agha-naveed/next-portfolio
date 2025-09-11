@@ -14,7 +14,7 @@
 * {
     box-sizing: border-box;
     font-family: var(--font-poppins);
-    cursor: none;
+    /* cursor: none; */
 }
 body {
     overflow-y: scroll;

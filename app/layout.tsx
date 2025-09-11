@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "Agha Naveed Portfolio",
-    description: "Full Stack Engineer | Software Engineer",
+    title: "Agha Naveed",
+    description: "Full Stack Developer | Software Engineer",
     url: "https://aghanaveed.vercel.app",
     siteName: "Agha Naveed Portfolio",
     images: [
@@ -62,8 +62,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agha Naveed Portfolio",
-    description: "Full Stack Engineer | Software Engineer",
+    title: "Agha Naveed",
+    description: "Full Stack Developer | Software Engineer",
     images: [
       "https://agha-naveed.vercel.app/assets/my-picture-V7ZyympP.png",
     ],
