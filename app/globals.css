@@ -168,3 +168,16 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+.skills-section::before {
+    content: "SKILLS";
+    color: white;
+    font-size: 22rem;
+    font-weight: 700;
+    position: absolute;
+    z-index: 0;
+    mix-blend-mode: overlay;
+    right: -150px;
+    top: 20rem;
+    opacity: 0.1;
+}

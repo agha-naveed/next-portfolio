@@ -42,7 +42,7 @@ export default function Skills() {
     const [option, setOption] = useState("frontend")
 
     return (
-        <div className='w-full overflow-hidden bg-main-dark-clr relative top-2'>
+        <div className='w-full overflow-hidden bg-main-dark-clr relative top-2 skills-section'>
             <div className='container !mx-auto justify-items-center !py-5'>
                 <h2 className='text-5xl font-semibold text-white text-center'>Skills</h2>
                 <Image src={blueFlare}
