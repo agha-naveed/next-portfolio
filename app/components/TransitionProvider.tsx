@@ -30,7 +30,6 @@ export default function TransitionProvider({ children }: { children: ReactNode }
     });
   };
 
-  // When route changes, animate the circle away
   useEffect(() => {
     gsap.to(overlayRef.current, {
       scale: 0,
@@ -45,7 +44,6 @@ export default function TransitionProvider({ children }: { children: ReactNode }
 
   return (
     <TransitionContext.Provider value={{ playTransition }}>
-      {/* Circular overlay */}
       <div
         ref={overlayRef}
         className="fixed top-1/2 left-1/2 z-[9999999] w-[100px] h-[100px] bg-main-dark-clr rounded-full pointer-events-none opacity-0"
