@@ -53,7 +53,7 @@ export default function Page() {
         <About />
         <Skills />
         <Projects />
-        <div className="absolute w-full bg-[#0b111a] h-fit !pt-10 !pb-3">
+        <div className="absolute left-0 w-full bg-[#0b111a] h-fit !pt-10 !pb-3">
           <Contact />
         </div>
       </div>

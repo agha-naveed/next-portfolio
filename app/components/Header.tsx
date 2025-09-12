@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <div className='w-full min-h-screen h-screen bg-main-dark-clr text-white'>
             <div className='w-[105%] h-auto object-center absolute top-0 -left-11'>
-                <Image src={bgBlend} placeholder='blur' alt="" 
+                <Image src={bgBlend} placeholder='blur' alt="" loading='eager'
                 className='w-full mix-blend-color-dodge select-none'
                 />
             </div>
@@ -52,7 +52,7 @@ export default function Header() {
                 </span>
                 
                 
-                <Image
+                <Image loading='eager'
                 data-aos="zoom-out-up" data-aos-duration="2500"
                 className='
                 absolute md:top-[40%] top-[50%] md:w-full w-[80%] left-1/2 -translate-x-1/2 z-[1000]

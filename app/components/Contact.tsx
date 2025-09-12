@@ -66,7 +66,7 @@ export default function Contact() {
 
     return (
         <footer className='container !mx-auto h-full text-white relative flex flex-col gap-10 justify-center'>
-            <div className='!px-10' data-aos="fade-up" data-aos-duration="1600" data-aos-easing="ease-out">
+            <div className='!px-10'>
                 <h3 className='text-xl font-semibold !mb-4 md:text-start text-center'>Connect:</h3>
                 <div className='flex md:flex-row flex-col lg:gap-17 gap-5 md:items-start items-center'>
                     <Link href={"https://linkedin.com/in/agha-naveed"} target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
