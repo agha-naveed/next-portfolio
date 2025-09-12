@@ -30,7 +30,7 @@ export default function page() {
                             </div>
                         </div>
 
-                        <div className=' flex gap-2 flex-wrap'>
+                        <div className='flex gap-2 flex-wrap'>
                             <span className='bg-[#1f2c3a] text-[12px] py-1 px-[13px] rounded-full h-fit font-thin'>Next Js</span>
                             <span className='bg-[#1f2c3a] text-[12px] py-1 px-[13px] rounded-full h-fit font-thin'>Tailwind</span>
                             <span className='bg-[#1f2c3a] text-[12px] py-1 px-[13px] rounded-full h-fit font-thin'>Shadcn</span>
@@ -129,7 +129,7 @@ export default function page() {
                     </div>
                 </Link>
 
-                <Link href={"/7up-site-redesign"} data-aos="fade-up" className='h-auto justify-items-center cursor-pointer hover-text'
+                <Link href={"/projects/7up-site-redesign"} data-aos="fade-up" className='h-auto justify-items-center cursor-pointer hover-text'
                 data-aos-duration="1000" data-aos-easing="ease-out">
                     <div className='md:w-[350px] h-full w-[80%] relative flex flex-col transition-custom2 hover:scale-[1.02] justify-between bg-secondary-light-clr hover:bg-[#16202b] !py-[26px] !px-5 rounded-lg z-[1000]'>
                         <div>
@@ -150,7 +150,7 @@ export default function page() {
                     </div>
                 </Link>
 
-                <Link href={"pharmacy-webapp"} data-aos="fade-up" className='h-auto justify-items-center cursor-pointer hover-text'
+                <Link href={"/projects/pharmacy-webapp"} data-aos="fade-up" className='h-auto justify-items-center cursor-pointer hover-text'
                 data-aos-duration="1000" data-aos-easing="ease-out">
                     <div className='md:w-[350px] h-full w-[80%] relative flex flex-col transition-custom2 hover:scale-[1.02] justify-between bg-secondary-light-clr hover:bg-[#16202b] !py-[26px] !px-5 rounded-lg z-[1000]'>
                         <div>
