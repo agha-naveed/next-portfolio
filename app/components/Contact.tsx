@@ -69,19 +69,19 @@ export default function Contact() {
             <div className='!px-10'>
                 <h3 className='text-xl font-semibold !mb-4 md:text-start text-center'>Connect:</h3>
                 <div className='flex md:flex-row flex-col lg:gap-17 gap-5 md:items-start items-center'>
-                    <Link href={"https://linkedin.com/in/agha-naveed"} target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
+                    <Link href={"https://linkedin.com/in/agha-naveed"} data-aos="fade-up" data-aos-duration="600" data-aos-delay="400" data-aos-easing="ease-out" target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
                         <FaLinkedinIn className='text-xl' />
                         <span className='w-max'>/Agha-Naveed</span>
                     </Link>
-                    <Link href={"https://x.com/naveed_kazmi31"} target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
+                    <Link href={"https://x.com/naveed_kazmi31"} data-aos="fade-up" data-aos-duration="600" data-aos-delay="500" data-aos-easing="ease-out" target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
                         <PiXLogo className='text-xl' />
                         <span className='w-max'>/Naveed_Kazmi31</span>
                     </Link>
-                    <Link href={"https://github.com/agha-naveed"} target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
+                    <Link href={"https://github.com/agha-naveed"} data-aos="fade-up" data-aos-duration="600" data-aos-delay="600" data-aos-easing="ease-out" target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
                         <FaGithub className='text-xl' />
                         <span className='w-max'>/Agha-Naveed</span>
                     </Link>
-                    <Link href={"mailto:naveedabs31@gmail.com"} target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
+                    <Link href={"mailto:naveedabs31@gmail.com"} data-aos="fade-up" data-aos-duration="600" data-aos-delay="700" data-aos-easing="ease-out" target='_blank' className='text-white flex items-center lg:flex-row flex-col gap-1 hover-text'>
                         <TbMail className='text-[22px]' />
                         <span className='w-max'>NaveedAbs31@gmail.com</span>
                     </Link>
