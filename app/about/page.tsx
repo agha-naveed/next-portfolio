@@ -3,13 +3,10 @@ import Image from 'next/image'
 import pic from 'public/img/pic.webp'
 import pic2 from 'public/img/pic2.webp'
 import flare from 'public/img/blue-flare.jpg'
-import Aurora from '../components/Aurora'
 export default function page() {
     return (
     
         <div className='w-full min-h-screen bg-main-dark-clr overflow-hidden pic-bg'>
-            <Aurora  />
-
             <div className="container !mx-auto !pb-40">
                 <div className='w-full lg:h-screen min-h-screen flex lg:flex-row-reverse flex-col-reverse justify-center items-center lg:gap-10 gap-20 relative !pt-40 !px-4'>
 
