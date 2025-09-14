@@ -95,7 +95,7 @@ export default function Projects() {
                         className='mix-blend-screen opacity-10 pointer-events-none
                         absolute bottom-10 -right-70 rotate-270 w-[70%] !select-none'/>
 
-                        <Image src={blueFlare} alt=''
+                    <Image src={blueFlare} alt=''
                         className='mix-blend-screen absolute top-20 right-0 w-70 animate-blink'
                         />
 

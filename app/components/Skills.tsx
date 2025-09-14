@@ -43,7 +43,7 @@ export default function Skills() {
 
     return (
         <div className='w-full overflow-hidden bg-main-dark-clr relative top-2 skills-section md:py-20 py-30'>
-            <div className='container !mx-auto justify-items-center !py-5'>
+            <div className='container !mx-auto justify-items-center !py-5 relative'>
                 <h2 className='text-5xl font-semibold text-white text-center'>Skills</h2>
                 <Image src={blueFlare}
                     className='absolute
@@ -53,7 +53,7 @@ export default function Skills() {
                     mix-blend-screen
                     w-[350px]
                     '
-                    alt='' />
+                    alt='' loading="eager" decoding="async" />
                 <div className="flex sm:flex-row flex-col gap-3 justify-center !mt-12 !px-10 w-full md:h-[405px]">
                     <div className="text-white text-start flex sm:flex-col flex-row flex-wrap sm:gap-1 sm:w-65 w-full gap-x-10 z-[200]">
                         <button className="border-none outline-none !py-[13px] sm:w-full w-fit hover:text-main-skin-clr transition-all cursor-pointer text-xl text-start" onClick={(e) => setOption("frontend")}>Frontend</button>

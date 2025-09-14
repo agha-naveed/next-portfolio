@@ -1,7 +1,5 @@
 'use client'
 import Image from 'next/image'
-import Tilt from 'react-parallax-tilt';
-import GsapLink from '../components/GsapLink';
 import store from 'public/img/projects/store.webp'
 import lms from 'public/img/projects/lib_lms.webp'
 import sevenup from 'public/img/projects/sevenup.webp'
