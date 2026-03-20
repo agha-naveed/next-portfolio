@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FiArrowUpRight, FiTerminal, FiDatabase, FiLayout, FiCpu, FiGitBranch } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,220 +12,329 @@ export default function Home() {
   const container = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    // 1. Initial Hero Load
+    // 1. Clinical Grid Reveal (On Load)
     const tl = gsap.timeline();
-    tl.to(".reveal-text", {
-      y: 0,
-      duration: 1.2,
-      stagger: 0.1,
-      ease: "power4.out",
-      delay: 0.2,
-    }).to(".fade-in", { opacity: 1, duration: 1, ease: "power2.out" }, "-=0.5");
 
-    // 2. The Zoom-in Scroll Effect (Pinned)
-    const zoomTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".zoom-section",
-        start: "top top",
-        end: "+=150%", // Pins for 1.5x the viewport height
-        scrub: 0.5, // Smooth scrubbing
-        pin: true,
-      },
-    });
+    // Animate grid lines (borders) growing
+    tl.fromTo(".grid-line-x", { scaleX: 0 }, { scaleX: 1, duration: 1.5, ease: "expo.inOut", stagger: 0.1 })
+      .fromTo(".grid-line-y", { scaleY: 0 }, { scaleY: 1, duration: 1.5, ease: "expo.inOut", stagger: 0.1 }, "-=1.5")
 
-    zoomTimeline
-      .to(".zoom-text", { scale: 15, opacity: 0, duration: 1 })
-      .to(".zoom-bg", { backgroundColor: "#ffffff", duration: 1 }, "<")
-      .to(".zoom-subtext", { opacity: 0, duration: 0.3 }, "<");
-
-    // 3. Project Parallax & Zoom (Image scales inside container on scroll)
-    const projects = gsap.utils.toArray<HTMLElement>(".project-container");
-    projects.forEach((project) => {
-      const image = project.querySelector(".project-image");
-      const text = project.querySelector(".project-info");
-
-      // Image subtle zoom on scroll
-      gsap.fromTo(
-        image,
-        { scale: 1 },
-        {
-          scale: 1.15,
-          ease: "none",
-          scrollTrigger: {
-            trigger: project,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,
-          },
-        }
+      // Reveal text via masking (clip-path)
+      .fromTo(".mask-reveal",
+        { clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", y: 20 },
+        { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", y: 0, duration: 1, ease: "power3.out", stagger: 0.1 },
+        "-=0.8"
       );
 
-      // Text reveal on scroll
-      gsap.from(text, {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: project,
-          start: "top 75%",
-        },
-      });
+    // 2. Data Table Row Reveals (On Scroll)
+    const dataRows = gsap.utils.toArray<HTMLElement>(".data-row");
+    dataRows.forEach((row) => {
+      gsap.fromTo(row,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: row,
+            start: "top 90%",
+          }
+        }
+      );
     });
 
-    // 4. Marquee Infinite Scroll
-    gsap.to(".marquee-inner", {
-      xPercent: -50,
-      ease: "none",
-      duration: 20,
-      repeat: -1,
+    // 3. Technical Specs Counter/Reveal
+    gsap.from(".spec-item", {
+      opacity: 0,
+      x: -20,
+      duration: 0.6,
+      stagger: 0.05,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".specs-container",
+        start: "top 80%",
+      }
     });
+
   }, { scope: container });
 
   return (
-    <main ref={container} className="bg-black text-neutral-200 min-h-screen font-sans overflow-x-hidden selection:bg-white selection:text-black">
+    <main ref={container} className="bg-black text-[#EAEAEA] min-h-screen font-sans selection:bg-white selection:text-black">
 
-      {/* Minimal Navbar */}
-      <nav className="fixed top-0 w-full p-6 md:p-10 flex justify-between items-center z-50 mix-blend-difference text-white">
-        <div className="text-sm font-bold tracking-widest uppercase">S. N. A.</div>
-        <div className="text-sm font-medium tracking-widest uppercase flex gap-8">
-          <a href="#work" className="hover:opacity-60 transition-opacity">Work</a>
-          <a href="#contact" className="hover:opacity-60 transition-opacity">Contact</a>
+      {/* ========================================
+        GLOBAL GRID LINES (Absolute Positioning)
+        ========================================
+      */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="grid-line-x absolute top-20 left-0 w-full h-[1px] bg-neutral-900 origin-left"></div>
+        <div className="grid-line-y absolute top-0 left-6 md:left-12 w-[1px] h-full bg-neutral-900 origin-top hidden md:block"></div>
+        <div className="grid-line-y absolute top-0 right-6 md:right-12 w-[1px] h-full bg-neutral-900 origin-top hidden md:block"></div>
+      </div>
+
+      {/* ========================================
+        NAVIGATION (Clinical & Minimal)
+        ========================================
+      */}
+      <nav className="fixed top-0 w-full h-20 px-6 md:px-12 flex justify-between items-center z-50 bg-black/80 backdrop-blur-md">
+        <div className="mask-reveal font-mono text-xs uppercase tracking-[0.2em] text-neutral-400">
+          Syed Naveed Abbas <span className="text-white ml-2">v2.0.26</span>
+        </div>
+        <div className="mask-reveal flex gap-8 font-mono text-xs uppercase tracking-[0.2em]">
+          <a href="#index" className="hover:text-white text-neutral-500 transition-colors">Index</a>
+          <a href="#specs" className="hover:text-white text-neutral-500 transition-colors">Specs</a>
+          <a href="mailto:NaveedAbs31@gmail.com" className="hover:text-white text-neutral-500 transition-colors">Contact</a>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="h-screen flex flex-col justify-between p-6 md:p-10 pt-32">
-        <div className="fade-in opacity-0 text-sm md:text-base font-mono uppercase tracking-widest text-neutral-500 max-w-sm">
-          Full Stack Engineer & AI Explorer based in Pakistan.
+      {/* ========================================
+        HERO ARCHITECTURE (Static Grid Layout)
+        ========================================
+      */}
+      <section className="relative z-10 pt-20 px-6 md:px-12 max-w-[120rem] mx-auto min-h-screen flex flex-col">
+
+        {/* Top Meta Info */}
+        <div className="grid grid-cols-1 md:grid-cols-4 border-b border-neutral-900 py-6 font-mono text-xs uppercase tracking-widest text-neutral-500 gap-6">
+          <div className="mask-reveal flex flex-col gap-1">
+            <span className="text-neutral-700">Role</span>
+            <span className="text-neutral-300">Software Engineer</span>
+          </div>
+          <div className="mask-reveal flex flex-col gap-1">
+            <span className="text-neutral-700">Specialization</span>
+            <span className="text-neutral-300">MERN Stack & AI Systems</span>
+          </div>
+          <div className="mask-reveal flex flex-col gap-1">
+            <span className="text-neutral-700">Status</span>
+            <span className="flex items-center gap-2 text-white">
+              <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
+              BS CS Final Year
+            </span>
+          </div>
+          <div className="mask-reveal flex flex-col gap-1 md:text-right">
+            <span className="text-neutral-700">Location</span>
+            <span className="text-neutral-300">Pakistan</span>
+          </div>
         </div>
 
-        <div className="mb-20">
-          <div className="overflow-hidden">
-            <h1 className="reveal-text translate-y-[110%] text-[12vw] leading-[0.85] tracking-tighter font-bold uppercase">
-              Syed Naveed
-            </h1>
-          </div>
-          <div className="overflow-hidden flex justify-end">
-            <h1 className="reveal-text translate-y-[110%] text-[12vw] leading-[0.85] tracking-tighter font-bold uppercase text-neutral-400">
-              Abbas.
-            </h1>
+        {/* Massive Typography Block */}
+        <div className="grow flex flex-col justify-center py-20">
+          <h1 className="text-[12vw] lg:text-[10vw] font-medium tracking-tighter leading-[0.85] uppercase mb-8">
+            <div className="mask-reveal">SYED</div>
+            <div className="mask-reveal text-neutral-600 font-semibold">NAVEED ABBAS.</div>
+          </h1>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 border-t border-neutral-900 pt-12">
+            <div className="md:col-span-4 mask-reveal">
+              <FiTerminal className="text-3xl text-neutral-500 mb-6" />
+              <p className="font-mono text-sm uppercase tracking-widest text-neutral-400 leading-relaxed">
+                I do not just build web interfaces. I architect complete systems that bridge robust web infrastructure with offline, localized machine learning environments.
+              </p>
+            </div>
+            <div className="md:col-span-8 mask-reveal">
+              <p className="text-xl md:text-3xl font-light leading-tight text-neutral-300 max-w-4xl">
+                Currently finalizing my BS CS degree and developing standalone applications that execute complex AI tasks natively, bypassing traditional cloud dependencies.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Pinned Zoom Transition Section */}
-      <section className="zoom-section zoom-bg h-screen w-full flex items-center justify-center relative overflow-hidden bg-black text-white">
-        <div className="text-center z-10 relative pointer-events-none">
-          <h2 className="zoom-text text-4xl md:text-7xl font-bold tracking-tighter uppercase whitespace-nowrap">
-            Dive Into My World
-          </h2>
-          <p className="zoom-subtext mt-4 text-neutral-400 font-mono text-sm uppercase tracking-widest">
-            Scroll to magnify
-          </p>
+      {/* ========================================
+        THE INDEX (Data Table Project Layout)
+        ========================================
+      */}
+      <section id="index" className="relative z-10 px-6 md:px-12 max-w-[120rem] mx-auto py-32">
+        <div className="border-b border-neutral-200 pb-6 mb-12 flex justify-between items-end">
+          <h2 className="text-4xl md:text-6xl font-medium tracking-tighter uppercase text-white">Project Index</h2>
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-500 hidden md:block">03 Entries Found</span>
         </div>
-      </section>
 
-      {/* Work Section (Now with white background from the transition) */}
-      <section id="work" className="bg-white text-black py-32 px-6 md:px-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-end mb-24 border-b border-black pb-8">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase">Selected Work</h2>
-            <span className="font-mono text-sm uppercase tracking-widest hidden md:block">(03) Featured Projects</span>
+        <div className="flex flex-col">
+
+          {/* Table Header */}
+          <div className="hidden lg:grid grid-cols-12 gap-8 font-mono text-xs uppercase tracking-widest text-neutral-600 border-b border-neutral-900 pb-4 mb-4">
+            <div className="col-span-1">ID</div>
+            <div className="col-span-3">System Name</div>
+            <div className="col-span-3">Core Stack</div>
+            <div className="col-span-4">Architecture Summary</div>
+            <div className="col-span-1 text-right">Action</div>
           </div>
 
-          <div className="flex flex-col gap-32">
+          {/* Project 01: Vextor AI */}
+          <div className="data-row group grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-8 items-start py-12 border-b border-neutral-900 hover:bg-neutral-900/20 transition-colors">
+            <div className="col-span-1 font-mono text-sm text-neutral-500">01</div>
 
-            {/* Project 1 */}
-            <div className="project-container grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 h-[50vh] md:h-[70vh] w-full overflow-hidden relative rounded-sm bg-neutral-100">
-                {/* Replace background color with actual images: <img src="..." className="project-image w-full h-full object-cover" /> */}
-                <div className="project-image w-full h-full bg-neutral-900 flex items-center justify-center text-white">
-                  <span className="font-mono opacity-50">[ Vextor AI Visual ]</span>
-                </div>
-              </div>
-              <div className="project-info lg:col-span-5 lg:pl-12 flex flex-col justify-center">
-                <span className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-4">01 — AI / Electron / React</span>
-                <h3 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase mb-6">Vextor AI IDE</h3>
-                <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                  An AI-powered Integrated Development Environment leveraging offline PyTorch models and llama.cpp for intelligent, localized coding assistance.
-                </p>
-                <a href="#" className="group inline-flex items-center gap-4 text-sm font-bold uppercase tracking-widest">
-                  View Case Study
-                  <span className="block w-8 h-[1px] bg-black group-hover:w-16 transition-all duration-300"></span>
-                </a>
-              </div>
+            <div className="col-span-3">
+              <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-4 group-hover:text-white transition-colors">Vextor IDE</h3>
+              <span className="inline-block font-mono text-[10px] uppercase tracking-widest border border-neutral-800 px-2 py-1 text-neutral-400">Capstone Project</span>
             </div>
 
-            {/* Project 2 */}
-            <div className="project-container grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-5 lg:pr-12 flex flex-col justify-center order-2 lg:order-1">
-                <span className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-4">02 — Full Stack E-commerce</span>
-                <h3 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase mb-6">Lenmi Store</h3>
-                <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                  A high-performance e-commerce platform built with Next.js and MongoDB. Engineered for seamless inventory management and secure user flows.
-                </p>
-                <a href="#" className="group inline-flex items-center gap-4 text-sm font-bold uppercase tracking-widest">
-                  View Case Study
-                  <span className="block w-8 h-[1px] bg-black group-hover:w-16 transition-all duration-300"></span>
-                </a>
-              </div>
-              <div className="lg:col-span-7 h-[50vh] md:h-[70vh] w-full overflow-hidden relative rounded-sm bg-neutral-100 order-1 lg:order-2">
-                <div className="project-image w-full h-full bg-neutral-800 flex items-center justify-center text-white">
-                  <span className="font-mono opacity-50">[ Lenmi Store Visual ]</span>
-                </div>
-              </div>
+            <div className="col-span-3 flex flex-wrap gap-2 h-fit">
+              {["Electron.js", "React 18", "PyTorch", "C++", "llama.cpp"].map(tech => (
+                <span key={tech} className="font-mono text-xs text-neutral-300 bg-neutral-900 px-2 py-1">{tech}</span>
+              ))}
             </div>
 
-            {/* Project 3 */}
-            <div className="project-container grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 h-[50vh] md:h-[70vh] w-full overflow-hidden relative rounded-sm bg-neutral-100">
-                <div className="project-image w-full h-full bg-neutral-900 flex items-center justify-center text-white">
-                  <span className="font-mono opacity-50">[ AI Chatbot Visual ]</span>
-                </div>
-              </div>
-              <div className="project-info lg:col-span-5 lg:pl-12 flex flex-col justify-center">
-                <span className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-4">03 — Node.js / Python / NLP</span>
-                <h3 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase mb-6">AI Chatbot</h3>
-                <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                  A 24/7 digital assistant utilizing advanced natural language processing to deliver real-time, context-aware support within a sleek UI.
-                </p>
-                <a href="#" className="group inline-flex items-center gap-4 text-sm font-bold uppercase tracking-widest">
-                  View Case Study
-                  <span className="block w-8 h-[1px] bg-black group-hover:w-16 transition-all duration-300"></span>
-                </a>
-              </div>
+            <div className="col-span-4">
+              <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
+                A localized Integrated Development Environment. Bypasses cloud APIs by natively mounting offline PyTorch models directly on the user's machine for privacy-first, zero-latency coding assistance.
+              </p>
             </div>
 
+            <div className="col-span-1 lg:text-right">
+              <a href="#" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors">
+                <FiArrowUpRight className="text-xl" />
+              </a>
+            </div>
           </div>
+
+          {/* Project 02: Lenmi Store */}
+          <div className="data-row group grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-8 items-start py-12 border-b border-neutral-900 hover:bg-neutral-900/20 transition-colors">
+            <div className="col-span-1 font-mono text-sm text-neutral-500">02</div>
+
+            <div className="col-span-3">
+              <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-4 group-hover:text-white transition-colors">Lenmi Store</h3>
+              <span className="inline-block font-mono text-[10px] uppercase tracking-widest border border-neutral-800 px-2 py-1 text-neutral-400">E-Commerce Architecture</span>
+            </div>
+
+            <div className="col-span-3 flex flex-wrap gap-2 h-fit">
+              {["Next.js", "MongoDB", "Node.js", "Tailwind CSS"].map(tech => (
+                <span key={tech} className="font-mono text-xs text-neutral-300 bg-neutral-900 px-2 py-1">{tech}</span>
+              ))}
+            </div>
+
+            <div className="col-span-4">
+              <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
+                A highly scalable marketplace infrastructure. Features complex state management protocols to synchronize real-time inventory, secure authentication flows, and high-conversion checkout pipelines.
+              </p>
+            </div>
+
+            <div className="col-span-1 lg:text-right">
+              <a href="#" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors">
+                <FiArrowUpRight className="text-xl" />
+              </a>
+            </div>
+          </div>
+
+          {/* Project 03: AI Chatbot */}
+          <div className="data-row group grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-8 items-start py-12 border-b border-neutral-900 hover:bg-neutral-900/20 transition-colors">
+            <div className="col-span-1 font-mono text-sm text-neutral-500">03</div>
+
+            <div className="col-span-3">
+              <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-4 group-hover:text-white transition-colors">Context Bot</h3>
+              <span className="inline-block font-mono text-[10px] uppercase tracking-widest border border-neutral-800 px-2 py-1 text-neutral-400">NLP Microservice</span>
+            </div>
+
+            <div className="col-span-3 flex flex-wrap gap-2 h-fit">
+              {["Python", "FastAPI", "React.js", "Docker"].map(tech => (
+                <span key={tech} className="font-mono text-xs text-neutral-300 bg-neutral-900 px-2 py-1">{tech}</span>
+              ))}
+            </div>
+
+            <div className="col-span-4">
+              <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
+                A decoupled 24/7 digital assistant. Isolates heavy Python-based natural language processing into an ultra-low latency backend, communicating seamlessly with a lightweight React client.
+              </p>
+            </div>
+
+            <div className="col-span-1 lg:text-right">
+              <a href="#" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors">
+                <FiArrowUpRight className="text-xl" />
+              </a>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* Marquee Skills Section */}
-      <section className="bg-black text-white py-24 overflow-hidden border-t border-neutral-900 border-b">
-        <div className="marquee-container whitespace-nowrap flex w-[200%]">
-          <div className="marquee-inner flex text-6xl md:text-9xl font-bold uppercase tracking-tighter opacity-20">
-            <span className="px-8">React</span> — <span className="px-8">Next.js</span> — <span className="px-8">TypeScript</span> — <span className="px-8">Node.js</span> — <span className="px-8">MongoDB</span> — <span className="px-8">Python</span> — <span className="px-8">PyTorch</span> —
-            {/* Duplicated for seamless loop */}
-            <span className="px-8">React</span> — <span className="px-8">Next.js</span> — <span className="px-8">TypeScript</span> — <span className="px-8">Node.js</span> — <span className="px-8">MongoDB</span> — <span className="px-8">Python</span> — <span className="px-8">PyTorch</span> —
+      {/* ========================================
+        TECHNICAL SPECIFICATIONS (The Stack)
+        ========================================
+      */}
+      <section id="specs" className="specs-container relative z-10 px-6 md:px-12 max-w-[120rem] mx-auto py-32 border-t border-neutral-900">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8">
+
+          <div className="lg:col-span-1">
+            <h2 className="text-3xl font-medium tracking-tighter uppercase text-white mb-6">Technical<br />Specifications</h2>
+            <p className="font-mono text-xs text-neutral-500 uppercase tracking-widest leading-relaxed">
+              System architecture capabilities and deployed toolsets.
+            </p>
           </div>
+
+          {/* Frontend Module */}
+          <div className="lg:col-span-1 flex flex-col border border-neutral-900 p-8">
+            <div className="flex items-center gap-4 mb-8 text-neutral-400">
+              <FiLayout className="text-2xl" />
+              <h3 className="font-mono text-sm uppercase tracking-widest text-white">Frontend Core</h3>
+            </div>
+            <ul className="flex flex-col gap-4 font-mono text-sm text-neutral-400">
+              {["React.js", "Next.js App Router", "TypeScript", "Tailwind CSS", "GSAP / Framer"].map(item => (
+                <li key={item} className="spec-item flex justify-between border-b border-neutral-900 pb-2">
+                  <span>{item}</span> <span className="text-neutral-700">Deploy</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Backend Module */}
+          <div className="lg:col-span-1 flex flex-col border border-neutral-900 p-8">
+            <div className="flex items-center gap-4 mb-8 text-neutral-400">
+              <FiDatabase className="text-2xl" />
+              <h3 className="font-mono text-sm uppercase tracking-widest text-white">Backend & Data</h3>
+            </div>
+            <ul className="flex flex-col gap-4 font-mono text-sm text-neutral-400">
+              {["Node.js", "Express Architecture", "MongoDB", "FastAPI", "SQL Relational"].map(item => (
+                <li key={item} className="spec-item flex justify-between border-b border-neutral-900 pb-2">
+                  <span>{item}</span> <span className="text-neutral-700">Deploy</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* AI & Systems Module */}
+          <div className="lg:col-span-1 flex flex-col border border-neutral-900 p-8">
+            <div className="flex items-center gap-4 mb-8 text-neutral-400">
+              <FiCpu className="text-2xl" />
+              <h3 className="font-mono text-sm uppercase tracking-widest text-white">AI & Systems</h3>
+            </div>
+            <ul className="flex flex-col gap-4 font-mono text-sm text-neutral-400">
+              {["Python", "PyTorch Models", "Electron.js", "C++ System Level", "Docker / Git"].map(item => (
+                <li key={item} className="spec-item flex justify-between border-b border-neutral-900 pb-2">
+                  <span>{item}</span> <span className="text-neutral-700">Deploy</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
       </section>
 
-      {/* Footer / Contact */}
-      <footer id="contact" className="bg-black text-white py-32 px-6 md:px-10 flex flex-col items-center justify-center text-center">
-        <h2 className="text-[10vw] font-bold tracking-tighter leading-none uppercase mb-8 hover:text-neutral-500 transition-colors cursor-pointer">
-          Let's Talk.
-        </h2>
-        <a href="mailto:NaveedAbs31@gmail.com" className="font-mono text-lg uppercase tracking-widest border-b border-white pb-1 hover:text-neutral-400 hover:border-neutral-400 transition-all">
-          NaveedAbs31@gmail.com
-        </a>
-        <div className="mt-32 text-xs font-mono uppercase tracking-widest text-neutral-600 flex gap-8">
-          <a href="#" className="hover:text-white">GitHub</a>
-          <a href="#" className="hover:text-white">LinkedIn</a>
-          <span>© 2026</span>
+      {/* ========================================
+        FOOTER (Command Execution)
+        ========================================
+      */}
+      <footer className="relative z-10 px-6 md:px-12 max-w-[120rem] mx-auto pt-32 pb-12 border-t border-neutral-900">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+
+          <div className="flex flex-col gap-6">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-500">System Awaiting Input</span>
+            <a href="mailto:NaveedAbs31@gmail.com" className="group flex items-center gap-6 text-4xl md:text-6xl font-medium tracking-tighter uppercase text-white hover:text-neutral-400 transition-colors">
+              Execute Contact <FiArrowUpRight className="text-5xl group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
+            </a>
+            <p className="font-mono text-sm text-neutral-500 mt-4">NaveedAbs31@gmail.com</p>
+          </div>
+
+          <div className="flex flex-col md:items-end gap-6 font-mono text-xs uppercase tracking-widest">
+            <div className="flex gap-8">
+              <a href="#" className="flex items-center gap-2 hover:text-white text-neutral-400 transition-colors"><FiGitBranch /> GitHub</a>
+              <a href="#" className="flex items-center gap-2 hover:text-white text-neutral-400 transition-colors"><FiArrowUpRight /> LinkedIn</a>
+            </div>
+            <span className="text-neutral-600">© {new Date().getFullYear()} Syed Naveed Abbas. All Rights Reserved.</span>
+          </div>
+
         </div>
       </footer>
+
     </main>
   );
 }
