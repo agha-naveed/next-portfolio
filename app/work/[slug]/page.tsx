@@ -1,15 +1,25 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, use } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
-import { FiArrowUpRight, FiArrowLeft, FiTerminal, FiCpu, FiMonitor, FiLayers, FiCode, FiZap } from "react-icons/fi";
+import { FiArrowUpRight, FiArrowLeft, FiTerminal, FiCpu, FiMonitor, FiCode, FiZap } from "react-icons/fi";
+import { notFound } from "next/navigation";
+import { projectsData } from "../../lib/data";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ProjectDetail() {
+// 1. Update the type definition to Promise
+export default function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
+
+    // 2. Unwrap the promise using React.use()
+    const { slug } = use(params);
+
+    const project = projectsData.find((p) => p.slug === slug);
+    if (!project) notFound();
+
     const container = useRef<HTMLElement>(null);
     const horizontalSection = useRef<HTMLDivElement>(null);
     const horizontalTrigger = useRef<HTMLDivElement>(null);
@@ -120,16 +130,16 @@ export default function ProjectDetail() {
                 <div className="flex flex-col justify-end pt-[10vh] pb-12">
                     <div className="font-mono text-sm uppercase tracking-widest text-neutral-500 mb-8 mask-reveal flex items-center gap-3">
                         <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-                        System Deployment
+                        Deployment Logs
                     </div>
                     <div className="overflow-hidden">
                         <h1 className="mask-reveal text-[13vw] lg:text-[11vw] font-bold tracking-tighter leading-[0.85] uppercase text-white">
-                            Vextor
+                            {project.title.split(" ")[0]}
                         </h1>
                     </div>
                     <div className="overflow-hidden text-right">
                         <h1 className="mask-reveal text-[13vw] lg:text-[11vw] font-bold tracking-tighter leading-[0.85] uppercase text-neutral-800">
-                            Intelligence.
+                            {project.title.split(" ").slice(1).join(" ") || "System."}
                         </h1>
                     </div>
                 </div>
@@ -137,110 +147,126 @@ export default function ProjectDetail() {
                 <div className="grid grid-cols-2 md:grid-cols-4 border-y border-neutral-900 py-8 font-mono text-xs uppercase tracking-widest gap-8 mt-12">
                     <div className="fade-up flex flex-col gap-2">
                         <span className="text-neutral-600">Context</span>
-                        <span className="text-white font-medium">BS CS Capstone</span>
+                        <span className="text-white font-medium">{project.type}</span>
                     </div>
                     <div className="fade-up flex flex-col gap-2">
                         <span className="text-neutral-600">Role</span>
-                        <span className="text-white font-medium">Sole Architect</span>
+                        <span className="text-white font-medium">{project.role}</span>
                     </div>
                     <div className="fade-up flex flex-col gap-2">
-                        <span className="text-neutral-600">Architecture</span>
-                        <span className="text-white font-medium">Native AI Bridge</span>
+                        <span className="text-neutral-600">Timeline</span>
+                        <span className="text-white font-medium">{project.timeline}</span>
                     </div>
                     <div className="fade-up flex flex-col gap-2 md:text-right">
-                        <span className="text-neutral-600">Status</span>
-                        <span className="text-white font-medium">v1.0 Operational</span>
+                        <span className="text-neutral-600">Core Stack</span>
+                        <span className="text-white font-medium">{project.stack[0]} + {project.stack[1]}</span>
                     </div>
                 </div>
             </header>
 
-            {/* --- HERO MEDIA SECTION (Add Video or Image here) --- */}
+            {/* --- HERO MEDIA: VIDEO OR IMAGE --- */}
             <section className="parallax-container relative z-10 w-full h-[60vh] md:h-[80vh] overflow-hidden border-y border-neutral-900 bg-neutral-950">
                 <div className="absolute inset-[-20%] w-[140%] h-[140%]">
-                    <div className="parallax-img w-full h-full flex items-center justify-center relative bg-neutral-900">
-                        {/* VIDEO OPTION: */}
-                        <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-50">
-                            <source src="/path-to-your-video.mp4" type="video/mp4" />
-                        </video>
-
-                        {/* IMAGE OPTION (Uncomment to use):
-            <img src="/path-to-image.jpg" className="w-full h-full object-cover" alt="Project Visual" /> 
-            */}
-
+                    <div className="parallax-img w-full h-full bg-[#0a0a0a] flex items-center justify-center relative bg-neutral-900">
+                        {/* ADD YOUR COVER VIDEO HERE:
+                           <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-50">
+                             <source src={`/videos/${project.slug}-hero.mp4`} type="video/mp4" />
+                           </video>
+                        */}
                         <div className="absolute inset-0 bg-black/20 z-10"></div>
-                        <span className="absolute bottom-10 right-10 font-mono text-xs text-neutral-500 border border-neutral-800 px-4 py-2 bg-black/50 backdrop-blur z-20 uppercase tracking-widest">Master_Deployment_View.mp4</span>
+                        <span className="absolute bottom-10 right-10 font-mono text-xs text-neutral-500 border border-neutral-800 px-4 py-2 bg-black/50 backdrop-blur z-20 uppercase tracking-widest">
+                            {project.slug.toUpperCase()}_ENV_VIEW.MP4
+                        </span>
                     </div>
                 </div>
             </section>
 
-            {/* --- HORIZONTAL TECHNICAL PAVE (Add Phase Images/Videos here) --- */}
+            {/* --- HORIZONTAL TECHNICAL PAVE --- */}
             <section ref={horizontalTrigger} className="relative z-10 overflow-hidden bg-[#0a0a0a]">
                 <div ref={horizontalSection} className="flex h-screen w-[300vw]">
 
-                    {/* PANEL 1: Technical Schema */}
+                    {/* PHASE 01: ARCHITECTURE IMAGE */}
                     <div className="horizontal-panel w-screen h-full flex items-center justify-center p-6 md:p-24 border-r border-neutral-900">
                         <div className="w-full h-full bg-black border border-neutral-800 rounded-sm flex flex-col relative overflow-hidden group">
-                            {/* ADD IMAGE HERE */}
-                            <img src="/architecture-diagram.jpg" className="w-full h-full object-contain opacity-40 group-hover:opacity-100 transition-opacity duration-700" alt="Schema" />
+                            {/* ADD DIAGRAM IMAGE HERE:
+                               <img src={`/images/${project.slug}-schema.jpg`} className="w-full h-full object-contain opacity-40" />
+                            */}
+                            <div className="m-auto flex flex-col items-center gap-6">
+                                <FiTerminal className="text-7xl text-neutral-800" />
+                                <span className="font-mono text-xs text-neutral-600 uppercase tracking-[1em]">Architecture_Schema</span>
+                            </div>
                             <div className="absolute bottom-10 left-10 text-left pointer-events-none">
                                 <span className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2 block">Phase 01</span>
-                                <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-white">System Architecture</h2>
+                                <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-white">The Challenge</h2>
                             </div>
                         </div>
                     </div>
 
-                    {/* PANEL 2: Live Demo Video */}
+                    {/* PHASE 02: EXECUTION VIDEO */}
                     <div className="horizontal-panel w-screen h-full flex items-center justify-center p-6 md:p-24 border-r border-neutral-900">
                         <div className="w-full h-full bg-black border border-neutral-800 rounded-sm flex items-center justify-center relative overflow-hidden">
-                            {/* ADD SCREEN RECORDING VIDEO HERE */}
-                            <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-60">
-                                <source src="/demo-video.mp4" type="video/mp4" />
-                            </video>
+                            {/* ADD SCREEN RECORDING VIDEO HERE:
+                               <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-60">
+                                 <source src={`/videos/${project.slug}-demo.mp4`} type="video/mp4" />
+                               </video>
+                            */}
                             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                <FiMonitor className="text-white/10 text-[20vw]" />
-                                <span className="absolute font-mono text-[10px] text-white/30 uppercase tracking-[1em]">Execution_Log</span>
+                                <FiMonitor className="text-white/5 text-[20vw]" />
+                                <span className="absolute font-mono text-[10px] text-white/30 uppercase tracking-[1em]">Runtime_Execution</span>
+                            </div>
+                            <div className="absolute bottom-10 left-10 text-left pointer-events-none">
+                                <span className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-2 block">Phase 02</span>
+                                <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-white">System Logic</h2>
                             </div>
                         </div>
                     </div>
 
-                    {/* PANEL 3: Logic Breakdown */}
+                    {/* PHASE 03: LOGIC SUMMARY */}
                     <div className="horizontal-panel w-screen h-full flex flex-col justify-center px-6 md:px-24">
                         <FiCode className="text-6xl mb-8 text-neutral-500" />
                         <span className="font-mono text-xs uppercase tracking-widest text-neutral-600 mb-4 block">Phase 03</span>
-                        <h2 className="text-5xl md:text-8xl font-bold uppercase tracking-tighter mb-8 text-white leading-none">Logic<br />Injection</h2>
+                        <h2 className="text-5xl md:text-8xl font-bold uppercase tracking-tighter mb-8 text-white leading-none">The<br />Solution</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 border-t border-neutral-900 pt-12">
                             <p className="text-xl text-neutral-400 font-light leading-relaxed">
-                                Implementing zero-latency Inter-Process Communication (IPC) to bridge the gap between the UI and local inference engines.
+                                {project.solution}
                             </p>
                             <div className="flex flex-wrap gap-2 h-fit">
-                                {["C++", "PyTorch", "GGUF", "IPC"].map(t => <span key={t} className="px-4 py-2 border border-neutral-800 font-mono text-[10px] uppercase text-white">{t}</span>)}
+                                {project.stack.map((t, index) => (
+                                    <span key={`${t}-${index}`} className="px-4 py-2 border border-neutral-800 font-mono text-[10px] uppercase text-white">{t}</span>
+                                ))}
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
+            {/* --- ABSTRACT SECTION --- */}
             <section className="relative z-10 px-6 md:px-12 max-w-[120rem] mx-auto py-32 border-b border-neutral-900">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24">
                     <div className="md:col-span-4 scroll-block">
                         <h2 className="font-mono text-sm uppercase tracking-widest text-neutral-600 border-b border-neutral-900 pb-4 mb-6">Abstract</h2>
                     </div>
                     <div className="md:col-span-8 scroll-block">
-                        <p className="text-3xl md:text-5xl font-light leading-tight text-white hover-target cursor-none">
-                            Engineering standalone applications that execute complex AI tasks natively, bypassing cloud dependencies to ensure privacy and speed.
+                        <p className="text-3xl md:text-5xl font-light leading-tight text-white hover-target cursor-none mb-12">
+                            {project.overview}
                         </p>
+                        <div className="p-8 border border-neutral-900 bg-neutral-950/50">
+                            <h4 className="font-mono text-xs text-neutral-500 uppercase mb-4">Challenge Summary</h4>
+                            <p className="text-lg text-neutral-400 leading-relaxed">{project.challenge}</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
+            {/* --- NEXT PROJECT FOOTER --- */}
             <footer className="relative z-10 pt-32 pb-20 px-6 md:px-12 max-w-[120rem] mx-auto text-center flex flex-col items-center justify-center min-h-[60vh]">
-                <span className="font-mono text-xs uppercase tracking-widest text-neutral-700 mb-8 block">Proceed to Next</span>
-                <a href="/work/lenmi-store" className="hover-target group flex flex-col items-center cursor-none">
+                <span className="font-mono text-xs uppercase tracking-widest text-neutral-700 mb-8 block">Proceed to Next System</span>
+                <a href={`/work/${project.nextProject}`} className="hover-target group flex flex-col items-center cursor-none">
                     <h2 className="text-[10vw] md:text-[8vw] font-bold tracking-tighter leading-none uppercase text-white group-hover:text-neutral-600 transition-colors duration-700">
-                        Lenmi Store
+                        {project.nextProjectName}
                     </h2>
                     <div className="mt-12 flex items-center gap-4 text-2xl font-mono uppercase tracking-widest text-neutral-600 group-hover:text-white transition-colors">
-                        Initialize <FiArrowUpRight className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
+                        Deploy <FiArrowUpRight className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
                     </div>
                 </a>
             </footer>

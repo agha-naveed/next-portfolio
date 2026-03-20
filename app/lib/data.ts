@@ -1,6 +1,6 @@
 export const projectsData = [
     {
-        slug: "vextor",
+        slug: "vextor-ai-ide",
         title: "Vextor IDE",
         type: "AI Infrastructure",
         role: "Lead Architect",

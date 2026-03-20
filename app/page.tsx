@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiArrowUpRight, FiTerminal, FiDatabase, FiLayout, FiCpu, FiGitBranch } from "react-icons/fi";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -112,10 +113,10 @@ export default function Home() {
 
       <div
         ref={cursorRef}
-        className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference transform -translate-x-1/2 -translate-y-1/2"
+        className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-9999 mix-blend-difference transform -translate-x-1/2 -translate-y-1/2"
       ></div>
 
-      <div ref={loaderRef} className="fixed inset-0 z-[9999] flex pointer-events-none">
+      <div ref={loaderRef} className="fixed inset-0 z-9999 flex pointer-events-none">
         <div className="loader-door-left w-1/2 h-full bg-[#050505] border-r border-neutral-800 flex justify-end items-center relative">
           <div className="loader-text font-mono text-[8vw] md:text-[6vw] font-black text-white mr-4 tracking-tighter">LOADING</div>
         </div>
@@ -125,9 +126,9 @@ export default function Home() {
       </div>
 
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="grid-line-x absolute top-20 left-0 w-full h-[1px] bg-neutral-900 origin-left"></div>
-        <div className="grid-line-y absolute top-0 left-6 md:left-12 w-[1px] h-full bg-neutral-900 origin-top hidden md:block"></div>
-        <div className="grid-line-y absolute top-0 right-6 md:right-12 w-[1px] h-full bg-neutral-900 origin-top hidden md:block"></div>
+        <div className="grid-line-x absolute top-20 left-0 w-full h-px bg-neutral-900 origin-left"></div>
+        <div className="grid-line-y absolute top-0 left-6 md:left-12 w-px h-full bg-neutral-900 origin-top hidden md:block"></div>
+        <div className="grid-line-y absolute top-0 right-6 md:right-12 w-px h-full bg-neutral-900 origin-top hidden md:block"></div>
       </div>
 
       <nav className="fixed top-0 w-full h-20 px-6 md:px-12 flex justify-between items-center z-50 bg-black/80 backdrop-blur-md">
@@ -135,13 +136,13 @@ export default function Home() {
           Syed Naveed Abbas <span className="text-white ml-2">v2.0.26</span>
         </div>
         <div className="mask-reveal flex gap-8 font-mono text-xs uppercase tracking-[0.2em]">
-          <a href="#index" className="hover-target hover:text-white text-neutral-500 transition-colors cursor-none">Index</a>
-          <a href="#specs" className="hover-target hover:text-white text-neutral-500 transition-colors cursor-none">Specs</a>
-          <a href="mailto:NaveedAbs31@gmail.com" className="hover-target hover:text-white text-neutral-500 transition-colors cursor-none">Contact</a>
+          <Link href="work" className="hover-target hover:text-white text-neutral-500 transition-colors cursor-none">Work</Link>
+          <Link href="about" className="hover-target hover:text-white text-neutral-500 transition-colors cursor-none">About</Link>
+          <Link href="mailto:NaveedAbs31@gmail.com" className="hover-target hover:text-white text-neutral-500 transition-colors cursor-none">Contact</Link>
         </div>
       </nav>
 
-      <section className="relative z-10 pt-20 px-6 md:px-12 max-w-[120rem] mx-auto min-h-screen flex flex-col">
+      <section className="relative z-10 pt-20 px-6 md:px-12 max-w-480 mx-auto min-h-screen flex flex-col">
         <div className="grid grid-cols-1 md:grid-cols-4 border-b border-neutral-900 py-6 font-mono text-xs uppercase tracking-widest text-neutral-500 gap-6">
           <div className="mask-reveal flex flex-col gap-1">
             <span className="text-neutral-700">Role</span>
@@ -164,7 +165,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex-grow flex flex-col justify-center py-20">
+        <div className="grow flex flex-col justify-center py-20">
           <h1 className="text-[12vw] lg:text-[10vw] font-medium tracking-tighter leading-[0.85] uppercase mb-8">
             <div className="mask-reveal">SYED</div>
             <div className="mask-reveal text-neutral-600">NAVEED ABBAS.</div>
@@ -186,7 +187,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="index" className="relative z-10 px-6 md:px-12 max-w-[120rem] mx-auto py-32">
+      <section id="index" className="relative z-10 px-6 md:px-12 max-w-480 mx-auto py-32">
         <div className="border-b border-neutral-200 pb-6 mb-12 flex justify-between items-end">
           <h2 className="text-4xl md:text-6xl font-medium tracking-tighter uppercase text-white">Project Index</h2>
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-500 hidden md:block">03 Entries Found</span>
@@ -218,9 +219,9 @@ export default function Home() {
               </p>
             </div>
             <div className="col-span-1 lg:text-right">
-              <a href="#" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors cursor-none">
+              <Link href="/work/vextor-ai-ide" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors cursor-none">
                 <FiArrowUpRight className="text-xl" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -241,39 +242,16 @@ export default function Home() {
               </p>
             </div>
             <div className="col-span-1 lg:text-right">
-              <a href="#" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors cursor-none">
+              <Link href="/work/lenmi-store" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors cursor-none">
                 <FiArrowUpRight className="text-xl" />
-              </a>
-            </div>
-          </div>
-
-          <div className="data-row hover-target group grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-8 items-start py-12 border-b border-neutral-900 hover:bg-neutral-900/20 transition-colors cursor-none">
-            <div className="col-span-1 font-mono text-sm text-neutral-500">03</div>
-            <div className="col-span-3">
-              <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-4 group-hover:text-white transition-colors">Context Bot</h3>
-              <span className="inline-block font-mono text-[10px] uppercase tracking-widest border border-neutral-800 px-2 py-1 text-neutral-400">NLP Microservice</span>
-            </div>
-            <div className="col-span-3 flex flex-wrap gap-2 h-fit">
-              {["Python", "FastAPI", "React.js", "Docker"].map(tech => (
-                <span key={tech} className="font-mono text-xs text-neutral-300 bg-neutral-900 px-2 py-1">{tech}</span>
-              ))}
-            </div>
-            <div className="col-span-4">
-              <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
-                A decoupled 24/7 digital assistant. Isolates heavy Python-based natural language processing into an ultra-low latency backend, communicating seamlessly with a lightweight React client.
-              </p>
-            </div>
-            <div className="col-span-1 lg:text-right">
-              <a href="#" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors cursor-none">
-                <FiArrowUpRight className="text-xl" />
-              </a>
+              </Link>
             </div>
           </div>
 
         </div>
       </section>
 
-      <section id="specs" className="specs-container relative z-10 px-6 md:px-12 max-w-[120rem] mx-auto py-32 border-t border-neutral-900">
+      <section id="specs" className="specs-container relative z-10 px-6 md:px-12 max-w-480 mx-auto py-32 border-t border-neutral-900">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8">
           <div className="lg:col-span-1">
             <h2 className="text-3xl font-medium tracking-tighter uppercase text-white mb-6">Technical<br />Specifications</h2>
@@ -326,7 +304,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="relative z-10 px-6 md:px-12 max-w-[120rem] mx-auto pt-32 pb-12 border-t border-neutral-900">
+      <footer className="relative z-10 px-6 md:px-12 max-w-480 mx-auto pt-32 pb-12 border-t border-neutral-900">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
           <div className="flex flex-col gap-6">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-500">System Awaiting Input</span>

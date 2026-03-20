@@ -6,11 +6,12 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { FiArrowUpRight, FiArrowLeft } from "react-icons/fi";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-    { id: "01", name: "Vextor IDE", type: "AI Infrastructure", stack: "Electron / PyTorch", color: "#3b82f6", slug: "vextor" },
+    { id: "01", name: "Vextor IDE", type: "AI Infrastructure", stack: "Electron / PyTorch", color: "#3b82f6", slug: "vextor-ai-ide" },
     { id: "02", name: "Lenmi Store", type: "E-Commerce", stack: "MERN Stack", color: "#a855f7", slug: "lenmi-store" },
     { id: "03", name: "Context Bot", type: "NLP Microservice", stack: "FastAPI / React", color: "#10b981", slug: "context-bot" },
 ];
@@ -58,6 +59,12 @@ export default function WorkIndex() {
         lenis.on("scroll", ScrollTrigger.update);
         gsap.ticker.add((time) => lenis.raf(time * 1000));
 
+        const interactives = document.querySelectorAll("a, button, .hover-target");
+        interactives.forEach(el => {
+            el.addEventListener("mouseenter", () => gsap.to(cursorRef.current, { scale: 3.5, duration: 0.3 }));
+            el.addEventListener("mouseleave", () => gsap.to(cursorRef.current, { scale: 1, duration: 0.3 }));
+        });
+
         const xTo = gsap.quickTo(cursorRef.current, "x", { duration: 0.15 });
         const yTo = gsap.quickTo(cursorRef.current, "y", { duration: 0.15 });
         window.addEventListener("mousemove", (e) => {
@@ -71,11 +78,9 @@ export default function WorkIndex() {
     return (
         <main ref={container} className={`bg-black text-[#EAEAEA] min-h-screen font-sans selection:bg-white selection:text-black cursor-none overflow-x-hidden ${!isLoaded ? "overflow-hidden h-screen" : ""}`}>
 
-            {/* CUSTOM CURSOR */}
-            <div ref={cursorRef} className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div ref={cursorRef} className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-9999 mix-blend-difference transform -translate-x-1/2 -translate-y-1/2"></div>
 
-            {/* APERTURE LOADER */}
-            <div ref={loaderRef} className="fixed inset-0 z-[9999] flex pointer-events-none bg-black">
+            <div ref={loaderRef} className="fixed inset-0 z-9999 flex pointer-events-none bg-black">
                 <div className="loader-door-left w-1/2 h-full border-r border-neutral-900 flex justify-end items-center px-10">
                     <div className="font-mono text-5xl font-bold uppercase tracking-tighter text-white">WORK</div>
                 </div>
@@ -84,25 +89,22 @@ export default function WorkIndex() {
                 </div>
             </div>
 
-            {/* GLOBAL GRID LINES */}
             <div className="fixed inset-0 pointer-events-none z-0">
-                <div className="grid-line-x absolute top-20 left-0 w-full h-[1px] bg-neutral-900 origin-left"></div>
-                <div className="grid-line-y absolute top-0 left-12 w-[1px] h-full bg-neutral-900 origin-top hidden md:block"></div>
-                <div className="grid-line-y absolute top-0 right-12 w-[1px] h-full bg-neutral-900 origin-top hidden md:block"></div>
+                <div className="grid-line-x absolute top-20 left-0 w-full h-px bg-neutral-900 origin-left"></div>
+                <div className="grid-line-y absolute top-0 left-12 w-px h-full bg-neutral-900 origin-top hidden md:block"></div>
+                <div className="grid-line-y absolute top-0 right-12 w-px h-full bg-neutral-900 origin-top hidden md:block"></div>
             </div>
 
-            {/* NAVIGATION */}
             <nav className="fixed top-0 w-full h-20 px-12 flex justify-between items-center z-50 bg-black/80 backdrop-blur-md">
-                <a href="/" className="group hover-target flex items-center gap-4 font-mono text-xs uppercase tracking-[0.2em] text-neutral-400 hover:text-white transition-colors">
-                    <FiArrowLeft className="text-lg group-hover:-translate-x-1 transition-transform" /> Index
-                </a>
+                <Link href="/" className="hover-target group flex items-center gap-4 font-mono text-xs uppercase tracking-[0.2em] text-neutral-400 hover:text-white transition-colors">
+                    <FiArrowLeft className="text-lg group-hover:-translate-x-1 transition-transform" /> Home
+                </Link>
                 <div className="mask-reveal font-mono text-xs uppercase tracking-[0.2em] text-neutral-500">
                     Total_Deployments: {projects.length}
                 </div>
             </nav>
 
-            {/* PAGE HEADER */}
-            <header className="relative pt-40 pb-20 px-12 md:px-24 max-w-[120rem] mx-auto border-b border-neutral-900">
+            <header className="relative pt-40 pb-20 px-12 md:px-24 max-w-480 mx-auto border-b border-neutral-900">
                 <div className="mask-reveal font-mono text-xs uppercase tracking-[0.5em] text-neutral-600 mb-8">
           // BROWSE_ARCHIVE
                 </div>
@@ -111,17 +113,16 @@ export default function WorkIndex() {
                 </h1>
             </header>
 
-            {/* PROJECT LIST INDEX */}
             <section className="relative z-10">
                 {projects.map((proj, i) => (
-                    <a
+                    <Link
                         key={proj.id}
                         href={`/work/${proj.slug}`}
                         onMouseEnter={() => setHoveredIndex(i)}
                         onMouseLeave={() => setHoveredIndex(null)}
                         className="group block border-b border-neutral-900 hover:bg-white transition-colors duration-500 overflow-hidden relative"
                     >
-                        <div className="max-w-[120rem] mx-auto grid grid-cols-1 md:grid-cols-12 items-center py-16 px-12 md:px-24 relative z-10 mix-blend-difference text-white">
+                        <div className="max-w-480 mx-auto grid grid-cols-1 md:grid-cols-12 items-center py-16 px-12 md:px-24 relative z-10 mix-blend-difference text-white">
                             <div className="md:col-span-1 font-mono text-sm opacity-40">{proj.id}</div>
                             <div className="md:col-span-6">
                                 <h2 className="text-4xl md:text-7xl font-bold uppercase tracking-tighter group-hover:italic transition-all duration-500">
@@ -147,7 +148,7 @@ export default function WorkIndex() {
                                 {proj.name.split(" ")[0].toUpperCase()}
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </section>
 
