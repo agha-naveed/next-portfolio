@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,23 +10,65 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const container = useRef<HTMLDivElement>(null);
+  const loaderRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useGSAP(() => {
-    // 1. Clinical Grid Reveal (On Load)
-    const tl = gsap.timeline();
+    const hasVisited = sessionStorage.getItem("clinical_visited");
 
-    // Animate grid lines (borders) growing
-    tl.fromTo(".grid-line-x", { scaleX: 0 }, { scaleX: 1, duration: 1.5, ease: "expo.inOut", stagger: 0.1 })
-      .fromTo(".grid-line-y", { scaleY: 0 }, { scaleY: 1, duration: 1.5, ease: "expo.inOut", stagger: 0.1 }, "-=1.5")
+    const animatePageIn = () => {
+      const tl = gsap.timeline();
 
-      // Reveal text via masking (clip-path)
-      .fromTo(".mask-reveal",
-        { clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", y: 20 },
-        { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", y: 0, duration: 1, ease: "power3.out", stagger: 0.1 },
-        "-=0.8"
-      );
+      tl.fromTo(".grid-line-x", { scaleX: 0 }, { scaleX: 1, duration: 1.5, ease: "expo.inOut", stagger: 0.1 })
+        .fromTo(".grid-line-y", { scaleY: 0 }, { scaleY: 1, duration: 1.5, ease: "expo.inOut", stagger: 0.1 }, "-=1.5")
+        .fromTo(".mask-reveal",
+          { clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", y: 20 },
+          { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", y: 0, duration: 1, ease: "power3.out", stagger: 0.1 },
+          "-=0.8"
+        );
+    };
 
-    // 2. Data Table Row Reveals (On Scroll)
+    if (hasVisited) {
+      setIsLoaded(true);
+      gsap.set(loaderRef.current, { display: "none" });
+      animatePageIn();
+    } else {
+      const loadTl = gsap.timeline({
+        onComplete: () => {
+          setIsLoaded(true);
+          sessionStorage.setItem("clinical_visited", "true");
+        }
+      });
+
+      loadTl.to(".loader-counter", {
+        innerHTML: 100,
+        duration: 2,
+        snap: { innerHTML: 1 },
+        ease: "power2.inOut",
+      })
+        .to(".loader-text", { opacity: 0, duration: 0.3 }, "-=0.2")
+        .to(".loader-door-left", { xPercent: -100, duration: 1.2, ease: "expo.inOut" })
+        .to(".loader-door-right", { xPercent: 100, duration: 1.2, ease: "expo.inOut" }, "<")
+        .to(loaderRef.current, { display: "none", duration: 0 }, ">")
+        .add(animatePageIn, "-=1");
+    }
+
+    const xTo = gsap.quickTo(cursorRef.current, "x", { duration: 0.15, ease: "power3.out" });
+    const yTo = gsap.quickTo(cursorRef.current, "y", { duration: 0.15, ease: "power3.out" });
+
+    const moveCursor = (e: MouseEvent) => {
+      xTo(e.clientX);
+      yTo(e.clientY);
+    };
+    window.addEventListener("mousemove", moveCursor);
+
+    const interactives = document.querySelectorAll("a, button, .hover-target");
+    interactives.forEach(el => {
+      el.addEventListener("mouseenter", () => gsap.to(cursorRef.current, { scale: 3.5, duration: 0.3 }));
+      el.addEventListener("mouseleave", () => gsap.to(cursorRef.current, { scale: 1, duration: 0.3 }));
+    });
+
     const dataRows = gsap.utils.toArray<HTMLElement>(".data-row");
     dataRows.forEach((row) => {
       gsap.fromTo(row,
@@ -44,7 +86,6 @@ export default function Home() {
       );
     });
 
-    // 3. Technical Specs Counter/Reveal
     gsap.from(".spec-item", {
       opacity: 0,
       x: -20,
@@ -57,43 +98,50 @@ export default function Home() {
       }
     });
 
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+    };
+
   }, { scope: container });
 
   return (
-    <main ref={container} className="bg-black text-[#EAEAEA] min-h-screen font-sans selection:bg-white selection:text-black">
+    <main
+      ref={container}
+      className={`bg-black text-[#EAEAEA] min-h-screen font-sans selection:bg-white selection:text-black cursor-none ${!isLoaded ? "overflow-hidden h-screen" : ""}`}
+    >
 
-      {/* ========================================
-        GLOBAL GRID LINES (Absolute Positioning)
-        ========================================
-      */}
+      <div
+        ref={cursorRef}
+        className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference transform -translate-x-1/2 -translate-y-1/2"
+      ></div>
+
+      <div ref={loaderRef} className="fixed inset-0 z-[9999] flex pointer-events-none">
+        <div className="loader-door-left w-1/2 h-full bg-[#050505] border-r border-neutral-800 flex justify-end items-center relative">
+          <div className="loader-text font-mono text-[8vw] md:text-[6vw] font-black text-white mr-4 tracking-tighter">LOADING</div>
+        </div>
+        <div className="loader-door-right w-1/2 h-full bg-[#050505] border-l border-neutral-800 flex justify-start items-center relative">
+          <div className="loader-text font-mono text-[8vw] md:text-[6vw] font-black text-white ml-4 tracking-tighter"><span className="loader-counter">0</span>%</div>
+        </div>
+      </div>
+
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="grid-line-x absolute top-20 left-0 w-full h-[1px] bg-neutral-900 origin-left"></div>
         <div className="grid-line-y absolute top-0 left-6 md:left-12 w-[1px] h-full bg-neutral-900 origin-top hidden md:block"></div>
         <div className="grid-line-y absolute top-0 right-6 md:right-12 w-[1px] h-full bg-neutral-900 origin-top hidden md:block"></div>
       </div>
 
-      {/* ========================================
-        NAVIGATION (Clinical & Minimal)
-        ========================================
-      */}
       <nav className="fixed top-0 w-full h-20 px-6 md:px-12 flex justify-between items-center z-50 bg-black/80 backdrop-blur-md">
         <div className="mask-reveal font-mono text-xs uppercase tracking-[0.2em] text-neutral-400">
           Syed Naveed Abbas <span className="text-white ml-2">v2.0.26</span>
         </div>
         <div className="mask-reveal flex gap-8 font-mono text-xs uppercase tracking-[0.2em]">
-          <a href="#index" className="hover:text-white text-neutral-500 transition-colors">Index</a>
-          <a href="#specs" className="hover:text-white text-neutral-500 transition-colors">Specs</a>
-          <a href="mailto:NaveedAbs31@gmail.com" className="hover:text-white text-neutral-500 transition-colors">Contact</a>
+          <a href="#index" className="hover-target hover:text-white text-neutral-500 transition-colors cursor-none">Index</a>
+          <a href="#specs" className="hover-target hover:text-white text-neutral-500 transition-colors cursor-none">Specs</a>
+          <a href="mailto:NaveedAbs31@gmail.com" className="hover-target hover:text-white text-neutral-500 transition-colors cursor-none">Contact</a>
         </div>
       </nav>
 
-      {/* ========================================
-        HERO ARCHITECTURE (Static Grid Layout)
-        ========================================
-      */}
       <section className="relative z-10 pt-20 px-6 md:px-12 max-w-[120rem] mx-auto min-h-screen flex flex-col">
-
-        {/* Top Meta Info */}
         <div className="grid grid-cols-1 md:grid-cols-4 border-b border-neutral-900 py-6 font-mono text-xs uppercase tracking-widest text-neutral-500 gap-6">
           <div className="mask-reveal flex flex-col gap-1">
             <span className="text-neutral-700">Role</span>
@@ -116,11 +164,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Massive Typography Block */}
-        <div className="grow flex flex-col justify-center py-20">
+        <div className="flex-grow flex flex-col justify-center py-20">
           <h1 className="text-[12vw] lg:text-[10vw] font-medium tracking-tighter leading-[0.85] uppercase mb-8">
             <div className="mask-reveal">SYED</div>
-            <div className="mask-reveal text-neutral-600 font-semibold">NAVEED ABBAS.</div>
+            <div className="mask-reveal text-neutral-600">NAVEED ABBAS.</div>
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 border-t border-neutral-900 pt-12">
@@ -139,10 +186,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ========================================
-        THE INDEX (Data Table Project Layout)
-        ========================================
-      */}
       <section id="index" className="relative z-10 px-6 md:px-12 max-w-[120rem] mx-auto py-32">
         <div className="border-b border-neutral-200 pb-6 mb-12 flex justify-between items-end">
           <h2 className="text-4xl md:text-6xl font-medium tracking-tighter uppercase text-white">Project Index</h2>
@@ -150,8 +193,6 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col">
-
-          {/* Table Header */}
           <div className="hidden lg:grid grid-cols-12 gap-8 font-mono text-xs uppercase tracking-widest text-neutral-600 border-b border-neutral-900 pb-4 mb-4">
             <div className="col-span-1">ID</div>
             <div className="col-span-3">System Name</div>
@@ -160,85 +201,70 @@ export default function Home() {
             <div className="col-span-1 text-right">Action</div>
           </div>
 
-          {/* Project 01: Vextor AI */}
-          <div className="data-row group grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-8 items-start py-12 border-b border-neutral-900 hover:bg-neutral-900/20 transition-colors">
+          <div className="data-row hover-target group grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-8 items-start py-12 border-b border-neutral-900 hover:bg-neutral-900/20 transition-colors cursor-none">
             <div className="col-span-1 font-mono text-sm text-neutral-500">01</div>
-
             <div className="col-span-3">
               <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-4 group-hover:text-white transition-colors">Vextor IDE</h3>
               <span className="inline-block font-mono text-[10px] uppercase tracking-widest border border-neutral-800 px-2 py-1 text-neutral-400">Capstone Project</span>
             </div>
-
             <div className="col-span-3 flex flex-wrap gap-2 h-fit">
               {["Electron.js", "React 18", "PyTorch", "C++", "llama.cpp"].map(tech => (
                 <span key={tech} className="font-mono text-xs text-neutral-300 bg-neutral-900 px-2 py-1">{tech}</span>
               ))}
             </div>
-
             <div className="col-span-4">
               <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
                 A localized Integrated Development Environment. Bypasses cloud APIs by natively mounting offline PyTorch models directly on the user's machine for privacy-first, zero-latency coding assistance.
               </p>
             </div>
-
             <div className="col-span-1 lg:text-right">
-              <a href="#" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors">
+              <a href="#" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors cursor-none">
                 <FiArrowUpRight className="text-xl" />
               </a>
             </div>
           </div>
 
-          {/* Project 02: Lenmi Store */}
-          <div className="data-row group grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-8 items-start py-12 border-b border-neutral-900 hover:bg-neutral-900/20 transition-colors">
+          <div className="data-row hover-target group grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-8 items-start py-12 border-b border-neutral-900 hover:bg-neutral-900/20 transition-colors cursor-none">
             <div className="col-span-1 font-mono text-sm text-neutral-500">02</div>
-
             <div className="col-span-3">
               <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-4 group-hover:text-white transition-colors">Lenmi Store</h3>
               <span className="inline-block font-mono text-[10px] uppercase tracking-widest border border-neutral-800 px-2 py-1 text-neutral-400">E-Commerce Architecture</span>
             </div>
-
             <div className="col-span-3 flex flex-wrap gap-2 h-fit">
               {["Next.js", "MongoDB", "Node.js", "Tailwind CSS"].map(tech => (
                 <span key={tech} className="font-mono text-xs text-neutral-300 bg-neutral-900 px-2 py-1">{tech}</span>
               ))}
             </div>
-
             <div className="col-span-4">
               <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
                 A highly scalable marketplace infrastructure. Features complex state management protocols to synchronize real-time inventory, secure authentication flows, and high-conversion checkout pipelines.
               </p>
             </div>
-
             <div className="col-span-1 lg:text-right">
-              <a href="#" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors">
+              <a href="#" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors cursor-none">
                 <FiArrowUpRight className="text-xl" />
               </a>
             </div>
           </div>
 
-          {/* Project 03: AI Chatbot */}
-          <div className="data-row group grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-8 items-start py-12 border-b border-neutral-900 hover:bg-neutral-900/20 transition-colors">
+          <div className="data-row hover-target group grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-8 items-start py-12 border-b border-neutral-900 hover:bg-neutral-900/20 transition-colors cursor-none">
             <div className="col-span-1 font-mono text-sm text-neutral-500">03</div>
-
             <div className="col-span-3">
               <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-4 group-hover:text-white transition-colors">Context Bot</h3>
               <span className="inline-block font-mono text-[10px] uppercase tracking-widest border border-neutral-800 px-2 py-1 text-neutral-400">NLP Microservice</span>
             </div>
-
             <div className="col-span-3 flex flex-wrap gap-2 h-fit">
               {["Python", "FastAPI", "React.js", "Docker"].map(tech => (
                 <span key={tech} className="font-mono text-xs text-neutral-300 bg-neutral-900 px-2 py-1">{tech}</span>
               ))}
             </div>
-
             <div className="col-span-4">
               <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
                 A decoupled 24/7 digital assistant. Isolates heavy Python-based natural language processing into an ultra-low latency backend, communicating seamlessly with a lightweight React client.
               </p>
             </div>
-
             <div className="col-span-1 lg:text-right">
-              <a href="#" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors">
+              <a href="#" className="inline-flex items-center justify-center w-12 h-12 border border-neutral-800 hover:bg-white hover:text-black transition-colors cursor-none">
                 <FiArrowUpRight className="text-xl" />
               </a>
             </div>
@@ -247,13 +273,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ========================================
-        TECHNICAL SPECIFICATIONS (The Stack)
-        ========================================
-      */}
       <section id="specs" className="specs-container relative z-10 px-6 md:px-12 max-w-[120rem] mx-auto py-32 border-t border-neutral-900">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8">
-
           <div className="lg:col-span-1">
             <h2 className="text-3xl font-medium tracking-tighter uppercase text-white mb-6">Technical<br />Specifications</h2>
             <p className="font-mono text-xs text-neutral-500 uppercase tracking-widest leading-relaxed">
@@ -261,8 +282,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Frontend Module */}
-          <div className="lg:col-span-1 flex flex-col border border-neutral-900 p-8">
+          <div className="hover-target lg:col-span-1 flex flex-col border border-neutral-900 p-8 cursor-none">
             <div className="flex items-center gap-4 mb-8 text-neutral-400">
               <FiLayout className="text-2xl" />
               <h3 className="font-mono text-sm uppercase tracking-widest text-white">Frontend Core</h3>
@@ -276,8 +296,7 @@ export default function Home() {
             </ul>
           </div>
 
-          {/* Backend Module */}
-          <div className="lg:col-span-1 flex flex-col border border-neutral-900 p-8">
+          <div className="hover-target lg:col-span-1 flex flex-col border border-neutral-900 p-8 cursor-none">
             <div className="flex items-center gap-4 mb-8 text-neutral-400">
               <FiDatabase className="text-2xl" />
               <h3 className="font-mono text-sm uppercase tracking-widest text-white">Backend & Data</h3>
@@ -291,8 +310,7 @@ export default function Home() {
             </ul>
           </div>
 
-          {/* AI & Systems Module */}
-          <div className="lg:col-span-1 flex flex-col border border-neutral-900 p-8">
+          <div className="hover-target lg:col-span-1 flex flex-col border border-neutral-900 p-8 cursor-none">
             <div className="flex items-center gap-4 mb-8 text-neutral-400">
               <FiCpu className="text-2xl" />
               <h3 className="font-mono text-sm uppercase tracking-widest text-white">AI & Systems</h3>
@@ -305,20 +323,14 @@ export default function Home() {
               ))}
             </ul>
           </div>
-
         </div>
       </section>
 
-      {/* ========================================
-        FOOTER (Command Execution)
-        ========================================
-      */}
       <footer className="relative z-10 px-6 md:px-12 max-w-[120rem] mx-auto pt-32 pb-12 border-t border-neutral-900">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
-
           <div className="flex flex-col gap-6">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-500">System Awaiting Input</span>
-            <a href="mailto:NaveedAbs31@gmail.com" className="group flex items-center gap-6 text-4xl md:text-6xl font-medium tracking-tighter uppercase text-white hover:text-neutral-400 transition-colors">
+            <a href="mailto:NaveedAbs31@gmail.com" className="hover-target group flex items-center gap-6 text-4xl md:text-6xl font-medium tracking-tighter uppercase text-white hover:text-neutral-400 transition-colors cursor-none">
               Execute Contact <FiArrowUpRight className="text-5xl group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
             </a>
             <p className="font-mono text-sm text-neutral-500 mt-4">NaveedAbs31@gmail.com</p>
@@ -326,12 +338,11 @@ export default function Home() {
 
           <div className="flex flex-col md:items-end gap-6 font-mono text-xs uppercase tracking-widest">
             <div className="flex gap-8">
-              <a href="#" className="flex items-center gap-2 hover:text-white text-neutral-400 transition-colors"><FiGitBranch /> GitHub</a>
-              <a href="#" className="flex items-center gap-2 hover:text-white text-neutral-400 transition-colors"><FiArrowUpRight /> LinkedIn</a>
+              <a href="#" className="hover-target flex items-center gap-2 hover:text-white text-neutral-400 transition-colors cursor-none"><FiGitBranch /> GitHub</a>
+              <a href="#" className="hover-target flex items-center gap-2 hover:text-white text-neutral-400 transition-colors cursor-none"><FiArrowUpRight /> LinkedIn</a>
             </div>
             <span className="text-neutral-600">© {new Date().getFullYear()} Syed Naveed Abbas. All Rights Reserved.</span>
           </div>
-
         </div>
       </footer>
 
