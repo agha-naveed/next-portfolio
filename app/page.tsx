@@ -251,7 +251,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="specs" className="specs-container relative z-10 px-6 md:px-12 max-w-480 mx-auto py-32 border-t border-neutral-900">
+      <section id="specs" className="specs-container relative z-10 px-6 md:px-12 max-w-[120rem] mx-auto py-32 border-t border-neutral-900">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8">
           <div className="lg:col-span-1">
             <h2 className="text-3xl font-medium tracking-tighter uppercase text-white mb-6">Technical<br />Specifications</h2>
@@ -260,43 +260,43 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="hover-target lg:col-span-1 flex flex-col border border-neutral-900 p-8 cursor-none">
+          <div className="lg:col-span-1 flex flex-col border border-neutral-900 p-8">
             <div className="flex items-center gap-4 mb-8 text-neutral-400">
               <FiLayout className="text-2xl" />
               <h3 className="font-mono text-sm uppercase tracking-widest text-white">Frontend Core</h3>
             </div>
             <ul className="flex flex-col gap-4 font-mono text-sm text-neutral-400">
-              {["React.js", "Next.js App Router", "TypeScript", "Tailwind CSS", "GSAP / Framer"].map(item => (
-                <li key={item} className="spec-item flex justify-between border-b border-neutral-900 pb-2">
-                  <span>{item}</span> <span className="text-neutral-700">Deploy</span>
+              {["React", "Next.js", "JavaScript (ES6+)", "TypeScript", "Tailwind CSS", "Bootstrap"].map(item => (
+                <li key={item} className="spec-item flex justify-between border-b border-neutral-900 pb-2 hover:text-white transition-colors cursor-default">
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="hover-target lg:col-span-1 flex flex-col border border-neutral-900 p-8 cursor-none">
+          <div className="lg:col-span-1 flex flex-col border border-neutral-900 p-8">
             <div className="flex items-center gap-4 mb-8 text-neutral-400">
               <FiDatabase className="text-2xl" />
-              <h3 className="font-mono text-sm uppercase tracking-widest text-white">Backend & Data</h3>
+              <h3 className="font-mono text-sm uppercase tracking-widest text-white">Backend & Database</h3>
             </div>
             <ul className="flex flex-col gap-4 font-mono text-sm text-neutral-400">
-              {["Node.js", "Express Architecture", "MongoDB", "FastAPI", "SQL Relational"].map(item => (
-                <li key={item} className="spec-item flex justify-between border-b border-neutral-900 pb-2">
-                  <span>{item}</span> <span className="text-neutral-700">Deploy</span>
+              {["Node.js + Express.js", "FastAPI", "Redis", "MongoDB", "PostgreSQL / MySQL", "Prisma ORM"].map(item => (
+                <li key={item} className="spec-item flex justify-between border-b border-neutral-900 pb-2 hover:text-white transition-colors cursor-default">
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="hover-target lg:col-span-1 flex flex-col border border-neutral-900 p-8 cursor-none">
+          <div className="lg:col-span-1 flex flex-col border border-neutral-900 p-8">
             <div className="flex items-center gap-4 mb-8 text-neutral-400">
               <FiCpu className="text-2xl" />
-              <h3 className="font-mono text-sm uppercase tracking-widest text-white">AI & Systems</h3>
+              <h3 className="font-mono text-sm uppercase tracking-widest text-white">Other Tech Stacks</h3>
             </div>
             <ul className="flex flex-col gap-4 font-mono text-sm text-neutral-400">
-              {["Python", "PyTorch Models", "Electron.js", "C++ System Level", "Docker / Git"].map(item => (
-                <li key={item} className="spec-item flex justify-between border-b border-neutral-900 pb-2">
-                  <span>{item}</span> <span className="text-neutral-700">Deploy</span>
+              {["Python", "Numpy / Pandas", "Docker", "Git", "Electron.js"].map(item => (
+                <li key={item} className="spec-item flex justify-between border-b border-neutral-900 pb-2 hover:text-white transition-colors cursor-default">
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
@@ -316,8 +316,8 @@ export default function Home() {
 
           <div className="flex flex-col md:items-end gap-6 font-mono text-xs uppercase tracking-widest">
             <div className="flex gap-8">
-              <a href="#" className="hover-target flex items-center gap-2 hover:text-white text-neutral-400 transition-colors cursor-none"><FiGitBranch /> GitHub</a>
-              <a href="#" className="hover-target flex items-center gap-2 hover:text-white text-neutral-400 transition-colors cursor-none"><FiArrowUpRight /> LinkedIn</a>
+              <a href="https://github.com/agha-naveed" className="hover-target flex items-center gap-2 hover:text-white text-neutral-400 transition-colors cursor-none"><FiGitBranch /> GitHub</a>
+              <a href="https://github.com/in/agha-naveed" className="hover-target flex items-center gap-2 hover:text-white text-neutral-400 transition-colors cursor-none"><FiArrowUpRight /> LinkedIn</a>
             </div>
             <span className="text-neutral-600">© {new Date().getFullYear()} Syed Naveed Abbas. All Rights Reserved.</span>
           </div>
