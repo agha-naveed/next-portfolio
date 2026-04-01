@@ -4,7 +4,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Syed Naveed Abbas | Software Engineer & AI Architect',
+    default: 'Syed Naveed Abbas | Full-Stack Software Engineer & AI Architect',
     template: '%s | Syed Naveed Abbas',
   },
   description: 'Portfolio of Syed Naveed Abbas, a Full-Stack Software Engineer and AI Architect based in Pakistan, specializing in high-performance MERN architectures and localized AI systems.',
