@@ -19,8 +19,7 @@ export const metadata: Metadata = {
     'MERN Stack Developer',
     'Next.js Developer',
     'React Developer',
-    'Offline LLM',
-    'PyTorch Integration',
+    'Cross-platform desktop app developer',
     'Full Stack Web Development'
   ],
 
