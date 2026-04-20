@@ -1,26 +1,182 @@
 @import "tailwindcss";
+/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400&display=swap'); */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #0A0805;
+  --paper: #F2EDE4;
+  --bone: #D9D0C0;
+  --amber: #C8854A;
+  --rust: #8B3A1E;
+  --fog: #5C5549;
 }
+@theme {
+  /* Colors */
+  --color-ink: #0A0805;
+  --color-paper: #F2EDE4;
+  --color-bone: #D9D0C0;
+  --color-amber: #C8854A;
+  --color-rust: #8B3A1E;
+  --color-fog: #5C5549;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Fonts */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Syne", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
 }
+/* 
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { overflow-x: hidden; } */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Syne', system-ui, sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* ── Cursor ─────────────────────────────────────── */
+#cur-dot {
+  position: fixed; width: 6px; height: 6px;
+  background: var(--paper); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: background .2s, width .2s, height .2s;
+}
+#cur-ring {
+  position: fixed; width: 32px; height: 32px;
+  border: 1px solid rgba(242,237,228,.35); border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%);
+}
+body:has(a:hover) #cur-dot,
+body:has(button:hover) #cur-dot { width: 3px; height: 3px; background: var(--amber); }
+body:has(a:hover) #cur-ring,
+body:has(button:hover) #cur-ring { width: 52px; height: 52px; border-color: var(--amber); }
+
+/* ── Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--fog); border-radius: 2px; }
+
+/* ── Canvas ──────────────────────────────────────── */
+#bg-canvas {
+  position: fixed; inset: 0; z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Content layer ───────────────────────────────── */
+.layer { position: relative; z-index: 10; }
+
+/* ── Typography ──────────────────────────────────── */
+.f-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+.f-sans  { font-family: 'Syne', system-ui, sans-serif; }
+.f-mono  { font-family: 'IBM Plex Mono', monospace; }
+
+/* ── Divider ─────────────────────────────────────── */
+.rule {
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(217,208,192,.18), transparent);
+}
+
+/* ── Tag pill ────────────────────────────────────── */
+.pill {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px; letter-spacing: .08em;
+  padding: 3px 10px;
+  border: 1px solid rgba(217,208,192,.2);
+  color: rgba(217,208,192,.55);
+  white-space: nowrap;
+}
+
+/* ── Reveal animation (JS sets opacity=0, then animates) ── */
+.reveal { will-change: transform, opacity; }
+
+/* ── Hover line ──────────────────────────────────── */
+.ul-line {
+  position: relative; display: inline-block;
+}
+.ul-line::after {
+  content: ''; position: absolute;
+  bottom: -1px; left: 0; height: 1px; width: 0;
+  background: var(--amber);
+  transition: width .35s ease;
+}
+.ul-line:hover::after { width: 100%; }
+
+/* ── Number accent ───────────────────────────────── */
+.idx {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px; color: var(--amber);
+  opacity: .55; letter-spacing: .06em;
+}
+
+/* ── Loading screen ──────────────────────────────── */
+#loader {
+  position: fixed; inset: 0; z-index: 2000;
+  background: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 24px;
+}
+
+/* ── Parallax images ─────────────────────────────── */
+.par-img { will-change: transform; }
+
+/* ── Project card hover ──────────────────────────── */
+.proj-card {
+  border-top: 1px solid rgba(217,208,192,.1);
+  transition: border-color .3s;
+}
+.proj-card:hover { border-color: rgba(200,133,74,.45); }
+
+/* ── Stack chip ──────────────────────────────────── */
+.chip {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px; letter-spacing: .06em;
+  padding: 5px 12px;
+  background: rgba(242,237,228,.04);
+  border: 1px solid rgba(242,237,228,.09);
+  color: rgba(242,237,228,.5);
+  transition: background .2s, border-color .2s, color .2s;
+}
+.chip:hover {
+  background: rgba(200,133,74,.1);
+  border-color: rgba(200,133,74,.4);
+  color: var(--amber);
+}
+
+/* ── Section label ───────────────────────────────── */
+.sec-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px; letter-spacing: .2em;
+  color: var(--amber); opacity: .7;
+  text-transform: uppercase;
+}
+
+/* ── Amber glow btn ──────────────────────────────── */
+.btn-amber {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 14px 36px;
+  background: var(--amber);
+  color: var(--ink);
+  border: none; cursor: pointer;
+  transition: background .25s, transform .15s;
+}
+.btn-amber:hover { background: #d9935a; transform: translateY(-1px); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 13px 36px;
+  background: transparent;
+  color: var(--paper);
+  border: 1px solid rgba(242,237,228,.2); cursor: pointer;
+  transition: border-color .25s, color .25s;
+}
+.btn-ghost:hover { border-color: rgba(242,237,228,.6); color: var(--paper); }
