@@ -3,21 +3,21 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 const ITEMS = [
-  "Software Engineering",
+  "Web Developer",
+  "—",
+  "Mobile App Developer",
+  "—",
+  "Cross-Platform Desktop App Developer",
   "—",
   "AI Architecture",
   "—",
   "MERN Stack",
   "—",
-  "Offline ML Systems",
+  "Next.js Specialist",
+  "—",
+  "ML Systems",
   "—",
   "Privacy-First Design",
-  "—",
-  "Electron.js",
-  "—",
-  "PyTorch",
-  "—",
-  "Full-Stack",
   "—",
 ];
 
