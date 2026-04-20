@@ -9,22 +9,32 @@ const CATS = [
   {
     label: "Frontend",
     color: "#C8854A",
-    items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Bootstrap"],
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Framer Motion"],
   },
   {
-    label: "Backend & Data",
+    label: "Backend",
     color: "#D9D0C0",
-    items: ["Node.js", "Express", "FastAPI", "MongoDB", "PostgreSQL", "MySQL", "Redis", "Prisma ORM"],
+    items: ["Node.js", "Express", "Drizzle ORM", "REST APIs", "WebSockets"],
   },
   {
-    label: "AI / ML",
+    label: "Database & Cloud",
     color: "#8B3A1E",
-    items: ["PyTorch", "llama.cpp", "NumPy", "Pandas", "Offline LLM", "Python"],
+    items: ["PostgreSQL", "MongoDB", "Redis", "MySQL", "Cloudinary"],
   },
   {
-    label: "Infrastructure",
+    label: "Mobile App",
     color: "#5C5549",
-    items: ["Electron.js", "Docker", "Git", "REST APIs", "WebSockets"],
+    items: ["React Native", "Java", "Kotlin"],
+  },
+  {
+    label: "Computer Vision",
+    color: "#C8854A",
+    items: ["Computer Vision", "CNN Architectures", "OpenCV", "Object Detection", "RAG Systems"],
+  },
+  {
+    label: "Infrastructure & DevOps",
+    color: "#D9D0C0",
+    items: ["Electron.js", "Docker","Git / GitHub", "Vercel", "CI/CD Foundations"],
   },
 ];
 
@@ -32,30 +42,34 @@ export default function Stack() {
   const sec = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    gsap.fromTo(
-      sec.current?.querySelectorAll(".cat-block") || [],
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.12,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: { trigger: sec.current, start: "top 70%" },
-      }
-    );
-    gsap.fromTo(
-      sec.current?.querySelectorAll(".chip") || [],
-      { opacity: 0, scale: 0.9 },
-      {
-        opacity: 1,
-        scale: 1,
-        stagger: 0.03,
-        duration: 0.4,
-        ease: "back.out(1.5)",
-        scrollTrigger: { trigger: sec.current, start: "top 60%" },
-      }
-    );
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".cat-block",
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.1,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: { trigger: sec.current, start: "top 70%" },
+        }
+      );
+      gsap.fromTo(
+        ".chip",
+        { opacity: 0, scale: 0.9 },
+        {
+          opacity: 1,
+          scale: 1,
+          stagger: 0.02,
+          duration: 0.4,
+          ease: "back.out(1.5)",
+          scrollTrigger: { trigger: sec.current, start: "top 60%" },
+        }
+      );
+    }, sec);
+
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -70,15 +84,15 @@ export default function Stack() {
           <p className="sec-label mb-4">03 / Tech Stack</p>
           <h2 className="f-serif text-[clamp(2.5rem,5vw,5.5rem)] font-light leading-[0.9] tracking-[-0.02em] text-[#F2EDE4]">
             Technical<br />
-            <em>Capabilities</em>
+            <em className="italic">Capabilities</em>
           </h2>
         </div>
       </div>
 
-      <div className="rule mb-[60px]" />
+      <div className="rule mb-[60px] opacity-20" />
 
-      {/* Categories Grid */}
-      <div className="grid grid-cols-1 gap-x-20 gap-y-12 md:grid-cols-2">
+      {/* Categories Grid - Adjusted for 6 items (3 columns on large screens) */}
+      <div className="grid grid-cols-1 gap-x-12 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
         {CATS.map((cat, i) => (
           <div key={i} className="cat-block">
             <div className="mb-5 flex items-center gap-2.5">
@@ -108,18 +122,18 @@ export default function Stack() {
       </div>
 
       {/* Proficiency bars */}
-      <div className="mt-16 md:mt-[80px]">
-        <p className="f-mono mb-8 text-[11px] tracking-[0.15em] text-[#D9D0C0]/30">
-          DEPTH INDEX
+      <div className="mt-20 md:mt-[100px]">
+        <p className="f-mono mb-8 text-[11px] tracking-[0.15em] text-[#D9D0C0]/30 uppercase">
+          Depth Index
         </p>
         <div className="grid grid-cols-1 gap-x-20 gap-y-6 md:grid-cols-2 md:gap-y-5">
           {[
-            { label: "Full-Stack Dev", pct: 92, col: "#C8854A" },
-            { label: "React / Next.js", pct: 90, col: "#C8854A" },
-            { label: "Node.js / APIs", pct: 85, col: "#D9D0C0" },
-            { label: "AI/ML Integration", pct: 78, col: "#8B3A1E" },
-            { label: "Electron.js", pct: 75, col: "#8B3A1E" },
-            { label: "DevOps / Docker", pct: 65, col: "#5C5549" },
+            { label: "MERN Stack & Next.js", pct: 95, col: "#C8854A" },
+            { label: "Backend & Systems Arch", pct: 92, col: "#C8854A" },
+            { label: "Database Management", pct: 90, col: "#D9D0C0" },
+            { label: "Mobile App Development", pct: 88, col: "#D9D0C0" },
+            { label: "Computer Vision", pct: 84, col: "#8B3A1E" },
+            { label: "DevOps & Infrastructure", pct: 80, col: "#5C5549" },
           ].map((s, i) => (
             <Bar key={i} {...s} index={i} />
           ))}
@@ -159,7 +173,7 @@ function Bar({
   return (
     <div>
       <div className="mb-[7px] flex justify-between">
-        <span className="f-sans text-[12px] font-medium text-[#D9D0C0]/55">
+        <span className="f-sans text-[12px] font-medium text-[#D9D0C0]/55 uppercase tracking-wider">
           {label}
         </span>
         <span className="f-mono text-[10px]" style={{ color: col }}>
