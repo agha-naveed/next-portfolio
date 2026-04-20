@@ -9,13 +9,13 @@ const SmoothScroll = dynamic(() => import("@/components/SmoothScroll"),  { ssr: 
 const Loader       = dynamic(() => import("@/components/Loader"),        { ssr: false });
 
 import Nav     from "@/components/Nav";
-import Hero    from "@/components/Hero";
 import Ribbon  from "@/components/Ribbon";
 import Work    from "@/components/Work";
 import Stack   from "@/components/Stack";
 import About   from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer  from "@/components/Footer";
+import Architect from "@/components/Architect";
 
 export default function Page() {
   const [ready, setReady] = useState(false);
@@ -37,7 +37,7 @@ export default function Page() {
         >
           <Nav />
           <main>
-            <Hero />
+            <Architect />
             <Ribbon />
             <Work />
             <Ribbon />

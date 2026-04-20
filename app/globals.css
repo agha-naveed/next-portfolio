@@ -1,5 +1,4 @@
 @import "tailwindcss";
-/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400&display=swap'); */
 
 :root {
   --ink: #0A0805;
@@ -10,7 +9,6 @@
   --fog: #5C5549;
 }
 @theme {
-  /* Colors */
   --color-ink: #0A0805;
   --color-paper: #F2EDE4;
   --color-bone: #D9D0C0;
@@ -18,15 +16,10 @@
   --color-rust: #8B3A1E;
   --color-fog: #5C5549;
 
-  /* Fonts */
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Syne", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 }
-/* 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { overflow-x: hidden; } */
 
 body {
   background: var(--ink);
