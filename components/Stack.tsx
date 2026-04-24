@@ -131,9 +131,9 @@ export default function Stack() {
             { label: "MERN Stack & Next.js", pct: 95, col: "#C8854A" },
             { label: "Backend & Systems Arch", pct: 92, col: "#C8854A" },
             { label: "Database Management", pct: 90, col: "#D9D0C0" },
-            { label: "Mobile App Development", pct: 88, col: "#D9D0C0" },
-            { label: "Computer Vision", pct: 84, col: "#8B3A1E" },
-            { label: "DevOps & Infrastructure", pct: 80, col: "#5C5549" },
+            { label: "Mobile App Development", pct: 60, col: "#D9D0C0" },
+            { label: "Computer Vision", pct: 55, col: "#8B3A1E" },
+            { label: "DevOps & Infrastructure", pct: 75, col: "#5C5549" },
           ].map((s, i) => (
             <Bar key={i} {...s} index={i} />
           ))}

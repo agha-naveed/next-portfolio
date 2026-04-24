@@ -113,7 +113,7 @@ export default function About() {
               ["Focus", "MERN + AI Systems"],
               ["Education", "BS CS — Final Year"],
               ["Location", "Pakistan (Remote OK)"],
-              ["Email", "NaveedAbs31@gmail.com"],
+              ["Email", "NaveedAbs@outlook.com"],
               ["Available", "Yes — Open to work"],
             ].map(([k, v], i) => (
               <div

@@ -21,12 +21,14 @@
   --font-mono: "IBM Plex Mono", monospace;
 }
 
+* {
+  cursor: none !important;
+}
 body {
   background: var(--ink);
   color: var(--paper);
   font-family: 'Syne', system-ui, sans-serif;
   overflow-x: hidden;
-  cursor: none;
   -webkit-font-smoothing: antialiased;
 }
 
