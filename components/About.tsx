@@ -1,69 +1,164 @@
 export default function About() {
+    const stats = [
+        { value: "50+", label: "Projects Built" },
+        { value: "3+", label: "Years Learning" },
+        { value: "10+", label: "Technologies" },
+    ];
+
     return (
-        <section id="about" className="py-24 border-t border-[var(--color-border)] relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-                {/* Left Side */}
-                <div>
-                    <div className="section-num mb-3">04 · ABOUT ME</div>
-                    <h2 className="font-mono font-bold text-3xl md:text-4xl leading-snug mb-6">
-                        I'm a developer<br />
-                        who loves turning<br />
-                        ideas into <span className="text-[var(--color-lime)] underline decoration-wavy underline-offset-4">reality</span>.
-                    </h2>
-                    <p className="text-sm text-[var(--color-muted)] leading-relaxed max-w-[400px] font-light">
-                        I enjoy building beautiful and functional web experiences. When I'm not coding, you'll find me exploring new tech, playing games or capturing moments.
-                    </p>
-                    <div className="mt-10">
-                        <a href="#contact" className="btn-lime inline-flex items-center gap-3 px-6 py-3 rounded-lg text-sm font-bold tracking-wide">
-                            LET'S CONNECT
-                            <span className="inline-block -rotate-45 text-base">↗</span>
-                        </a>
+        <section
+            id="about"
+            className="py-32 border-t border-[var(--color-border)] relative overflow-hidden"
+        >
+            {/* Ambient Background */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-20 left-[8%] w-72 h-72 bg-[var(--color-lime)]/5 blur-[140px] rounded-full" />
+                <div className="absolute bottom-10 right-[10%] w-80 h-80 bg-[var(--color-purple)]/10 blur-[160px] rounded-full" />
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+                {/* Heading */}
+                <div className="mb-20 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
+                    <div>
+                        <div className="section-num mb-4">04 · WHO I AM</div>
+
+                        <h2 className="text-4xl md:text-6xl font-bold leading-[1.05] max-w-4xl">
+                            Building{" "}
+                            <span className="text-[var(--color-lime)]">
+                                meaningful
+                            </span>{" "}
+                            digital
+                            <br />
+                            experiences through
+                            <br />
+                            code, design & innovation.
+                        </h2>
                     </div>
+
+                    <p className="max-w-xl text-sm md:text-base text-[var(--color-muted)] leading-relaxed">
+                        I’m a full-stack developer passionate about crafting
+                        high-performance websites, modern applications, and
+                        immersive digital products that merge aesthetics with
+                        functionality.
+                    </p>
                 </div>
 
-                {/* Right Side - Flat Illustration */}
-                <div className="relative h-[420px] flex items-center justify-center">
-                    {/* Flat Background Circle */}
-                    <div className="absolute w-[300px] h-[300px] rounded-full border border-[var(--color-purple)]/30 bg-[var(--color-purple)]/5 bottom-5" />
+                {/* Main Layout */}
+                <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-14 items-center">
+                    {/* Left Side */}
+                    <div className="space-y-8">
+                        {/* Story Cards */}
+                        <div className="grid md:grid-cols-2 gap-6">
+                            <div className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-card)] p-7">
+                                <div className="text-xs tracking-[0.3em] text-[var(--color-lime)] font-mono mb-4">
+                                    DEVELOPMENT
+                                </div>
+                                <h3 className="text-xl font-semibold mb-3">
+                                    From frontend precision to backend systems
+                                </h3>
+                                <p className="text-sm text-[var(--color-muted)] leading-relaxed">
+                                    I specialize in creating scalable web apps
+                                    with clean architecture, polished UI, and
+                                    seamless performance.
+                                </p>
+                            </div>
 
-                    {/* Typography Element */}
-                    <div className="absolute top-1/2 left-[55%] -translate-x-1/2 -translate-y-1/2 text-center z-10 font-sans font-bold text-2xl leading-snug">
-                        <div className="text-white">Code.</div>
-                        <div className="text-white">Create.</div>
-                        <div className="text-[var(--color-lime)]">Inspire.</div>
+                            <div className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-card)] p-7">
+                                <div className="text-xs tracking-[0.3em] text-[var(--color-lime)] font-mono mb-4">
+                                    CREATIVE MINDSET
+                                </div>
+                                <h3 className="text-xl font-semibold mb-3">
+                                    Designing experiences, not just interfaces
+                                </h3>
+                                <p className="text-sm text-[var(--color-muted)] leading-relaxed">
+                                    Every product I build balances usability,
+                                    motion, and emotion to leave a lasting
+                                    impression.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Stats */}
+                        <div className="grid grid-cols-3 gap-4">
+                            {stats.map((stat) => (
+                                <div
+                                    key={stat.label}
+                                    className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-5 text-center"
+                                >
+                                    <div className="text-3xl md:text-4xl font-bold text-[var(--color-lime)] mb-2">
+                                        {stat.value}
+                                    </div>
+                                    <div className="text-xs uppercase tracking-[0.2em] text-[var(--color-muted)]">
+                                        {stat.label}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* CTA */}
+                        <div>
+                            <a
+                                href="#contact"
+                                className="inline-flex items-center gap-3 px-7 py-4 rounded-2xl bg-[var(--color-lime)] text-black font-semibold tracking-[0.15em] text-sm hover:scale-[1.03] transition-transform"
+                            >
+                                LET’S BUILD TOGETHER
+                                <span className="text-lg">↗</span>
+                            </a>
+                        </div>
                     </div>
 
-                    {/* Dotted Orbit */}
-                    <div className="absolute w-[250px] h-[250px] rounded-full border-[1.5px] border-dashed border-white/10 top-1/2 left-[55%] -translate-x-1/2 -translate-y-1/2" />
+                    {/* Right Side - Modern Identity Card */}
+                    <div className="relative flex justify-center">
+                        {/* Outer Glow */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-[380px] h-[380px] rounded-full border border-[var(--color-lime)]/20" />
+                            <div className="absolute w-[460px] h-[460px] rounded-full border border-dashed border-white/5 animate-spin-slow" />
+                        </div>
 
-                    {/* Paper Plane */}
-                    <div className="orbit-1 absolute top-[calc(50%-125px)] left-[calc(55%-125px)] origin-[125px_125px]">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-lime)">
-                            <path d="M2 12L22 2L12 22L10 14L2 12Z" />
-                        </svg>
-                    </div>
-
-                    {/* Dev Illustration Placeholder */}
-                    <div className="relative z-20 text-center w-[180px] h-[240px] mx-auto mt-20">
-                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120px] h-[200px]">
-                            {/* Body */}
-                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80px] h-[140px] bg-[#1a1a1a] rounded-t-lg border border-[#333]" />
-                            {/* Head */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[55px] h-[60px] bg-[#2a1a0a] rounded-[50%_50%_40%_40%] border border-[#444]">
-                                {/* Glasses */}
-                                <div className="absolute top-[35%] left-[10%] flex gap-1">
-                                    <div className="w-4 h-3 rounded border-2 border-[#555] bg-blue-400/10" />
-                                    <div className="w-4 h-3 rounded border-2 border-[#555] bg-blue-400/10" />
+                        {/* Main Card */}
+                        <div className="relative w-full max-w-md rounded-[2rem] border border-[var(--color-border)] bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))] backdrop-blur-xl p-8 overflow-hidden">
+                            {/* Decorative Top */}
+                            <div className="flex items-center justify-between mb-8">
+                                <div>
+                                    <div className="text-xs tracking-[0.3em] text-[var(--color-muted)] mb-2">
+                                        DIGITAL CREATOR
+                                    </div>
+                                    <div className="text-lg font-semibold">
+                                        Agha Naveed
+                                    </div>
                                 </div>
-                                {/* Hair */}
-                                <div className="absolute -top-2 left-[10%] right-[10%] h-5 bg-[#1a0a00] rounded-t-lg" />
-                            </div>
-                            {/* Laptop */}
-                            <div className="absolute bottom-[80px] left-1/2 -translate-x-1/2 w-[70px] h-[10px] bg-[#222] rounded-sm border border-[#444]">
-                                <div className="absolute bottom-full left-0 w-[70px] h-[46px] bg-[#111] rounded-t border border-[#333] flex items-center justify-center">
-                                    <div className="text-[var(--color-lime)] font-mono text-[10px] font-bold">&lt;/&gt;</div>
+
+                                <div className="w-14 h-14 rounded-2xl bg-[var(--color-lime)]/10 border border-[var(--color-lime)]/20 flex items-center justify-center text-[var(--color-lime)] font-mono text-lg">
+                                    {"</>"}
                                 </div>
                             </div>
+
+                            {/* Philosophy */}
+                            <div className="space-y-5">
+                                <h3 className="text-3xl font-bold leading-tight">
+                                    Code.
+                                    <br />
+                                    Design.
+                                    <br />
+                                    Scale.
+                                </h3>
+
+                                <p className="text-sm text-[var(--color-muted)] leading-relaxed">
+                                    Focused on transforming ideas into
+                                    impactful products with strategy,
+                                    innovation, and technical excellence.
+                                </p>
+                            </div>
+
+                            {/* Bottom Strip */}
+                            <div className="mt-10 pt-6 border-t border-[var(--color-border)] flex justify-between text-xs uppercase tracking-[0.2em] text-[var(--color-muted)]">
+                                <span>Frontend</span>
+                                <span>Backend</span>
+                                <span>AI</span>
+                            </div>
+
+                            {/* Corner Accent */}
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-[var(--color-lime)]/10 blur-2xl rounded-full" />
                         </div>
                     </div>
                 </div>

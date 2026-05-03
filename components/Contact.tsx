@@ -16,13 +16,8 @@ export default function Contact() {
                     <source src="/illustration.webm" type="video/webm" />
                 </video>
 
+                <div className="absolute right-[350px] top-[150px] -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(126,87,255,0.38)_0%,rgba(126,87,255,0.12)_45%,transparent_72%)] blur-xl" />
 
-
-                {/* Purple circular aura */}
-                <div className="absolute right-[400px] top-[100px] -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(126,87,255,0.38)_0%,rgba(126,87,255,0.12)_45%,transparent_72%)] blur-xl" />
-
-                {/* Bottom shadow */}
-                {/* <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black via-black/40 to-transparent" /> */}
             </div>
 
             {/* Main Content */}
