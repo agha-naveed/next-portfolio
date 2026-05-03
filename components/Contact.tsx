@@ -12,17 +12,17 @@ export default function Contact() {
                 playsInline
                 className="absolute w-[70%] right-0"
             >
-                <source src="/illustration.mp4" type="video/mp4" />
+                <source src="/illustration.webm" type="video/webm" />
             </video>
 
             {/* Left-heavy dark cinematic overlay */}
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,4,4,0.99)_0%,rgba(4,4,4,0.97)_26%,rgba(4,4,4,0.88)_42%,rgba(9,5,18,0.58)_64%,rgba(4,4,4,0.72)_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,4,4,0.99)_0%,rgba(4,4,4,0.97)_26%,rgba(4,4,4,0.88)_42%,rgba(9,5,18,0.58)_64%,rgba(4,4,4,0.72)_100%)] opacity-50" />
 
             {/* Purple circular aura */}
             <div className="absolute right-[30%] top-[30%] -translate-y-1/2 w-[32vw] h-[32vw] rounded-full bg-[radial-gradient(circle,rgba(126,87,255,0.38)_0%,rgba(126,87,255,0.12)_45%,transparent_72%)] blur-xl" />
 
             {/* Bottom shadow */}
-            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black via-black/40 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black via-black/40 to-transparent" />
 
             {/* Main Content */}
             <div className="relative z-20 h-full max-w-7xl mx-auto px-8 md:px-10 flex items-center">
