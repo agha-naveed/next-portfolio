@@ -2,7 +2,7 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="relative h-[140vh] max-h-[900px] w-full overflow-hidden bg-[#0C0C0C]"
+            className="relative h-[140vh] max-h-[900px] w-full bg-[#0C0C0C]"
         >
             <div className="relative w-full container mx-auto">
                 {/* Background Video */}
@@ -17,11 +17,9 @@ export default function Contact() {
                 </video>
 
 
-                {/* Left-heavy dark cinematic overlay */}
-                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,4,4,0.99)_0%,rgba(4,4,4,0.97)_26%,rgba(4,4,4,0.88)_42%,rgba(9,5,18,0.58)_64%,rgba(4,4,4,0.72)_100%)] opacity-50" />
 
                 {/* Purple circular aura */}
-                <div className="absolute right-[30%] top-[30%] -translate-y-1/2 w-[32vw] h-[32vw] rounded-full bg-[radial-gradient(circle,rgba(126,87,255,0.38)_0%,rgba(126,87,255,0.12)_45%,transparent_72%)] blur-xl" />
+                <div className="absolute right-[400px] top-[100px] -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(126,87,255,0.38)_0%,rgba(126,87,255,0.12)_45%,transparent_72%)] blur-xl" />
 
                 {/* Bottom shadow */}
                 {/* <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black via-black/40 to-transparent" /> */}
