@@ -1,40 +1,45 @@
 "use client";
+
 import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 export default function Cursor() {
-  const dot  = useRef<HTMLDivElement>(null);
-  const ring = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let rx = 0, ry = 0, dx = 0, dy = 0;
+    // Center the elements on the cursor coordinates
+    gsap.set([dotRef.current, ringRef.current], { xPercent: -50, yPercent: -50 });
 
-    const move = (e: MouseEvent) => {
-      dx = e.clientX; dy = e.clientY;
-      if (dot.current) {
-        dot.current.style.left  = dx + "px";
-        dot.current.style.top   = dy + "px";
-      }
+    // quickTo is highly optimized for mouse tracking
+    const xMoveDot = gsap.quickTo(dotRef.current, "x", { duration: 0.1, ease: "power3.out" });
+    const yMoveDot = gsap.quickTo(dotRef.current, "y", { duration: 0.1, ease: "power3.out" });
+
+    const xMoveRing = gsap.quickTo(ringRef.current, "x", { duration: 0.3, ease: "power3.out" });
+    const yMoveRing = gsap.quickTo(ringRef.current, "y", { duration: 0.3, ease: "power3.out" });
+
+    const handleMouseMove = (e: MouseEvent) => {
+      xMoveDot(e.clientX);
+      yMoveDot(e.clientY);
+      xMoveRing(e.clientX);
+      yMoveRing(e.clientY);
     };
 
-    const loop = () => {
-      rx += (dx - rx) * 0.13;
-      ry += (dy - ry) * 0.13;
-      if (ring.current) {
-        ring.current.style.left = rx + "px";
-        ring.current.style.top  = ry + "px";
-      }
-      requestAnimationFrame(loop);
-    };
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
 
-    addEventListener("mousemove", move);
-    loop();
-    return () => removeEventListener("mousemove", move);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
     <>
-      <div ref={dot}  id="cur-dot" className="md:block hidden" style={{ position:"fixed", pointerEvents:"none", zIndex:9999, transform:"translate(-50%,-50%)", width:6, height:6, borderRadius:"50%", background:"#F2EDE4", transition:"width .2s,height .2s,background .2s" }} />
-      <div ref={ring} id="cur-ring" className="md:block hidden" style={{ position:"fixed", pointerEvents:"none", zIndex:9998, transform:"translate(-50%,-50%)", width:32, height:32, borderRadius:"50%", border:"1px solid rgba(242,237,228,.3)", transition:"width .35s,height .35s,border-color .35s" }} />
+      <div
+        ref={dotRef}
+        className="hidden md:block fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[99999] bg-[var(--color-lime)]"
+      />
+      <div
+        ref={ringRef}
+        className="hidden md:block fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[99998] border-[1.5px] border-[var(--color-lime)]/50"
+      />
     </>
   );
 }

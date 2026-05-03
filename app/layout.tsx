@@ -1,29 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Syne, IBM_Plex_Mono } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-// 1. Optimize Fonts (No CLS, better SEO performance)
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  weight: ["300", "400", "600"],
-  style: ["normal", "italic"],
-});
-
-const syne = Syne({
+// 1. Optimize Fonts for the new design (No CLS, better SEO performance)
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const mono = IBM_Plex_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
-  weight: ["300", "400"],
+  weight: ["400", "500", "700"],
 });
 
+// 2. Your custom SEO & Metadata
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aghanaveed.vercel.com"),
+  metadataBase: new URL("https://aghanaveed.vercel.app"), // Note: using .app based on your schema.org link
   title: {
     default: "Syed Naveed Abbas — Full-Stack Engineer & AI Architect",
     template: "%s | Agha Naveed",
@@ -31,8 +25,8 @@ export const metadata: Metadata = {
   description:
     "Expert Full-Stack Software Engineer specialized in MERN Stack, Next.js, and offline AI systems. Building high-performance architectures like Vextor AI.",
   keywords: [
-    "Agha Naveed", 
-    "Syed Naveed Abbas", 
+    "Agha Naveed",
+    "Syed Naveed Abbas",
     "Software Engineer Pakistan",
     "AI Architect",
     "MERN Stack Developer",
@@ -46,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://aghanaveed.vercel.com",
+    url: "https://aghanaveed.vercel.app",
     title: "Syed Naveed Abbas — Engineer & AI Architect",
     description: "Full-Stack Software Engineer specializing in scalable systems and AI.",
     siteName: "Syed Naveed Abbas Portfolio",
@@ -79,8 +73,9 @@ export const metadata: Metadata = {
   },
 };
 
+// 3. Updated Viewport to match the new dark theme
 export const viewport: Viewport = {
-  themeColor: "#0A0805",
+  themeColor: "#0a0a0a",
   width: "device-width",
   initialScale: 1,
 };
@@ -118,7 +113,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${cormorant.variable} ${syne.variable} ${mono.variable} antialiased bg-[#0A0805] text-[#F2EDE4] font-sans`}
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased bg-[#0a0a0a] text-white font-sans`}
       >
         {children}
       </body>

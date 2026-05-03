@@ -1,53 +1,27 @@
-"use client";
-
-import { useState } from "react";
-import dynamic from "next/dynamic";
-
-const Background   = dynamic(() => import("@/components/Background"),   { ssr: false });
-const Cursor       = dynamic(() => import("@/components/Cursor"),        { ssr: false });
-const SmoothScroll = dynamic(() => import("@/components/SmoothScroll"),  { ssr: false });
-const Loader       = dynamic(() => import("@/components/Loader"),        { ssr: false });
-
-import Nav     from "@/components/Nav";
-import Ribbon  from "@/components/Ribbon";
-import Work    from "@/components/Work";
-import Stack   from "@/components/Stack";
-import About   from "@/components/About";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
+import About from "@/components/About";
 import Contact from "@/components/Contact";
-import Footer  from "@/components/Footer";
-import Architect from "@/components/Architect";
+import Footer from "@/components/Footer";
+import Cursor from "@/components/Cursor";
 
-export default function Page() {
-  const [ready, setReady] = useState(false);
-
+export default function Home() {
   return (
     <>
       <Cursor />
-      <Background />
+      <Navbar />
 
-      <Loader onDone={() => setReady(true)} />
+      <main>
+        <Hero />
+        <Projects />
+        <Skills />
+        <About />
+        <Contact />
+      </main>
 
-      <SmoothScroll>
-        <div
-          style={{
-            opacity: ready ? 1 : 0,
-            transition: "opacity .6s ease",
-            pointerEvents: ready ? "auto" : "none",
-          }}
-        >
-          <Nav />
-          <main>
-            <Architect />
-            <Ribbon />
-            <Work />
-            <Ribbon />
-            <Stack />
-            <About />
-            <Contact />
-          </main>
-          <Footer />
-        </div>
-      </SmoothScroll>
+      <Footer />
     </>
   );
 }
