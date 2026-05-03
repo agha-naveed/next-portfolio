@@ -89,7 +89,7 @@ export default function Hero() {
                 {/* Left Content */}
                 <div className="z-10 relative">
                     <div className="gsap-stagger flex items-center gap-3 mb-6">
-                        <span className="font-mono text-sm text-[var(--color-muted)] tracking-widest">Hi, I'm Aman</span>
+                        <span className="font-mono text-sm text-[var(--color-muted)] tracking-widest">Hi, I'm Agha Naveed</span>
                         <span className="text-xl">👋</span>
                     </div>
 
