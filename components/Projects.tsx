@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function ProjectCard({ project, index }: any) {
     return (
         <div
@@ -32,9 +34,9 @@ function ProjectCard({ project, index }: any) {
 
                 {/* Floating Device Frame */}
                 <div className="absolute inset-0 flex items-center justify-center px-8">
-                    <div className="relative w-full max-w-[290px] h-[190px] rounded-[2rem] border border-white/10 bg-black/40 backdrop-blur-md shadow-[0_30px_80px_rgba(0,0,0,0.45)] group-hover:scale-105 transition-transform duration-700">
+                    <div className="relative w-full max-w-[400px] h-[220px] rounded-xl border border-white/10 bg-black/40 backdrop-blur-md shadow-[0_30px_80px_rgba(0,0,0,0.45)] group-hover:scale-105 transition-transform duration-700 flex flex-col overflow-hidden">
                         {/* Browser Header */}
-                        <div className="h-10 border-b border-white/5 flex items-center justify-between px-4">
+                        <div className="h-10 shrink-0 border-b border-white/5 flex items-center justify-between px-4 bg-black/20 z-10">
                             <div className="flex gap-2">
                                 {["#ff5f57", "#febc2e", "#28c840"].map((c, i) => (
                                     <span
@@ -47,24 +49,17 @@ function ProjectCard({ project, index }: any) {
                             <div className="w-20 h-2 rounded-full bg-white/10" />
                         </div>
 
-                        {/* Fake Product Layout */}
-                        <div className="p-4 flex flex-col gap-4">
-                            <div className="space-y-2">
-                                <div className="h-3 rounded-full bg-white/10 w-3/4" />
-                                <div className="h-3 rounded-full bg-white/5 w-1/2" />
-                            </div>
-
-                            <div className="grid grid-cols-2 gap-3">
-                                <div
-                                    className="h-16 rounded-2xl border border-white/5"
-                                    style={{
-                                        background: `linear-gradient(135deg, ${project.color}20, transparent)`,
-                                    }}
-                                />
-                                <div className="h-16 rounded-2xl bg-white/[0.03]" />
-                            </div>
-
-                            <div className="h-10 rounded-xl bg-white/[0.04]" />
+                        {/* Real Image Container */}
+                        <div className="flex-1 relative overflow-hidden bg-[#09090c]">
+                            <Image
+                                src={project.image}
+                                alt={project.title}
+                                width={900}
+                                height={900}
+                                placeholder="blur"
+                                blurDataURL={project.image}
+                                className="absolute inset-0 w-fit h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
                         </div>
                     </div>
                 </div>
@@ -130,45 +125,48 @@ export default function Projects() {
     const projects = [
         {
             num: "01",
-            title: "Vextor IDE",
-            category: "DEVELOPER PLATFORM",
-            desc: "A modern browser-based IDE ecosystem crafted for speed, focus, and powerful coding workflows.",
-            tags: ["React", "Monaco", "Node.js", "WebSockets"],
+            title: "EchoUp",
+            category: "SOCIAL PLATFORM",
+            desc: "A modern web social media platform featuring built-in AI capabilities, immersive interactions, and highly scalable architecture.",
+            tags: ["Next.js", "PostgreSQL", "Redis", "Next Auth", "Drizzle ORM", "Zod"],
             stats: [
-                { value: "98%", label: "Performance" },
-                { value: "4x", label: "Workflow" },
-                { value: "24/7", label: "Cloud Sync" },
-            ],
-            bg: "#0f172a",
-            color: "#84ff00",
-        },
-        {
-            num: "02",
-            title: "Nexa Commerce",
-            category: "E-COMMERCE",
-            desc: "A luxury digital commerce ecosystem with immersive UX, conversion systems, and scalable architecture.",
-            tags: ["Next.js", "Stripe", "PostgreSQL"],
-            stats: [
-                { value: "3.2x", label: "Sales" },
-                { value: "89%", label: "Retention" },
-                { value: "1.9s", label: "Load" },
+                { value: "Realtime", label: "Sync" },
+                { value: "AI", label: "Integrated" },
+                { value: "Secure", label: "Auth" },
             ],
             bg: "#111827",
             color: "#00e5ff",
+            image: "/echo-up.webp"
+        },
+        {
+            num: "02",
+            title: "Vextor AI",
+            category: "DESKTOP IDE",
+            desc: "An AI-powered desktop IDE ecosystem built entirely from scratch. Crafted for speed, focus, and local offline coding workflows.",
+            tags: ["React", "ElectronJs", "GoLang", "Rust", "Tailwind", "WebSockets"],
+            stats: [
+                { value: "100%", label: "From Scratch" },
+                { value: "Local", label: "AI Models" },
+                { value: "Native", label: "Desktop" },
+            ],
+            bg: "#0f172a",
+            color: "#84ff00",
+            image: "/vextor.jpg"
         },
         {
             num: "03",
-            title: "AI Vision",
-            category: "COMPUTER VISION",
-            desc: "Real-time intelligent object detection dashboard integrating machine learning with responsive interfaces.",
-            tags: ["Python", "TensorFlow", "OpenCV"],
+            title: "Vextra",
+            category: "MOBILE APP",
+            desc: "An intelligent chat application featuring automated, ML-powered emergency messaging to trusted user contacts.",
+            tags: ["Kotlin", "Node.js", "TensorFlow", "Express", "Socket.io"],
             stats: [
-                { value: "95%", label: "Accuracy" },
-                { value: "60FPS", label: "Realtime" },
-                { value: "AI", label: "Powered" },
+                { value: "Instant", label: "Alerts" },
+                { value: "ML", label: "Powered" },
+                { value: "Secure", label: "Comm" },
             ],
             bg: "#1a1020",
             color: "#ff4ecd",
+            image: "/vextra.webp"
         },
     ];
 

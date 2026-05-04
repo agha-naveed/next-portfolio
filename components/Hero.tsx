@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Image from "next/image";
 
 export default function Hero() {
     const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
@@ -152,7 +153,7 @@ export default function Hero() {
                     {/* Profile Main Card */}
                     <div className="hero-right relative z-20 w-[340px] md:w-[420px]">
                         {/* Outer Glass */}
-                        <div className="relative rounded-[2.8rem] border border-white/10 bg-white/[0.03] backdrop-blur-2xl p-4 shadow-[0_25px_100px_rgba(0,0,0,0.55)]">
+                        <div className="relative hover:scale-102 transition-all rounded-[2.8rem] border border-white/10 bg-white/3 backdrop-blur-2xl p-4 shadow-[0_25px_100px_rgba(0,0,0,0.55)]">
                             {/* Top Bar */}
                             <div className="flex items-center justify-between mb-4 px-2">
                                 <span className="text-[10px] font-mono tracking-[0.35em] text-[var(--color-muted)]">
@@ -166,18 +167,19 @@ export default function Hero() {
                                 </div>
                             </div>
 
-                            {/* Image */}
                             <div className="relative rounded-[2.2rem] overflow-hidden aspect-[4/5] bg-black">
-                                <img
-                                    src="https://raw.githubusercontent.com/agha-naveed/vextor/refs/heads/main/public/images/syed-naveed-dp.png"
+                                <Image
+                                    placeholder="blur"
+                                    blurDataURL="/dp.png"
+                                    src="/dp.png"
                                     alt="Syed Naveed"
+                                    width={600}
+                                    height={600}
                                     className="w-full h-full object-cover object-top"
                                 />
 
-                                {/* Overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-                                {/* Bottom Identity */}
                                 <div className="absolute bottom-0 left-0 right-0 p-5">
                                     <div className="text-xl font-semibold text-white">
                                         Syed Naveed
