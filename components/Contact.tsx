@@ -11,7 +11,7 @@ export default function Contact() {
                     muted
                     loop
                     playsInline
-                    className="absolute w-[70%] right-0"
+                    className="absolute w-[70%] right-[32px]"
                 >
                     <source src="/illustration.webm" type="video/webm" />
                 </video>
