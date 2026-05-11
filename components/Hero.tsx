@@ -167,8 +167,9 @@ export default function Hero() {
                                 </div>
                             </div>
 
-                            <div className="relative rounded-[2.2rem] overflow-hidden aspect-[4/5] bg-black">
+                            <div className="relative rounded-[2.2rem] overflow-hidden aspect-4/5 bg-black">
                                 <Image
+                                    loading="lazy"
                                     placeholder="blur"
                                     blurDataURL="/dp.png"
                                     src="/dp.png"
