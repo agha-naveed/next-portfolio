@@ -15,12 +15,13 @@ export default function Projects() {
             title: "Vextor AI",
             category: "DESKTOP IDE",
             desc: "An intelligent desktop IDE ecosystem built entirely from scratch. Crafted for speed, focus, and local offline coding workflows.",
-            tags: ["React", "Electron.js", "Node.js", "TypeScript"],
-            // Replaced 'image' with an array of 'images'
+            tags: ["React", "Electron.js", "GoLang", "Rust", "TailwindCSS"],
             images: [
-                "/vextor.jpg",
-                "/vextor-2.jpg", // Add your secondary images here
-                "/vextor-3.jpg"
+                "/vextor/vextor.webp",
+                "/vextor/vextor1.webp",
+                "/vextor/vextor2.webp",
+                "/vextor/vextor3.webp",
+                "/vextor/vextor4.webp",
             ],
             color: "#84ff00",
             isMobileView: false
@@ -181,8 +182,8 @@ export default function Projects() {
                                 layout
                                 transition={{ duration: 0.6, type: "spring", bounce: 0.15 }}
                                 className={`relative overflow-hidden flex flex-col shadow-[0_30px_100px_rgba(0,0,0,0.6)] ${activeProject.isMobileView
-                                        ? "w-[320px] h-[650px] rounded-[3rem] border-8 border-white/10 bg-black"
-                                        : "w-full aspect-[16/10] max-h-[600px] rounded-2xl border border-white/10 bg-[#09090c]"
+                                    ? "w-[320px] h-[650px] rounded-[3rem] border-8 border-white/10 bg-black"
+                                    : "w-full aspect-[16/10] max-h-[600px] rounded-2xl border border-white/10 bg-[#09090c]"
                                     }`}
                             >
                                 {/* Subtle internal glow */}

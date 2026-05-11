@@ -1,8 +1,12 @@
+import Image from "next/image";
+
 export default function Footer() {
     return (
         <footer className="py-8 px-8 md:px-16 border-t border-[var(--color-border)] flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="font-mono font-bold text-base text-white">
-                <span className="text-[var(--color-lime)]">A</span>M
+                <span className="text-[var(--color-lime)]">
+                    <Image src={'/my-logo.webp'} alt="" width={30} height={30} />
+                </span>
             </div>
 
             <span className="font-mono text-[10px] text-[#444] tracking-widest uppercase">
