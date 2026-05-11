@@ -1,239 +1,207 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-
-function ProjectCard({ project, index }: any) {
-    return (
-        <div
-            className={`group relative rounded-[2.5rem] overflow-hidden border border-white/8 bg-[var(--color-card)] min-h-[620px] transition-all duration-700 hover:-translate-y-3 ${index === 1 ? "lg:-mt-10" : ""
-                }`}
-            style={{ animationDelay: `${index * 0.08}s` }}
-        >
-            {/* Dynamic Gradient Layer */}
-            <div
-                className="absolute inset-0 opacity-40 group-hover:opacity-70 transition-opacity duration-700"
-                style={{
-                    background: `
-                        radial-gradient(circle at top right, ${project.color}35, transparent 35%),
-                        radial-gradient(circle at bottom left, ${project.color}15, transparent 40%)
-                    `,
-                }}
-            />
-
-            {/* Top Hero Visual */}
-            <div className="relative h-[300px] overflow-hidden">
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        background: `linear-gradient(145deg, ${project.bg}, #09090c)`,
-                    }}
-                />
-
-                {/* Giant Number */}
-                <div className="absolute top-7 left-7 text-[120px] font-black leading-none text-white/[0.03]">
-                    {project.num}
-                </div>
-
-                {/* Floating Device Frame */}
-                <div className="absolute inset-0 flex items-center justify-center px-8">
-                    <div className="relative w-full max-w-[400px] h-[220px] rounded-xl border border-white/10 bg-black/40 backdrop-blur-md shadow-[0_30px_80px_rgba(0,0,0,0.45)] group-hover:scale-105 transition-transform duration-700 flex flex-col overflow-hidden">
-                        {/* Browser Header */}
-                        <div className="h-10 shrink-0 border-b border-white/5 flex items-center justify-between px-4 bg-black/20 z-10">
-                            <div className="flex gap-2">
-                                {["#ff5f57", "#febc2e", "#28c840"].map((c, i) => (
-                                    <span
-                                        key={i}
-                                        className="w-2.5 h-2.5 rounded-full"
-                                        style={{ background: c }}
-                                    />
-                                ))}
-                            </div>
-                            <div className="w-20 h-2 rounded-full bg-white/10" />
-                        </div>
-
-                        {/* Real Image Container */}
-                        <div className="flex-1 relative overflow-hidden bg-[#09090c]">
-                            <Image
-                                src={project.image}
-                                alt={project.title}
-                                width={900}
-                                height={900}
-                                placeholder="blur"
-                                blurDataURL={project.image}
-                                className="absolute inset-0 w-fit h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                {/* Category Badge */}
-                <div className="absolute bottom-5 left-5 px-4 py-2 rounded-full border border-white/10 bg-black/30 backdrop-blur-md text-[10px] tracking-[0.35em] uppercase text-white/75 font-mono">
-                    {project.category}
-                </div>
-            </div>
-
-            {/* Main Content */}
-            <div className="relative p-8 flex flex-col">
-                {/* Title + Arrow */}
-                <div className="flex justify-between items-start gap-4 mb-5">
-                    <div>
-                        <h3 className="text-3xl font-bold leading-tight mb-2 group-hover:text-[var(--color-lime)] transition-colors duration-500">
-                            {project.title}
-                        </h3>
-                        <p className="text-sm text-[var(--color-muted)] leading-relaxed max-w-sm">
-                            {project.desc}
-                        </p>
-                    </div>
-
-                    <button className="w-14 h-14 rounded-2xl shrink-0 border border-white/10 bg-white/[0.03] flex items-center justify-center text-xl group-hover:bg-[var(--color-lime)] group-hover:text-black group-hover:rotate-45 transition-all duration-500">
-                        ↗
-                    </button>
-                </div>
-
-                {/* Divider */}
-                <div className="h-px bg-white/5 my-6" />
-
-                {/* Project Metrics */}
-                <div className="grid grid-cols-3 gap-4 mb-7">
-                    {project.stats.map((stat: any) => (
-                        <div key={stat.label}>
-                            <div className="text-lg font-semibold">
-                                {stat.value}
-                            </div>
-                            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--color-muted)] mt-1">
-                                {stat.label}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Stack */}
-                <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.tags.map((tag: string) => (
-                        <span
-                            key={tag}
-                            className="px-4 py-2 rounded-full text-xs border border-white/8 bg-white/[0.025] text-[#d6d6d6] hover:border-white/20 transition-colors"
-                        >
-                            {tag}
-                        </span>
-                    ))}
-                </div>
-            </div>
-        </div>
-    );
-}
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Projects() {
+    const [activeIndex, setActiveIndex] = useState(0);
+
     const projects = [
         {
             num: "01",
-            title: "EchoUp",
-            category: "SOCIAL PLATFORM",
-            desc: "A modern web social media platform featuring built-in AI capabilities, immersive interactions, and highly scalable architecture.",
-            tags: ["Next.js", "PostgreSQL", "Redis", "Next Auth", "Drizzle ORM", "Zod"],
-            stats: [
-                { value: "Realtime", label: "Sync" },
-                { value: "AI", label: "Integrated" },
-                { value: "Secure", label: "Auth" },
-            ],
-            bg: "#111827",
-            color: "#00e5ff",
-            image: "/echo-up.webp"
+            title: "Vextor AI",
+            category: "DESKTOP IDE",
+            desc: "An intelligent desktop IDE ecosystem built entirely from scratch. Crafted for speed, focus, and local offline coding workflows.",
+            tags: ["React", "Electron.js", "Node.js", "TypeScript"],
+            image: "/vextor.jpg",
+            color: "#84ff00",
+            isMobileView: false
         },
         {
             num: "02",
-            title: "Vextor AI",
-            category: "DESKTOP IDE",
-            desc: "An AI-powered desktop IDE ecosystem built entirely from scratch. Crafted for speed, focus, and local offline coding workflows.",
-            tags: ["React", "ElectronJs", "GoLang", "Rust", "Tailwind", "WebSockets"],
-            stats: [
-                { value: "100%", label: "From Scratch" },
-                { value: "Local", label: "AI Models" },
-                { value: "Native", label: "Desktop" },
-            ],
-            bg: "#0f172a",
-            color: "#84ff00",
-            image: "/vextor.jpg"
-        },
-        {
-            num: "03",
             title: "Vextra",
             category: "MOBILE APP",
             desc: "An intelligent chat application featuring automated, ML-powered emergency messaging to trusted user contacts.",
-            tags: ["Kotlin", "Node.js", "TensorFlow", "Express", "Socket.io"],
-            stats: [
-                { value: "Instant", label: "Alerts" },
-                { value: "ML", label: "Powered" },
-                { value: "Secure", label: "Comm" },
-            ],
-            bg: "#1a1020",
+            tags: ["Kotlin", "Java", "Express.js", "Cloudinary"],
+            image: "/vextra.webp",
             color: "#ff4ecd",
-            image: "/vextra.webp"
+            isMobileView: true
         },
+        {
+            num: "03",
+            title: "EchoUp",
+            category: "SOCIAL PLATFORM",
+            desc: "A modern web social media platform featuring built-in AI capabilities, immersive interactions, and highly scalable architecture.",
+            tags: ["Next.js", "PostgreSQL", "Redis", "Next Auth"],
+            image: "/echo-up.webp",
+            color: "#00e5ff",
+            isMobileView: false
+        },
+        {
+            num: "04",
+            title: "Lenmi Store",
+            category: "E-COMMERCE",
+            desc: "A highly scalable marketplace infrastructure featuring complex state management and secure checkout pipelines.",
+            tags: ["React Native", "MongoDB", "Node.js", "Tailwind"],
+            image: "/lenmi.webp",
+            color: "#ffaa00",
+            isMobileView: true
+        },
+        {
+            num: "05",
+            title: "Smart Safety Net",
+            category: "IOT / OFFLINE",
+            desc: "Offline Smart Tourist Safety System utilizing localized nodes for communication in remote regions.",
+            tags: ["React", "Express.js", "WebSockets"],
+            image: "/safety-net.jpg",
+            color: "#64ffda",
+            isMobileView: false
+        }
     ];
 
+    const activeProject = projects[activeIndex];
+
     return (
-        <section
-            id="projects"
-            className="relative py-32 border-t border-[var(--color-border)] overflow-hidden"
-        >
-            {/* Massive Ambient Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-[var(--color-lime)]/5 blur-[180px]" />
-                <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-cyan-500/5 blur-[180px]" />
-            </div>
+        <section id="projects" className="relative py-24 md:py-32 bg-[#050505] overflow-hidden border-t border-white/5 selection:bg-[var(--color-lime)] selection:text-black">
+            <div className="max-w-[1400px] mx-auto px-6 md:px-10">
 
-            <div className="relative max-w-7xl mx-auto px-6 md:px-10">
                 {/* Header */}
-                <div className="mb-24">
-                    <div className="section-num mb-6">
-                        02 · SELECTED DIGITAL EXPERIENCES
+                <div className="mb-16 md:mb-24">
+                    <div className="text-[11px] tracking-[0.3em] text-white/40 font-mono mb-6 uppercase">
+                        02 · System Architecture & Products
+                    </div>
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">
+                        Engineered <span className="text-white/30">To Impress.</span>
+                    </h2>
+                </div>
+
+                <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
+
+                    {/* LEFT COLUMN: Interactive Project Roster */}
+                    <div className="w-full lg:w-5/12 flex flex-col z-10">
+                        {projects.map((project, index) => {
+                            const isActive = index === activeIndex;
+                            return (
+                                <div
+                                    key={project.num}
+                                    onMouseEnter={() => setActiveIndex(index)}
+                                    onClick={() => setActiveIndex(index)}
+                                    className={`group cursor-pointer py-8 pr-6 border-b border-white/5 transition-all duration-300 ${isActive ? "opacity-100" : "opacity-40 hover:opacity-70"
+                                        }`}
+                                >
+                                    <div className="flex items-center gap-6">
+                                        <span
+                                            className="text-sm font-mono transition-colors duration-300"
+                                            style={{ color: isActive ? project.color : 'rgba(255,255,255,0.5)' }}
+                                        >
+                                            {project.num}
+                                        </span>
+                                        <h3 className={`text-3xl md:text-4xl font-bold transition-transform duration-500 ease-out ${isActive ? 'translate-x-3 text-white' : 'text-white/80'
+                                            }`}>
+                                            {project.title}
+                                        </h3>
+                                    </div>
+
+                                    {/* Framer Motion Accordion Content */}
+                                    <AnimatePresence initial={false}>
+                                        {isActive && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: "auto", opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                                                className="overflow-hidden"
+                                            >
+                                                <div className="pt-6 pl-14">
+                                                    <p className="text-sm text-white/60 leading-relaxed mb-6 max-w-md">
+                                                        {project.desc}
+                                                    </p>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        {project.tags.map(tag => (
+                                                            <span
+                                                                key={tag}
+                                                                className="text-[10px] tracking-widest uppercase font-mono px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/70"
+                                                            >
+                                                                {tag}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            );
+                        })}
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-12 items-end">
-                        <div>
-                            <h2 className="text-5xl md:text-8xl font-bold leading-[0.9] tracking-tight">
-                                Engineered
-                                <br />
-                                To Impress
-                            </h2>
+                    {/* RIGHT COLUMN: Sticky Display Frame */}
+                    <div className="hidden lg:block w-full lg:w-7/12">
+                        <div className="sticky top-32 h-[650px] w-full rounded-[2rem] border border-white/10 bg-[#0a0a0e] overflow-hidden flex items-center justify-center p-12 shadow-2xl">
+
+                            {/* Dynamic Ambient Glow */}
+                            <motion.div
+                                animate={{ backgroundColor: activeProject.color }}
+                                transition={{ duration: 0.8, ease: "easeInOut" }}
+                                className="absolute inset-0 opacity-10 blur-[120px]"
+                            />
+
+                            {/* Image Swapper Container */}
+                            <div className="relative z-10 w-full h-full flex items-center justify-center">
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={activeProject.num}
+                                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                                        exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                        className={`relative ${activeProject.isMobileView
+                                                ? 'w-[280px] aspect-[9/19]'
+                                                : 'w-full max-w-[600px] aspect-[16/10]'
+                                            } rounded-xl border border-white/10 bg-black/50 backdrop-blur-md overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.6)] flex flex-col`}
+                                    >
+                                        {!activeProject.isMobileView && (
+                                            <div className="h-8 shrink-0 border-b border-white/5 flex items-center px-4 bg-[#1a1a1a]">
+                                                <div className="flex gap-2">
+                                                    <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+                                                    <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
+                                                    <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        <div className="flex-1 relative w-full bg-[#09090c]">
+                                            <Image
+                                                src={activeProject.image}
+                                                alt={activeProject.title}
+                                                fill
+                                                priority
+                                                className="object-cover object-top"
+                                            />
+                                        </div>
+                                    </motion.div>
+                                </AnimatePresence>
+                            </div>
+
+                            {/* Interactive Bottom CTA Overlay */}
+                            <motion.div
+                                className="absolute bottom-8 right-8 z-20"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <button
+                                    className="w-16 h-16 rounded-full bg-white text-black flex items-center justify-center shadow-xl transition-colors duration-300"
+                                    style={{ '--hover-color': activeProject.color } as any}
+                                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = activeProject.color}
+                                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
+                                >
+                                    <span className="text-2xl -rotate-45">→</span>
+                                </button>
+                            </motion.div>
                         </div>
-
-                        <p className="max-w-xl text-base md:text-lg text-[var(--color-muted)] leading-relaxed">
-                            Every project is designed as a premium digital
-                            experience — blending aesthetic precision,
-                            engineering excellence, and product strategy into
-                            memorable systems.
-                        </p>
                     </div>
-                </div>
 
-                {/* Staggered Layout */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
-                        <ProjectCard
-                            key={project.num}
-                            project={project}
-                            index={index}
-                        />
-                    ))}
-                </div>
-
-                {/* Bottom CTA */}
-                <div className="mt-24 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-white/5 pt-10">
-                    <p className="text-sm tracking-[0.25em] uppercase text-[var(--color-muted)]">
-                        More products. More innovation. More impact.
-                    </p>
-
-                    <a
-                        href="#"
-                        className="group inline-flex items-center gap-4 px-8 py-4 rounded-full border border-white/10 bg-white/[0.02] hover:border-[var(--color-lime)]/40 transition-all duration-500"
-                    >
-                        <span className="text-sm font-medium uppercase tracking-[0.3em]">
-                            Explore Full Portfolio
-                        </span>
-                        <span className="w-10 h-10 rounded-full bg-[var(--color-lime)] text-black flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
-                            ↗
-                        </span>
-                    </a>
                 </div>
             </div>
         </section>
