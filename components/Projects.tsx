@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Projects() {
     const [activeIndex, setActiveIndex] = useState(0);
+    // New state to track the active image inside the gallery
+    const [currentImageIdx, setCurrentImageIdx] = useState(0);
 
     const projects = [
         {
@@ -14,7 +16,12 @@ export default function Projects() {
             category: "DESKTOP IDE",
             desc: "An intelligent desktop IDE ecosystem built entirely from scratch. Crafted for speed, focus, and local offline coding workflows.",
             tags: ["React", "Electron.js", "Node.js", "TypeScript"],
-            image: "/vextor.jpg",
+            // Replaced 'image' with an array of 'images'
+            images: [
+                "/vextor.jpg",
+                "/vextor-2.jpg", // Add your secondary images here
+                "/vextor-3.jpg"
+            ],
             color: "#84ff00",
             isMobileView: false
         },
@@ -24,7 +31,10 @@ export default function Projects() {
             category: "MOBILE APP",
             desc: "An intelligent chat application featuring automated, ML-powered emergency messaging to trusted user contacts.",
             tags: ["Kotlin", "Java", "Express.js", "Cloudinary"],
-            image: "/vextra.webp",
+            images: [
+                "/vextra.webp",
+                "/vextra-2.webp"
+            ],
             color: "#ff4ecd",
             isMobileView: true
         },
@@ -34,7 +44,11 @@ export default function Projects() {
             category: "SOCIAL PLATFORM",
             desc: "A modern web social media platform featuring built-in AI capabilities, immersive interactions, and highly scalable architecture.",
             tags: ["Next.js", "PostgreSQL", "Redis", "Next Auth"],
-            image: "/echo-up.webp",
+            images: [
+                "/echo-up.webp",
+                "/echo-up-2.webp",
+                "/echo-up-3.webp"
+            ],
             color: "#00e5ff",
             isMobileView: false
         },
@@ -44,7 +58,10 @@ export default function Projects() {
             category: "E-COMMERCE",
             desc: "A highly scalable marketplace infrastructure featuring complex state management and secure checkout pipelines.",
             tags: ["React Native", "MongoDB", "Node.js", "Tailwind"],
-            image: "/lenmi.webp",
+            images: [
+                "/lenmi.webp",
+                "/lenmi-2.webp"
+            ],
             color: "#ffaa00",
             isMobileView: true
         },
@@ -54,13 +71,33 @@ export default function Projects() {
             category: "IOT / OFFLINE",
             desc: "Offline Smart Tourist Safety System utilizing localized nodes for communication in remote regions.",
             tags: ["React", "Express.js", "WebSockets"],
-            image: "/safety-net.jpg",
+            images: [
+                "/safety-net.jpg",
+                "/safety-net-2.jpg"
+            ],
             color: "#64ffda",
             isMobileView: false
         }
     ];
 
     const activeProject = projects[activeIndex];
+
+    // Handler to change projects and reset the image gallery to the first image
+    const handleProjectChange = (index: number) => {
+        setActiveIndex(index);
+        setCurrentImageIdx(0);
+    };
+
+    // Handlers for the image gallery navigation
+    const nextImage = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        setCurrentImageIdx((prev) => (prev + 1) % activeProject.images.length);
+    };
+
+    const prevImage = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        setCurrentImageIdx((prev) => (prev - 1 + activeProject.images.length) % activeProject.images.length);
+    };
 
     return (
         <section id="projects" className="relative py-24 md:py-32 bg-[#050505] overflow-hidden border-t border-white/5 selection:bg-[var(--color-lime)] selection:text-black">
@@ -76,7 +113,7 @@ export default function Projects() {
                     </h2>
                 </div>
 
-                <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
+                <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative min-h-[700px]">
 
                     {/* LEFT COLUMN: Interactive Project Roster */}
                     <div className="w-full lg:w-5/12 flex flex-col z-10">
@@ -85,8 +122,8 @@ export default function Projects() {
                             return (
                                 <div
                                     key={project.num}
-                                    onMouseEnter={() => setActiveIndex(index)}
-                                    onClick={() => setActiveIndex(index)}
+                                    onMouseEnter={() => handleProjectChange(index)}
+                                    onClick={() => handleProjectChange(index)}
                                     className={`group cursor-pointer py-8 pr-6 border-b border-white/5 transition-all duration-300 ${isActive ? "opacity-100" : "opacity-40 hover:opacity-70"
                                         }`}
                                 >
@@ -103,7 +140,7 @@ export default function Projects() {
                                         </h3>
                                     </div>
 
-                                    {/* Framer Motion Accordion Content */}
+                                    {/* Expandable Accordion Text */}
                                     <AnimatePresence initial={false}>
                                         {isActive && (
                                             <motion.div
@@ -136,69 +173,113 @@ export default function Projects() {
                         })}
                     </div>
 
-                    {/* RIGHT COLUMN: Sticky Display Frame */}
-                    <div className="hidden lg:block w-full lg:w-7/12">
-                        <div className="sticky top-32 h-[650px] w-full rounded-[2rem] border border-white/10 bg-[#0a0a0e] overflow-hidden flex items-center justify-center p-12 shadow-2xl">
+                    {/* RIGHT COLUMN: The Morphing Sticky Canvas with Gallery */}
+                    <div className="hidden lg:block w-full lg:w-7/12 relative">
+                        <div className="sticky top-32 w-full flex justify-center items-start pt-4">
 
-                            {/* Dynamic Ambient Glow */}
                             <motion.div
-                                animate={{ backgroundColor: activeProject.color }}
-                                transition={{ duration: 0.8, ease: "easeInOut" }}
-                                className="absolute inset-0 opacity-10 blur-[120px]"
-                            />
+                                layout
+                                transition={{ duration: 0.6, type: "spring", bounce: 0.15 }}
+                                className={`relative overflow-hidden flex flex-col shadow-[0_30px_100px_rgba(0,0,0,0.6)] ${activeProject.isMobileView
+                                        ? "w-[320px] h-[650px] rounded-[3rem] border-8 border-white/10 bg-black"
+                                        : "w-full aspect-[16/10] max-h-[600px] rounded-2xl border border-white/10 bg-[#09090c]"
+                                    }`}
+                            >
+                                {/* Subtle internal glow */}
+                                <motion.div
+                                    animate={{ backgroundColor: activeProject.color }}
+                                    transition={{ duration: 0.8 }}
+                                    className="absolute inset-0 opacity-20 blur-[80px] pointer-events-none z-0"
+                                />
 
-                            {/* Image Swapper Container */}
-                            <div className="relative z-10 w-full h-full flex items-center justify-center">
-                                <AnimatePresence mode="wait">
+                                {/* Browser Header */}
+                                {!activeProject.isMobileView && (
                                     <motion.div
-                                        key={activeProject.num}
-                                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                                        exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                                        className={`relative ${activeProject.isMobileView
-                                                ? 'w-[280px] aspect-[9/19]'
-                                                : 'w-full max-w-[600px] aspect-[16/10]'
-                                            } rounded-xl border border-white/10 bg-black/50 backdrop-blur-md overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.6)] flex flex-col`}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        className="h-10 shrink-0 border-b border-white/5 flex items-center px-4 bg-[#111] relative z-10"
                                     >
-                                        {!activeProject.isMobileView && (
-                                            <div className="h-8 shrink-0 border-b border-white/5 flex items-center px-4 bg-[#1a1a1a]">
-                                                <div className="flex gap-2">
-                                                    <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
-                                                    <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
-                                                    <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-                                                </div>
-                                            </div>
-                                        )}
+                                        <div className="flex gap-2">
+                                            <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                                            <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                                            <span className="w-3 h-3 rounded-full bg-[#28c840]" />
+                                        </div>
+                                    </motion.div>
+                                )}
 
-                                        <div className="flex-1 relative w-full bg-[#09090c]">
+                                {/* Image Crossfade Wrapper */}
+                                <div className="flex-1 relative w-full h-full z-10 overflow-hidden bg-black/40 group">
+                                    <AnimatePresence mode="popLayout">
+                                        <motion.div
+                                            // The key now includes the image index so Framer Motion knows when to animate the crossfade
+                                            key={`${activeProject.num}-${currentImageIdx}`}
+                                            initial={{ opacity: 0, filter: "blur(10px)", scale: 1.05 }}
+                                            animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+                                            exit={{ opacity: 0, filter: "blur(10px)", scale: 0.95 }}
+                                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                                            className="absolute inset-0 w-full h-full"
+                                        >
                                             <Image
-                                                src={activeProject.image}
-                                                alt={activeProject.title}
+                                                src={activeProject.images[currentImageIdx]}
+                                                alt={`${activeProject.title} screenshot ${currentImageIdx + 1}`}
                                                 fill
                                                 priority
                                                 className="object-cover object-top"
                                             />
-                                        </div>
-                                    </motion.div>
-                                </AnimatePresence>
-                            </div>
+                                        </motion.div>
+                                    </AnimatePresence>
 
-                            {/* Interactive Bottom CTA Overlay */}
-                            <motion.div
-                                className="absolute bottom-8 right-8 z-20"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <button
-                                    className="w-16 h-16 rounded-full bg-white text-black flex items-center justify-center shadow-xl transition-colors duration-300"
-                                    style={{ '--hover-color': activeProject.color } as any}
+                                    {/* Gallery Navigation Controls (Only show if there are multiple images) */}
+                                    {activeProject.images.length > 1 && (
+                                        <>
+                                            {/* Left Arrow */}
+                                            <button
+                                                onClick={prevImage}
+                                                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 hover:bg-black/80 transition-all duration-300 z-20 backdrop-blur-md"
+                                            >
+                                                ←
+                                            </button>
+
+                                            {/* Right Arrow */}
+                                            <button
+                                                onClick={nextImage}
+                                                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 border border-white/10 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 hover:bg-black/80 transition-all duration-300 z-20 backdrop-blur-md"
+                                            >
+                                                →
+                                            </button>
+
+                                            {/* Progress Dots */}
+                                            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20 bg-black/40 px-3 py-2 rounded-full backdrop-blur-md border border-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                {activeProject.images.map((_, idx) => (
+                                                    <button
+                                                        key={idx}
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setCurrentImageIdx(idx);
+                                                        }}
+                                                        className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${currentImageIdx === idx ? 'w-4 bg-white' : 'bg-white/30 hover:bg-white/60'
+                                                            }`}
+                                                    />
+                                                ))}
+                                            </div>
+                                        </>
+                                    )}
+                                </div>
+
+                                {/* Floating Action Button (View Project CTA) */}
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="absolute bottom-6 right-6 z-30 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-xl transition-colors duration-300"
                                     onMouseEnter={(e) => e.currentTarget.style.backgroundColor = activeProject.color}
                                     onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
                                 >
-                                    <span className="text-2xl -rotate-45">→</span>
-                                </button>
+                                    <span className="text-xl -rotate-45">→</span>
+                                </motion.button>
+
                             </motion.div>
+
                         </div>
                     </div>
 
