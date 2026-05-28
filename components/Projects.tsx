@@ -31,7 +31,7 @@ export default function Projects() {
             title: "Vextra",
             category: "MOBILE APP",
             desc: "An intelligent chat application featuring automated, ML-powered emergency messaging to trusted user contacts.",
-            tags: ["Kotlin", "Java", "Express.js", "Cloudinary"],
+            tags: ["Kotlin", "PostgreSQL", "Node.js", "Express.js", "Socket.io"],
             images: [
                 "/vextra.webp",
                 "/vextra-2.webp"
@@ -44,7 +44,7 @@ export default function Projects() {
             title: "EchoUp",
             category: "SOCIAL PLATFORM",
             desc: "A modern web social media platform featuring built-in AI capabilities, immersive interactions, and highly scalable architecture.",
-            tags: ["Next.js", "PostgreSQL", "Redis", "Next Auth"],
+            tags: ["Next.js", "PostgreSQL", "Redis", "Drizzle ORM", "FastAPI", "PyTorch"],
             images: [
                 "/echo-up.webp",
                 "/echo-up-2.webp",
@@ -66,19 +66,19 @@ export default function Projects() {
             color: "#ffaa00",
             isMobileView: true
         },
-        {
-            num: "05",
-            title: "Smart Safety Net",
-            category: "IOT / OFFLINE",
-            desc: "Offline Smart Tourist Safety System utilizing localized nodes for communication in remote regions.",
-            tags: ["React", "Express.js", "WebSockets"],
-            images: [
-                "/safety-net.jpg",
-                "/safety-net-2.jpg"
-            ],
-            color: "#64ffda",
-            isMobileView: false
-        }
+        // {
+        //     num: "05",
+        //     title: "Smart Safety Net",
+        //     category: "IOT / OFFLINE",
+        //     desc: "Offline Smart Tourist Safety System utilizing localized nodes for communication in remote regions.",
+        //     tags: ["React", "Express.js", "WebSockets"],
+        //     images: [
+        //         "/safety-net.jpg",
+        //         "/safety-net-2.jpg"
+        //     ],
+        //     color: "#64ffda",
+        //     isMobileView: false
+        // }
     ];
 
     const activeProject = projects[activeIndex];

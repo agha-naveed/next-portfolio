@@ -1,230 +1,194 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import Image from "next/image";
 
 export default function Hero() {
-    const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
     const containerRef = useRef<HTMLElement>(null);
+    
+    // Decrypt Effect State
+    const roles = [
+        "Web Developer", 
+        "Software Developer", 
+        "App Developer", 
+        "AI Engineer"
+    ];
+    const [roleIndex, setRoleIndex] = useState(0);
+    const [displayChars, setDisplayChars] = useState<{ char: string; isReal: boolean }[]>([]);
+
+    // Cipher / Decrypt Logic
+    useEffect(() => {
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!<>-_\\\\/[]{}—=+*^?#_";
+        const targetWord = roles[roleIndex];
+        let iteration = 0;
+        let intervalId: NodeJS.Timeout;
+
+        const startDecrypt = () => {
+            clearInterval(intervalId);
+            
+            intervalId = setInterval(() => {
+                setDisplayChars(
+                    targetWord
+                        .split("")
+                        // THIS LINE fixes the length issue! 
+                        // It limits the visible characters to stay just ahead of the locked letters
+                        .slice(0, Math.ceil(iteration + 2)) 
+                        .map((letter, index) => {
+                            // Lock in the real letter
+                            if (index < iteration) {
+                                return { char: targetWord[index], isReal: true };
+                            }
+                            // Keep spaces as spaces to prevent word shifting
+                            if (targetWord[index] === " ") {
+                                return { char: " ", isReal: true };
+                            }
+                            
+                            // Otherwise, show a random chaotic character
+                            return { 
+                                char: characters[Math.floor(Math.random() * characters.length)], 
+                                isReal: false 
+                            };
+                        })
+                );
+
+                if (iteration >= targetWord.length) {
+                    clearInterval(intervalId);
+                    setTimeout(() => {
+                        setRoleIndex((prev) => (prev + 1) % roles.length);
+                    }, 3000); // Pause for 3 seconds
+                }
+
+                iteration += 1 / 3; 
+            }, 30);
+        };
+
+        startDecrypt();
+
+        return () => clearInterval(intervalId);
+    }, [roleIndex]);
+
+    // Grammar check for "a" vs "an"
+    const currentRole = roles[roleIndex];
+    const article = /^[AEIOU]/i.test(currentRole) ? "an" : "a";
 
     useGSAP(() => {
-        gsap.from(".hero-left", {
-            x: -60,
-            opacity: 0,
-            duration: 1.1,
-            stagger: 0.12,
-            ease: "power4.out",
-        });
+        // FIXED INITIAL FLASH: Using fromTo overrides the initial CSS state seamlessly
+        gsap.fromTo(".hero-reveal", 
+            { 
+                y: 50, 
+                opacity: 0 
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1.2,
+                stagger: 0.15,
+                ease: "power4.out",
+                delay: 0.2
+            }
+        );
 
-        gsap.from(".hero-right", {
-            x: 60,
-            opacity: 0,
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power4.out",
-        });
-
-        gsap.to(".floating-orb", {
-            y: -18,
-            duration: 3,
-            repeat: -1,
-            yoyo: true,
-            ease: "power1.inOut",
-        });
-    }, { scope: containerRef });
-
-    useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
-            const rect = document.getElementById("hero-zone")?.getBoundingClientRect();
-
-            if (!rect) return;
-
-            setMousePos({
-                x: Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width)),
-                y: Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height)),
-            });
+            if (!containerRef.current) return;
+            const rect = containerRef.current.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            containerRef.current.style.setProperty('--mouse-x', `${x}px`);
+            containerRef.current.style.setProperty('--mouse-y', `${y}px`);
         };
 
         window.addEventListener("mousemove", handleMouseMove, { passive: true });
-
         return () => window.removeEventListener("mousemove", handleMouseMove);
-    }, []);
+    }, { scope: containerRef });
 
     return (
         <section
             id="home"
             ref={containerRef}
-            className="relative min-h-screen bg-[var(--color-bg)] overflow-hidden"
+            className="relative min-h-screen bg-[#050505] overflow-hidden flex items-center justify-center"
+            style={{ '--mouse-x': '50%', '--mouse-y': '50%' } as React.CSSProperties}
         >
-            {/* BACKGROUND */}
-            <div className="absolute inset-0">
-                <div className="absolute top-0 right-0 w-[45%] h-full bg-white/[0.015] border-l border-[var(--color-border)]" />
-
-                <div className="absolute top-[8%] left-[8%] w-[320px] h-[320px] rounded-full bg-[var(--color-lime)]/10 blur-[120px]" />
-                <div className="absolute bottom-[5%] right-[8%] w-[300px] h-[300px] rounded-full bg-[var(--color-purple)]/10 blur-[120px]" />
-
-                <div
-                    className="absolute inset-0 opacity-[0.03]"
+            {/* --- INTERACTIVE BACKGROUND --- */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--color-lime)]/5 blur-[120px] rounded-full pointer-events-none" />
+                
+                <div 
+                    className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem]"
                     style={{
-                        backgroundImage: `
-                            linear-gradient(to right, white 1px, transparent 1px),
-                            linear-gradient(to bottom, white 1px, transparent 1px)
-                        `,
-                        backgroundSize: "72px 72px",
+                        maskImage: `radial-gradient(circle 600px at var(--mouse-x) var(--mouse-y), black 0%, transparent 80%)`,
+                        WebkitMaskImage: `radial-gradient(circle 600px at var(--mouse-x) var(--mouse-y), black 0%, transparent 80%)`,
                     }}
                 />
             </div>
 
-            <div
-                id="hero-zone"
-                className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 min-h-screen grid lg:grid-cols-[0.95fr_1.05fr] items-center"
-            >
-                {/* LEFT SIDE */}
-                <div className="py-24 lg:pr-12">
-                    {/* Label */}
-                    <div className="hero-left inline-flex items-center gap-3 mb-8">
-                        <div className="w-10 h-[1px] bg-[var(--color-lime)]" />
-                        <span className="font-mono text-xs tracking-[0.35em] uppercase text-[var(--color-muted)]">
-                            FULL STACK ENGINEER
-                        </span>
-                    </div>
-
-                    {/* Main Title */}
-                    <div className="mb-8">
-                        <h1 className="hero-left text-[clamp(3.2rem,8vw,7.2rem)] font-bold leading-[0.9] tracking-[-0.05em]">
-                            <span className="block text-white">SYED</span>
-                            <span className="block text-white">NAVEED</span>
-                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-lime)] to-white">
-                                ABBAS
-                            </span>
-                        </h1>
-                    </div>
-
-                    {/* Description */}
-                    <p className="hero-left max-w-xl text-base md:text-lg leading-relaxed text-[var(--color-muted)] mb-10">
-                        I design and build high-performance web platforms,
-                        scalable backend systems, AI-powered products, and
-                        premium user experiences that feel futuristic.
-                    </p>
-
-                    {/* Expertise Tags */}
-                    <div className="hero-left flex flex-wrap gap-3 mb-12">
-                        {[
-                            "Frontend",
-                            "Backend",
-                            "AI Systems",
-                            "Mobile Apps"
-                        ].map((tag) => (
-                            <span
-                                key={tag}
-                                className="px-4 py-2 rounded-full border border-[var(--color-border)] bg-white/[0.02] text-sm text-[var(--color-muted)] hover:border-[var(--color-lime)] hover:text-white transition-all"
-                            >
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-
-                    {/* CTA */}
-                    <div className="hero-left flex flex-wrap gap-4 mb-14">
-                        <a
-                            href="#projects"
-                            className="group px-8 py-4 rounded-2xl bg-[var(--color-lime)] text-black font-semibold text-sm tracking-[0.18em] flex items-center gap-3 hover:scale-[1.03] transition-all"
-                        >
-                            VIEW PROJECTS
-                            <span className="group-hover:translate-x-1 transition-transform">
-                                →
-                            </span>
-                        </a>
-
-                        <a
-                            href="#contact"
-                            className="px-8 py-4 rounded-2xl border border-[var(--color-border)] text-white text-sm tracking-[0.18em] hover:border-[var(--color-lime)] hover:text-[var(--color-lime)] transition-all"
-                        >
-                            CONTACT ME
-                        </a>
-                    </div>
-
+            {/* --- MAIN CONTENT --- */}
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center text-center mt-16">
+                
+                {/* Note: Added "opacity-0" to all hero-reveal elements to prevent the loading flash */}
+                
+                {/* Availability Pill */}
+                <div className="hero-reveal opacity-0 inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8 md:mb-12">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-lime)] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-lime)]"></span>
+                    </span>
+                    <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-[var(--color-muted)]">
+                        Online
+                    </span>
                 </div>
 
-                {/* RIGHT SIDE */}
-                <div className="relative h-full min-h-screen flex items-center justify-center">
-                    {/* Profile Main Card */}
-                    <div className="hero-right relative z-20 w-[340px] md:w-[420px]">
-                        {/* Outer Glass */}
-                        <div className="relative hover:scale-102 transition-all rounded-[2.8rem] border border-white/10 bg-white/3 backdrop-blur-2xl p-4 shadow-[0_25px_100px_rgba(0,0,0,0.55)]">
-                            {/* Top Bar */}
-                            <div className="flex items-center justify-between mb-4 px-2">
-                                <span className="text-[10px] font-mono tracking-[0.35em] text-[var(--color-muted)]">
-                                    DIGITAL IDENTITY
+                {/* Massive Typography */}
+                <div className="hero-reveal opacity-0 mb-4 w-full">
+                    <h1 className="text-[clamp(3.5rem,10vw,9rem)] font-bold leading-[0.85] tracking-[-0.04em] text-white">
+                        SYED NAVEED.
+                    </h1>
+                </div>
+
+                {/* Dynamic Decrypt Role */}
+                <div className="hero-reveal opacity-0 h-10 md:h-14 mb-6">
+                    <h2 className="text-2xl md:text-4xl font-medium tracking-tight text-white flex items-center justify-center gap-2">
+                        I am {article}
+                        <span className="font-mono ml-2 flex items-center">
+                            {displayChars.map((item, i) => (
+                                <span 
+                                    key={i} 
+                                    className={`transition-colors duration-100 ${
+                                        item.isReal ? "text-[var(--color-lime)]" : "text-white opacity-90"
+                                    }`}
+                                >
+                                    {item.char === " " ? "\u00A0" : item.char}
                                 </span>
+                            ))}
+                        </span>
+                    </h2>
+                </div>
 
-                                <div className="flex gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-white/20" />
-                                    <div className="w-2 h-2 rounded-full bg-white/20" />
-                                    <div className="w-2 h-2 rounded-full bg-[var(--color-lime)]" />
-                                </div>
-                            </div>
+                {/* Subtitle */}
+                <p className="hero-reveal opacity-0 text-sm md:text-lg text-[var(--color-muted)] max-w-2xl mb-12 leading-relaxed font-light">
+                    Architecting scalable full-stack infrastructure and building intelligent ecosystems from the ground up.
+                </p>
 
-                            <div className="relative rounded-[2.2rem] overflow-hidden aspect-4/5 bg-black">
-                                <Image
-                                    loading="lazy"
-                                    placeholder="blur"
-                                    blurDataURL="/dp.png"
-                                    src="/dp.png"
-                                    alt="Syed Naveed"
-                                    width={600}
-                                    height={600}
-                                    className="w-full h-full object-cover object-top"
-                                />
+                {/* Call to Actions */}
+                <div className="hero-reveal opacity-0 flex flex-col sm:flex-row items-center gap-5">
+                    <a
+                        href="#projects"
+                        className="group relative px-8 py-4 rounded-2xl bg-[var(--color-lime)] text-black font-semibold text-sm tracking-[0.15em] flex items-center gap-3 overflow-hidden transition-transform hover:scale-[1.02]"
+                    >
+                        <span className="relative z-10 flex items-center gap-3">
+                            EXPLORE SYSTEMS
+                            <span className="group-hover:translate-x-1 transition-transform">→</span>
+                        </span>
+                        <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />
+                    </a>
 
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-
-                                <div className="absolute bottom-0 left-0 right-0 p-5">
-                                    <div className="text-xl font-semibold text-white">
-                                        Syed Naveed
-                                    </div>
-                                    <div className="text-sm text-[var(--color-muted)]">
-                                        Full Stack Developer
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Floating Orb */}
-                        <div className="floating-orb absolute -top-8 -right-8 w-24 h-24 rounded-full border border-[var(--color-lime)]/30 bg-[var(--color-lime)]/10 backdrop-blur-xl flex items-center justify-center">
-                            <div className="text-xs font-mono text-[var(--color-lime)] tracking-[0.2em]">
-                                OPEN
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Side Cards */}
-                    <div className="hero-right absolute left-8 top-[18%] hidden xl:block">
-                        <div className="rounded-2xl border border-[var(--color-border)] bg-[#111]/80 backdrop-blur-md p-4">
-                            <div className="text-[10px] font-mono tracking-[0.25em] text-[var(--color-muted)] mb-2">
-                                SPECIALIZED IN
-                            </div>
-                            <div className="space-y-2 text-sm">
-                                <div>• Modern Web Apps</div>
-                                <div>• AI Integration</div>
-                                <div>• Backend Systems</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="hero-right absolute right-8 bottom-[18%] hidden xl:block">
-                        <div className="rounded-2xl border border-[var(--color-border)] bg-[#111]/80 backdrop-blur-md p-4">
-                            <div className="text-[10px] font-mono tracking-[0.25em] text-[var(--color-muted)] mb-2">
-                                CURRENT STATUS
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 rounded-full bg-[var(--color-lime)]" />
-                                <span className="text-sm">Available for work</span>
-                            </div>
-                        </div>
-                    </div>
+                    <a
+                        href="#contact"
+                        className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md text-white text-sm tracking-[0.15em] hover:border-white/30 hover:bg-white/10 transition-all"
+                    >
+                        INITIATE CONTACT
+                    </a>
                 </div>
             </div>
         </section>

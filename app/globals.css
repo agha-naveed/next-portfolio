@@ -12,6 +12,7 @@
   --color-muted: #666666;
   --font-sans: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  --animate-shimmer: shimmer 1.5s infinite;
 }
 
 * {
@@ -25,6 +26,9 @@ body {
   overflow-x: hidden;
 }
 
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
 
 /* ISOMETRIC 3D ROOM */
 .iso-scene {
