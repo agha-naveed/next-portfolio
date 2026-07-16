@@ -3,24 +3,20 @@
 import { motion } from "framer-motion";
 
 export default function AchievementMarquee() {
-    // The items to loop. We include decorative separators (✦) between items.
+    // Structured data for a cleaner, two-tone typography look
     const achievements = [
-        "🏆 1st Place Speed Programming — Mega Tech Explosion 2025",
-        "✦",
-        "🏆 2x Tech Expo Speed Programming Champion",
-        "✦",
-        "👨‍🏫 Web Dev Instructor — Aura Tech Academy",
-        "✦",
-        "👨‍💻 Python Instructor — Codehub Skardu",
-        "✦",
+        { role: "1ST PLACE SPEED PROGRAMMING", location: "MEGA TECH EXPLOSION 2025" },
+        { role: "2X SPEED PROGRAMMING CHAMPION", location: "TECH EXPO UB" },
+        { role: "WEB DEV INSTRUCTOR", location: "AURA TECH ACADEMY" },
+        { role: "PYTHON INSTRUCTOR", location: "CODEHUB SKARDU" },
     ];
 
     return (
-        <div className="relative w-full bg-[var(--color-lime)] py-3 overflow-hidden flex items-center border-y border-white/10 shadow-[0_0_40px_rgba(184,255,0,0.1)]">
+        <div className="relative w-full bg-[#050505] py-5 overflow-hidden flex items-center border-y border-white/5">
             
-            {/* Left and Right Fade Masks for a cleaner entrance/exit */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
+            {/* Soft edge fade masks to blend into the dark background */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
 
             {/* Scrolling Track */}
             <motion.div
@@ -29,27 +25,34 @@ export default function AchievementMarquee() {
                     x: ["0%", "-50%"],
                 }}
                 transition={{
-                    duration: 25, // Adjust this to make it faster or slower
+                    duration: 30, // Slightly slower for a more premium, deliberate feel
                     ease: "linear",
                     repeat: Infinity,
                 }}
                 style={{ width: "fit-content" }}
             >
-                {/* 
-                  We map over the array TWICE to create the seamless infinite loop.
-                  When the first half scrolls out of view, the second half is perfectly in place.
-                */}
+                {/* Looping the array twice for the infinite scroll effect */}
                 {[...achievements, ...achievements].map((item, index) => (
-                    <span
-                        key={index}
-                        className={`mx-4 md:mx-6 text-sm md:text-base font-mono uppercase tracking-widest ${
-                            item === "✦" 
-                                ? "text-black/30" // Styling for the separator
-                                : "text-black font-bold" // Styling for the text
-                        }`}
-                    >
-                        {item}
-                    </span>
+                    <div key={index} className="flex items-center">
+                        
+                        {/* The Text Block */}
+                        <div className="flex items-center gap-3 px-6 md:px-10">
+                            <span className="text-sm md:text-base font-bold tracking-widest text-white uppercase">
+                                {item.role}
+                            </span>
+                            <span className="text-sm md:text-base font-mono tracking-widest text-[var(--color-lime)] uppercase opacity-80">
+                                // {item.location}
+                            </span>
+                        </div>
+
+                        {/* Glowing Orb Separator */}
+                        <div className="flex items-center justify-center px-4">
+                            <div className="relative w-2 h-2 rounded-full bg-white/20">
+                                <div className="absolute inset-0 bg-white/40 blur-sm rounded-full" />
+                            </div>
+                        </div>
+
+                    </div>
                 ))}
             </motion.div>
         </div>
