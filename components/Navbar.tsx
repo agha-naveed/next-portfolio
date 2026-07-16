@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -17,7 +18,7 @@ export default function Navbar() {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item, i) => (
-            <a
+            <Link
               key={item}
               href={`#${item.toLowerCase()}`}
               onClick={() => setActiveNav(item)}
@@ -32,7 +33,7 @@ export default function Navbar() {
               {activeNav === item && (
                 <div className="h-[2px] w-full bg-[var(--color-lime)] rounded-full mt-0.5" />
               )}
-            </a>
+            </Link>
           ))}
         </div>
 

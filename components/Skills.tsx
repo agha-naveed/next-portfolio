@@ -1,3 +1,9 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+
 const JavaScript = () => <svg xmlns="http://www.w3.org/2000/svg" width={40} height={40} viewBox="0 0 256 256"><path fill="#f7df1e" d="M0 0h256v256H0z"></path><path d="m67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371c7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259c-19.245 0-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607c9.969 0 16.325-4.984 16.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257c0-18.044 13.747-31.792 35.228-31.792c15.294 0 26.292 5.328 34.196 19.247l-18.732 12.03c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046 0-11.514 4.468-11.514 10.31c0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804c0 21.654-17.012 33.51-39.867 33.51c-22.339 0-36.774-10.654-43.819-24.574"></path></svg>
 const TypeScript = () => <svg xmlns="http://www.w3.org/2000/svg" width={40} height={40} viewBox="0 0 128 128"><path fill="#fff" d="M22.67 47h99.67v73.67H22.67z"></path><path fill="#007acc" d="M1.5 63.91v62.5h125v-125H1.5zm100.73-5a15.56 15.56 0 0 1 7.82 4.5a20.6 20.6 0 0 1 3 4c0 .16-5.4 3.81-8.69 5.85c-.12.08-.6-.44-1.13-1.23a7.09 7.09 0 0 0-5.87-3.53c-3.79-.26-6.23 1.73-6.21 5a4.6 4.6 0 0 0 .54 2.34c.83 1.73 2.38 2.76 7.24 4.86c8.95 3.85 12.78 6.39 15.16 10c2.66 4 3.25 10.46 1.45 15.24c-2 5.2-6.9 8.73-13.83 9.9a38.3 38.3 0 0 1-9.52-.1a23 23 0 0 1-12.72-6.63c-1.15-1.27-3.39-4.58-3.25-4.82a9 9 0 0 1 1.15-.73L82 101l3.59-2.08l.75 1.11a16.8 16.8 0 0 0 4.74 4.54c4 2.1 9.46 1.81 12.16-.62a5.43 5.43 0 0 0 .69-6.92c-1-1.39-3-2.56-8.59-5c-6.45-2.78-9.23-4.5-11.77-7.24a16.5 16.5 0 0 1-3.43-6.25a25 25 0 0 1-.22-8c1.33-6.23 6-10.58 12.82-11.87a31.7 31.7 0 0 1 9.49.26zm-29.34 5.24v5.12H56.66v46.23H45.15V69.26H28.88v-5a49 49 0 0 1 .12-5.17C29.08 59 39 59 51 59h21.83z"></path></svg>
 const React = () => <svg xmlns="http://www.w3.org/2000/svg" width={40} height={40} viewBox="0 0 256 228"><path fill="#00d8ff" d="M210.483 73.824a172 172 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171 171 0 0 0-6.375 5.848a156 156 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a171 171 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a146 146 0 0 0 6.921 2.165a168 168 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a146 146 0 0 0 5.342-4.923a168 168 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145 145 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844m-6.365 70.984q-2.102.694-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14m-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a157 157 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345q.785 3.162 1.386 6.193M87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a157 157 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a135 135 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94M50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a135 135 0 0 1-6.318-1.979m12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144 144 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160 160 0 0 1-1.76-7.887m110.427 27.268a348 348 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381 381 0 0 0-7.365-13.322m-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322 322 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18M82.802 87.83a323 323 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a322 322 0 0 0-7.848 12.897m8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321 321 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147m37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486m52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382 382 0 0 0 7.859-13.026a347 347 0 0 0 7.425-13.565m-16.898 8.101a359 359 0 0 1-12.281 19.815a329 329 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310 310 0 0 1-12.513-19.846h.001a307 307 0 0 1-10.923-20.627a310 310 0 0 1 10.89-20.637l-.001.001a307 307 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329 329 0 0 1 12.335 19.695a359 359 0 0 1 11.036 20.54a330 330 0 0 1-11 20.722m22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026q-.518 2.504-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a161 161 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3M128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86"></path></svg>
@@ -33,24 +39,30 @@ const Electron = () => <svg xmlns="http://www.w3.org/2000/svg" width={40} height
 const Github = () => <svg xmlns="http://www.w3.org/2000/svg" width={40} height={40} viewBox="0 0 24 24"><path fill="#ededed" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"></path></svg>
 const Jest = () => <svg xmlns="http://www.w3.org/2000/svg" width={40} height={40} viewBox="0 0 256 283"><path fill="#99425b" d="M239.553 138.96c0-14.508-11.762-26.27-26.27-26.27q-1.4.001-2.762.146l36.082-106.42H93.267l36.032 106.327a26 26 0 0 0-1.597-.052c-14.508 0-26.27 11.76-26.27 26.27c0 11.727 7.686 21.656 18.293 25.034c-5.602 9.704-12.652 18.445-20.656 25.997c-10.884 10.267-23.34 18.053-36.812 22.85c-16.04-8.24-23.614-26.565-16.78-42.632c.772-1.815 1.56-3.654 2.313-5.485c11.62-2.712 20.28-13.129 20.28-25.576c0-14.509-11.762-26.27-26.271-26.27s-26.27 11.761-26.27 26.27c0 8.897 4.426 16.756 11.193 21.508c-6.502 14.804-16.06 30.298-19.038 48.255c-3.569 21.52-.012 44.364 18.601 57.265c43.348 30.044 90.402-18.625 140.014-30.86c17.98-4.433 37.717-3.719 53.558-12.893c11.896-6.89 19.739-18.309 21.964-31.128c2.2-12.664-1.006-25.273-8.378-35.497a26.16 26.16 0 0 0 6.11-16.839"></path><path fill="#fff" d="M235.5 190.198c-1.932 11.13-8.806 20.851-18.858 26.674c-9.371 5.427-20.6 7.047-32.49 8.761c-6.369.918-12.955 1.869-19.389 3.455c-17.012 4.195-33.49 12.38-49.424 20.295c-31.89 15.84-59.43 29.518-85.398 11.52c-19.022-13.183-18.144-37.575-15.928-50.941c2.054-12.384 7.607-23.789 12.976-34.818a797 797 0 0 0 2.722-5.634a32.5 32.5 0 0 0 8.443 2.118c-5.466 18.039 3.13 37.653 21.171 46.921l2.47 1.269l2.614-.931c14.263-5.08 27.406-13.23 39.063-24.229c7.535-7.109 14.014-14.974 19.339-23.378a33 33 0 0 0 4.891.367c16.559 0 30.271-12.379 32.393-28.367c6.778-.248 13.977-.25 20.794-.002c2.12 15.99 15.834 28.37 32.393 28.37c6.924 0 13.346-2.17 18.637-5.856c3.673 7.519 5.044 15.979 3.581 24.406M41.8 119.295c10.948 0 19.854 8.907 19.854 19.855a19.73 19.73 0 0 1-3.135 10.687c-3.3 5.147-8.91 8.675-15.355 9.115c-.451.03-.906.052-1.364.052c-2.44 0-4.777-.445-6.938-1.253a19.97 19.97 0 0 1-10.305-8.777a19.7 19.7 0 0 1-2.612-9.824c0-10.948 8.907-19.855 19.855-19.855m66.049 19.666c0-9.947 7.353-18.206 16.907-19.634q1.444-.219 2.947-.22c6.365 0 12.032 3.015 15.666 7.687a20 20 0 0 1 2.318 3.765a19.7 19.7 0 0 1 1.87 8.402c0 1.587-.192 3.13-.545 4.61c-1.935 8.1-8.842 14.292-17.306 15.144q-.987.1-2.003.1a19.73 19.73 0 0 1-10.76-3.181c-5.466-3.541-9.094-9.69-9.094-16.673m82.865-23.61a32.7 32.7 0 0 0-8.991 15.117a305 305 0 0 0-22.458 0c-1.68-6.232-5.162-11.73-9.847-15.906l20.545-41.542zM102.216 12.834h135.437l-31.989 94.345a32.5 32.5 0 0 0-4.051 1.255l-31.6-64.463l-31.69 64.078a32.5 32.5 0 0 0-4.226-1.139zm130.92 126.128c0 1.99-.297 3.912-.844 5.727a19.93 19.93 0 0 1-7.653 10.545a19.74 19.74 0 0 1-11.357 3.582c-9.167 0-16.9-6.247-19.174-14.707a19.8 19.8 0 0 1-.68-5.147c0-2.714.548-5.302 1.538-7.66a20 20 0 0 1 1.878-3.442c3.573-5.274 9.602-8.752 16.438-8.752q.94.001 1.858.09c10.08.939 17.997 9.442 17.997 19.764m12.833 0c0-15.958-11.498-29.273-26.642-32.117L255.553 0H84.318L120.6 107.061c-14.618 3.253-25.583 16.316-25.583 31.9c0 11.702 6.184 21.98 15.452 27.756c-4.458 6.642-9.744 12.892-15.802 18.608c-9.608 9.063-20.311 15.937-31.85 20.46c-11.623-7.301-16.536-21.07-11.434-33.064l.4-.94l.75-1.764c12.766-4.453 21.953-16.603 21.953-30.867c0-18.024-14.663-32.687-32.686-32.687c-18.024 0-32.687 14.663-32.687 32.687c0 9.097 3.74 17.335 9.758 23.267a553 553 0 0 1-3.418 7.11c-5.503 11.301-11.739 24.11-14.098 38.335c-4.684 28.25 2.872 50.833 21.277 63.588c11.168 7.74 22.51 10.784 33.923 10.784c21.49 0 43.23-10.797 64.493-21.359c15.313-7.605 31.148-15.47 46.789-19.328c5.82-1.435 11.808-2.299 18.148-3.213c12.573-1.814 25.573-3.689 37.089-10.358c13.349-7.732 22.486-20.702 25.07-35.582c2.218-12.775-.451-25.57-6.961-36.422a32.5 32.5 0 0 0 4.787-17.011"></path></svg>
 
+
+
 export default function Skills() {
+    const [activeTab, setActiveTab] = useState(0);
+
     const categories = [
         {
+            id: "frontend",
             title: "Frontend",
-            number: "01",
-            color: "from-cyan-500/20 to-blue-500/5",
+            desc: "Architecting responsive, high-fidelity user interfaces.",
+            color: "#00e5ff",
             skills: [
-                { icon: <JavaScript />, label: "JavaScript" },
-                { icon: <TypeScript />, label: "TypeScript" },
                 { icon: <React />, label: "React" },
                 { icon: <Nextjs />, label: "Next.js" },
+                { icon: <TypeScript />, label: "TypeScript" },
+                { icon: <JavaScript />, label: "JavaScript" },
                 { icon: <Tailwind />, label: "Tailwind CSS" },
             ],
         },
         {
-            title: "Backend",
-            number: "02",
-            color: "from-emerald-500/20 to-green-500/5",
+            id: "backend",
+            title: "Backend & APIs",
+            desc: "Developing scalable servers and microservices.",
+            color: "#84ff00",
             skills: [
                 { icon: <Nodejs />, label: "Node.js" },
                 { icon: <Expressjs />, label: "Express.js" },
@@ -60,9 +72,10 @@ export default function Skills() {
             ],
         },
         {
-            title: "Databases",
-            number: "03",
-            color: "from-orange-500/20 to-yellow-500/5",
+            id: "database",
+            title: "Data Infrastructure",
+            desc: "Designing resilient and optimized database schemas.",
+            color: "#ffaa00",
             skills: [
                 { icon: <Postgres />, label: "PostgreSQL" },
                 { icon: <MySQL />, label: "MySQL" },
@@ -73,30 +86,22 @@ export default function Skills() {
             ],
         },
         {
-            title: "Mobile Development",
-            number: "04",
-            color: "from-pink-500/20 to-rose-500/5",
-            skills: [
-                { icon: <Java />, label: "Java" },
-                { icon: <Kotlin />, label: "Kotlin" },
-                { icon: <React />, label: "React Native" },
-            ],
-        },
-        {
-            title: "AI / Data",
-            number: "05",
-            color: "from-violet-500/20 to-purple-500/5",
+            id: "ai",
+            title: "AI & Intelligence",
+            desc: "Integrating machine learning and vision models.",
+            color: "#b026ff",
             skills: [
                 { icon: <Python />, label: "Python" },
                 { icon: <Numpy />, label: "NumPy" },
                 { icon: <Pandas />, label: "Pandas" },
-                { icon: <CNN />, label: "Computer Vision" },
+                { icon: <CNN />, label: "Vision Models" },
             ],
         },
         {
-            title: "DevOps & Cloud",
-            number: "06",
-            color: "from-lime-500/20 to-green-500/5",
+            id: "devops",
+            title: "Cloud & Deployment",
+            desc: "Managing CI/CD, containerization, and asset pipelines.",
+            color: "#00bfff",
             skills: [
                 { icon: <Docker />, label: "Docker" },
                 { icon: <Vercel />, label: "Vercel" },
@@ -104,9 +109,10 @@ export default function Skills() {
             ],
         },
         {
-            title: "Tools",
-            number: "07",
-            color: "from-slate-500/20 to-gray-500/5",
+            id: "tools",
+            title: "Tooling",
+            desc: "Ensuring code quality and cross-platform capabilities.",
+            color: "#ffffff",
             skills: [
                 { icon: <Github />, label: "GitHub" },
                 { icon: <Electron />, label: "Electron" },
@@ -115,95 +121,116 @@ export default function Skills() {
         },
     ];
 
+    const activeData = categories[activeTab];
+
     return (
         <section
             id="skills"
-            className="relative py-32 border-t border-[var(--color-border)] overflow-hidden"
+            className="relative py-24 md:py-32 bg-[#050505] border-t border-white/5 overflow-hidden min-h-screen flex items-center"
         >
-            {/* Background Glow */}
+            {/* Soft Ambient Background */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-20 left-1/4 w-72 h-72 bg-[var(--color-lime)]/10 blur-[120px]" />
-                <div className="absolute bottom-20 right-1/4 w-72 h-72 bg-cyan-500/10 blur-[120px]" />
+                <div 
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] max-w-[800px] h-[500px] blur-[150px] opacity-10 transition-colors duration-700 ease-in-out"
+                    style={{ backgroundColor: activeData.color }}
+                />
             </div>
 
-            <div className="relative max-w-7xl mx-auto px-6 md:px-10">
-                {/* Header */}
-                <div className="text-center max-w-4xl mx-auto mb-24">
-                    <div className="section-num mb-5">03 · SKILLS UNIVERSE</div>
-
-                    <h2 className="text-5xl md:text-8xl font-bold leading-[0.9] tracking-tight mb-8">
-                        Building Across
-                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-lime)] via-cyan-400 to-blue-500">
-                            Every Layer
-                        </span>
+            <div className="relative z-10 max-w-[1200px] mx-auto w-full px-6 md:px-10">
+                
+                <div className="text-center md:text-left mb-16">
+                    <div className="text-[11px] tracking-[0.3em] text-[var(--color-lime)] font-mono mb-6 uppercase">
+                        03 · Technical Arsenal
+                    </div>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+                        System <span className="text-white/30">Architecture.</span>
                     </h2>
-
-                    <p className="text-sm md:text-lg text-[var(--color-muted)] leading-relaxed max-w-2xl mx-auto">
-                        From pixel-perfect frontend experiences to backend systems,
-                        mobile ecosystems, AI intelligence, and deployment —
-                        a complete technical spectrum.
-                    </p>
                 </div>
 
-                {/* Zig-Zag Premium Layout */}
-                <div className="space-y-10">
-                    {categories.map((category, i) => (
-                        <div
-                            key={category.title}
-                            className={`grid grid-cols-1 lg:grid-cols-12 gap-6 items-center ${i % 2 === 0 ? "" : "lg:[&>*:first-child]:order-2"
-                                }`}
-                        >
-                            {/* Side Label */}
-                            <div className="lg:col-span-4">
-                                <div className="sticky top-24">
-                                    <div className="text-[var(--color-lime)] text-sm font-mono tracking-[0.35em] mb-3">
-                                        {category.number}
-                                    </div>
-
-                                    <h3 className="text-3xl md:text-5xl font-bold mb-4">
+                {/* The IDE Interface */}
+                <div className="flex flex-col md:flex-row rounded-3xl border border-white/10 bg-[#09090c] overflow-hidden shadow-2xl">
+                    
+                    {/* LEFT: Sidebar Navigation */}
+                    <div className="w-full md:w-[35%] lg:w-[30%] bg-[#050505] border-b md:border-b-0 md:border-r border-white/10 flex flex-col p-4 md:p-6 gap-2">
+                        {categories.map((category, index) => {
+                            const isActive = activeTab === index;
+                            return (
+                                <button
+                                    key={category.id}
+                                    onClick={() => setActiveTab(index)}
+                                    className={`relative flex items-center gap-4 w-full px-5 py-4 rounded-xl text-left transition-all duration-300 ${
+                                        isActive ? "bg-white/10 text-white" : "text-white/50 hover:bg-white/5 hover:text-white/80"
+                                    }`}
+                                >
+                                    {isActive && (
+                                        <motion.div
+                                            layoutId="activeTabIndicator"
+                                            className="absolute left-0 top-1/4 bottom-1/4 w-1 rounded-r-full"
+                                            style={{ backgroundColor: category.color }}
+                                        />
+                                    )}
+                                    <span className="font-mono text-xs opacity-50">
+                                        0{index + 1}
+                                    </span>
+                                    <span className="font-medium tracking-wide">
                                         {category.title}
+                                    </span>
+                                </button>
+                            );
+                        })}
+                    </div>
+
+                    {/* RIGHT: Main Canvas Area */}
+                    <div className="w-full md:w-[65%] lg:w-[70%] p-8 md:p-12 min-h-[400px] flex flex-col justify-center relative">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeData.id}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.3, ease: "easeOut" }}
+                                className="flex flex-col h-full"
+                            >
+                                {/* Active Category Header */}
+                                <div className="mb-10">
+                                    <h3 
+                                        className="text-2xl md:text-3xl font-bold mb-3"
+                                        style={{ color: activeData.color }}
+                                    >
+                                        {activeData.title}
                                     </h3>
-
-                                    <div className="h-[2px] w-24 bg-gradient-to-r from-[var(--color-lime)] to-transparent mb-4" />
-
-                                    <p className="text-[var(--color-muted)] leading-relaxed max-w-sm">
-                                        {category.skills.length} carefully selected
-                                        technologies powering this domain.
+                                    <p className="text-white/50 leading-relaxed max-w-md">
+                                        {activeData.desc}
                                     </p>
                                 </div>
-                            </div>
 
-                            {/* Skills Panel */}
-                            <div className="lg:col-span-8">
-                                <div
-                                    className={`relative rounded-[2rem] border border-white/10 bg-gradient-to-br ${category.color} backdrop-blur-xl p-8 md:p-10 overflow-hidden group hover:border-[var(--color-lime)]/30 transition-all duration-500`}
-                                >
-                                    {/* Decorative Grid */}
-                                    <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:32px_32px]" />
-
-                                    <div className="relative grid grid-cols-2 sm:grid-cols-3 gap-4">
-                                        {category.skills.map((skill) => (
-                                            <div
-                                                key={skill.label}
-                                                className="group/skill rounded-2xl border border-white/10 bg-black/20 backdrop-blur-md p-5 flex flex-col items-center justify-center text-center hover:bg-white/[0.06] hover:-translate-y-2 transition-all duration-300"
-                                            >
-                                                <div className="scale-90 group-hover/skill:scale-100 transition-transform duration-300 mb-3">
-                                                    {skill.icon}
-                                                </div>
-
-                                                <span className="text-sm md:text-base font-medium text-white/90 group-hover/skill:text-white">
-                                                    {skill.label}
-                                                </span>
+                                {/* Staggered Skills Grid */}
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6">
+                                    {activeData.skills.map((skill, index) => (
+                                        <motion.div
+                                            key={skill.label}
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{ 
+                                                duration: 0.4, 
+                                                delay: index * 0.05, 
+                                                ease: "backOut" 
+                                            }}
+                                            className="group flex flex-col items-center justify-center gap-3 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-white/15 transition-all duration-300"
+                                        >
+                                            <div className="w-10 h-10 flex items-center justify-center opacity-70 group-hover:opacity-100 group-hover:-translate-y-1 group-hover:scale-110 transition-all duration-300">
+                                                {skill.icon}
                                             </div>
-                                        ))}
-                                    </div>
-
-                                    {/* Floating Corner Orb */}
-                                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 blur-3xl rounded-full group-hover:scale-125 transition-transform duration-700" />
+                                            <span className="text-[11px] font-mono tracking-widest uppercase text-white/50 group-hover:text-white transition-colors">
+                                                {skill.label}
+                                            </span>
+                                        </motion.div>
+                                    ))}
                                 </div>
-                            </div>
-                        </div>
-                    ))}
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
+
                 </div>
             </div>
         </section>

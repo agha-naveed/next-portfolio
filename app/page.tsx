@@ -6,6 +6,7 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Cursor from "@/components/Cursor";
+import AchievementMarquee from "@/components/AchievementMarquee";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
 
       <main>
         <Hero />
+        <AchievementMarquee />
         <Projects />
         <Skills />
         <About />

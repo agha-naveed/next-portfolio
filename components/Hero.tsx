@@ -10,8 +10,7 @@ export default function Hero() {
     // Decrypt Effect State
     const roles = [
         "Web Developer", 
-        "Software Developer", 
-        "App Developer", 
+        "Software Developer",
         "AI Engineer"
     ];
     const [roleIndex, setRoleIndex] = useState(0);
