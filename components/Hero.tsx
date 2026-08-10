@@ -314,8 +314,8 @@ export default function Hero() {
                 <div
                     className="
                         absolute
-                        bottom-[30%]
-                        right-[20%]
+                        bottom-[20%]
+                        right-[15%]
                         font-mono
                         text-[10px]
                         text-[#00e5ff]/30
