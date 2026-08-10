@@ -13,6 +13,7 @@
   --font-sans: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --animate-shimmer: shimmer 1.5s infinite;
+  --animate-slideImage: slideImage 6s ease-in-out forwards;
 }
 
 * {
@@ -312,4 +313,15 @@ body::after {
 
 .animate-fade-in-up {
   animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideImage {
+  0% {
+  }
+  25% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-63.5%);
+  }
 }
