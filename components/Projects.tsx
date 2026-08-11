@@ -280,7 +280,7 @@ export default function Projects() {
             title: "EchoUp",
             category: "SOCIAL PLATFORM",
             desc: "A modern web social media platform featuring built-in AI capabilities, immersive interactions, and a highly scalable backend architecture designed to handle thousands of concurrent events.",
-            tags: ["Next.js", "Supabase", "Redis", "FastAPI", "Docker"],
+            tags: ["Next.js", "Supabase", "Redis", "FastAPI", "Cloudinary", "Docker"],
             images: [
                 "/echoup/1.jpg",
                 "/echoup/2.jpg",
