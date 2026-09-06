@@ -34,11 +34,11 @@ export default function Cursor() {
     <>
       <div
         ref={dotRef}
-        className="hidden md:block fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[99999] bg-[var(--color-lime)]"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[99999] bg-[var(--color-lime)]"
       />
       <div
         ref={ringRef}
-        className="hidden md:block fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[99998] border-[1.5px] border-[var(--color-lime)]/50"
+        className=" fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[99998] border-[1.5px] border-[var(--color-lime)]/50"
       />
     </>
   );
