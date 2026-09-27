@@ -683,55 +683,7 @@ export default function Hero() {
                     </a>
                 </div>
             </div>
-
-            {/* =====================================================
-                SCROLL INDICATOR
-                ===================================================== */}
-
-            <motion.div
-                animate={{
-                    opacity: [0.2, 0.8, 0.2],
-                }}
-                transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-                className="
-                    absolute
-                    bottom-10
-                    left-1/2
-                    -translate-x-1/2
-                    hidden
-                    md:flex
-                    flex-col
-                    items-center
-                    gap-4
-                    z-10
-                "
-            >
-                <span
-                    className="
-                        font-mono
-                        text-[9px]
-                        uppercase
-                        tracking-[0.3em]
-                        text-white/40
-                    "
-                >
-                    Scroll
-                </span>
-
-                <div
-                    className="
-                        w-px
-                        h-8
-                        bg-linear-to-b
-                        from-white/40
-                        to-transparent
-                    "
-                />
-            </motion.div>
+            
         </section>
     );
 }

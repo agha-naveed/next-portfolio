@@ -263,7 +263,7 @@ export default function Projects() {
             title: "Vextor AI",
             category: "DESKTOP IDE",
             desc: "An intelligent desktop IDE ecosystem built entirely from scratch. Crafted for speed, focus, and local offline coding workflows with highly optimized native performance.",
-            tags: ["React", "Electron.js", "GoLang", "Rust", "TailwindCSS"],
+            tags: ["React", "Electron.js", "GoLang", "Rust", "NeonDB", "TailwindCSS"],
             images: [
                 "/vextor/1.png",
                 "/vextor/2.png",
@@ -295,8 +295,8 @@ export default function Projects() {
             num: "03",
             title: "Online Quran Academy",
             category: "WEBSITE",
-            desc: "A modern, performant web platform dedicated to online Quranic and Islamic education. Built with Next.js and TailwindCSS to ensure a lightning-fast, fully responsive, and accessible experience for students across all devices, efficiently deployed via cPanel.",
-            tags: ["Next.Js", "TailwindCSS", "cPanel"],
+            desc: "A modern, performant web platform dedicated to online Quranic and Islamic education. Built with Plain HTML, CSS, JS and TailwindCSS to ensure a lightning-fast, fully responsive, and accessible experience for students across all devices, efficiently deployed via cPanel.",
+            tags: ["HTML, CSS, JS", "TailwindCSS", "cPanel"],
             images: [
                 "/quran-academy/full-1.png",
                 "/quran-academy/full-2.png",
